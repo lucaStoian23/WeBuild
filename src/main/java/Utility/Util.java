@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Calendar;
 
 
@@ -45,13 +46,13 @@ public class Util extends DriverManager {
 
     public static WebElement waitElement(TestElement el){
         if (!el.getId().equals("")) {
-            return new WebDriverWait(driver,3)
+            return new WebDriverWait(driver, Duration.ofSeconds(3))
                     .until(driver -> driver.findElement(By.id(el.getId())));
         } else if(!el.getText().equals("")){
-            return new WebDriverWait(driver,3)
+            return new WebDriverWait(driver, Duration.ofSeconds(3))
                     .until(driver -> driver.findElement(By.xpath("//*[contains(text(),'"+el.getText()+"')]")));
         } else {
-            return new WebDriverWait(driver,3)
+            return new WebDriverWait(driver, Duration.ofSeconds(3))
                     .until(driver -> driver.findElement(By.xpath(el.getXpath())));
         }
     }
@@ -115,11 +116,11 @@ public class Util extends DriverManager {
 
     public static boolean waitElementNotVisible(TestElement el){
         if (!el.getId().equals("")) {
-            return new WebDriverWait(driver, 3).until(ExpectedConditions.invisibilityOfElementLocated(By.id(el.getId())));
+            return new WebDriverWait(driver,  Duration.ofSeconds(3)).until(ExpectedConditions.invisibilityOfElementLocated(By.id(el.getId())));
         } else if(!el.getText().equals("")){
-            return new WebDriverWait(driver, 3).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(text(),'"+el.getText()+"')]")));
+            return new WebDriverWait(driver,  Duration.ofSeconds(3)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(text(),'"+el.getText()+"')]")));
         } else {
-            return new WebDriverWait(driver, 3).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(el.getXpath())));
+            return new WebDriverWait(driver,  Duration.ofSeconds(3)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(el.getXpath())));
         }
     }
 
@@ -181,7 +182,7 @@ public class Util extends DriverManager {
     public static void passOverPopUpLogin(String urlStr){
 
         System.out.println("Pass over Pop Up");
-        new WebDriverWait(driver, 20).until(ExpectedConditions.urlContains("sts3.reply.eu"));
+        new WebDriverWait(driver,  Duration.ofSeconds(20)).until(ExpectedConditions.urlContains("sts3.reply.eu"));
         String url = driver.getCurrentUrl();
         String newUrl = url.replace("//",urlStr);
         driver.get(newUrl);

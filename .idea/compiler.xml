@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Test Automation Framework" />
         <module name="webuild" />
+        <module name="WeBuild2" />
       </profile>
     </annotationProcessing>
   </component>

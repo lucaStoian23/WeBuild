@@ -108,9 +108,9 @@ public class WebStep {
         Util.takeScreenShot();
     }
 
-    @Given("I navigate to CUCUMBER page")
-    public void navigateToCucumber() throws IOException {
-        Util.getURL("https://www.baeldung.com/java-cucumber-hooks");
+    @Given("I navigate to WeBuild page")
+    public void navigateToWeBuild() throws IOException {
+        Util.getURL("https://dev-mrhgsddb.launchpad.cfapps.eu20.hana.ondemand.com/it-webuild-npp.itwebuildnpp-0.0.1/index.html");
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
     }
