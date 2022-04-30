@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">WeBuild Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">apr 28, 2022 05:43:33 PM</span></a>
+<a href="#"><span class="badge badge-primary">apr 29, 2022 06:00:24 PM</span></a>
 </li>
 </ul>
 </div>
@@ -71,6 +71,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
@@ -79,25 +80,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">T001 VendorManager atterraggio HomePage</p>
             <p class="text-sm">
-              <span>17:43:34</span> / <span>00:00:20:675</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>18:00:26</span> / <span>00:00:32:621</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">T001 VendorManager atterraggio HomePage</h5>
-<span class='badge badge-success'>04.28.2022 17:43:34</span>
-<span class='badge badge-danger'>04.28.2022 17:43:55</span>
-<span class='badge badge-default'>00:00:20:675</span>
+<h5 class="test-status text-pass">T001 VendorManager atterraggio HomePage</h5>
+<span class='badge badge-success'>04.29.2022 18:00:26</span>
+<span class='badge badge-danger'>04.29.2022 18:00:58</span>
+<span class='badge badge-default'>00:00:32:621</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -109,13 +110,13 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>T001 VendorManager atterraggio HomePage</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>T001 VendorManager atterraggio HomePage</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
               <div class="step pass-bg" title="test.java.steps.WebStep.navigateToWeBuild()">
                 <span>Given I navigate to WeBuild page</span>
@@ -181,38 +182,9 @@
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="test.java.steps.WebStep.insertText(java.lang.String,java.lang.String,java.lang.String)">
+              <div class="step pass-bg" title="test.java.steps.WebStep.insertText(java.lang.String,java.lang.String,java.lang.String)">
                 <span>And I input in WeBuildLogInPage.LogInField the text "c.motta@reply.it"</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=100.0.4896.127)
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'DESKTOP-LVPIRVK', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2948e5087e19fa80c5fad17809e4b7a4, findElement {using=xpath, value=//*[@id="j_username"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\lucas\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64364}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64364/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2948e5087e19fa80c5fad17809e4b7a4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
-	at main.java.Utility.Util.findEl(Util.java:147)
-	at test.java.steps.WebStep.insertText(WebStep.java:61)
-	at ✽.I input in WeBuildLogInPage.LogInField the text "c.motta@reply.it"(file:///D:/WeBuild2/src/test/java/features/prova2.feature:9)
-</textarea>
-      
       </div>
               </div>
               <div class="step pass-bg" title="AFTER_STEP">
@@ -226,34 +198,195 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
       <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.waitSec(int)">
+              <div class="step pass-bg" title="test.java.steps.WebStep.waitSec(int)">
                 <span>And I wait 1 seconds</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.ClickEl(java.lang.String,java.lang.String)">
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded6.png' src="../embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.ClickEl(java.lang.String,java.lang.String)">
                 <span>And I click WeBuildLogInPage.Continuare</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.waitSec(int)">
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded7.png' src="../embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.waitSec(int)">
                 <span>And I wait 1 seconds</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.insertText(java.lang.String,java.lang.String,java.lang.String)">
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded8.png' src="../embedded8.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.insertText(java.lang.String,java.lang.String,java.lang.String)">
                 <span>And I input in WeBuildLogInPage.PasswordField the text "Sysko@003"</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.waitSec(int)">
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded9.png' src="../embedded9.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.waitSec(int)">
                 <span>And I wait 1 seconds</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="test.java.steps.WebStep.ClickEl(java.lang.String,java.lang.String)">
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded10.png' src="../embedded10.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.ClickEl(java.lang.String,java.lang.String)">
                 <span>And I click WeBuildLogInPage.SignIn</span>
-      <div>Step skipped
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded11.png' src="../embedded11.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="test.java.steps.WebStep.waitSec(int)">
+                <span>And I wait 20 seconds</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T001 VendorManager atterraggio HomePage
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded12.png' src="../embedded12.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">T002 VendorManager Nuovo Fornitore</p>
+            <p class="text-sm">
+              <span>18:00:58</span> / <span>00:00:00:013</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">T002 VendorManager Nuovo Fornitore</h5>
+<span class='badge badge-success'>04.29.2022 18:00:58</span>
+<span class='badge badge-danger'>04.29.2022 18:00:58</span>
+<span class='badge badge-default'>00:00:00:013</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log fail-bg mr-2">Fail</span>T002 VendorManager Nuovo Fornitore</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="test.java.steps.WebStep.ClickEl(java.lang.String,java.lang.String)">
+                <span>And I click HomePage.Fornitori</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'DESKTOP-LVPIRVK', ip: '192.168.1.113', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {using=id, value=__tile10}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\lucas\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59166}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59166/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:145)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at main.java.Utility.Util.findEl(Util.java:147)
+	at test.java.steps.WebStep.ClickEl(WebStep.java:89)
+	at ✽.I click HomePage.Fornitori(file:///D:/WeBuild2/src/test/java/features/NuovoFornitore.feature:4)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>main.java.Hooks.Hook.afterStep(io.cucumber.java.Scenario)</span>
+      <div>T002 VendorManager Nuovo Fornitore
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded13.png' src="../embedded13.png">
+    
+    </div></div>
+</div>
+      <div>
       </div>
               </div>
               <div class="step skip-bg" title="test.java.steps.WebStep.waitSec(int)">
@@ -264,23 +397,13 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
               <div class="step fail-bg" title="AFTER">
                 <span>main.java.Hooks.Hook.closeDriver()</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=100.0.4896.127)
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'DESKTOP-LVPIRVK', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'DESKTOP-LVPIRVK', ip: '192.168.1.113', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2948e5087e19fa80c5fad17809e4b7a4, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\lucas\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64364}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64364/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2948e5087e19fa80c5fad17809e4b7a4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\lucas\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59166}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59166/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:145)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
@@ -321,12 +444,12 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 <span class="meta">
 <span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">org.openqa.selenium.WebDriverException</p>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.WebDriverException</h4>
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
 <span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -340,21 +463,21 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>17:43:42 PM</td>
+<td>18:00:58 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='17'>And I input in WeBuildLogInPage.LogInField the text "c.motta@reply.it"</a>
+<a href="#" class="linked" test-id='40' id='43'>And I click HomePage.Fornitori</a>
 <div class="">
-<span class="badge badge-default">T001 VendorManager atterraggio HomePage.T001 VendorManager atterraggio HomePage.And I input in WeBuildLogInPage.LogInField the text "c.motta@reply.it"</span>
+<span class="badge badge-default">T002 VendorManager Nuovo Fornitore.T002 VendorManager Nuovo Fornitore.And I click HomePage.Fornitori</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>17:43:54 PM</td>
+<td>18:00:58 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='40'>main.java.Hooks.Hook.closeDriver()</a>
+<a href="#" class="linked" test-id='40' id='48'>main.java.Hooks.Hook.closeDriver()</a>
 <div class="">
-<span class="badge badge-default">T001 VendorManager atterraggio HomePage.T001 VendorManager atterraggio HomePage.main.java.Hooks.Hook.closeDriver()</span>
+<span class="badge badge-default">T002 VendorManager Nuovo Fornitore.T002 VendorManager Nuovo Fornitore.main.java.Hooks.Hook.closeDriver()</span>
 </div>
 </td>
 </tr>
@@ -375,19 +498,19 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>apr 28, 2022 05:43:33 PM</h3>
+<h3>apr 29, 2022 06:00:24 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>apr 28, 2022 05:43:55 PM</h3>
+<h3>apr 29, 2022 06:00:58 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -409,12 +532,12 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> features passed
+<div><small data-tooltip='50%'>
+<b>1</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>1</b> features failed,
+<small data-tooltip='50%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -432,9 +555,9 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div><small data-tooltip='50%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='100%'><b>1</b> scenarios failed,
+<small data-tooltip='50%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -452,10 +575,10 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>9</b> steps passed</small></div>
+<div><small data-tooltip='89%'><b>25</b> steps passed</small></div>
 <div>
-<small data-tooltip='11%'><b>2</b> steps failed,
-<b>7</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='7%'><b>2</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -471,7 +594,7 @@ Session ID: 2948e5087e19fa80c5fad17809e4b7a4
 </div></div>
 <script>
 var timeline = {
-"T001 VendorManager atterraggio HomePage":20.675
+"T001 VendorManager atterraggio HomePage":32.621,"T002 VendorManager Nuovo Fornitore":0.013
 };
 </script>
 <div class="row">
@@ -480,21 +603,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
+passParent: 1,
 failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 0,
+passChild: 1,
 failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 9,
+passGrandChild: 25,
 failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 7,
+skipGrandChild: 1,
 infoGrandChild: 0,
 eventsCount: 5,
 };

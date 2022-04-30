@@ -24,9 +24,9 @@ public class Hook extends DriverManager {
 
     }
 
-
+/**
     @Before
-    /**
+
      * Se esiste un server in ascolto su localhost, porta 4723 allora viene usato il driver chrome di appium, altrimenti
      * viene usato il driver chrome per desktop
      *
@@ -36,10 +36,12 @@ public class Hook extends DriverManager {
     public void beforeScenario(Scenario scenario) throws IOException {
         String command = "curl http://127.0.0.1:4723/wd/hub/status";
         Process process = Runtime.getRuntime().exec(command);
-        if(process.getInputStream().readAllBytes().length == 0){
-            Util.CreateDriver();
-        }else{
-            Util.GetAndroidDriver();
+        if(Util.driver.equals(null)) {
+            if (process.getInputStream().readAllBytes().length == 0) {
+                Util.CreateDriver();
+            } else {
+                Util.GetAndroidDriver();
+            }
         }
         //Util.CreateDriver();
         //Util.GetAndroidDriver();

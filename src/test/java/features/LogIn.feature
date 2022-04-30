@@ -13,4 +13,4 @@ Feature: T001 VendorManager atterraggio HomePage
     And I input in WeBuildLogInPage.PasswordField the text "Sysko@003"
     And I wait 1 seconds
     And I click WeBuildLogInPage.SignIn
-    And I wait 20 seconds
+    And I wait 2 seconds

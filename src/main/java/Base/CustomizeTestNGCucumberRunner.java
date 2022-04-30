@@ -3,18 +3,22 @@ package main.java.Base;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
+import main.java.Utility.Util;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class CustomizeTestNGCucumberRunner extends DriverManager{
 
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
-    public void setUpClass() {
+    public void setUpClass() throws IOException {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+        Util.CreateDriver();
     }
 
     @SuppressWarnings("unused")
@@ -38,7 +42,7 @@ public class CustomizeTestNGCucumberRunner extends DriverManager{
         }
         return testNGCucumberRunner.provideScenarios();
     }
-
+/**
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
         if (testNGCucumberRunner == null) {
@@ -46,4 +50,5 @@ public class CustomizeTestNGCucumberRunner extends DriverManager{
         }
         testNGCucumberRunner.finish();
     }
+    */
 }
