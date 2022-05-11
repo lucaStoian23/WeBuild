@@ -18,8 +18,11 @@ public class Hook extends DriverManager {
 
     @AfterStep
     public void afterStep(Scenario scenario) throws IOException {
+        try {
+            scenario.attach(Util.screenshot, "image/png", scenario.getName());
+        }catch (Exception e){
 
-        scenario.attach(Util.screenshot, "image/png", scenario.getName());
+        }
 
 
     }
@@ -33,10 +36,11 @@ public class Hook extends DriverManager {
      * Per far partire il server appium, bisogna fornirgli il path per il driver, scrivere:
      * appium --chromedriver-executable D:\webuild\src\test\java\drivers\chromedriver.exe
      */
+@Before
     public void beforeScenario(Scenario scenario) throws IOException {
         String command = "curl http://127.0.0.1:4723/wd/hub/status";
         Process process = Runtime.getRuntime().exec(command);
-        if(Util.driver.equals(null)) {
+        if(Util.driver == null) {
             if (process.getInputStream().readAllBytes().length == 0) {
                 Util.CreateDriver();
             } else {
