@@ -5,6 +5,8 @@ package main.java.Hooks;
 import io.cucumber.java.*;
 import main.java.Base.DriverManager;
 import main.java.Utility.Util;
+import test.java.pages.General;
+import test.java.steps.WebStep;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -20,6 +22,9 @@ public class Hook extends DriverManager {
     public void afterStep(Scenario scenario) throws IOException {
         try {
             scenario.attach(Util.screenshot, "image/png", scenario.getName());
+            WebStep.waitSec(1);
+            //WebStep.ClickEl("General", "OKErrorMessage");
+
         }catch (Exception e){
 
         }

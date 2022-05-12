@@ -73,6 +73,7 @@ public class WebStep {
     public void insertText(String className, String fieldName, String text) throws Exception {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
+        findEl(el).clear();
         findEl(el).sendKeys(text);
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
@@ -99,10 +100,14 @@ public class WebStep {
 
     @And("I click {}.{}")
     public static void ClickEl(String className, String fieldName) throws Exception {
-        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
-        findEl(el).click();
-        String step =  new Throwable().getStackTrace()[0].getMethodName();
-        Util.takeScreenShot();
+        try {
+            BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+            findEl(el).click();
+            String step = new Throwable().getStackTrace()[0].getMethodName();
+            Util.takeScreenShot();
+        }catch (org.openqa.selenium.ElementNotInteractableException e){
+            System.out.println("Element not intercectable");
+        }
     }
 
     @And("I wait {int} seconds")
@@ -186,5 +191,11 @@ public class WebStep {
         List<WebElement> elements = wbl.findElements(By.tagName("li"));
         elements.size();
         elements.get(n).click();
+    }
+
+    @And("I scroll down")
+    public void iScrollDown() {
+        JavascriptExecutor js = (JavascriptExecutor) Util.driver;
+        js.executeScript("window.scrollBy(0,400)","");
     }
 }

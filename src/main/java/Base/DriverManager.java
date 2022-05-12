@@ -55,8 +55,8 @@ public class DriverManager {
     }
 
     public static void afterSuite() {
-        //driver.close();
-       // driver.quit();
+        driver.close();
+        driver.quit();
     }
 
 }
