@@ -12,7 +12,7 @@ Feature: T002 VendorManager Nuovo Fornitore
     And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I select the 2 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'btp'
+    And I input in NuovoFornitore.RagioneSociale the text 'fpsm'
     And I click NuovoFornitore.SearchInfoProviderButton
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione

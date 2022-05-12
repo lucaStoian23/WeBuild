@@ -22,8 +22,8 @@ public class Hook extends DriverManager {
     public void afterStep(Scenario scenario) throws IOException {
         try {
             scenario.attach(Util.screenshot, "image/png", scenario.getName());
-            WebStep.waitSec(1);
-            //WebStep.ClickEl("General", "OKErrorMessage");
+            //WebStep.waitSec(1);
+           // WebStep.ClickEl("General", "OKMessage");
 
         }catch (Exception e){
 
@@ -43,15 +43,16 @@ public class Hook extends DriverManager {
      */
 @Before
     public void beforeScenario(Scenario scenario) throws IOException {
+
         String command = "curl http://127.0.0.1:4723/wd/hub/status";
         Process process = Runtime.getRuntime().exec(command);
-        if(Util.driver == null) {
+
             if (process.getInputStream().readAllBytes().length == 0) {
                 Util.CreateDriver();
             } else {
                 Util.GetAndroidDriver();
             }
-        }
+
         //Util.CreateDriver();
         //Util.GetAndroidDriver();
         Util.scenarioName = scenario.getName();
