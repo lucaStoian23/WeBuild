@@ -179,9 +179,9 @@ public class WebStep {
 
     }
 
-    @And("I change the iFrame")
-    public void iChangeTheIFrame() {
-        driver.switchTo().frame("application-NPPSupplierCreation-Display");
+    @And("I change the iFrame {}")
+    public void iChangeTheIFrame(String name) {
+        driver.switchTo().frame(name);
     }
 
     @And("I select the {} element from the DDL {}.{}")

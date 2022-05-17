@@ -31,7 +31,7 @@ public class InfoFornitore {
     public static final BrowserElement ULTimezone = new BrowserElement(new By[]{By.id("id_SupplierCreateFormComboTimezone-popup-list-listUl")});
     public static final BrowserElement ArrowContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-arrow")});
     public static final BrowserElement ULContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-popup-list-listUl")});
-
+    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.id("shell-header-logo")});
 
 
 

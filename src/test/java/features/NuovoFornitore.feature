@@ -2,8 +2,11 @@ Feature: T002 VendorManager Nuovo Fornitore
 
   Scenario: T002 VendorManager Nuovo Fornitore
     Given I log_in with username c.motta@reply.it and password Sysko@003
+    And I wait 5 seconds
+    #problema qua
     And I click HomePage.NuovoFornitore
-    And I change the iFrame
+    And I change the iFrame application-NPPSupplierCreation-Display
+    And I wait 10 seconds
     And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italia'
     And I click NuovoFornitore.Clessidra
@@ -12,7 +15,7 @@ Feature: T002 VendorManager Nuovo Fornitore
     And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I select the 2 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'fpsm'
+    And I input in NuovoFornitore.RagioneSociale the text 'luca'
     And I click NuovoFornitore.SearchInfoProviderButton
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
@@ -21,7 +24,7 @@ Feature: T002 VendorManager Nuovo Fornitore
     And I click NuovoFornitore.Crea
     And I wait 10 seconds
     And I click InfoFornitore.LinguaggioButton
-    And I wait 1 seconds
+    And I wait 2 seconds
     And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
     And I click InfoFornitore.ValutaDiRiferimentoButton
     And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'eur'
@@ -57,9 +60,19 @@ Feature: T002 VendorManager Nuovo Fornitore
     And I click General.SALVA
     And I click General.OKMessage
 
-    And I wait 10 seconds
+    And I wait 2 seconds
     And I click InfoFornitore.InviaProposta
-    And I click General.OKMessage
     And I wait 10 seconds
+    And I click General.OKMessage
+    And I wait 20 seconds
+   # And I click InfoFornitore.TornaIndietro
+    #ora inizio ad approvare il fornitore
+
+    And I click HomePage.LaMiaInbox
+    And I change the iFrame application-WorkflowTaskReply-DisplayMyInboxReply
+    And I select the 2 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.Approve
+    And I wait 30 seconds
+
 
 
