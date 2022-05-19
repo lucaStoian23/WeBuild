@@ -1,15 +1,16 @@
 package test.java.steps;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import main.java.Base.Functions_Settings;
 import main.java.Elements.BrowserElement;
 import main.java.Utility.Util;
 import org.apache.log4j.Logger; import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import test.java.pages.WeBuildLogInPage;
@@ -17,6 +18,7 @@ import test.java.pages.WeBuildLogInPage;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -88,6 +90,7 @@ public class WebStep {
         Util.takeScreenShot();
 
     }
+
 
     @And("I clear the field {}.{}")
     public void insertText(String className, String fieldName) throws Exception {
@@ -184,6 +187,7 @@ public class WebStep {
         driver.switchTo().frame(name);
     }
 
+
     @And("I select the {} element from the DDL {}.{}")
     public void selectFromUl(Integer n, String className, String fieldName) throws Exception {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
@@ -196,6 +200,24 @@ public class WebStep {
     @And("I scroll down")
     public void iScrollDown() {
         JavascriptExecutor js = (JavascriptExecutor) Util.driver;
-        js.executeScript("window.scrollBy(0,400)","");
+        js.executeScript("window.scrollBy(0,1000)","");
+    }
+
+    @And("I switch to defaultContentFrame")
+    public void iSwitchToDefaultContentFrame() {
+        Util.driver.switchTo().defaultContent();
+    }
+
+    @And("I search the supplier {} in the tbody {}.{}")
+    public void searchTheSupplier(String nomeFornitore, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        WebElement wbl = findEl(el);
+        WebElement element = wbl.findElement(By.xpath("//a[text() =" + nomeFornitore + "]"));
+        element.click();
+    }
+
+    @And("I go to the next frame")
+    public void iGoToTheNextFrame() {
+        Util.driver.switchTo().frame(Util.driver.findElement(By.tagName("iframe")));
     }
 }
