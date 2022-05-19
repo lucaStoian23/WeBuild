@@ -1,45 +1,30 @@
-Feature: T001 VendorManager Nuovo Fornitore
-
-  Scenario: T001 VendorManager Nuovo Fornitore
-#FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
+Feature: T003 VendorManager Nuovo Fornitore
+Scenario: T003 VendorManager Nuovo Fornitore
+    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
 Given I log_in with username c.motta@reply.it and password Sysko@003
-And I wait 10 seconds
+  And I wait 20 seconds
 And I click HomePage.NuovoFornitore
 And I wait 10 seconds
 And I change the iFrame application-NPPSupplierCreation-Display
 And I click NuovoFornitore.NazioneButton
-And I input in NuovoFornitore.NazioneCerca the text 'Ita'
+And I input in NuovoFornitore.NazioneCerca the text 'Italia'
 And I click NuovoFornitore.Clessidra
 And I click NuovoFornitore.NazioneTrovata
 And I click NuovoFornitore.FormaGiuridicaButton
-And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
+And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
 And I click NuovoFornitore.TipologiaFornitoreButton
 And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
 And I input in NuovoFornitore.RagioneSociale the text 'mang'
 And I click NuovoFornitore.SearchInfoProviderButton
-And I click NuovoFornitore.Annulla
-And I input in NuovoFornitore.PartitaIva the text '15912354'
-And I click NuovoFornitore.Crea
-And I wait 10 seconds
-#dopo che ho creato il fornitore in draft torno nella homepage
-And I switch to defaultContentFrame
-And I click InfoFornitore.TornaIndietro
-And I wait 5 seconds
-    And I click HomePage.Fornitori
-    And I wait 10 seconds
-    And I go to the next frame
-    And I input in Fornitori.SearchBox the text '15912354'
-    And I click Fornitori.SearchIcon
-    And I wait 5 seconds
-    And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
-    And I wait 12 seconds
-
-#inizio ad editare l'anagrafica fornitore
-    And I switch to defaultContentFrame
-    And I go to the next frame
-And I click InfoFornitore.LinguaggioButton
+    #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
+    #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
+And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
 And I wait 4 seconds
+And I click NuovoFornitore.Crea
+And I wait 30 seconds
+And I click InfoFornitore.LinguaggioButton
+And I wait 1 seconds
 And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
 And I click InfoFornitore.ValutaDiRiferimentoButton
 And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'eur'
@@ -74,8 +59,7 @@ And I click InfoFornitore.ArrowContattoPrimario
 And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
 And I click InfoFornitore.SalvaContatto
 And I click General.OKMessage
-
-    #Aggiungo l'ufficio operativo
+#Aggiungo l'ufficio operativo
 And I click InfoFornitore.NuovoUfficioOperativo
 And I input in InfoFornitore.NomeUfficioOperativo the text 'nomeUfficio'
 And I click InfoFornitore.TipoIndirizzoArrow
@@ -88,9 +72,14 @@ And I input in InfoFornitore.Citta the text 'Busto Arsizio'
 And I click InfoFornitore.ProvinciaButton
 And I select the 0 element from the DDL InfoFornitore.ULProvincia
 And I click InfoFornitore.SalvaUfficioOperativo
+And I wait 3 seconds
 And I click General.OKMessage
 
+    #invio la proposta
 And I wait 4 seconds
 And I click InfoFornitore.InviaProposta
+And I wait 30 seconds
+And I click General.OKMessage
+    #controllo il nuovo status
 And I wait 10 seconds
 And I check that the element AnagraficaFornitore.Status contains the text 'Registrato AFC'

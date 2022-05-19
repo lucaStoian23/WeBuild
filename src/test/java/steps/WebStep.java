@@ -105,6 +105,7 @@ public class WebStep {
     public static void ClickEl(String className, String fieldName) throws Exception {
         try {
             BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
             findEl(el).click();
             String step = new Throwable().getStackTrace()[0].getMethodName();
             Util.takeScreenShot();

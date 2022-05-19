@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 
 public class InfoFornitore {
     public static final BrowserElement EmailContatto = new BrowserElement(new By[]{By.id("id_SupplierCreateFormInputEmail-inner")});
-    public static final BrowserElement LinguaggioButton = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-arrow")});
-    public static final BrowserElement ULLinguaggio = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-popup-list-listUl")});
+    public static final BrowserElement LinguaggioButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-arrow")});
+    public static final BrowserElement ULLinguaggio = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-popup-list-listUl")});
     public static final BrowserElement ValutaDiRiferimentoButton = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--iCurrency-vhi")});
     public static final BrowserElement ValutaDiRiferimentoCerca = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-searchField-I")});
     public static final BrowserElement ValutaDiRiferimentoLente = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-searchField-search")});
@@ -41,7 +41,7 @@ public class InfoFornitore {
     public static final BrowserElement TipoIndirizzoArrow = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-arrow")});
     public static final BrowserElement ULTipoIndirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-popup-list-listUl")});
     public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.id("iOfficeNation-vhi")});
-    public static final BrowserElement ULNazione = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-list-listUl")});
+    public static final BrowserElement ULNazione = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-list-listUl")});
     public static final BrowserElement Indirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputAddress-inner")});
     public static final BrowserElement CodicePostale = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboPostalCode-inner")});
     public static final BrowserElement Citta = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboCity-inner")});

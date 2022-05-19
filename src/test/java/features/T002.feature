@@ -1,4 +1,4 @@
-Feature: T002 VendorManager Nuovo Fornitore
+Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore
 
   Scenario: T002 VendorManager Nuovo Fornitore
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/

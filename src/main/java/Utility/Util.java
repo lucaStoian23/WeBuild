@@ -46,13 +46,13 @@ public class Util extends DriverManager {
 
     public static WebElement waitElement(TestElement el){
         if (!el.getId().equals("")) {
-            return new WebDriverWait(driver, Duration.ofSeconds(3))
+            return new WebDriverWait(driver, Duration.ofSeconds(30))
                     .until(driver -> driver.findElement(By.id(el.getId())));
         } else if(!el.getText().equals("")){
-            return new WebDriverWait(driver, Duration.ofSeconds(3))
+            return new WebDriverWait(driver, Duration.ofSeconds(30))
                     .until(driver -> driver.findElement(By.xpath("//*[contains(text(),'"+el.getText()+"')]")));
         } else {
-            return new WebDriverWait(driver, Duration.ofSeconds(3))
+            return new WebDriverWait(driver, Duration.ofSeconds(30))
                     .until(driver -> driver.findElement(By.xpath(el.getXpath())));
         }
     }
