@@ -83,3 +83,81 @@ And I click General.OKMessage
     #controllo il nuovo status
 And I wait 10 seconds
 And I check that the element AnagraficaFornitore.Status contains the text 'Registrato AFC'
+
+   #dopo che ho creato il fornitore in draft torno nella homepage
+  And I switch to defaultContentFrame
+  And I click InfoFornitore.TornaIndietro
+  And I wait 5 seconds
+  And I click HomePage.Fornitori
+  And I wait 10 seconds
+  And I go to the next frame
+  And I input in Fornitori.SearchBox the text '1812354'
+  And I click Fornitori.SearchIcon
+  And I wait 5 seconds
+  And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
+  And I wait 4 seconds
+  And I go to the next frame
+  And I click AnagraficaFornitore.TabContact
+  And I click AnagraficaFornitore.NuovoContattoTabContact
+  And I input in AnagraficaFornitore.NomeContatto the text 'paolo'
+  And I input in AnagraficaFornitore.CognomeContatto the text 'bianchi'
+  And I input in AnagraficaFornitore.TelefonoContatto the text '742421499123'
+  And I input in AnagraficaFornitore.EmailContatto the text 'emailcontatto3@outlook.com'
+  And I click AnagraficaFornitore.ArrowRuolo
+  And I select the 0 element from the DDL InfoFornitore.ULRuolo
+  And I click AnagraficaFornitore.ArrowTimezone
+  And I select the 0 element from the DDL InfoFornitore.ULTimezone
+  And I click AnagraficaFornitore.ArrowContattoPrimario
+  And I select the 1 element from the DDL InfoFornitore.ULContattoPrimario
+  And I click AnagraficaFornitore.SalvaContatto
+  And I click General.OKMessage
+     #aggiungo una commodity
+  And I click AnagraficaFornitore.TabCommodityAndProject
+  And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
+  And I click AnagraficaFornitore.CommodityArrow
+  And I select the 1 element from the DDL InfoFornitore.ULCommodity
+  And I click AnagraficaFornitore.RegistraCommodity
+  And I click General.OKMessage
+ #aggiungo un progetto
+  And I click AnagraficaFornitore.TabCommodityAndProject
+  And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
+  And I click AnagraficaFornitore.CommodityArrow
+  And I select the 1 element from the DDL InfoFornitore.ULCommodity
+  And I click AnagraficaFornitore.RegistraCommodity
+  And I click General.OKMessage
+    #devo fargli una richiesta di cambio stato duplicato
+    # 0=cessato,1=duplicato,2=fallito,3=afc>proc,4=derogaRFX,5=incorporato,6=modificheVM,7=revocato,8=sospeso
+
+  And I click AnagraficaFornitore.TabRequest
+  And I click AnagraficaFornitore.AddRequest
+  And I click Request.arrowChose
+  And I select the 1 element from the DDL Request.DDLChoseStatus
+  And I input in Request.addNotes the text 'test richiesta di cambio stato duplicato'
+    #qui aggiungo a mano un attachment
+  And I wait 30 seconds
+  And I click Request.add
+  And I wait 30 seconds
+#ora aspetto devo approvare la richiesta, devo approvarla usando tantissimi account diversi.
+  #torno nella homepage
+And I switch to defaultContentFrame
+  And I click General.Logo
+  #appro tile MyInbox e approvo la richiesta di cambio stato
+  And I click HomePage.LaMiaInbox
+  And I wait 10 seconds
+  And I go to the next frame
+  And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+  And I click LaMiaInbox.Approve
+  And I wait 30 seconds
+  #torno nella vendor List
+  And I switch to defaultContentFrame
+  And I click General.logo
+  And I wait 5 seconds
+  And I click HomePage.Fornitori
+  And I wait 10 seconds
+  And I go to the next frame
+  And I input in Fornitori.SearchBox the text '1812354'
+  And I click Fornitori.SearchIcon
+  And I wait 5 seconds
+  And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
+  And I wait 4 seconds
+  And I go to the next frame

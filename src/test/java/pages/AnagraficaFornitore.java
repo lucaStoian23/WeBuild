@@ -9,8 +9,8 @@ import org.openqa.selenium.By;
  */
 public class AnagraficaFornitore {
     public static final BrowserElement EmailContatto = new BrowserElement(new By[]{By.id("id_SupplierCreateFormInputEmail-inner")});
-    public static final BrowserElement LinguaggioButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-arrow")});
-    public static final BrowserElement ULLinguaggio = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-popup-list-listUl")});
+    public static final BrowserElement LinguaggioButton = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-arrow")});
+    public static final BrowserElement ULLinguaggio = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--lingua-popup-list-listUl")});
     public static final BrowserElement ValutaDiRiferimentoButton = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--iCurrency-vhi")});
     public static final BrowserElement ValutaDiRiferimentoCerca = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-searchField-I")});
     public static final BrowserElement ValutaDiRiferimentoLente = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-searchField-search")});
@@ -54,4 +54,16 @@ public class AnagraficaFornitore {
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
 
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
+//tab contact
+    public static final BrowserElement TabContact = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--contact-anchor")});
+    public static final BrowserElement NuovoContattoTabContact = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--contactblock-Collapsed--idNewUsrBtn")});
+//tab commodities and projects
+public static final BrowserElement TabCommodityAndProject = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--commodityproject-anchor")});
+
+    public static final BrowserElement AggiungiCommodityTabCommodity = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew")});
+    public static final BrowserElement AggiungiProgettiTabCommodity = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content")});
+//tab request
+public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--request-anchor")});
+    public static final BrowserElement AddRequest = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--_IDGenButton1")});
+
 }

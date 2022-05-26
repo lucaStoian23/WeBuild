@@ -115,10 +115,10 @@ public class WebStep {
     }
 
     @And("I wait {int} seconds")
-    public static void waitSec(int sec) {
-        int millis = sec * 1000;
+    public static void waitSec(int millis) {
+
         try {
-            Thread.sleep(millis);
+            Thread.sleep(millis*1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -156,6 +156,7 @@ public class WebStep {
         findEl(WeBuildLogInPage.Continuare).click();
         findEl(WeBuildLogInPage.PasswordField).sendKeys(password);
         findEl(WeBuildLogInPage.SignIn).click();
+        Util.createCodFiscale();
         waitSec(4);
 
     }
@@ -220,5 +221,25 @@ public class WebStep {
     @And("I go to the next frame")
     public void iGoToTheNextFrame() {
         Util.driver.switchTo().frame(Util.driver.findElement(By.tagName("iframe")));
+    }
+
+    @And("I input the codFiscale in {}.{}")
+    public void iInputTheCodFiscaleInNuovoFornitorePartitaIva(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        findEl(el).clear();
+        findEl(el).sendKeys(System.getProperty("codiceFiscale"));
+        String step =  new Throwable().getStackTrace()[0].getMethodName();
+        Util.takeScreenShot();
+
+    }
+
+    @And("I save the codFiscale from {}.{}")
+    public void iSaveTheCodFiscaleFromInfoFornitoreCodiceFiscale(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        String val = findEl(el).getAttribute("value");
+        System.setProperty("codiceFiscale", val);
+
     }
 }

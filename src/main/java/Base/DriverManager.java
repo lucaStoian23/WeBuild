@@ -23,11 +23,11 @@ public class DriverManager {
 
     public static WebDriver CreateDriver() throws IOException {
         //BasicConfigurator.configure();
-        //String command = "curl http://127.0.0.1:4723/wd/hub/status";
-        //Process process = Runtime.getRuntime().exec(command);
-        //System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" + process.getInputStream().readAllBytes().length);
+        String command = "curl http://127.0.0.1:4723/wd/hub/status";
+        Process process = Runtime.getRuntime().exec(command);
+        //System.out.println("" + process.getInputStream().readAllBytes().length);
 
-        //if(false){
+        //if(process = 0){
             //non ho il server appium aperto
 
             WebDriverManager.chromedriver().setup();
@@ -41,6 +41,7 @@ public class DriverManager {
             driverr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver =  driverr;
             return driverr;
+
 
     }
         public static AndroidDriver GetAndroidDriver() throws MalformedURLException {

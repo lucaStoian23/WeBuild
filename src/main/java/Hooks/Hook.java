@@ -22,7 +22,7 @@ public class Hook extends DriverManager {
     public void afterStep(Scenario scenario) throws IOException {
         try {
             scenario.attach(Util.screenshot, "image/png", scenario.getName());
-            WebStep.waitSec(1);
+           // WebStep.waitSec();
            // WebStep.ClickEl("General", "OKMessage");
 
         }catch (Exception e){

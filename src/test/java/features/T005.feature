@@ -1,30 +1,35 @@
-Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE, CON BVD
-
-  Scenario: T002 VendorManager Nuovo Fornitore
+Feature: T005 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. and supplier type = account and finance
+  Scenario: T005 VendorManager Nuovo Fornitore
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
+
     And I click HomePage.NuovoFornitore
-    And I wait 10 seconds
-    And I change the iFrame application-NPPSupplierCreation-Display
+
+    #And I change the iFrame application-NPPSupplierCreation-Display
+    And I go to the next frame
+   And I wait 2 seconds
+    #non clicca nazione button
     And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italia'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
-    And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
+    And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'euro'
+    And I input in NuovoFornitore.RagioneSociale the text 'magnum'
     And I click NuovoFornitore.SearchInfoProviderButton
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
-    And I select the 3 element from the DDL NuovoFornitore.ULFornitoriTrovati
-    And I wait 4 seconds
+    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
+
     And I click NuovoFornitore.Crea
-    And I wait 6 seconds
+
+    #And I click General.OKMessage
+    And I save the codFiscale from InfoFornitore.CodiceFiscale
     And I click InfoFornitore.LinguaggioButton
-    And I wait 1 seconds
+
     And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
     And I click InfoFornitore.ValutaDiRiferimentoButton
     And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'eur'
@@ -32,7 +37,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I select the 0 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
     And I input in InfoFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
-    And I wait 1 seconds
+
  #aggiungo una commodity
     And I click InfoFornitore.AggiungiCommodity
     And I click InfoFornitore.CommodityArrow
@@ -59,21 +64,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
     And I click InfoFornitore.SalvaContatto
     And I click General.OKMessage
-#Aggiungo l'ufficio operativo
-    And I click InfoFornitore.NuovoUfficioOperativo
-    And I input in InfoFornitore.NomeUfficioOperativo the text 'nomeUfficio'
-    And I click InfoFornitore.TipoIndirizzoArrow
-    And I select the 1 element from the DDL InfoFornitore.ULTipoIndirizzo
-    And I click InfoFornitore.NazioneButton
-    And I select the 0 element from the DDL InfoFornitore.ULNazione
-    And I input in InfoFornitore.Indirizzo the text 'nomeIndirizzo'
-    And I input in InfoFornitore.CodicePostale the text '21052'
-    And I input in InfoFornitore.Citta the text 'Busto Arsizio'
-    And I click InfoFornitore.ProvinciaButton
-    And I select the 0 element from the DDL InfoFornitore.ULProvincia
-    And I click InfoFornitore.SalvaUfficioOperativo
-    And I wait 3 seconds
-    And I click General.OKMessage
+
 
     #invio la proposta
     And I wait 4 seconds
@@ -83,15 +74,15 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     #controllo il nuovo status
     And I wait 10 seconds
     And I check that the element AnagraficaFornitore.Status contains the text 'Registrato AFC'
-    #continuo ad editare il fornitore
-  #dopo che ho creato il fornitore in draft torno nella homepage
+
+   #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I click InfoFornitore.TornaIndietro
     And I wait 5 seconds
     And I click HomePage.Fornitori
     And I wait 10 seconds
     And I go to the next frame
-    And I input in Fornitori.SearchBox the text '1812354'
+    And I input the codFiscale in Fornitori.SearchBox
     And I click Fornitori.SearchIcon
     And I wait 5 seconds
     And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
@@ -125,17 +116,38 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I select the 1 element from the DDL InfoFornitore.ULCommodity
     And I click AnagraficaFornitore.RegistraCommodity
     And I click General.OKMessage
-    #devo fargli una richiesta di cambio da afc a procurement
+    #devo fargli una richiesta di cambio stato afc proc
+    #0=cessato,1=duplicato,2=fallito,3=afc>proc,4=derogaRFX,5=incorporato,6=modificheVM,7=revocato,8=sospeso
     And I click AnagraficaFornitore.TabRequest
     And I click AnagraficaFornitore.AddRequest
     And I click Request.arrowChose
     And I select the 3 element from the DDL Request.DDLChoseStatus
-    And I input in Request.addNotes the text 'test richiesta di cambio stato afc procurement'
+    And I input in Request.addNotes the text 'test richiesta di cambio stato duplicato'
     #qui aggiungo a mano un attachment
-  And I wait 30 seconds
-    And I click Request.addCommodity
-    And I select the 3 element from the DDL Request.DDLCommodity
+    And I wait 30 seconds
     And I click Request.add
     And I wait 30 seconds
 #ora aspetto devo approvare la richiesta, devo approvarla usando tantissimi account diversi.
-
+  #torno nella homepage
+    And I switch to defaultContentFrame
+    And I click General.Logo
+  #appro tile MyInbox e approvo la richiesta di cambio stato
+    And I click HomePage.LaMiaInbox
+    And I wait 10 seconds
+    And I go to the next frame
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.Approve
+    And I wait 30 seconds
+  #torno nella vendor List
+    And I switch to defaultContentFrame
+    And I click General.logo
+    And I wait 5 seconds
+    And I click HomePage.Fornitori
+    And I wait 10 seconds
+    And I go to the next frame
+    And I input the codFiscale in Fornitori.SearchBox
+    And I click Fornitori.SearchIcon
+    And I wait 5 seconds
+    And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
+    And I wait 4 seconds
+    And I go to the next frame

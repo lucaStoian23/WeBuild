@@ -17,6 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Calendar;
+import java.util.Random;
 
 
 public class Util extends DriverManager {
@@ -169,7 +170,13 @@ public class Util extends DriverManager {
         driver.get(s);
     }
 
-
+    public static void createCodFiscale(){
+        Random r = new Random();
+        int low = 1000000000;
+        int high =2000000000;
+        int result = r.nextInt(high-low) + low;
+        System.setProperty("codiceFiscale", String.valueOf(result) + "0");
+    }
 
     /*public static void scrollToElement(String el){
 

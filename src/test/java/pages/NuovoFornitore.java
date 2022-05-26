@@ -15,8 +15,8 @@ public class NuovoFornitore {
     public static final BrowserElement ULTipologieFornitore = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iTipologia-popup-list-listUl")});
     public static final BrowserElement RagioneSociale = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iRagioneSociale-inner")});
     public static final BrowserElement PartitaIva = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iPIva-inner")});
-    public static final BrowserElement CodiceFiscale = new BrowserElement(new By[]{By.xpath("application-NPPSupplierCreation-Display-component---SupplierCreation--iPIva-inner")});
-    public static final BrowserElement PartitaIvaCEE = new BrowserElement(new By[]{By.xpath("application-NPPSupplierCreation-Display-component---SupplierCreation--iPIvaCom-inner")});
+    public static final BrowserElement CodiceFiscale = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iCodFisc-inner")});
+    public static final BrowserElement PartitaIvaCEE = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iPIvaCom-inner")});
     public static final BrowserElement SearchInfoProviderButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--_IDGenButton1")});
     public static final BrowserElement ULFornitoriTrovati = new BrowserElement(new By[]{By.id("_IDGenList1XX-listUl")});
     public static final BrowserElement Crea = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--_IDGenButton3")});
