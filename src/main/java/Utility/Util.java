@@ -177,6 +177,9 @@ public class Util extends DriverManager {
         int result = r.nextInt(high-low) + low;
         System.setProperty("codiceFiscale", String.valueOf(result) + "0");
     }
+    public static void getCodFiscale(){
+
+    }
 
     /*public static void scrollToElement(String el){
 

@@ -6,8 +6,8 @@ Feature: T005 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
 
     And I click HomePage.NuovoFornitore
 
-    #And I change the iFrame application-NPPSupplierCreation-Display
-    And I go to the next frame
+    And I change the iFrame application-NPPSupplierCreation-Display
+    #And I go to the next frame
    And I wait 2 seconds
     #non clicca nazione button
     And I click NuovoFornitore.NazioneButton

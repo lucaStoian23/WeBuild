@@ -1,20 +1,18 @@
-Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. and supplier type = account and finance, SENZA BVD
-
-  Scenario Outline: T006 VendorManager Nuovo Fornitore
+Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+  Scenario: T011 VendorManager Nuovo Fornitore
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
-    And I wait 6 seconds
+    And I wait 20 seconds
     And I click HomePage.NuovoFornitore
-    And I wait 3 seconds
+    And I wait 4 seconds
     And I change the iFrame application-NPPSupplierCreation-Display
-    #And I go to the next frame
     And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italia'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
-    And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
+    And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text 'mang'
@@ -22,12 +20,11 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
     And I click NuovoFornitore.Annulla
-    #And I input the codFiscale in NuovoFornitore.PartitaIva
-    And I input in NuovoFornitore.PartitaIva the text <codFiscale>
+    And I input the codFiscale in NuovoFornitore.PartitaIva
     And I input in NuovoFornitore.CodiceFiscale the text 'STNAASD1230ASD'
     And I input in NuovoFornitore.PartitaIvaCEE the text 'CEE2323CEE2323CDD'
     And I click NuovoFornitore.Crea
-    And I wait 5 seconds
+    And I wait 4 seconds
     And I click InfoFornitore.LinguaggioButton
     And I wait 1 seconds
     And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
@@ -41,13 +38,13 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
  #aggiungo una commodity
     And I click InfoFornitore.AggiungiCommodity
     And I click InfoFornitore.CommodityArrow
-    And I select the 0 element from the DDL InfoFornitore.ULCommodity
+    And I select the 5 element from the DDL InfoFornitore.ULCommodity
     And I click InfoFornitore.RegistraCommodity
     And I click General.OKMessage
 #Aggiungo un progetto
     And I click InfoFornitore.AggiungiProgetti
     And I click InfoFornitore.ProgettoArrow
-    And I select the 0 element from the DDL InfoFornitore.ULProgetto
+    And I select the 5 element from the DDL InfoFornitore.ULProgetto
     And I click InfoFornitore.RegistraProgetto
     And I click General.OKMessage
 #creo il contatto primario
@@ -83,10 +80,10 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     #invio la proposta
     And I wait 4 seconds
     And I click InfoFornitore.InviaProposta
-    And I wait 6 seconds
+    And I wait 5 seconds
     And I click General.OKMessage
     #controllo il nuovo status
-    And I wait 10 seconds
+    And I wait 2 seconds
     And I check that the element AnagraficaFornitore.Status contains the text 'Registrato AFC'
 
    #dopo che ho creato il fornitore in draft torno nella homepage
@@ -96,8 +93,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click HomePage.Fornitori
     And I wait 10 seconds
     And I go to the next frame
-    #And I input the codFiscale in Fornitori.SearchBox
-    And I input in Fornitori.SearchBox the text <codFiscale>
+    And I input the codFiscale in Fornitori.SearchBox
     And I click Fornitori.SearchIcon
     And I wait 5 seconds
     And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
@@ -110,25 +106,25 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I input in AnagraficaFornitore.TelefonoContatto the text '742421499123'
     And I input in AnagraficaFornitore.EmailContatto the text 'emailcontatto3@outlook.com'
     And I click AnagraficaFornitore.ArrowRuolo
-    And I select the 0 element from the DDL AnagraficaFornitore.ULRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
     And I click AnagraficaFornitore.ArrowTimezone
-    And I select the 0 element from the DDL AnagraficaFornitore.ULTimezone
+    And I select the 0 element from the DDL InfoFornitore.ULTimezone
     And I click AnagraficaFornitore.ArrowContattoPrimario
-    And I select the 1 element from the DDL AnagraficaFornitore.ULContattoPrimario
+    And I select the 1 element from the DDL InfoFornitore.ULContattoPrimario
     And I click AnagraficaFornitore.SalvaContatto
     And I click General.OKMessage
      #aggiungo una commodity
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
     And I click AnagraficaFornitore.CommodityArrow
-    And I select the 1 element from the DDL AnagraficaFornitore.ULCommodity
+    And I select the 1 element from the DDL InfoFornitore.ULCommodity
     And I click AnagraficaFornitore.RegistraCommodity
     And I click General.OKMessage
  #aggiungo un progetto
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
     And I click AnagraficaFornitore.CommodityArrow
-    And I select the 1 element from the DDL AnagraficaFornitore.ULCommodity
+    And I select the 1 element from the DDL InfoFornitore.ULCommodity
     And I click AnagraficaFornitore.RegistraCommodity
     And I click General.OKMessage
     #devo fargli una richiesta di cambio stato afc proc
@@ -141,24 +137,24 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     #qui aggiungo a mano un attachment
     And I wait 30 seconds
     And I click Request.add
-    And I wait 30 seconds
+    And I wait 4 seconds
 #ora aspetto devo approvare la richiesta, devo approvarla usando tantissimi account diversi.
   #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.Logo
   #appro tile MyInbox e approvo la richiesta di cambio stato
     And I click HomePage.LaMiaInbox
-    And I wait 10 seconds
+    And I wait 4 seconds
     And I go to the next frame
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
     And I click LaMiaInbox.Approve
-    And I wait 30 seconds
+    And I wait 5 seconds
   #torno nella vendor List
     And I switch to defaultContentFrame
     And I click General.logo
     And I wait 5 seconds
     And I click HomePage.Fornitori
-    And I wait 10 seconds
+    And I wait 4 seconds
     And I go to the next frame
     And I input the codFiscale in Fornitori.SearchBox
     And I click Fornitori.SearchIcon
@@ -166,7 +162,3 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
     And I wait 4 seconds
     And I go to the next frame
-
-    Examples:
-      | codFiscale     |
-      | "009358409420" |
