@@ -21,5 +21,13 @@ public class NuovoFornitore {
     public static final BrowserElement ULFornitoriTrovati = new BrowserElement(new By[]{By.id("_IDGenList1XX-listUl")});
     public static final BrowserElement Crea = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--_IDGenButton3")});
     public static final BrowserElement Annulla = new BrowserElement(new By[]{By.id("_IDGenButton1XX-inner")});
-
+    public static final BrowserElement FormaGiuridicaPrimaScelta = new BrowserElement(new By[]{By.id("__item0")});
+    public static final BrowserElement SupplierSoloProcurement = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Solo Procurement')]")});
+    public static final BrowserElement LenteNazione = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-search")});
+    public static final BrowserElement NazioneApri = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iNation-vhi")});
+    public static final BrowserElement SelezionaGermania = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'DE')]")});
+    public static final BrowserElement SelezionaProva = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'PROVA GMBH')]")});
 }
+
+
+
