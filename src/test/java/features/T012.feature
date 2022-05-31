@@ -17,12 +17,20 @@ Feature: T012 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click NuovoFornitore.FormaGiuridicaPrimaScelta
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I click NuovoFornitore.SupplierSoloProcurement
-    And I input in NuovoFornitore.RagioneSociale the text 'Prova Azienda S.R.L'
+    And I input in NuovoFornitore.RagioneSociale the text 'GMBH'
     And I input in NuovoFornitore.PartitaIva the text '003584009430'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
-    And I click NuovoFornitore.SelezionaProva
+   And I select the 2 element from the DDL NuovoFornitore.ULFornitoriTrovati
+    And I click NuovoFornitore.Crea
+    And I click InfoFornitore.OK
     And I wait 10 seconds
+    And I click InfoFornitore.LinguaggioButton
+    And I select the 1 element from the DDL NuovoFornitore.ULLinguaggio
+    And I click InfoFornitore.ValutaDiRiferimentoButton
+    And I input in NuovoFornitore.ValutaDiRiferimentoCerca the text 'Euro'
+    And I click InfoFornitore.ValutaDiRiferimentoLente
+    And I select the 1 element from the DDL NuovoFornitore.ValutaDiRiferimentoDDL
     # Compilazione scheda Operation Office
     And I scroll down
     And I click InfoFornitore.NuovoUfficioOperativo
