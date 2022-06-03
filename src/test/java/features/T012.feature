@@ -21,16 +21,39 @@ Feature: T012 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I input in NuovoFornitore.PartitaIva the text '003584009430'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
-   And I select the 2 element from the DDL NuovoFornitore.ULFornitoriTrovati
-    And I click NuovoFornitore.Crea
-    And I click InfoFornitore.OK
+    And I select the 2 element from the DDL NuovoFornitore.ULFornitoriTrovati
+    #temporaneamente commentati questi 2 step per evitare di creare acc nuovo
+    #And I click NuovoFornitore.Crea
+   # And I click InfoFornitore.OK
     And I wait 10 seconds
     And I click InfoFornitore.LinguaggioButton
-    And I select the 1 element from the DDL NuovoFornitore.ULLinguaggio
+    And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
     And I click InfoFornitore.ValutaDiRiferimentoButton
-    And I input in NuovoFornitore.ValutaDiRiferimentoCerca the text 'Euro'
+    And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'Euro'
     And I click InfoFornitore.ValutaDiRiferimentoLente
-    And I select the 1 element from the DDL NuovoFornitore.ValutaDiRiferimentoDDL
+    And I select the 1 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
+    And I click InfoFornitore.AggiungiCommodity
+    And I click InfoFornitore.CommodityArrow
+    And I select the 1 element from the DDL InfoFornitore.ULCommodity
+    And I click InfoFornitore.RegistraCommodity
+    And I click InfoFornitore.AggiungiProgetti
+    And I click InfoFornitore.ProgettoArrow
+    And I select the 1 element from the DDL InfoFornitore.ULProgetto
+    And I click InfoFornitore.RegistraProgetto
+    #registrazione contatto
+    And I click InfoFornitore.NuovoContatto
+    And I input in InfoFornitore.NomeContatto the text 'Marco'
+    And I input in InfoFornitore.CognomeContatto the text 'Rossi'
+    And I input in InfoFornitore.TelefonoContatto the text '348211499123'
+    And I input in InfoFornitore.EmailContatto the text 'emailcontatto@outlook.com'
+    And I click InfoFornitore.ArrowRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
+    And I click InfoFornitore.ArrowTimezone
+    And I select the 0 element from the DDL InfoFornitore.ULTimezone
+    And I click InfoFornitore.ArrowContattoPrimario
+    And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
+    And I click InfoFornitore.SalvaContatto
+    And I click General.OKMessage
     # Compilazione scheda Operation Office
     And I scroll down
     And I click InfoFornitore.NuovoUfficioOperativo
