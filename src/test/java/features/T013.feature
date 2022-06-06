@@ -64,7 +64,7 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click InfoFornitore.ULNazione
     And I input in InfoFornitore.Indirizzo the text 'Via Prova 5'
     And I input in InfoFornitore.CodicePostale the text '50124'
-    And I input in InfoFornitore.Citta the text 'Sidney'
+    And I input in InfoFornitore.Citta the text 'Sydney'
     And I click InfoFornitore.ProvinciaButton
     And I click InfoFornitore.ULProvincia
     And I click InfoFornitore.SalvaUfficioOperativo
