@@ -26,7 +26,7 @@ public class NuovoFornitore {
     public static final BrowserElement LenteNazione = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-search")});
     public static final BrowserElement NazioneApri = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iNation-vhi")});
     public static final BrowserElement SelezionaGermania = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'DE')]")});
-    public static final BrowserElement SelezionaAustralia = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'AUS')]")});
+    public static final BrowserElement SelezionaAustralia = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'AU')]")});
 
 }
 

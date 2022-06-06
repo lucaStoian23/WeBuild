@@ -4,9 +4,9 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
     And I wait 25 seconds
-    And I click HomePage.VendorRating
+    And I click HomePage.NuovoFornitore
+    And I wait 15 seconds
     And I go to the next frame
-    And I wait 25 seconds
   # Complilazione del form nuovo fornitore richiesta
     And I click NuovoFornitore.NazioneApri
     And I input in NuovoFornitore.NazioneCerca the text 'Australia'
@@ -21,7 +21,7 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I input in NuovoFornitore.PartitaIva the text '003954909490'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
-    And I select the 2 element from the DDL NuovoFornitore.ULFornitoriTrovati
+    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
        #Creazione Dati Nuovo Fornitore
     And I click NuovoFornitore.Crea
     And I click InfoFornitore.OK
@@ -36,10 +36,12 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click InfoFornitore.CommodityArrow
     And I select the 0 element from the DDL InfoFornitore.ULCommodity
     And I click InfoFornitore.RegistraCommodity
+    And I click InfoFornitore.OK
     And I click InfoFornitore.AggiungiProgetti
     And I click InfoFornitore.ProgettoArrow
     And I select the 0 element from the DDL InfoFornitore.ULProgetto
     And I click InfoFornitore.RegistraProgetto
+    And I click InfoFornitore.OK
     #registrazione contatto
     And I click InfoFornitore.NuovoContatto
     And I input in InfoFornitore.NomeContatto the text 'Marco'

@@ -40,6 +40,7 @@ Feature: T012 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click InfoFornitore.ProgettoArrow
     And I select the 0 element from the DDL InfoFornitore.ULProgetto
     And I click InfoFornitore.RegistraProgetto
+    And I click InfoFornitore.OK
     #registrazione contatto
     And I click InfoFornitore.NuovoContatto
     And I input in InfoFornitore.NomeContatto the text 'Marco'
