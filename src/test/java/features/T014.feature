@@ -6,6 +6,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I wait 25 seconds
     And I click HomePage.VendorRating
     And I go to the next frame
-    And I wait 25 seconds
+    And I wait 15 seconds
+
 
 

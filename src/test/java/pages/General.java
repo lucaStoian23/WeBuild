@@ -9,4 +9,5 @@ public class General {
     public static final BrowserElement SALVA = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Salva')]")});
     public static final BrowserElement Logo = new BrowserElement(new By[]{By.xpath("shell-header-icon")});
     public static final BrowserElement ANNULLA = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Annulla')]")});
+    public static final BrowserElement BackButton = new BrowserElement(new By[]{By.id("backBtn")});
 }

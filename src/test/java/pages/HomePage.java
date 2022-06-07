@@ -17,4 +17,5 @@ public class HomePage {
   public static final BrowserElement PaginaInizialeMenu = new BrowserElement(new By[]{By.xpath("//*[@id=\"shellAppTitle-button\"]")});
   public static final BrowserElement PaginaInizialeGestioneDeiFornitori = new BrowserElement(new By[]{By.xpath("//*[@id=\"__item3-allMyAppsView--sapUshellAllMyAppsDataSourcesList-1\"]")});
   public static final BrowserElement PaginaInizialeNuovoFornitore = new BrowserElement(new By[]{By.xpath("//*[@id=\"__label0-allMyAppsView--oItemsContainerlist-3-bdi\"]")});
+  public static final BrowserElement TornaAllaHome = new BrowserElement(new By[]{By.id("shell-header-icon")});
 }
