@@ -25,9 +25,9 @@ Feature: T021 VendorManager Registration supplier procurement and qualification 
     And I click NuovoFornitore.Crea
     And I click General.OKMessage
     #Ricerca Del fornitore creato precedentemente
-    And I wait 5 seconds
-    And I click General.BackButton
-    And I click General.BackButton
+    And I wait 10 seconds
+    And I click General.BackToHome
+    And I switch to defaultContentFrame
     And I click HomePage.Fornitori
     And I go to the next frame
     And I input in Fornitori.SearchBox the text 'Test Prova 21AA'
