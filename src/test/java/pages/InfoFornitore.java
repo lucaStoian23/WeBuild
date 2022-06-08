@@ -55,5 +55,4 @@ public class InfoFornitore {
     public static final BrowserElement SubmitProposal = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Submit Proposal')]")});
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
 
-
 }
