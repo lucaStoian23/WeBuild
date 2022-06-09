@@ -18,7 +18,7 @@ Feature: T022 creazione fornitore procurement and qualification
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text 'Test Prova 21AA'
     #cambiare partita iva per il controllo dei duplicati
-    And I input in NuovoFornitore.PartitaIva the text '028876506000'
+    And I input in NuovoFornitore.PartitaIva the text '027820806060'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
     And I click NuovoFornitore.Annulla
@@ -26,52 +26,6 @@ Feature: T022 creazione fornitore procurement and qualification
     And I click General.OKMessage
     And I wait 10 seconds
     #compilazione scheda operations Office
-  #  And I click OperationalOffices.ChooseOperationalOffices
-  #  And I click OperationalOffices.AddOperationalOffice
-  #  And I input in OperationalOffices.OperationOfficeName the text 'Nome Prova'
-   # And I click OperationalOffices.AddressTypeArrow
-   # And I select the 0 element from the DDL OperationalOffices.AddressTypeUL
-   # And I click OperationalOffices.CountryButton
-   # And I input in OperationalOffices.CountrySearchBar the text 'Italia'
-   # And I click OperationalOffices.CountryLents
-   # And I select the 0 element from the DDL OperationalOffices.CountryUL
-  #  And I input in OperationalOffices.Address the text 'Via Indirizzo Prova 53'
-  #  And I input in OperationalOffices.PostalCode the text '00100'
-  #  And I input in OperationalOffices.City the text 'Milano'
-  #  And I click OperationalOffices.ProvinceButton
- #   And I input in OperationalOffices.ProvinceSearch the text 'Milano'
-  #  And I click OperationalOffices.ProvinceLents
- #   And I select the 0 element from the DDL OperationalOffices.ProvinceUL
-  #  And I click OperationalOffices.Save
-    #inserimento nuovo contatto
-   # And I click OperationalOffices.ChooseContact
-   # And I click OperationalOffices.NewContact
-   # And I input in OperationalOffices.ContactName the text 'Mario'
-    #And I input in OperationalOffices.ContactSurname the text 'Rossi'
-    #And I input in OperationalOffices.ContactPhone the text '3568874521'
-   # And I input in OperationalOffices.ContactEmail the text 'prova@prova.com'
- #   And I click OperationalOffices.ContactRoleArrow
- #   And I select the 0 element from the DDL OperationalOffices.ContactRoleUL
-  #  And I click OperationalOffices.ContactTimezoneArrow
-  #  And I select the 14 element from the DDL OperationalOffices.ContactTimezoneUL
-  #  And I click OperationalOffices.ContactSave
-   # And I click General.OKMessage
-  #  And I click OperationalOffices.ChooseCommoditiesAndProjects
-   # And I click OperationalOffices.AddCommoditiesButton
-   # And I click OperationalOffices.AddCommoditiesArrow
-  #  And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
-   # And I click OperationalOffices.CommoditiesRegister
-   # And I click General.OKMessage
-  #  And I click OperationalOffices.AddProjectButton
-  #  And I click OperationalOffices.AddProjectArrow
-   # And I select the 0 element from the DDL OperationalOffices.ProjectUL
-   # And I click OperationalOffices.ProjectRegister
-    #And I click General.OKMessage
-
-
-
-    And I click NuovoFornitore.Crea
-    And I click InfoFornitore.OK
     And I wait 10 seconds
     And I click InfoFornitore.LinguaggioButton
     And I select the 0 element from the DDL InfoFornitore.ULLinguaggio
