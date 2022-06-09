@@ -24,7 +24,7 @@ Feature: T022 creazione fornitore procurement and qualification
     And I click NuovoFornitore.Annulla
     And I click NuovoFornitore.Crea
     And I click General.OKMessage
-    And I wait 3 seconds
+    And I wait 10 seconds
     #compilazione scheda operations Office
     And I click OperationalOffices.ChooseOperationalOffices
     And I click OperationalOffices.AddOperationalOffice
@@ -43,3 +43,27 @@ Feature: T022 creazione fornitore procurement and qualification
     And I click OperationalOffices.ProvinceLents
     And I select the 0 element from the DDL OperationalOffices.ProvinceUL
     And I click OperationalOffices.Save
+    #inserimento nuovo contatto
+    And I click OperationalOffices.ChooseContact
+    And I click OperationalOffices.NewContact
+    And I input in OperationalOffices.ContactName the text 'Mario'
+    And I input in OperationalOffices.ContactSurname the text 'Rossi'
+    And I input in OperationalOffices.ContactPhone the text '3568874521'
+    And I input in OperationalOffices.ContactEmail the text 'prova@prova.com'
+    And I click OperationalOffices.ContactRoleArrow
+    And I select the 0 element from the DDL OperationalOffices.ContactRoleUL
+    And I click OperationalOffices.ContactTimezoneArrow
+    And I select the 14 element from the DDL OperationalOffices.ContactTimezoneUL
+    And I click OperationalOffices.ContactSave
+    And I click General.OKMessage
+    And I click OperationalOffices.ChooseCommoditiesAndProjects
+    And I click OperationalOffices.AddCommoditiesButton
+    And I click OperationalOffices.AddCommoditiesArrow
+    And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
+    And I click OperationalOffices.CommoditiesRegister
+    And I click General.OKMessage
+    And I click OperationalOffices.AddProjectButton
+    And I click OperationalOffices.AddProjectArrow
+    And I select the 0 element from the DDL OperationalOffices.ProjectUL
+    And I click OperationalOffices.ProjectRegister
+    And I click General.OKMessage
