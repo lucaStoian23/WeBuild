@@ -4,7 +4,7 @@ import main.java.Elements.BrowserElement;
 import org.openqa.selenium.By;
 
 public class OperationalOffices {
-    public static final BrowserElement ChooseOperationalOffices = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPSupplierCreation-Display-component---SupplierData--operationaloffices-anchor-content")});
+    public static final BrowserElement ChooseOperationalOffices = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Operational Offices')]")});
     public static final BrowserElement AddOperationalOffice = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--idNewUsrBtn-inner")});
     //Elementi Create Operations Office
     public static final BrowserElement OperationOfficeName = new BrowserElement(new By[]{By.id("id_SupplierCreateOfficeInputName-inner")});

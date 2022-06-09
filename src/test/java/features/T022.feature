@@ -24,3 +24,22 @@ Feature: T022 creazione fornitore procurement and qualification
     And I click NuovoFornitore.Annulla
     And I click NuovoFornitore.Crea
     And I click General.OKMessage
+    And I wait 3 seconds
+    #compilazione scheda operations Office
+    And I click OperationalOffices.ChooseOperationalOffices
+    And I click OperationalOffices.AddOperationalOffice
+    And I input in OperationalOffices.OperationOfficeName the text 'Nome Prova'
+    And I click OperationalOffices.AddressTypeArrow
+    And I select the 0 element from the DDL OperationalOffices.AddressTypeUL
+    And I click OperationalOffices.CountryButton
+    And I input in OperationalOffices.CountrySearchBar the text 'Italia'
+    And I click OperationalOffices.CountryLents
+    And I select the 0 element from the DDL OperationalOffices.CountryUL
+    And I input in OperationalOffices.Address the text 'Via Indirizzo Prova 53'
+    And I input in OperationalOffices.PostalCode the text '00100'
+    And I input in OperationalOffices.City the text 'Milano'
+    And I click OperationalOffices.ProvinceButton
+    And I input in OperationalOffices.ProvinceSearch the text 'Milano'
+    And I click OperationalOffices.ProvinceLents
+    And I select the 0 element from the DDL OperationalOffices.ProvinceUL
+    And I click OperationalOffices.Save
