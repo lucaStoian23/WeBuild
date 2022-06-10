@@ -19,11 +19,60 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click NuovoFornitore.SupplierSoloProcurement
     And I input in NuovoFornitore.RagioneSociale the text 'GMBH'
     #Cambiare Partita iva per problema duplicati
-    And I input in NuovoFornitore.PartitaIva the text '003954909490'
+    And I input in NuovoFornitore.PartitaIva the text '004042409470'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
     And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     And I click NuovoFornitore.Crea
+    And I click InfoFornitore.OK
+    And I wait 10 seconds
+    And I click InfoFornitore.LinguaggioButton
+    And I select the 0 element from the DDL InfoFornitore.ULLinguaggio
+    And I click InfoFornitore.ValutaDiRiferimentoButton
+    And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'Euro'
+    And I click InfoFornitore.ValutaDiRiferimentoLente
+    And I select the 0 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
+    And I click InfoFornitore.AggiungiCommodity
+    And I click InfoFornitore.CommodityArrow
+    And I select the 0 element from the DDL InfoFornitore.ULCommodity
+    And I click InfoFornitore.RegistraCommodity
+    And I click InfoFornitore.OK
+    And I click InfoFornitore.AggiungiProgetti
+    And I click InfoFornitore.ProgettoArrow
+    And I select the 0 element from the DDL InfoFornitore.ULProgetto
+    And I click InfoFornitore.RegistraProgetto
+    And I click InfoFornitore.OK
+    #registrazione contatto
+    And I click InfoFornitore.NuovoContatto
+    And I input in InfoFornitore.NomeContatto the text 'Marco'
+    And I input in InfoFornitore.CognomeContatto the text 'Rossi'
+    And I input in InfoFornitore.TelefonoContatto the text '348211499123'
+    And I input in InfoFornitore.EmailContatto the text 'emailcontatto@outlook.com'
+    And I click InfoFornitore.ArrowRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
+    And I click InfoFornitore.ArrowTimezone
+    And I select the 0 element from the DDL InfoFornitore.ULTimezone
+    And I click InfoFornitore.ArrowContattoPrimario
+    And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
+    And I click InfoFornitore.SalvaContatto
+    And I click General.OKMessage
+    # Compilazione scheda Operation Office
+    And I scroll down
+    And I click InfoFornitore.NuovoUfficioOperativo
+    And I input in InfoFornitore.NomeUfficioOperativo the text 'Nome Prova'
+    And I click InfoFornitore.TipoIndirizzoArrow
+    And I click InfoFornitore.ULTipoIndirizzo
+    And I click InfoFornitore.NazioneButton
+    And I click InfoFornitore.ULNazione
+    And I input in InfoFornitore.Indirizzo the text 'Via Prova 5'
+    And I input in InfoFornitore.CodicePostale the text '50124'
+    And I input in InfoFornitore.Citta the text 'Parigi'
+    And I click InfoFornitore.ProvinciaButton
+    And I select the 0 element from the DDL InfoFornitore.ULProvincia
+    And I click InfoFornitore.SalvaUfficioOperativo
+    And I wait 2 seconds
+    And I click InfoFornitore.OK
+    And I click InfoFornitore.SubmitProposal
 
 
 

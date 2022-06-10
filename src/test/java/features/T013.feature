@@ -68,7 +68,7 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I input in InfoFornitore.CodicePostale the text '50124'
     And I input in InfoFornitore.Citta the text 'Sydney'
     And I click InfoFornitore.ProvinciaButton
-    And I click InfoFornitore.ULProvincia
+    And I select the 0 element from the DDL InfoFornitore.ULProvincia
     And I click InfoFornitore.SalvaUfficioOperativo
     And I wait 2 seconds
     And I click InfoFornitore.OK
