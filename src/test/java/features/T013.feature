@@ -11,7 +11,7 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click NuovoFornitore.NazioneApri
     And I input in NuovoFornitore.NazioneCerca the text 'Australia'
     And I click NuovoFornitore.LenteNazione
-    And I click NuovoFornitore.SelezionaAustralia
+    And I select the 0 element from the DDL NuovoFornitore.NazioneLI
     And I wait 2 seconds
     And I click NuovoFornitore.FormaGiuridicaButton
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche

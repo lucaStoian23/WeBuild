@@ -25,45 +25,51 @@ Feature: T025 creazione fornitore procurement and qualification
     And I click NuovoFornitore.Crea
     And I click General.OKMessage
     And I wait 10 seconds
-    #compilazione scheda operations Office
-    And I click OperationalOffices.ChooseOperationalOffices
-    And I click OperationalOffices.AddOperationalOffice
-    And I input in OperationalOffices.OperationOfficeName the text 'Nome Prova'
-    And I click OperationalOffices.AddressTypeArrow
-    And I select the 0 element from the DDL OperationalOffices.AddressTypeUL
-    And I click OperationalOffices.CountryButton
-    And I input in OperationalOffices.CountrySearchBar the text 'Italia'
-    And I click OperationalOffices.CountryLents
-    And I select the 0 element from the DDL OperationalOffices.CountryUL
-    And I input in OperationalOffices.Address the text 'Via Indirizzo Prova 53'
-    And I input in OperationalOffices.PostalCode the text '00100'
-    And I input in OperationalOffices.City the text 'Milano'
-    And I click OperationalOffices.ProvinceButton
-    And I input in OperationalOffices.ProvinceSearch the text 'Milano'
-    And I click OperationalOffices.ProvinceLents
-    And I select the 0 element from the DDL OperationalOffices.ProvinceUL
-    And I click OperationalOffices.Save
-    #inserimento nuovo contatto
-    And I click OperationalOffices.ChooseContact
-    And I click OperationalOffices.NewContact
-    And I input in OperationalOffices.ContactName the text 'Mario'
-    And I input in OperationalOffices.ContactSurname the text 'Rossi'
-    And I input in OperationalOffices.ContactPhone the text '3568874521'
-    And I input in OperationalOffices.ContactEmail the text 'prova@prova.com'
-    And I click OperationalOffices.ContactRoleArrow
-    And I select the 0 element from the DDL OperationalOffices.ContactRoleUL
-    And I click OperationalOffices.ContactTimezoneArrow
-    And I select the 14 element from the DDL OperationalOffices.ContactTimezoneUL
-    And I click OperationalOffices.ContactSave
+     #compilazione scheda operations Office
+    And I wait 10 seconds
+    And I click InfoFornitore.LinguaggioButton
+    And I select the 0 element from the DDL InfoFornitore.ULLinguaggio
+    And I click InfoFornitore.ValutaDiRiferimentoButton
+    And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'Euro'
+    And I click InfoFornitore.ValutaDiRiferimentoLente
+    And I select the 0 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
+    And I click InfoFornitore.AggiungiCommodity
+    And I click InfoFornitore.CommodityArrow
+    And I select the 0 element from the DDL InfoFornitore.ULCommodity
+    And I click InfoFornitore.RegistraCommodity
+    And I click InfoFornitore.OK
+    And I click InfoFornitore.AggiungiProgetti
+    And I click InfoFornitore.ProgettoArrow
+    And I select the 0 element from the DDL InfoFornitore.ULProgetto
+    And I click InfoFornitore.RegistraProgetto
+    And I click InfoFornitore.OK
+    #registrazione contatto
+    And I click InfoFornitore.NuovoContatto
+    And I input in InfoFornitore.NomeContatto the text 'Marco'
+    And I input in InfoFornitore.CognomeContatto the text 'Rossi'
+    And I input in InfoFornitore.TelefonoContatto the text '348211499123'
+    And I input in InfoFornitore.EmailContatto the text 'emailcontatto@outlook.com'
+    And I click InfoFornitore.ArrowRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
+    And I click InfoFornitore.ArrowTimezone
+    And I select the 0 element from the DDL InfoFornitore.ULTimezone
+    And I click InfoFornitore.ArrowContattoPrimario
+    And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
+    And I click InfoFornitore.SalvaContatto
     And I click General.OKMessage
-    And I click OperationalOffices.ChooseCommoditiesAndProjects
-    And I click OperationalOffices.AddCommoditiesButton
-    And I click OperationalOffices.AddCommoditiesArrow
-    And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
-    And I click OperationalOffices.CommoditiesRegister
-    And I click General.OKMessage
-    And I click OperationalOffices.AddProjectButton
-    And I click OperationalOffices.AddProjectArrow
-    And I select the 0 element from the DDL OperationalOffices.ProjectUL
-    And I click OperationalOffices.ProjectRegister
-    And I click General.OKMessage
+    # Compilazione scheda Operation Office
+    And I scroll down
+    And I click InfoFornitore.NuovoUfficioOperativo
+    And I input in InfoFornitore.NomeUfficioOperativo the text 'Nome Prova'
+    And I click InfoFornitore.TipoIndirizzoArrow
+    And I click InfoFornitore.ULTipoIndirizzo
+    And I click InfoFornitore.NazioneButton
+    And I click InfoFornitore.ULNazione
+    And I input in InfoFornitore.Indirizzo the text 'Via Prova 5'
+    And I input in InfoFornitore.CodicePostale the text '50124'
+    And I input in InfoFornitore.Citta the text 'Sydney'
+    And I click InfoFornitore.ProvinciaButton
+    And I click InfoFornitore.ULProvincia
+    And I click InfoFornitore.SalvaUfficioOperativo
+    And I wait 2 seconds
+    And I click InfoFornitore.OK

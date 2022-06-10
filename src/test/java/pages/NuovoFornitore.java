@@ -8,8 +8,8 @@ public class NuovoFornitore {
     public static final BrowserElement NazioneCerca = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-I")});
     public static final BrowserElement Clessidra = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-search")});
     public static final BrowserElement NazioneTrovata = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--_IDGenStandardListItem1-__clone20")});
+    public static final BrowserElement NazioneLI = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-list-listUl")});
     public static final BrowserElement FormaGiuridicaButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iGiurForm-arrow")});
-    public static final BrowserElement F = new BrowserElement(new By[]{By.id("")});
     public static final BrowserElement ULFormeGiuridiche = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iGiurForm-popup-list-listUl")});
     public static final BrowserElement TipologiaFornitoreButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iTipologia-arrow")});
     public static final BrowserElement ULTipologieFornitore = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iTipologia-popup-list-listUl")});
@@ -29,7 +29,6 @@ public class NuovoFornitore {
     public static final BrowserElement SelezionaAustralia = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'AU')]")});
 
 }
-
 
 
 
