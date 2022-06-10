@@ -62,8 +62,6 @@ Feature: T021 VendorManager Registration supplier procurement and qualification 
     And I select the 0 element from the DDL AnagraficaFornitore.ULRuolo
     And I click AnagraficaFornitore.ArrowTimezone
     And I select the 0 element from the DDL AnagraficaFornitore.ULTimezone
-    And I click AnagraficaFornitore.ArrowContattoPrimario
-    And I select the 0 element from the DDL AnagraficaFornitore.ULContattoPrimario
     And I click AnagraficaFornitore.SalvaContatto
     And I click General.OKMessage
     # Compilazione scheda Operation Office
