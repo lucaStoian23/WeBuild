@@ -1,5 +1,5 @@
-Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario: T015
+Feature: T016 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+  Scenario: T016
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
@@ -17,6 +17,7 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I click NuovoFornitore.SupplierSoloProcurement
+    And I input in NuovoFornitore.RagioneSociale the text 'Prova015A'
     #Cambiare Partita iva per problema duplicati
     And I input in NuovoFornitore.PartitaIva the text '009221609400'
     And I click NuovoFornitore.SearchInfoProviderButton
