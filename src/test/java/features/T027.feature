@@ -1,5 +1,5 @@
-Feature: T026 creazione fornitore procurement and qualification
-  Scenario: T026
+Feature: T027 creazione fornitore procurement and qualification
+  Scenario: T027
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
@@ -21,7 +21,8 @@ Feature: T026 creazione fornitore procurement and qualification
     And I input in NuovoFornitore.PartitaIva the text '003954909490'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
-    And I select the 0 element from the DDL InfoFornitore.ULFornitoriTrovati
+    And I click NuovoFornitore.Annulla
+    And I click NuovoFornitore.Crea
     And I click General.OKMessage
     And I wait 10 seconds
      #compilazione scheda operations Office
