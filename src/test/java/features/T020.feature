@@ -1,5 +1,5 @@
-Feature: T021 VendorManager Registration supplier procurement and qualification Italia GITC - PROFES. PERS. GIUR. ITALIA CEE without BVD, rejected
-  Scenario: T021
+Feature: T020 VendorManager Registration supplier procurement and qualification Italia GITC - PROFES. PERS. GIUR. ITALIA CEE without BVD, rejected
+  Scenario Outline: T020 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
@@ -16,9 +16,9 @@ Feature: T021 VendorManager Registration supplier procurement and qualification 
     And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'Test Prova 20AAA'
+    And I input in NuovoFornitore.RagioneSociale the text <RagSociale>
     #cambiare partita iva per il controllo dei duplicati
-    And I input in NuovoFornitore.PartitaIva the text '009358409420'
+    And I input in NuovoFornitore.PartitaIva the text 'inserire PIVA'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
     And I click NuovoFornitore.Annulla
@@ -31,7 +31,7 @@ Feature: T021 VendorManager Registration supplier procurement and qualification 
     And I click HomePage.Fornitori
     And I go to the next frame
     And I wait 5 seconds
-    And I input in Fornitori.SearchBox the text 'Test Prova 20AAA'
+    And I input in Fornitori.SearchBox the text <RagSociale>
     And I click Fornitori.SearchIcon
     And I click Fornitori.SearchFirstChoice
     And I wait 5 seconds
@@ -82,3 +82,37 @@ Feature: T021 VendorManager Registration supplier procurement and qualification 
     And I click AnagraficaFornitore.SalvaUfficioOperativo
     And I wait 2 seconds
     And I click General.OKMessage
+      #qui aggiungo a mano un attachment
+    And I wait 30 seconds
+    And I click Request.add
+    And I wait 30 seconds
+    And I click InfoFornitore.SubmitProposal
+  #a questo punto ho un problema e non posso inviare la proposta
+   #torno nella homepage
+    And I switch to defaultContentFrame
+    And I click General.Logo
+  #appro tile MyInbox e Approve la richiesta di cambio stato
+    And I click HomePage.LaMiaInbox
+    And I wait 10 seconds
+    And I go to the next frame
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.Approve
+    And I wait 30 seconds
+    #torno a Fornitori
+    And I switch to defaultContentFrame
+    And I click General.logo
+    And I wait 5 seconds
+    And I click HomePage.Fornitori
+    And I wait 10 seconds
+    And I go to the next frame
+    And I input in Fornitori.SearchBox the text <RagSociale>
+    And I click Fornitori.SearchIcon
+    And I wait 5 seconds
+    And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
+    And I wait 4 seconds
+    And I go to the next frame
+
+
+    Examples:
+      | RagSociale     |
+      | "Test"         |

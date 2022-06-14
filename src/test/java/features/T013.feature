@@ -1,5 +1,5 @@
 Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario: T013
+  Scenario Outline: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in with username c.motta@reply.it and password Sysko@003
@@ -18,10 +18,23 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I click NuovoFornitore.SupplierSoloProcurement
     And I input in NuovoFornitore.RagioneSociale the text 'GMBH'
+    #Cambiare partita iva per controllo duplicati
     And I input in NuovoFornitore.PartitaIva the text '003954909490'
     And I click NuovoFornitore.SearchInfoProviderButton
     And I wait 5 seconds
     And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
+     #torno nella homepage
+    And I switch to defaultContentFrame
+    And I click General.Logo
+    And I click HomePage.Fornitori
+    And I wait 10 seconds
+    And I go to the next frame
+    #inserire partita iva usata precedentemente
+    And I input in Fornitori.SearchBox the text <Piva>
+    And I click Fornitori.SearchIcon
+    And I wait 5 seconds
+    And I search the supplier 'Nome Fornitore' in the tbody Fornitori.SuppliersTableBody
+    And I wait 4 seconds
        #Creazione Dati Nuovo Fornitore
     And I click NuovoFornitore.Crea
     And I click InfoFornitore.OK
@@ -59,7 +72,7 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     # Compilazione scheda Operation Office
     And I scroll down
     And I click InfoFornitore.NuovoUfficioOperativo
-    And I input in InfoFornitore.NomeUfficioOperativo the text 'Nome Prova'
+    And I input in InfoFornitore.NomeUfficioOperativo the text <Piva>
     And I click InfoFornitore.TipoIndirizzoArrow
     And I click InfoFornitore.ULTipoIndirizzo
     And I click InfoFornitore.NazioneButton
@@ -74,3 +87,15 @@ Feature: T013 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click InfoFornitore.OK
     And I click InfoFornitore.SubmitProposal
 
+    #appro tile MyInbox e Send To compliance la richiesta di cambio stato
+    And I click HomePage.LaMiaInbox
+    And I wait 10 seconds
+    And I go to the next frame
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.SendToCompliance
+    And I wait 30 seconds
+    #Lo step successivo è di accedere con un compliance acc e approvare la richiesta al momento mancante compliance ACC
+
+    Examples:
+      | Piva           |
+      | "Test"         |
