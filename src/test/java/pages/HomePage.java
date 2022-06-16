@@ -11,7 +11,8 @@ public class HomePage {
     public static final BrowserElement VendorRating = new BrowserElement(new By[]{By.id("__tile31")});
     public static final BrowserElement MySurvey = new BrowserElement(new By[]{By.id("__tile33")});
     public static final BrowserElement CreazioneRFX = new BrowserElement(new By[]{By.id("__tile34")});
-    public static final BrowserElement MyRFX = new BrowserElement(new By[]{By.id("__tile35")});
+    public static final BrowserElement RFXCreation = new BrowserElement(new By[]{By.id("__tile32")});
+    public static final BrowserElement MyRFX = new BrowserElement(new By[]{By.id("__tile23")});
     public static final BrowserElement RFX = new BrowserElement(new By[]{By.id("__tile36")});
     public static final BrowserElement GestioneDeiFornitori = new BrowserElement(new By[]{By.id("__item0-anchorNavigationBar-2-inner")});
     public static final BrowserElement SourcingCockpit = new BrowserElement(new By[]{By.id("__tile38")});
