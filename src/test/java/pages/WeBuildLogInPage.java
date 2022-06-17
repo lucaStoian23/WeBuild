@@ -9,5 +9,9 @@ public class WeBuildLogInPage {
     public static final BrowserElement LogInField = new BrowserElement(new By[]{By.xpath("//*[@id=\"j_username\"]")});
     public static final BrowserElement Continuare = new BrowserElement(new By[]{By.id("logOnFormSubmit")});
     public static final BrowserElement PasswordField = new BrowserElement(new By[]{By.id("password")});
+
+    public static final BrowserElement PasswordFieldSupplier = new BrowserElement(new By[]{By.id("j_password")});
     public static final BrowserElement SignIn = new BrowserElement(new By[]{By.className("test-button")});
+
+    public static final BrowserElement SignInSupplier = new BrowserElement(new By[]{By.id("logOnFormSubmit")});
 }

@@ -11,4 +11,4 @@ Feature: T003 VendorManager Approva workflow
     And I click Fornitori.SearchIcon
     And I wait 5 seconds
     And I search the supplier 'ASD' in the tbody Fornitori.SuppliersTableBody
-    And I wait 30 seconds
+    And I wait 31 seconds

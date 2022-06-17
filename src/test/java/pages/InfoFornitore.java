@@ -37,6 +37,7 @@ public class InfoFornitore {
 
     public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.id("shell-header-logo")});
 
+    public static final BrowserElement OperationalOffices = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Offices')]")});
 
     public static final BrowserElement NuovoUfficioOperativo = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--idNewUsrBtn")});
     public static final BrowserElement NomeUfficioOperativo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputName-inner")});
@@ -50,9 +51,8 @@ public class InfoFornitore {
     public static final BrowserElement ProvinciaButton = new BrowserElement(new By[]{By.id("SupplierCreateOfficeLocal-vhi")});
     public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl")});
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
-
+    public static final BrowserElement OK = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'OK')]")});
+    public static final BrowserElement SubmitProposal = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Submit Proposal')]")});
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
-
-
 
 }

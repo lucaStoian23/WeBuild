@@ -161,6 +161,18 @@ public class WebStep {
 
     }
 
+    @And("I log_in NEW with username {} and password {}")
+    public void iLog_inSupplier(String username, String password) throws Exception {
+        Util.getURL("https://tst-tdrwhi6n.launchpad.cfapps.eu20.hana.ondemand.com/site/npp");
+        findEl(WeBuildLogInPage.LogInField).sendKeys(username);
+        findEl(WeBuildLogInPage.Continuare).click();
+        findEl(WeBuildLogInPage.PasswordFieldSupplier).sendKeys(password);
+        findEl(WeBuildLogInPage.SignInSupplier).click();
+        Util.createCodFiscale();
+        waitSec(4);
+
+    }
+
     @And("I click on the button")
     public void clickOnIt(){
         WebElement wb = Util.driver.findElement(By.xpath("//span[@role='button']"));
