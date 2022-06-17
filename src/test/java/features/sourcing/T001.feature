@@ -3,7 +3,7 @@ Feature: T001 creazione fornitore procurement and qualification
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-    And I wait 15 seconds
+    #And I wait 15 seconds
    # And I click HomePage.SourcingCockpit
    # And I go to the next frame
    # And I wait 15 seconds
@@ -11,6 +11,9 @@ Feature: T001 creazione fornitore procurement and qualification
 
     #procedo dal punto 8
     #creazione di un RFX
+
+    And I click HomePage.Fornitori
+    And I wait 40 seconds
     And I click HomePage.RFXCreation
     And I go to the next frame
     And I input in RFX.EventTitle the text <RFXTitle>
