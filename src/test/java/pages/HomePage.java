@@ -13,7 +13,7 @@ public class HomePage {
     public static final BrowserElement CreazioneRFX = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFX cre\u00ADation')]/ancestor::a")});
     public static final BrowserElement RFXCreation = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFX cre\u00ADation')]/ancestor::a")});
     public static final BrowserElement MyRFX = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'My RFX')]/ancestor::a")});
-    public static final BrowserElement RFX = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFX')]/ancestor::a")});
+    public static final BrowserElement RFX = new BrowserElement(new By[]{By.xpath("//*[text() = 'RFX']/ancestor::a")});
     public static final BrowserElement GestioneDeiFornitori = new BrowserElement(new By[]{By.id("__item0-anchorNavigationBar-2-inner")});
     public static final BrowserElement SourcingCockpit = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Sourc\u00ADing Cock\u00ADpit')]/ancestor::a")});
     public static final BrowserElement GeneralData = new BrowserElement(new By[]{By.xpath("//*[@id=\"__tile31\"]")});
@@ -21,4 +21,6 @@ public class HomePage {
     public static final BrowserElement PaginaInizialeGestioneDeiFornitori = new BrowserElement(new By[]{By.xpath("//*[@id=\"__item3-allMyAppsView--sapUshellAllMyAppsDataSourcesList-1\"]")});
     public static final BrowserElement PaginaInizialeNuovoFornitore = new BrowserElement(new By[]{By.xpath("//*[@id=\"__label0-allMyAppsView--oItemsContainerlist-3-bdi\"]")});
     public static final BrowserElement TornaAllaHome = new BrowserElement(new By[]{By.id("shell-header-icon")});
+
 }
+
