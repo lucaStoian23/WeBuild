@@ -1,5 +1,5 @@
-Feature: T002 creazione fornitore procurement and qualification
-  Scenario Outline: T002 creazione fornitore procurement and qualification
+Feature: T004 creazione fornitore procurement and qualification
+  Scenario Outline: T004 creazione fornitore procurement and qualification
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
@@ -17,6 +17,7 @@ Feature: T002 creazione fornitore procurement and qualification
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I click RFX.RFI
     And I click RFX.Create
     #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
     #compilare RFX
@@ -126,9 +127,6 @@ Feature: T002 creazione fornitore procurement and qualification
 
 
 
-
-
-
     Examples:
       | RFXTitle       |
-      | "TestProva003" |
+      | "TestProva004" |

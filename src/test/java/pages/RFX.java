@@ -11,7 +11,7 @@ public class RFX {
     public static final BrowserElement Create = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCreateBtn-inner")});
     public static final BrowserElement AggiungiRDA = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXAddBtn-inner")});
     public static final BrowserElement RFXHeader = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDPageNewRFX-intHeader-BarPH")});
-
+    public static final BrowserElement RFI = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFI')]")});
     public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXProject-vhi")});
     public static final BrowserElement ProjectSearch = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--selectProject-searchField-I")});
     public static final BrowserElement ProjectLents = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--selectProject-searchField-search")});
@@ -77,7 +77,7 @@ public class RFX {
     public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-inner")});
     public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
 
-    //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")});
+    //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 
 
 }
