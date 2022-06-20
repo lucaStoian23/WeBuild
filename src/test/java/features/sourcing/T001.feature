@@ -58,16 +58,23 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 5 seconds
     And I click RFX.PreRFXButton
     And I wait 5 seconds
-    And I click RFX.AddVendorRegionFilter
-    And I wait 1 seconds
-    And I click RFX.AddVendorSupplierStatusArrow
-    And I wait 1 seconds
-    And I click RFX.Registered
-    And I click RFX.AddVendorSearchButton
-    And I wait 3 seconds
-    And I click RFX.Vendor1
-    And I click RFX.Vendor2
-    And I click RFX.Vendor3
+    And I input in RFX.AddVendorsSearch the text 'Marco Coroniti SPA'
+    And I click RFX.AddVendorLents
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+    And I wait 2 seconds
+    And I click RFX.InviteVendors
+    And I wait 2 seconds
+    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
+    And I click RFX.AddVendorLents
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+    And I wait 2 seconds
+    And I click RFX.InviteVendors
+    And I wait 2 seconds
+    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
+    And I click RFX.AddVendorLents
+    And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
     And I click RFX.InviaVendorApprovazione
       #torno nella homepage

@@ -46,6 +46,7 @@ public class RFX {
 
     public static final BrowserElement PreRFX = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXVendorTab-anchor-inner")});
     public static final BrowserElement PreRFXButton = new BrowserElement(new By[]{By.id("__button24-inner")});
+    public static final BrowserElement InviteVendors = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Invite')]")});
     public static final BrowserElement AddVendorsSearch = new BrowserElement(new By[]{By.id("IDVendorDialog--searchSupplierField-I")});
     public static final BrowserElement AddVendorLents = new BrowserElement(new By[]{By.id("IDVendorDialog--searchSupplierField-search")});
     public static final BrowserElement AddVendorRegionFilter = new BrowserElement(new By[]{By.id("IDVendorDialog--panSl2-header")});
@@ -53,9 +54,7 @@ public class RFX {
     public static final BrowserElement AddVendorSupplierStatusUL = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-popup-list-listUl")});
     public static final BrowserElement AddVendorSearchButton = new BrowserElement(new By[]{By.id("__button48-inner")});
 
-    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.tagName("COOP. SRLS")});
-    public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.id("__item78-__clone118-selectMulti-CbBg")});
-    public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.id("__item78-__clone119-selectMulti-CbBg")});
+    public static final BrowserElement VendorTickAll = new BrowserElement(new By[]{By.id("IDVendorDialog--tSuppliers-sa-CbBg")});
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.id("__button50-inner")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
 
