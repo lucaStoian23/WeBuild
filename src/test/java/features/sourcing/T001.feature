@@ -62,6 +62,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.AddVendorLents
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
+    And I wait 10 seconds
+    And I scroll up
     And I wait 2 seconds
     And I click RFX.InviteVendors
     And I wait 2 seconds
@@ -72,7 +74,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 2 seconds
     And I click RFX.InviteVendors
     And I wait 2 seconds
-    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
+    And I input in RFX.AddVendorsSearch the text 'LINDT & SPRUNGLI S.P.A.'
     And I click RFX.AddVendorLents
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
