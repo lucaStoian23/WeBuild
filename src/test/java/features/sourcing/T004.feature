@@ -51,12 +51,15 @@ Feature: T004 creazione fornitore procurement and qualification
     And I click RFX.RFXFirstChoice
     #Scelgo manualmente RFX creato precedentemente
     #aggiungo i vendor alla list
+         #aggiungo i vendor alla list
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
     And I click RFX.PreRFXButton
-    And I input in RFX.AddVendorsSearch the text 'Test'
-    And I click RFX.AddVendorLents
+    And I click RFX.AddVendorRegionFilter
+    And I click RFX.AddVendorSupplierStatusArrow
+    And I select the 7 element from the DDL RFX.TenderCommodityUL
+    And I click RFX.AddVendorSearchButton
     And I wait 3 seconds
     And I click RFX.Vendor1
     And I click RFX.Vendor2
