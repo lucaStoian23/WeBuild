@@ -63,9 +63,9 @@ public class RFX {
     public static final BrowserElement EvaluationButton2 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-1-inner")});
     public static final BrowserElement EvaluationButton3 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-2-inner")});
     public static final BrowserElement EvaluationArrow = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalSelect-arrow")});
-    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.id("__list4")});
+    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.id("__list1")});
     public static final BrowserElement EvaluationNote = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalAttachmentNota-inner")});
-    public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.id("__button27-inner")});
+    public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.id("__button23")});
     public static final BrowserElement EvaluationAttach = new BrowserElement(new By[]{By.id("IDTechEvalDialog--fuTechEvalAttachment-fu_button-inner")});
     public static final BrowserElement CompletaValutazioneTecnica = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
 
@@ -81,6 +81,8 @@ public class RFX {
 
     public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-inner")});
     public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
+
+    public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.id("IDTechEvalDialog--fuTechEvalAttachment-fu")});
 
     //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 
