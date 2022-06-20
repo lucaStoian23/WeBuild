@@ -63,6 +63,51 @@ Feature: T005 creazione fornitore procurement and qualification
     And I click RFX.Vendor1
     And I click RFX.Vendor2
     And I click RFX.Vendor3
+#a questo punto bisogna creare un vendor da inserire come quarto elemento (tasto create non presente)
+    And I click RFX.AddVendorButton
+    And I click RFX.InviaVendorApprovazione
+      #torno nella homepage
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    #apro tile MyInbox e Approve la richiesta di cambio stato
+    And I click HomePage.LaMiaInbox
+    And I wait 10 seconds
+    And I go to the next frame
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.Approve
+    And I wait 30 seconds
+   #torno nella homepage
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I click HomePage.MyRFX
+    And I go to the next frame
+    And I click RFX.RFXFirstChoice
+    And I click RFX.TechnicalEvaluations
+    And I click RFX.AddTechnicalEvaluation
+    #adesso valuto il primo negativo gli altri positivo
+    And I click RFX.EvaluationButton
+    And I click RFX.EvaluationArrow
+    And I select the 0 element from the DDL RFX.EvaluationUL
+    And I input in RFX.EvaluationNote the text 'Negativo'
+    #aggiungo un attach manualmente
+    And I click RFX.EvaluationArrow
+    And I wait 30 seconds
+    And I click RFX.EvaluationButton2
+    And I click RFX.EvaluationArrow
+    And I select the 2 element from the DDL RFX.EvaluationUL
+    And I input in RFX.EvaluationNote the text 'Positivo'
+    #aggiungo un attach manualmente
+    And I click RFX.EvaluationArrow
+    And I wait 30 seconds
+    And I click RFX.EvaluationButton3
+    And I click RFX.EvaluationArrow
+    And I select the 2 element from the DDL RFX.EvaluationUL
+    And I input in RFX.EvaluationNote the text 'Positivo'
+    #aggiungo un attach manualmente
+    And I click RFX.CompletaValutazioneTecnica
+    #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
+    #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
+    #proseguire da 34
 
 
     Examples:
