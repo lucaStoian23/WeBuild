@@ -217,6 +217,13 @@ public class WebStep {
         js.executeScript("window.scrollBy(0,1000)","");
     }
 
+    @And("I scroll up")
+    public void iScrollUp() {
+        JavascriptExecutor js = (JavascriptExecutor) Util.driver;
+        js.executeScript("window.scrollBy(1000,0)","");
+    }
+
+
     @And("I switch to defaultContentFrame")
     public void iSwitchToDefaultContentFrame() {
         Util.driver.switchTo().defaultContent();
