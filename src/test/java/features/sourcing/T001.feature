@@ -58,6 +58,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
+
     And I click RFX.PreRFXButton
     And I click RFX.AddVendorRegionFilter
     And I click RFX.AddVendorSupplierStatusArrow
