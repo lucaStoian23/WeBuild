@@ -254,4 +254,16 @@ public class WebStep {
         System.setProperty("codiceFiscale", val);
 
     }
+
+    @And("I open the {} row insire table {}.{}")
+    public void iOpenTheFirstRowInsireTable(Integer n, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
+        WebElement wbl = findEl(el);
+        List<WebElement> elements = wbl.findElements(By.tagName("tr"));
+        System.out.println(elements);
+        elements.get(n).click();
+    }
+
+
 }

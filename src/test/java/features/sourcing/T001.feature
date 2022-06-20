@@ -11,9 +11,10 @@ Feature: T001 creazione fornitore procurement and qualification
     #procedo dal punto 8
     #creazione di un RFX
 
+    #STEP DA 8 FINO A 16
     And I click HomePage.CreazioneRFX
     And I go to the next frame
-    And I wait 10 seconds
+    And I wait 2 seconds
     And I input in RFX.EventTitle the text <RFXTitle>
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
@@ -41,7 +42,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.CurrencyLents
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I input in RFX.Budget the text '30000'
-    And I input in RFX.Forecast the text '20000'
     And I click RFX.SaveAsDraft
     And I wait 3 seconds
      #torno nella homepage
@@ -49,13 +49,16 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click General.BackToHome
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
+    And I wait 3 seconds
+    #And I click RFX.RFXFirstChoice
+    And I open the 0 row insire table MyRfx.RFXtable
     #Scelgo manualmente RFX creato precedentemente
-    #aggiungo i vendor alla list
+    #aggiungo i vendor alla list\x
         #aggiungo i vendor alla list
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
+
     And I click RFX.PreRFXButton
     And I click RFX.AddVendorRegionFilter
     And I click RFX.AddVendorSupplierStatusArrow
@@ -74,7 +77,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.LaMiaInbox
     And I wait 10 seconds
     And I go to the next frame
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I wait 3 seconds
+    And I select the 1 element from the DDL LaMiaInbox.DDLProposte
     And I click LaMiaInbox.Approve
     And I wait 30 seconds
    #torno nella homepage
