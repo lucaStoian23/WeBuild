@@ -11,7 +11,7 @@ public class RFX {
     public static final BrowserElement Create = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCreateBtn-inner")});
     public static final BrowserElement AggiungiRDA = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXAddBtn-inner")});
     public static final BrowserElement RFXHeader = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDPageNewRFX-intHeader-BarPH")});
-
+    public static final BrowserElement RFI = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFI')]")});
     public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXProject-vhi")});
     public static final BrowserElement ProjectSearch = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--selectProject-searchField-I")});
     public static final BrowserElement ProjectLents = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXDetail--selectProject-searchField-search")});
@@ -46,6 +46,11 @@ public class RFX {
     public static final BrowserElement PreRFXButton = new BrowserElement(new By[]{By.id("__button22-inner")});
     public static final BrowserElement AddVendorsSearch = new BrowserElement(new By[]{By.id("IDVendorDialog--searchSupplierField-I")});
     public static final BrowserElement AddVendorLents = new BrowserElement(new By[]{By.id("IDVendorDialog--searchSupplierField-search")});
+    public static final BrowserElement AddVendorRegionFilter = new BrowserElement(new By[]{By.id("IDVendorDialog--panSl2-header")});
+    public static final BrowserElement AddVendorSupplierStatusArrow = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-arrow")});
+    public static final BrowserElement AddVendorSupplierStatusUL = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-popup-list-listUl")});
+    public static final BrowserElement AddVendorSearchButton = new BrowserElement(new By[]{By.id("__button48-inner")});
+
     public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.id("__item93-__clone123-selectMulti-CbBg")});
     public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.id("__item93-__clone124-selectMulti-CbBg")});
     public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.id("__item93-__clone125-selectMulti-CbBg")});
@@ -77,7 +82,7 @@ public class RFX {
     public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-inner")});
     public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
 
-    //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")});
+    //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 
 
 }
