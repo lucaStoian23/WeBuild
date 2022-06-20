@@ -15,10 +15,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.CreazioneRFX
     And I go to the next frame
     And I wait 2 seconds
-    And I input in RFX.EventTitle the text <RFXTitle>
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
     #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
@@ -50,19 +50,19 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.MyRFX
     And I go to the next frame
     And I wait 3 seconds
-    #And I click RFX.RFXFirstChoice
     And I open the 0 row insire table MyRfx.RFXtable
-    #Scelgo manualmente RFX creato precedentemente
     #aggiungo i vendor alla list\x
         #aggiungo i vendor alla list
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
-
     And I click RFX.PreRFXButton
+    And I wait 5 seconds
     And I click RFX.AddVendorRegionFilter
+    And I wait 1 seconds
     And I click RFX.AddVendorSupplierStatusArrow
-    And I select the 7 element from the DDL RFX.TenderCommodityUL
+    And I wait 1 seconds
+    And I click RFX.Registered
     And I click RFX.AddVendorSearchButton
     And I wait 3 seconds
     And I click RFX.Vendor1
