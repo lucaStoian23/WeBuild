@@ -20,9 +20,9 @@ And I input in NuovoFornitore.RagioneSociale the text 'mang'
 And I click NuovoFornitore.SearchInfoProviderButton
     #senza BVD
 And I click NuovoFornitore.Annulla
-And I input in NuovoFornitore.PartitaIva the text '1812354'
-      And I input in NuovoFornitore.CodiceFiscale the text 'STNAASD1230ASD'
-      And I input in NuovoFornitore.PartitaIvaCEE the text 'CEE2323CEE2323CDD'
+And I input in NuovoFornitore.PartitaIva the text '562643297'
+      And I input in NuovoFornitore.CodiceFiscale the text 'STNAASD1230DFR'
+      And I input in NuovoFornitore.PartitaIvaCEE the text 'CEE2323CEE2323BRT'
 And I click NuovoFornitore.Crea
 And I wait 2 seconds
 #dopo che ho creato il fornitore in draft torno nella homepage
