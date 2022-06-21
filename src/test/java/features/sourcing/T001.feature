@@ -66,6 +66,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
     And I click RFX.AddVendorSearchButton
     And I wait 3 seconds
+    #And I change the iFrame application-NPPNewRFX-Display
     And I click RFX.Vendor1
     And I click RFX.Vendor2
     And I click RFX.Vendor3
