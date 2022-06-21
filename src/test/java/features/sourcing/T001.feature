@@ -43,6 +43,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.CurrencyLents
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I input in RFX.Budget the text '30000'
+    And I input in RFX.Forecast the text '10000'
     And I click RFX.SaveAsDraft
 
     And I wait 3 seconds
@@ -52,7 +53,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.MyRFX
     And I go to the next frame
     And I wait 6 seconds
-    #And I click RFX.RFXFirstChoice
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
 
@@ -71,49 +71,48 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Vendor2
     And I click RFX.Vendor3
     And I click RFX.AddVendorButton
+    And I wait 2 seconds
     And I click RFX.InviaVendorApprovazione
+    And I wait 5 seconds
       #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
     #apro tile MyInbox e Approve la richiesta di cambio stato
-    And I click HomePage.LaMiaInbox
-    And I wait 10 seconds
-    And I go to the next frame
-    And I wait 3 seconds
-    And I select the 1 element from the DDL LaMiaInbox.DDLProposte
-    And I click LaMiaInbox.Approve
-    And I wait 30 seconds
+   # And I click HomePage.LaMiaInbox
+   # And I wait 10 seconds
+   # And I go to the next frame
+   # And I wait 3 seconds
+   # And I select the 1 element from the DDL LaMiaInbox.DDLProposte
+   # And I click LaMiaInbox.Approve
+   # And I wait 30 seconds
    #torno nella homepage
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
+   # And I switch to defaultContentFrame
+   # And I click General.BackToHome
     And I click HomePage.MyRFX
     And I wait 5 seconds
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
-
+    And I open the 0 row insire table MyRfx.RFXtable
+    #adesso procedo con la valutatione tecnica
+    And I wait 3 seconds
     And I click RFX.TechnicalEvaluations
     And I click RFX.AddTechnicalEvaluation
+    And I wait 3 seconds
     #adesso valuto il primo negativo gli altri positivo
     And I click RFX.EvaluationButton
     And I click RFX.EvaluationArrow
     And I select the 0 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationNote the text 'Negativo'
-    #aggiungo un attach manualmente
-    And I click RFX.EvaluationArrow
     And I wait 3 seconds
     And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
-    And I click RFX.EvaluationAdd
-    And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL
+    And I click RFX.Add
+    And I select the 1 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationNote the text 'Positivo'
-    #aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
-    And I wait 30 seconds
+    And I wait 5 seconds
     And I click RFX.EvaluationButton3
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationNote the text 'Positivo'
-    #aggiungo un attach manualmente
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
     #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
