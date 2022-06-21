@@ -90,22 +90,42 @@ Feature: T001 creazione fornitore procurement and qualification
 #    And I switch to defaultContentFrame
 #    And I click General.BackToHome
 #    And I click HomePage.MyRFX
-    And I wait 5 seconds
+    And I wait 10 seconds
 #    And I go to the next frame
 #    And I click RFX.RFXFirstChoice
 
 #    And I click RFX.TechnicalEvaluations
 #    And I click RFX.AddTechnicalEvaluation
     #adesso valuto il primo negativo gli altri positivo
-    And I click RFX.EvaluationButton
+    And I use the 0 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 0 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Negativo'
+    And I input in RFX.EvaluationTextArea the text 'Negativo'
     #aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
-    And I wait 3 seconds
-    And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
-    And I click RFX.EvaluationAdd
+    And I wait 1 seconds
+    And I put the attachment cucumber.properties inside RFX.AttachmentField
+    And I click RFX.Add
+    And I wait 8 seconds
+    And I use the 1 button of RFX.TechnicalEvaluationTable
+    And I click RFX.EvaluationArrow
+    And I select the 2 element from the DDL RFX.EvaluationUL2
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
+    #aggiungo un attach manualmente
+    And I click RFX.EvaluationArrow
+    And I wait 1 seconds
+    And I put the attachment embedded1.png inside RFX.AttachmentField
+    And I click RFX.Add
+    And I wait 8 seconds
+    And I use the 2 button of RFX.TechnicalEvaluationTable
+    And I click RFX.EvaluationArrow
+    And I select the 2 element from the DDL RFX.EvaluationUL3
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
+    #aggiungo un attach manualmente
+    And I click RFX.EvaluationArrow
+    And I wait 1 seconds
+    And I put the attachment extent.properties inside RFX.AttachmentField
+    And I click RFX.Add
 #    And I click RFX.EvaluationArrow
 #    And I select the 2 element from the DDL RFX.EvaluationUL
 #    And I input in RFX.EvaluationNote the text 'Positivo'

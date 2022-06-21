@@ -16,7 +16,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import test.java.pages.WeBuildLogInPage;
 
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -266,4 +269,23 @@ public class WebStep {
     }
 
 
+    @And("I use the {} button of {}.{}")
+    public void iUseTheButtonOfRFXTechnicalEvaluationTable(Integer n, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
+        WebElement wbl = findEl(el);
+        List<WebElement> elements = wbl.findElements(By.tagName("button"));
+        elements.get(n).click();
+    }
+
+    @And("I put the attachment {} inside {}.{}")
+    public void iPutTheAttachmentCucumberPropertiesInsideRfxAttachmentField(String s, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
+        WebElement wbl = findEl(el);
+        URL res = getClass().getClassLoader().getResource(s);
+        File file = Paths.get(res.toURI()).toFile();
+        String absolutePath = file.getAbsolutePath();
+        wbl.sendKeys(absolutePath);
+    }
 }
