@@ -9,9 +9,9 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I wait 15 seconds
       # Complilazione del form nuovo fornitore richiesta
     And I click NuovoFornitore.NazioneApri
-    And I input in NuovoFornitore.NazioneCerca the text 'Francia'
+    And I input in NuovoFornitore.NazioneCerca the text 'France'
     And I click NuovoFornitore.LenteNazione
-    And I select the 0 element from the DDL NuovoFornitore.NazioneLI
+    And I select the 1 element from the DDL NuovoFornitore.NazioneLI
     And I wait 2 seconds
     And I click NuovoFornitore.FormaGiuridicaButton
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
@@ -77,9 +77,9 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL AnagraficaFornitore.ULNazione
     And I input in AnagraficaFornitore.Indirizzo the text 'Via Prova 100'
     And I input in AnagraficaFornitore.CodicePostale the text '50524'
-    And I input in AnagraficaFornitore.Citta the text 'Parigi'
+    And I input in AnagraficaFornitore.Citta the text 'Paris'
     And I click AnagraficaFornitore.ProvinciaButton
-    And I input in AnagraficaFornitore.ProvinciaInput the text 'Parigi'
+    And I input in AnagraficaFornitore.ProvinciaInput the text 'Paris'
     And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
     And I click AnagraficaFornitore.SalvaUfficioOperativo
     And I wait 2 seconds
@@ -101,4 +101,4 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
     Examples:
       | Piva           |
-      | "009354909460" |
+      | "009319709410" |
