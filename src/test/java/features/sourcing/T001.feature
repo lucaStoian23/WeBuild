@@ -107,6 +107,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Add
     And I select the 1 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationNote the text 'Positivo'
+    And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
     And I click RFX.EvaluationArrow
     And I wait 5 seconds
     And I click RFX.EvaluationButton3
