@@ -3,22 +3,23 @@ Feature: T001 creazione fornitore procurement and qualification
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-   # And I click HomePage.SourcingCockpit
-   # And I go to the next frame
-   # And I wait 15 seconds
+
+    And I click HomePage.SourcingCockpit
+    And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
     #procedo dal punto 8
     #creazione di un RFX
 
     #STEP DA 8 FINO A 16
+
     And I click HomePage.CreazioneRFX
     And I go to the next frame
     And I wait 2 seconds
+    And I input in RFX.EventTitle the text <RFXTitle>
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
-    And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
     #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
@@ -43,16 +44,18 @@ Feature: T001 creazione fornitore procurement and qualification
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I input in RFX.Budget the text '30000'
     And I click RFX.SaveAsDraft
+
     And I wait 3 seconds
      #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I wait 3 seconds
-    And I open the 0 row insire table MyRfx.RFXtable
-    #aggiungo i vendor alla list\x
-        #aggiungo i vendor alla list
+    And I wait 6 seconds
+    #And I click RFX.RFXFirstChoice
+    And I open the 3 row insire table MyRfx.RFXtable
+
+          #aggiungo i vendor alla list
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
@@ -62,8 +65,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.AddVendorLents
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-    And I wait 10 seconds
-    And I scroll up
     And I wait 2 seconds
     And I click RFX.InviteVendors
     And I wait 2 seconds
@@ -74,7 +75,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 2 seconds
     And I click RFX.InviteVendors
     And I wait 2 seconds
-    And I input in RFX.AddVendorsSearch the text 'LINDT & SPRUNGLI S.P.A.'
+    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
     And I click RFX.AddVendorLents
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
@@ -94,8 +95,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I switch to defaultContentFrame
     And I click General.BackToHome
     And I click HomePage.MyRFX
+    And I wait 5 seconds
     And I go to the next frame
     And I click RFX.RFXFirstChoice
+
     And I click RFX.TechnicalEvaluations
     And I click RFX.AddTechnicalEvaluation
     #adesso valuto il primo negativo gli altri positivo
@@ -105,8 +108,9 @@ Feature: T001 creazione fornitore procurement and qualification
     And I input in RFX.EvaluationNote the text 'Negativo'
     #aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
-    And I wait 30 seconds
-    And I click RFX.EvaluationButton2
+    And I wait 3 seconds
+    And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
+    And I click RFX.EvaluationAdd
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationNote the text 'Positivo'
@@ -141,8 +145,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Reccomendations
     And I click RFX.AddRecommendation
     #il sistema anche se ho settato un target price non mi fa inserire reccomendation
-    
-
 
 
 
