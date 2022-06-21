@@ -97,23 +97,35 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.TechnicalEvaluations
     And I click RFX.AddTechnicalEvaluation
     And I wait 3 seconds
-    #adesso valuto il primo negativo gli altri positivo
-    And I click RFX.EvaluationButton
+      #adesso valuto il primo negativo gli altri positivo
+    And I use the 0 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 0 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Negativo'
-    And I wait 3 seconds
-    And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
+    And I input in RFX.EvaluationTextArea the text 'Negativo'
+#aggiungo un attach manualmente
+    And I click RFX.EvaluationArrow
+    And I wait 1 seconds
+    And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I select the 1 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Positivo'
-    And I input in RFX.EvaluationAttachment the text 'D:\WeBuild2\src\test\java\pages\Request.java'
+    And I wait 8 seconds
+    And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I wait 5 seconds
-    And I click RFX.EvaluationButton3
+    And I select the 2 element from the DDL RFX.EvaluationUL2
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
+#aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Positivo'
+    And I wait 1 seconds
+    And I put the attachment embedded1.png inside RFX.AttachmentField
+    And I click RFX.Add
+    And I wait 8 seconds
+    And I use the 2 button of RFX.TechnicalEvaluationTable
+    And I click RFX.EvaluationArrow
+    And I select the 2 element from the DDL RFX.EvaluationUL3
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
+    And I click RFX.EvaluationArrow
+    And I wait 1 seconds
+    And I put the attachment extent.properties inside RFX.AttachmentField
+    And I click RFX.Add
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
     #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)

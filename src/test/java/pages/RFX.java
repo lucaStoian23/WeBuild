@@ -59,17 +59,20 @@ public class RFX {
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Vendors']")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
 
-    public static final BrowserElement TechnicalEvaluationTable = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-listUl")});
+
 
     public static final BrowserElement TechnicalEvaluations = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTechnicalEvaluationTab-anchor-inner']")});
     public static final BrowserElement AddTechnicalEvaluation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Technical Evaluation']")});
+    public static final BrowserElement TechnicalEvaluationTable = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-listUl")});
     public static final BrowserElement EvaluationButton = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-0-inner")});
     public static final BrowserElement EvaluationButton2 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-1-inner")});
     public static final BrowserElement EvaluationButton3 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-2-inner")});
-    public static final BrowserElement EvaluationArrow = new BrowserElement(new By[]{By.xpath("//span[@id='IDTechEvalDialog--IDTechEvalSelect-arrow']")});
-    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.xpath("//ul[@id='__list6']")});
-    public static final BrowserElement EvaluationNote = new BrowserElement(new By[]{By.xpath("//textarea[@id='IDTechEvalDialog--IDTechEvalAttachmentNota-inner']")});
-    public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.xpath("__button23")});
+    public static final BrowserElement EvaluationArrow = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalSelect-arrow")});
+    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.id("__list1")});
+    public static final BrowserElement EvaluationUL2 = new BrowserElement(new By[]{By.id("__list2")});
+    public static final BrowserElement EvaluationUL3 = new BrowserElement(new By[]{By.id("__list3")});
+    public static final BrowserElement EvaluationNote = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalAttachmentNota-inner")});
+    public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.id("__button23")});
     public static final BrowserElement Add = new BrowserElement(new By[]{By.xpath("//*[text()='Add']/ancestor::button")});
     public static final BrowserElement AttachmentField = new BrowserElement(new By[]{By.xpath("//div[@title='Upload the attached file to the server']/input")});
     public static final BrowserElement EvaluationTextArea = new BrowserElement(new By[]{By.xpath("//div[@id='IDTechEvalDialog--IDTechEvalAttachmentNota-content']/textarea")});
@@ -92,6 +95,7 @@ public class RFX {
     public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
 
     public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.xpath("//form[@id='IDTechEvalDialog--fuTechEvalAttachment-fu_form']")});
+
 
     //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 
