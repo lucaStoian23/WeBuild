@@ -4,8 +4,8 @@ Feature: T001 creazione fornitore procurement and qualification
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
 
-    And I click HomePage.SourcingCockpit
-    And I go to the next frameAnd I wait 15 seconds
+    #And I click HomePage.SourcingCockpit
+    #And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
     #procedo dal punto 8
@@ -16,10 +16,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.CreazioneRFX
     And I go to the next frame
     And I wait 2 seconds
-    And I input in RFX.EventTitle the text <RFXTitle>
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
     #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
@@ -53,31 +53,22 @@ Feature: T001 creazione fornitore procurement and qualification
     And I go to the next frame
     And I wait 6 seconds
     #And I click RFX.RFXFirstChoice
-    And I open the 3 row insire table MyRfx.RFXtable
-
+    And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
+
     And I wait 5 seconds
     And I click RFX.PreRFX
     And I wait 5 seconds
     And I click RFX.PreRFXButton
-    And I wait 5 seconds
-    And I input in RFX.AddVendorsSearch the text 'Marco Coroniti SPA'
-    And I click RFX.AddVendorLents
-    And I click RFX.VendorTickAll
-    And I click RFX.AddVendorButton
+    And I click RFX.AddVendorRegionFilter
     And I wait 2 seconds
-    And I click RFX.InviteVendors
-    And I wait 2 seconds
-    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
-    And I click RFX.AddVendorLents
-    And I click RFX.VendorTickAll
-    And I click RFX.AddVendorButton
-    And I wait 2 seconds
-    And I click RFX.InviteVendors
-    And I wait 2 seconds
-    And I input in RFX.AddVendorsSearch the text 'MARELLI SNC DI MARELLI MARCO E DANIELEe'
-    And I click RFX.AddVendorLents
-    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorSupplierStatusArrow
+    And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
+    And I click RFX.AddVendorSearchButton
+    And I wait 3 seconds
+    And I click RFX.Vendor1
+    And I click RFX.Vendor2
+    And I click RFX.Vendor3
     And I click RFX.AddVendorButton
     And I click RFX.InviaVendorApprovazione
       #torno nella homepage
