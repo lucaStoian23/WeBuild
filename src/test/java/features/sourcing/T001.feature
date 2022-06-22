@@ -132,6 +132,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click General.BackToHome
     And I wait 2 seconds
     And I click General.MenuUtente
+    And I wait 1 seconds
     And I click General.Logout
     And I click General.OKMessage
     And I wait 5 seconds

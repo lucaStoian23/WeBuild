@@ -11,6 +11,6 @@ public class General {
     public static final BrowserElement ANNULLA = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Annulla')]")});
     public static final BrowserElement BackButton = new BrowserElement(new By[]{By.xpath("//*[@id=\"backBtn\"]")});
     public static final BrowserElement MenuUtente = new BrowserElement(new By[]{By.xpath("//span[@id='meAreaHeaderButton']")});
-    public static final BrowserElement Logout = new BrowserElement(new By[]{By.xpath("//div[text()='Sign Out'])});")});
+    public static final BrowserElement Logout = new BrowserElement(new By[]{By.id("__list0-4-logoutBtn-content")});
     public static final BrowserElement LogInAgain = new BrowserElement(new By[]{By.xpath("//span[@id='__button0-content']")});
 }
