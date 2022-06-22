@@ -96,10 +96,15 @@ public class RFX {
     public static final BrowserElement EventDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpdescription-inner']")});
     public static final BrowserElement EventTargetPrice = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpvalue-inner']")});
     public static final BrowserElement EventTargetAddButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='_IDTargetPriceCTAButtonSave-BDI-content']")});
-    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailPublishBtn-BDI-content']")});
+    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Publish']")});
 
     public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-BDI-content']")});
     public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Recommendation']")});
+    public static final BrowserElement ReccomentationNote = new BrowserElement(new By[]{By.xpath("//textarea[@id='__area1-inner']")});
+    public static final BrowserElement CreateReccomendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Create']")});
+    public static final BrowserElement ReccomendationTbody = new BrowserElement(new By[]{By.xpath("//tbody[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTable-tblBody']")});
+
+    //textarea[@id='__area1-inner']
 
     public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.xpath("//form[@id='IDTechEvalDialog--fuTechEvalAttachment-fu_form']")});
 

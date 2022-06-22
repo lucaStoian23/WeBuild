@@ -114,7 +114,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 8 seconds
+    And I wait 5 seconds
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL2
@@ -123,7 +123,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment embedded1.png inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 8 seconds
+    And I wait 5 seconds
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL3
@@ -214,8 +214,15 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.PublishButton
     And I wait 3 seconds
     #Recommendation
-    #And I click RFX.Reccomendations
-    #And I click RFX.AddRecommendation
+    And I click RFX.Reccomendations
+    And I check that RFX.AddRecommendation is displayed
+    And I click RFX.AddRecommendation
+    And I input in RFX.ReccomentationNote the text 'Test Nota'
+    And I check that RFX.CreateReccomendation is displayed
+    And I click RFX.CreateReccomendation
+    #And I search the supplier 'Draft' in the tbody RFX.ReccomendationTbody
+#Sezioni mancanti a causa dei primi step non attivi
+
     #il sistema anche se ho settato un target price non mi fa inserire reccomendation
 
 

@@ -242,6 +242,7 @@ public class WebStep {
         element.click();
     }
 
+
     @And("I go to the next frame")
     public void iGoToTheNextFrame() {
         Util.driver.switchTo().frame(Util.driver.findElement(By.tagName("iframe")));
