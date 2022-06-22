@@ -68,31 +68,31 @@ public class RFX {
     public static final BrowserElement EvaluationButton2 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-1-inner")});
     public static final BrowserElement EvaluationButton3 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-2-inner")});
     public static final BrowserElement EvaluationArrow = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalSelect-arrow")});
-    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.id("__list1")});
-    public static final BrowserElement EvaluationUL2 = new BrowserElement(new By[]{By.id("__list2")});
-    public static final BrowserElement EvaluationUL3 = new BrowserElement(new By[]{By.id("__list3")});
+    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.xpath("//ul[@id='__list6']")});
+    public static final BrowserElement EvaluationUL2 = new BrowserElement(new By[]{By.xpath("//ul[@id='__list7']")});
+    public static final BrowserElement EvaluationUL3 = new BrowserElement(new By[]{By.xpath("//ul[@id='__list8']")});
     public static final BrowserElement EvaluationNote = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalAttachmentNota-inner")});
     public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.id("__button23")});
     public static final BrowserElement Add = new BrowserElement(new By[]{By.xpath("//*[text()='Add']/ancestor::button")});
     public static final BrowserElement AttachmentField = new BrowserElement(new By[]{By.xpath("//div[@title='Upload the attached file to the server']/input")});
     public static final BrowserElement EvaluationTextArea = new BrowserElement(new By[]{By.xpath("//div[@id='IDTechEvalDialog--IDTechEvalAttachmentNota-content']/textarea")});
     public static final BrowserElement EvaluationAttach = new BrowserElement(new By[]{By.id("IDTechEvalDialog--fuTechEvalAttachment-fu_button-inner")});
-    public static final BrowserElement CompletaValutazioneTecnica = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
+    public static final BrowserElement CompletaValutazioneTecnica = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner']")});
 
 
 
-    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-inner")});
-    public static final BrowserElement AddTargetPrice = new BrowserElement(new By[]{By.id("__button48-inner")});
-    public static final BrowserElement TheEventEnds = new BrowserElement(new By[]{By.id("__picker2-inner")}); //15 June 2022 - 02:24 PM GMT+02:00
-    public static final BrowserElement EventNotes = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXTPnote2-inner")});
-    public static final BrowserElement AddEventItem = new BrowserElement(new By[]{By.id("__button50-inner")});
-    public static final BrowserElement EventDescription = new BrowserElement(new By[]{By.id("id_tpdescription-inner")});
-    public static final BrowserElement EventTargetPrice = new BrowserElement(new By[]{By.id("id_tpvalue-inner")});
-    public static final BrowserElement EventTargetAddButton = new BrowserElement(new By[]{By.id("_IDTargetPriceCTAButtonSave-inner")});
-    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailPublishBtn-inner")});
+    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-inner']")});
+    public static final BrowserElement AddTargetPrice = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add target price']")});
+    public static final BrowserElement TheEventEnds = new BrowserElement(new By[]{By.xpath("//input[@id='__picker4-inner']")}); //15 June 2022 - 02:24 PM GMT+02:00
+    public static final BrowserElement EventNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='application-NPPMyRFX-Display-component---NewRFXDetail--RFXTPnote2-inner']")});
+    public static final BrowserElement AddEventItem = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add an item']")});
+    public static final BrowserElement EventDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpdescription-inner']")});
+    public static final BrowserElement EventTargetPrice = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpvalue-inner']")});
+    public static final BrowserElement EventTargetAddButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='_IDTargetPriceCTAButtonSave-BDI-content']")});
+    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailPublishBtn-BDI-content']")});
 
-    public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-inner")});
-    public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
+    public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-BDI-content']")});
+    public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Recommendation']")});
 
     public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.xpath("//form[@id='IDTechEvalDialog--fuTechEvalAttachment-fu_form']")});
 

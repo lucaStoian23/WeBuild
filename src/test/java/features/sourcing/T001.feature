@@ -102,7 +102,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.EvaluationArrow
     And I select the 0 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Negativo'
-#aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
     And I wait 1 seconds
     And I put the attachment cucumber.properties inside RFX.AttachmentField
@@ -112,7 +111,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL2
     And I input in RFX.EvaluationTextArea the text 'Positivo'
-#aggiungo un attach manualmente
     And I click RFX.EvaluationArrow
     And I wait 1 seconds
     And I put the attachment embedded1.png inside RFX.AttachmentField
@@ -126,6 +124,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment extent.properties inside RFX.AttachmentField
     And I click RFX.Add
+    And I wait 5 seconds
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
     #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
@@ -135,7 +134,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click General.BackToHome
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
+    And I open the 0 row insire table MyRfx.RFXtable
     And I click RFX.TargetPrice
     And I click RFX.AddTargetPrice
     And I input in RFX.TheEventEnds the text '15 June 2022 - 02:24 PM GMT+02:00'
@@ -146,8 +145,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.PublishButton
     And I wait 3 seconds
     #Recommendation
-    And I click RFX.Reccomendations
-    And I click RFX.AddRecommendation
+    #And I click RFX.Reccomendations
+    #And I click RFX.AddRecommendation
     #il sistema anche se ho settato un target price non mi fa inserire reccomendation
 
 
