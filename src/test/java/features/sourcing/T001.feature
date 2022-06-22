@@ -73,8 +73,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Vendor2
     And I click RFX.Vendor3
     And I click RFX.AddVendorButton
-    And I check that RFX.InviaVendorApprovazione is displayed
-    And I click RFX.InviaVendorApprovazione
+    And I wait 5 seconds
       #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
@@ -98,10 +97,13 @@ Feature: T001 creazione fornitore procurement and qualification
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
     And I wait 1 seconds
+    And I check that RFX.InviaVendorListPerApprovazione is displayed and enabled
+    And I click RFX.InviaVendorListPerApprovazione
+    And I wait 3 seconds
     And I check that RFX.TechnicalEvaluations is displayed
     And I click RFX.TechnicalEvaluations
+    And I check that RFX.AddTechnicalEvaluation is displayed
     And I click RFX.AddTechnicalEvaluation
-    And I wait 3 seconds
       #adesso valuto il primo negativo gli altri positivo
     And I check that RFX.TechnicalEvaluationTable is displayed
     And I use the 0 button of RFX.TechnicalEvaluationTable
@@ -200,8 +202,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I check that RFX.TargetPrice is displayed
     And I click RFX.TargetPrice
-    And I click RFX.InviaVendorListPerApprovazione
-    And I check that RFX.AddTargetPrice is displayed
+    And I click RFX.CompletaValutazioneTecnica
+    And I check that RFX.AddTargetPrice is displayed and enabled
     And I click RFX.AddTargetPrice
     And I check that RFX.EventNotes is displayed
     And I input in RFX.TheEventEnds the text '15 June 2022 - 02:24 PM GMT+02:00'
