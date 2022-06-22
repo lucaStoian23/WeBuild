@@ -53,8 +53,8 @@ public class RFX {
     public static final BrowserElement AddVendorSupplierStatusUL = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-popup-list-listUl")});
     public static final BrowserElement AddVendorSearchButton = new BrowserElement(new By[]{By.id("__button48-inner")});
 
-    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='COOP. SRLS']/../..//input/..")});
-    public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.xpath("//span[text()='ETHIOPIAN AIRLINES']/../..//input/..")});
+    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='ABJ SISTEMI S.R.L.']/../..//input/..")});
+    public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.xpath("//span[text()='Marco Coroniti SPA']/../..//input/..")});
     public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.xpath("//span[contains(text(),'PIO CESARE')]/../..//input/..")});
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Vendors']")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
@@ -81,7 +81,7 @@ public class RFX {
 
 
 
-    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-inner']")});
+    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-content']")});
     public static final BrowserElement AddTargetPrice = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add target price']")});
     public static final BrowserElement TheEventEnds = new BrowserElement(new By[]{By.xpath("//input[@id='__picker4-inner']")}); //15 June 2022 - 02:24 PM GMT+02:00
     public static final BrowserElement EventNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='application-NPPMyRFX-Display-component---NewRFXDetail--RFXTPnote2-inner']")});

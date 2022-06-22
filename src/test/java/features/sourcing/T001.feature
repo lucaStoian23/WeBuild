@@ -127,6 +127,53 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 5 seconds
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
+    #processo di logout e login con primo account
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I wait 2 seconds
+    And I click General.MenuUtente
+    And I click General.Logout
+    And I click General.OKMessage
+    And I wait 5 seconds
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
+    And I click HomePage.MyRFX
+    And I go to the next frame
+    And I wait 6 seconds
+    And I open the 0 row insire table MyRfx.RFXtable
+    #Logout e login per il secondo account
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I wait 2 seconds
+    And I click General.MenuUtente
+    And I click General.Logout
+    And I click General.OKMessage
+    And I wait 5 seconds
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
+    And I click HomePage.MyRFX
+    And I go to the next frame
+    And I wait 6 seconds
+    And I open the 0 row insire table MyRfx.RFXtable
+    #inserire step 32/33
+    #logout e login terzo account
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I wait 2 seconds
+    And I click General.MenuUtente
+    And I click General.Logout
+    And I click General.OKMessage
+    And I wait 5 seconds
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
+    And I click HomePage.MyRFX
+    And I go to the next frame
+    And I wait 6 seconds
+    And I open the 0 row insire table MyRfx.RFXtable
+    #inserire step 32/33
     #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
     #Sezione Target Setting da eseguire con buyer
     #torno nella homepage
@@ -134,8 +181,12 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click General.BackToHome
     And I click HomePage.MyRFX
     And I go to the next frame
+    And I wait 6 seconds
     And I open the 0 row insire table MyRfx.RFXtable
+    And I wait 3 seconds
     And I click RFX.TargetPrice
+    And I click RFX.CompletaValutazioneTecnica
+    And I wait 10 seconds
     And I click RFX.AddTargetPrice
     And I input in RFX.TheEventEnds the text '15 June 2022 - 02:24 PM GMT+02:00'
     And I input in RFX.EventNotes the text 'Test'
