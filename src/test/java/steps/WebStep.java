@@ -167,8 +167,10 @@ public class WebStep {
     @And("I log_in NEW with username {} and password {}")
     public void iLog_inSupplier(String username, String password) throws Exception {
         Util.getURL("https://tst-tdrwhi6n.launchpad.cfapps.eu20.hana.ondemand.com/site/npp");
+        findEl(WeBuildLogInPage.LogInField).clear();
         findEl(WeBuildLogInPage.LogInField).sendKeys(username);
         findEl(WeBuildLogInPage.Continuare).click();
+        findEl(WeBuildLogInPage.PasswordFieldSupplier).clear();
         findEl(WeBuildLogInPage.PasswordFieldSupplier).sendKeys(password);
         findEl(WeBuildLogInPage.SignInSupplier).click();
         Util.createCodFiscale();

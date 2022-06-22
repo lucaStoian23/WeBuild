@@ -5,6 +5,13 @@ import org.openqa.selenium.By;
 
 public class RFX {
     //(new By[]{By.xpath("")});
+    // controlli di pagina
+    public static final BrowserElement RFXCreationPageCheck = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDPageNewRFX-title-inner']")});
+    public static final BrowserElement RFCCreationDeatailCheck = new BrowserElement(new By[]{By.xpath("//span[@id='__title0-inner']")});
+    public static final BrowserElement RFCCreationDetailCheckFromRFXTable = new BrowserElement(new By[]{By.xpath("//span[@id='__title6-inner']")});
+    public static final BrowserElement MyRFXCheckPage = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---MyRFX--IDMyRFXST-header-inner']")});
+    public static final BrowserElement AddVendorsPageCheck = new BrowserElement(new By[]{By.xpath("//h2[@id='IDVendorDialog--IDRFXVendorDialog-title']")});
+
     public static final BrowserElement EventTitle = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXDescription-inner']")});
     public static final BrowserElement TenderCommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-arrow']")});
     public static final BrowserElement TenderCommodityUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-popup-list-listUl']")});
