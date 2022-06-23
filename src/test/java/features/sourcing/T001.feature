@@ -8,7 +8,7 @@ Feature: T001 creazione fornitore procurement and qualification
     #And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
-    #procedo dal punto 8
+    #procedo dal punto 08
     #creazione di un RFX
 
     #STEP DA 8 FINO A 16
