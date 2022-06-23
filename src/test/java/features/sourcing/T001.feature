@@ -139,16 +139,17 @@ Feature: T001 creazione fornitore procurement and qualification
    # #processo di logout e login con primo account
    # And I switch to defaultContentFrame
    # And I click General.BackToHome
-   # And I wait 2 seconds
+   # And I check that General.MenuUtente is displayed
    # And I click General.MenuUtente
    # And I wait 1 seconds
    # And I click General.Logout
    # And I click General.OKMessage
-   # And I wait 5 seconds
+   # And I check that General.LogInAgain is displayed
    # And I click General.LogInAgain
    # And I wait 5 seconds
 #
    # Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
+   # And I check that HomePage.MyRFX is displayed
    # And I click HomePage.MyRFX
    # And I go to the next frame
    # And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
@@ -156,12 +157,13 @@ Feature: T001 creazione fornitore procurement and qualification
    # And I open the 0 row insire table MyRfx.RFXtable
     #Logout e login per il secondo account<
   #  And I switch to defaultContentFrame
+    # And I check that General.BackToHome is displayed
   #  And I click General.BackToHome
   #  And I wait 2 seconds
   #  And I click General.MenuUtente
   #  And I click General.Logout
   #  And I click General.OKMessage
-  #  And I wait 5 seconds
+    # And I check that General.LogInAgain is displayed
   #  And I click General.LogInAgain
   #  And I wait 5 seconds
   #  Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
@@ -223,7 +225,7 @@ Feature: T001 creazione fornitore procurement and qualification
     #And I search the supplier 'Draft' in the tbody RFX.ReccomendationTbody
 #Sezioni mancanti a causa dei primi step non attivi
 
-    #il sistema anche se ho settato un target price non mi fa inserire reccomendation
+
 
 
 
