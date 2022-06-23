@@ -80,12 +80,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that the element HomePage.HeaderHome contains the text 'Home'
     #apro tile MyInbox e Approve la richiesta di cambio stato
    # And I click HomePage.LaMiaInbox
-   # And I wait 10 seconds
    # And I go to the next frame
-   # And I wait 3 seconds
+   # And I check that LaMiaInbox.DDLProposte is displayed
    # And I select the 1 element from the DDL LaMiaInbox.DDLProposte
    # And I click LaMiaInbox.Approve
-   # And I wait 30 seconds
    #torno nella homepage
    # And I switch to defaultContentFrame
    # And I click General.BackToHome
@@ -114,7 +112,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 5 seconds
+    And I check that RFX.Add is not displayed
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL2
@@ -123,7 +121,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment embedded1.png inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 5 seconds
+    And I check that RFX.Add is not displayed
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL3
@@ -132,7 +130,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment extent.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 5 seconds
+    And I check that RFX.Add is not displayed
     And I check that RFX.CompletaValutazioneTecnica is displayed
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
