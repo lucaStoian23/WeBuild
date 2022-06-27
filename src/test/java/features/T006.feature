@@ -8,14 +8,14 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click HomePage.NuovoFornitore
     #And I change the iFrame application-NPPSupplierCreation-Display
     And I go to the next frame
-    And I check that NuovoFornitore.NazioneApri is displayed and enabled
-    And I click NuovoFornitore.NazioneApri
+    And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
     And I check that NuovoFornitore.ULFormeGiuridiche is displayed
-    And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
+    And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
