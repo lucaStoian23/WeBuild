@@ -9,6 +9,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     #And I change the iFrame application-NPPSupplierCreation-Display
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And I wait 1 seconds
     And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra

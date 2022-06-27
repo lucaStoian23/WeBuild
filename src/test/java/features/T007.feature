@@ -6,9 +6,9 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
-    #And I change the iFrame application-NPPSupplierCreation-Display
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And I wait 1 seconds
     And I click NuovoFornitore.NazioneButton
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
@@ -31,7 +31,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click NuovoFornitore.Crea
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
-    And I check that InfoFornitore.TornaIndietro is displayed
+    And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
     And I check that HomePage.Fornitori is displayed
     And I click HomePage.Fornitori
@@ -42,7 +42,6 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
 #inizio ad editare l'anagrafica fornitore
-    And I go to the next frame
     And I check that AnagraficaFornitore.LinguaggioButton is displayed
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
@@ -130,5 +129,5 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
 
     Examples:
-      | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale |
-      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"105924610070"| "stefano92"    |
+      | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale       |
+      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"10592461007i"| "CompagniaTest07"    |
