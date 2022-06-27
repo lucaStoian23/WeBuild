@@ -6,7 +6,6 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
-    #And I change the iFrame application-NPPSupplierCreation-Display
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And I wait 1 seconds
