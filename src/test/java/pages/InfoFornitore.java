@@ -17,8 +17,8 @@ public class InfoFornitore {
     public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--_IDGenButton1")});
     public static final BrowserElement AggiungiCommodity = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew")});
     public static final BrowserElement AggiungiProgetti = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content")});
-    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.id("iCommodity-arrow")});
-    public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.id("iCommodity-popup-list-listUl")});
+    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='iCommodity-arrow']")});
+    public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.xpath("//ul[@id='iCommodity-popup-list-listUl']")});
     public static final BrowserElement RegistraCommodity = new BrowserElement(new By[]{By.id("id_SupplierAddCommodityFormCTAButtonSave")});
     public static final BrowserElement ProgettoArrow = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-arrow")});
     public static final BrowserElement ULProgetto = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-popup-list-listUl")});
@@ -35,7 +35,7 @@ public class InfoFornitore {
     public static final BrowserElement ULContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-popup-list-listUl")});
     public static final BrowserElement SalvaContatto = new BrowserElement(new By[]{By.id("_IDSupplierCreateFormCTAButtonSave")});
 
-    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.id("shell-header-logo")});
+    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.xpath("//a[@id='shell-header-logo']")});
 
     public static final BrowserElement OperationalOffices = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Offices')]")});
 
