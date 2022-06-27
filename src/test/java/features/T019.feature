@@ -23,7 +23,6 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     And I click NuovoFornitore.Crea
     And I click InfoFornitore.OK
-    And I wait 10 seconds
      #Inserimento dati nella scheda
     And I click AnagraficaFornitore.LinguaggioButton
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
