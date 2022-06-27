@@ -4,7 +4,7 @@ import main.java.Elements.BrowserElement;
 import org.openqa.selenium.By;
 
 public class NuovoFornitore {
-    public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iNation-content']//div")});
+    public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iNation-vhi']")});
     public static final BrowserElement NazioneCerca = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-I']")});
     public static final BrowserElement Clessidra = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-search']")});
     public static final BrowserElement NazioneTrovata = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--_IDGenStandardListItem1-__clone20")});
@@ -24,7 +24,6 @@ public class NuovoFornitore {
     public static final BrowserElement FormaGiuridicaPrimaScelta = new BrowserElement(new By[]{By.id("__item0")});
     public static final BrowserElement SupplierSoloProcurement = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Solo Procurement')]")});
     public static final BrowserElement LenteNazione = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--selectDialog-searchField-search")});
-    public static final BrowserElement NazioneApri = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreation--iNation-vhi")});
     public static final BrowserElement SelezionaGermania = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'DE')]")});
     public static final BrowserElement SelezionaAustralia = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'AU')]")});
 
