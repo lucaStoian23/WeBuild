@@ -5,6 +5,13 @@ import org.openqa.selenium.By;
 
 public class RFX {
     //(new By[]{By.xpath("")});
+    // controlli di pagina
+    public static final BrowserElement RFXCreationPageCheck = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDPageNewRFX-title-inner']")});
+    public static final BrowserElement RFCCreationDeatailCheck = new BrowserElement(new By[]{By.xpath("//span[@id='__title0-inner']")});
+    public static final BrowserElement RFCCreationDetailCheckFromRFXTable = new BrowserElement(new By[]{By.xpath("//span[@id='__title6-inner']")});
+    public static final BrowserElement MyRFXCheckPage = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---MyRFX--IDMyRFXST-header-inner']")});
+    public static final BrowserElement AddVendorsPageCheck = new BrowserElement(new By[]{By.xpath("//h2[@id='IDVendorDialog--IDRFXVendorDialog-title']")});
+
     public static final BrowserElement EventTitle = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXDescription-inner']")});
     public static final BrowserElement TenderCommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-arrow']")});
     public static final BrowserElement TenderCommodityUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-popup-list-listUl']")});
@@ -34,7 +41,7 @@ public class RFX {
     public static final BrowserElement CurrencyUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPNewRFX-Display-component---NewRFXDetail--selectCurrency-list-listUl']")});
     public static final BrowserElement Budget = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXBudget-inner']")});
     public static final BrowserElement Forecast = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXForecast-inner']")});
-    public static final BrowserElement InviaVendorListPerApprovazione = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-BDI-content']")});
+    public static final BrowserElement InviaVendorListPerApprovazione = new BrowserElement(new By[]{By.xpath("//bdi[text()='Invia vendor list per approvazione']")});
     public static final BrowserElement WorkflowPreRFX = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXDetailWorkflowTestBtn-BDI-content']")});
     public static final BrowserElement SaveAsDraft = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDSaveGenDataDraftBtn-BDI-content']")});
 
@@ -53,47 +60,54 @@ public class RFX {
     public static final BrowserElement AddVendorSupplierStatusUL = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-popup-list-listUl")});
     public static final BrowserElement AddVendorSearchButton = new BrowserElement(new By[]{By.id("__button48-inner")});
 
-    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='COOP. SRLS']/../..//input/..")});
-    public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.xpath("//span[text()='ETHIOPIAN AIRLINES']/../..//input/..")});
+    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='ABJ SISTEMI S.R.L.']/../..//input/..")});
+    public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.xpath("//span[text()='Marco Coroniti SPA']/../..//input/..")});
     public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.xpath("//span[contains(text(),'PIO CESARE')]/../..//input/..")});
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Vendors']")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
 
-    public static final BrowserElement TechnicalEvaluationTable = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-listUl")});
 
-    public static final BrowserElement TechnicalEvaluations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTechnicalEvaluationTab-anchor-content")});
-    public static final BrowserElement AddTechnicalEvaluation = new BrowserElement(new By[]{By.id("__button5-inner")});
+
+    public static final BrowserElement TechnicalEvaluations = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTechnicalEvaluationTab-anchor-inner']")});
+    public static final BrowserElement AddTechnicalEvaluation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Technical Evaluation']")});
+    public static final BrowserElement TechnicalEvaluationTable = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-listUl")});
     public static final BrowserElement EvaluationButton = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-0-inner")});
     public static final BrowserElement EvaluationButton2 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-1-inner")});
     public static final BrowserElement EvaluationButton3 = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--_IDGenTEButtonEvaluation-application-NPPMyRFX-Display-component---NewRFXDetail--RFXtechEvalTable-2-inner")});
     public static final BrowserElement EvaluationArrow = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalSelect-arrow")});
-    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.id("__list1")});
-    public static final BrowserElement EvaluationUL2 = new BrowserElement(new By[]{By.id("__list2")});
-    public static final BrowserElement EvaluationUL3 = new BrowserElement(new By[]{By.id("__list3")});
+    public static final BrowserElement EvaluationUL = new BrowserElement(new By[]{By.xpath("//ul[@id='__list6']")});
+    public static final BrowserElement EvaluationUL2 = new BrowserElement(new By[]{By.xpath("//ul[@id='__list7']")});
+    public static final BrowserElement EvaluationUL3 = new BrowserElement(new By[]{By.xpath("//ul[@id='__list8']")});
     public static final BrowserElement EvaluationNote = new BrowserElement(new By[]{By.id("IDTechEvalDialog--IDTechEvalAttachmentNota-inner")});
     public static final BrowserElement EvaluationAdd = new BrowserElement(new By[]{By.id("__button23")});
     public static final BrowserElement Add = new BrowserElement(new By[]{By.xpath("//*[text()='Add']/ancestor::button")});
     public static final BrowserElement AttachmentField = new BrowserElement(new By[]{By.xpath("//div[@title='Upload the attached file to the server']/input")});
     public static final BrowserElement EvaluationTextArea = new BrowserElement(new By[]{By.xpath("//div[@id='IDTechEvalDialog--IDTechEvalAttachmentNota-content']/textarea")});
     public static final BrowserElement EvaluationAttach = new BrowserElement(new By[]{By.id("IDTechEvalDialog--fuTechEvalAttachment-fu_button-inner")});
-    public static final BrowserElement CompletaValutazioneTecnica = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
+    public static final BrowserElement CompletaValutazioneTecnica = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner']")});
 
 
 
-    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-inner")});
-    public static final BrowserElement AddTargetPrice = new BrowserElement(new By[]{By.id("__button48-inner")});
-    public static final BrowserElement TheEventEnds = new BrowserElement(new By[]{By.id("__picker2-inner")}); //15 June 2022 - 02:24 PM GMT+02:00
-    public static final BrowserElement EventNotes = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--RFXTPnote2-inner")});
-    public static final BrowserElement AddEventItem = new BrowserElement(new By[]{By.id("__button50-inner")});
-    public static final BrowserElement EventDescription = new BrowserElement(new By[]{By.id("id_tpdescription-inner")});
-    public static final BrowserElement EventTargetPrice = new BrowserElement(new By[]{By.id("id_tpvalue-inner")});
-    public static final BrowserElement EventTargetAddButton = new BrowserElement(new By[]{By.id("_IDTargetPriceCTAButtonSave-inner")});
-    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailPublishBtn-inner")});
+    public static final BrowserElement TargetPrice = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTargetPriceTab-anchor-content']")});
+    public static final BrowserElement AddTargetPrice = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add target price']")});
+    public static final BrowserElement TheEventEnds = new BrowserElement(new By[]{By.xpath("//input[@id='__picker4-inner']")}); //15 June 2022 - 02:24 PM GMT+02:00
+    public static final BrowserElement EventNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='application-NPPMyRFX-Display-component---NewRFXDetail--RFXTPnote2-inner']")});
+    public static final BrowserElement AddEventItem = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add an item']")});
+    public static final BrowserElement EventDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpdescription-inner']")});
+    public static final BrowserElement EventTargetPrice = new BrowserElement(new By[]{By.xpath("//input[@id='id_tpvalue-inner']")});
+    public static final BrowserElement EventTargetAddButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='_IDTargetPriceCTAButtonSave-BDI-content']")});
+    public static final BrowserElement PublishButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Publish']")});
 
-    public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-inner")});
-    public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.id("__button54-inner")});
+    public static final BrowserElement Reccomendations = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTab-anchor-BDI-content']")});
+    public static final BrowserElement AddRecommendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Recommendation']")});
+    public static final BrowserElement ReccomentationNote = new BrowserElement(new By[]{By.xpath("//textarea[@id='__area1-inner']")});
+    public static final BrowserElement CreateReccomendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Create']")});
+    public static final BrowserElement ReccomendationTbody = new BrowserElement(new By[]{By.xpath("//tbody[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTable-tblBody']")});
 
-    public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.id("IDTechEvalDialog--fuTechEvalAttachment-fu")});
+    //textarea[@id='__area1-inner']
+
+    public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.xpath("//form[@id='IDTechEvalDialog--fuTechEvalAttachment-fu_form']")});
+
 
     //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 

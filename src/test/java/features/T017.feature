@@ -3,19 +3,20 @@ Feature: T017 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-    And I wait 25 seconds
+    And I wait 3 seconds
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I wait 15 seconds
       # Complilazione del form nuovo fornitore richiesta
     And I click NuovoFornitore.NazioneApri
-    And I input in NuovoFornitore.NazioneCerca the text 'Francia'
+    And I input in NuovoFornitore.NazioneCerca the text 'France'
     And I click NuovoFornitore.LenteNazione
-    And I select the 0 element from the DDL NuovoFornitore.NazioneLI
+    And I select the 1 element from the DDL NuovoFornitore.NazioneLI
     And I wait 2 seconds
     And I click NuovoFornitore.FormaGiuridicaButton
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
+    And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I click NuovoFornitore.SupplierSoloProcurement
     #Cambiare Fornitore iva per problema duplicati
     And I input in NuovoFornitore.RagioneSociale the text <RagSociale>
@@ -73,13 +74,13 @@ Feature: T017 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
-    And I input in AnagraficaFornitore.NazioneInput the text 'Francia'
+    And I input in AnagraficaFornitore.NazioneInput the text 'France'
     And I select the 0 element from the DDL AnagraficaFornitore.ULNazione
     And I input in AnagraficaFornitore.Indirizzo the text 'Via Prova 100'
     And I input in AnagraficaFornitore.CodicePostale the text '50524'
-    And I input in AnagraficaFornitore.Citta the text 'Parigi'
+    And I input in AnagraficaFornitore.Citta the text 'Paris'
     And I click AnagraficaFornitore.ProvinciaButton
-    And I input in AnagraficaFornitore.ProvinciaInput the text 'Parigi'
+    And I input in AnagraficaFornitore.ProvinciaInput the text 'Paris'
     And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
     And I click AnagraficaFornitore.SalvaUfficioOperativo
     And I wait 2 seconds
@@ -103,4 +104,4 @@ Feature: T017 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
     Examples:
       | RagSociale     |
-      | "Test"         |
+      | "Mario Rossi"  |
