@@ -112,7 +112,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I check that RFX.Add is not displayed
+    And I wait 3 seconds
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL2
@@ -121,7 +121,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment embedded1.png inside RFX.AttachmentField
     And I click RFX.Add
-    And I check that RFX.Add is not displayed
+    And I wait 3 seconds
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I select the 2 element from the DDL RFX.EvaluationUL3
@@ -130,7 +130,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I put the attachment extent.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I check that RFX.Add is not displayed
+    And I wait 3 seconds
     And I check that RFX.CompletaValutazioneTecnica is displayed
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
