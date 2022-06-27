@@ -35,7 +35,7 @@ public class InfoFornitore {
     public static final BrowserElement ULContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-popup-list-listUl")});
     public static final BrowserElement SalvaContatto = new BrowserElement(new By[]{By.id("_IDSupplierCreateFormCTAButtonSave")});
 
-    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.id("shell-header-logo")});
+    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.xpath("//a[@id='shell-header-logo']")});
 
     public static final BrowserElement OperationalOffices = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Offices')]")});
 

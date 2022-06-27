@@ -68,4 +68,25 @@ public static final BrowserElement TabCommodityAndProject = new BrowserElement(n
 public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--request-anchor")});
     public static final BrowserElement AddRequest = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--_IDGenButton1")});
 
+
+    //tab attachement
+    public static final BrowserElement AddDocumentButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPFornitori-Display-component---SupplierCreationData--attachmentblock-Collapsed--_IDGenButton1-BDI-content' and text()='Add document']")});
+    public static final BrowserElement AttachmentName = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateAttachmentInputName-inner']")});
+    public static final BrowserElement AttachmentDescription = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateAttachmentInputDescription-inner']")});
+
+    public static final BrowserElement AttachmentFileName = new BrowserElement(new By[]{By.xpath("//input[ @type='file' and @id='fuSupplierCreate-fu']")});
+    public static final BrowserElement AttachFileButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='fuSupplierCreate-fu_button-BDI-content']")});
+
+    public static final BrowserElement AddButton = new BrowserElement(new By[]{By.xpath("//button//bdi[@id='_IDSupplierCreateAttachmentCTAButtonSave-BDI-content']")});
+    public static final BrowserElement CancelButton = new BrowserElement(new By[]{By.xpath("//button//bdi[@id='_IDSupplierCreateAttachmentCTAButtonCancel-BDI-content']")});
+
+
+    public static final BrowserElement CreateOperationOficeSerachInputField = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-I']")});
+    public static final BrowserElement CreateOperationOficeSerachLenteIngradimento = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-search']")});
+
+    public static final BrowserElement Status = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
+
+
+
+
 }
