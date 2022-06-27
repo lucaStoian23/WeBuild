@@ -29,13 +29,19 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
     And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
     And I click NuovoFornitore.Crea
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I check that General.OKMessage is not displayed
 #dopo che ho creato il fornitore in draft torno nella homepage
+
+     #torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
     And I check that HomePage.Fornitori is displayed
     And I click HomePage.Fornitori
     And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed and enabled
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
@@ -45,7 +51,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that AnagraficaFornitore.LinguaggioButton is displayed
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
-    And I select the 1 element from the DDL AnagraficaFornitore.ULLinguaggio
+    And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
     And I click AnagraficaFornitore.ValutaDiRiferimentoButton
     And I check that AnagraficaFornitore.ValutaDiRiferimentoCerca is displayed
     And I input in AnagraficaFornitore.ValutaDiRiferimentoCerca the text 'EUR'
@@ -53,6 +59,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I select the 0 element from the DDL AnagraficaFornitore.ValutaDiRiferimentoDDL
     And I input in AnagraficaFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
+
  #aggiungo una commodity
     And I check that AnagraficaFornitore.AggiungiCommodity is displayed
     And I click AnagraficaFornitore.AggiungiCommodity
@@ -62,6 +69,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click AnagraficaFornitore.RegistraCommodity
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
 #Aggiungo un progetto
     And I check that AnagraficaFornitore.AggiungiProgetti is displayed and enabled
     And I click AnagraficaFornitore.AggiungiProgetti
@@ -71,6 +79,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click AnagraficaFornitore.RegistraProgetto
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
 #creo il contatto primario
     And I check that AnagraficaFornitore.NuovoContatto is displayed and enabled
     And I click AnagraficaFornitore.NuovoContatto
@@ -97,6 +106,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
+
     #devo prendere una country italiana
     And I check that AnagraficaFornitore.CreateOperationOficeSerachInputField is displayed
     And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
@@ -111,9 +121,27 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
+    # allego un file
+    And I check that AnagraficaFornitore.AddDocumentButton is displayed
+    And I click AnagraficaFornitore.AddDocumentButton
+    And I click AnagraficaFornitore.AttachmentName
+    And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
+    And I check that AnagraficaFornitore.AttachmentDescription is displayed
+    And I click AnagraficaFornitore.AttachmentDescription
+    And I input in AnagraficaFornitore.AttachmentDescription the text 'File Test Allegato'
+    And I check that AnagraficaFornitore.AttachmentFileName is displayed
+    And I put the attachment cucumber.properties inside RFX.AttachmentField
+    And I check that AnagraficaFornitore.AddButton is displayed
+    And I click AnagraficaFornitore.AddButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+    #invio della proposta
+
     And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
     And I click AnagraficaFornitore.InviaProposta
     And I check that the element AnagraficaFornitore.Status contains the text 'Proposed'
+
       #ora devo accettare la proposta
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
@@ -130,4 +158,4 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
     Examples:
       | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale       |
-      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"10592461007i"| "CompagniaTest07"    |
+      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"009139309470"| "CompagniaTest07"    |
