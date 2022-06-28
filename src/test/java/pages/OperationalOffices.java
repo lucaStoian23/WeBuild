@@ -37,9 +37,9 @@ public class OperationalOffices {
     //Aggiunta Comodidities and Projects
     public static final BrowserElement ChooseCommoditiesAndProjects = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Commodities and Projects')]")});
     public static final BrowserElement AddCommoditiesButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew-inner")});
-    public static final BrowserElement AddCommoditiesArrow = new BrowserElement(new By[]{By.id("id_SupplierAddCommodityFormSelectCommodity-arrow")});
-    public static final BrowserElement CommoditiesUL = new BrowserElement(new By[]{By.id("id_SupplierAddCommodityFormSelectCommodity-popup-list-listUl")});
-    public static final BrowserElement CommoditiesRegister = new BrowserElement(new By[]{By.id("id_SupplierAddCommodityFormCTAButtonSave-inner")});
+    public static final BrowserElement AddCommoditiesArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierAddCommodityFormSelectCommodity-arrow']")});
+    public static final BrowserElement CommoditiesUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierAddCommodityFormSelectCommodity-popup-list-listUl']")});
+    public static final BrowserElement CommoditiesRegister = new BrowserElement(new By[]{By.xpath("//button//span[@id='id_SupplierAddCommodityFormCTAButtonSave-inner']")});
     public static final BrowserElement AddProjectButton = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-inner")});
     public static final BrowserElement AddProjectArrow = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-arrow")});
     public static final BrowserElement ProjectUL = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-popup-list-listUl")});

@@ -19,7 +19,7 @@ public class AnagraficaFornitore {
     public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--_IDGenButton1']")});
     public static final BrowserElement AggiungiCommodity = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew']")});
     public static final BrowserElement AggiungiProgetti = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content']")});
-    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='iCommodity-arrow']")});
+    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierAddCommodityFormSelectCommodity-arrow']")});
     public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.xpath("//ul[@id='iCommodity-popup-list-listUl']")});
     public static final BrowserElement RegistraCommodity = new BrowserElement(new By[]{By.xpath("//button[@id='id_SupplierAddCommodityFormCTAButtonSave']")});
     public static final BrowserElement ProgettoArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierAddProjectFormSelectProject-arrow']")});
@@ -36,15 +36,12 @@ public class AnagraficaFornitore {
     public static final BrowserElement ArrowContattoPrimario = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateFormPC-arrow']")});
     public static final BrowserElement ULContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-popup-list-listUl")});
     public static final BrowserElement SalvaContatto = new BrowserElement(new By[]{By.xpath("//button[@id='_IDSupplierCreateFormCTAButtonSave']")});
-
     public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.xpath("//a[@id='shell-header-logo']")});
-
-
-    public static final BrowserElement NuovoUfficioOperativo = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--idNewUsrBtn")});
-    public static final BrowserElement NomeUfficioOperativo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputName-inner")});
-    public static final BrowserElement TipoIndirizzoArrow = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-arrow")});
-    public static final BrowserElement ULTipoIndirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-popup-list-listUl")});
-    public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.id("iOfficeNation-vhi")});
+    public static final BrowserElement NuovoUfficioOperativo = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--idNewUsrBtn']")});
+    public static final BrowserElement NomeUfficioOperativo = new BrowserElement(new By[]{By.xpath("//input[@id='SupplierCreateOfficeInputName-inner']")});
+    public static final BrowserElement TipoIndirizzoArrow = new BrowserElement(new By[]{By.xpath("//span[@id='SupplierCreateOfficeComboTipo-arrow']")});
+    public static final BrowserElement ULTipoIndirizzo = new BrowserElement(new By[]{By.xpath("//ul[@id='SupplierCreateOfficeComboTipo-popup-list-listUl']")});
+    public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.xpath("//span[@id='iOfficeNation-vhi' and @role='button']")});
     public static final BrowserElement NazioneInput = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-I]")});
     public static final BrowserElement ULNazione = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-list-listUl")});
     public static final BrowserElement Indirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputAddress-inner")});
