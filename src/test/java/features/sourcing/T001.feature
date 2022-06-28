@@ -95,6 +95,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
     And I wait 1 seconds
+    And I check that RFX.InviaVendorListPerApprovazione is displayed
     And I check that RFX.InviaVendorListPerApprovazione is displayed and enabled
     And I click RFX.InviaVendorListPerApprovazione
     And I wait 3 seconds
