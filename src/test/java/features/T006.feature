@@ -4,53 +4,42 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-    And I wait 6 seconds
+    And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
-    And I wait 3 seconds
-    And I change the iFrame application-NPPSupplierCreation-Display
-    #And I go to the next frame
+    And I go to the next frame
+    And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And I wait 1 seconds
     And I click NuovoFornitore.NazioneButton
-    And I input in NuovoFornitore.NazioneCerca the text 'Italia'
+    And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
-    And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
+    And I check that NuovoFornitore.ULFormeGiuridiche is displayed
+    And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
+    And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'mang'
+    And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
+    And I check that NuovoFornitore.ULFornitoriTrovati is displayed
+    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
-    And I click NuovoFornitore.Annulla
-    #And I input the codFiscale in NuovoFornitore.PartitaIva
-    And I input in NuovoFornitore.PartitaIva the text <codFiscale>
-    And I input in NuovoFornitore.CodiceFiscale the text 'STNAASD1230ASD'
-    And I input in NuovoFornitore.PartitaIvaCEE the text 'CEE2323CEE2323CDD'
     And I click NuovoFornitore.Crea
-    And I wait 5 seconds
+    And I check that InfoFornitore.LinguaggioButton is displayed
     And I click InfoFornitore.LinguaggioButton
-    And I wait 1 seconds
+    And I check that InfoFornitore.ULLinguaggio is displayed
     And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
     And I click InfoFornitore.ValutaDiRiferimentoButton
-    And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'eur'
+    And I check that InfoFornitore.ValutaDiRiferimentoCerca is displayed
+    And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'EUR'
     And I click InfoFornitore.ValutaDiRiferimentoLente
     And I select the 0 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
+    And I check that InfoFornitore.SitoWeb is displayed
     And I input in InfoFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
-    And I wait 1 seconds
- #aggiungo una commodity
-    And I click InfoFornitore.AggiungiCommodity
-    And I click InfoFornitore.CommodityArrow
-    And I select the 0 element from the DDL InfoFornitore.ULCommodity
-    And I click InfoFornitore.RegistraCommodity
-    And I click General.OKMessage
-#Aggiungo un progetto
-    And I click InfoFornitore.AggiungiProgetti
-    And I click InfoFornitore.ProgettoArrow
-    And I select the 0 element from the DDL InfoFornitore.ULProgetto
-    And I click InfoFornitore.RegistraProgetto
-    And I click General.OKMessage
-#creo il contatto primario
+    #creo il contatto primario
+    And I check that InfoFornitore.NuovoContatto is displayed
     And I click InfoFornitore.NuovoContatto
     And I input in InfoFornitore.NomeContatto the text 'Marco'
     And I input in InfoFornitore.CognomeContatto the text 'Rossi'
@@ -63,6 +52,25 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click InfoFornitore.ArrowContattoPrimario
     And I select the 0 element from the DDL InfoFornitore.ULContattoPrimario
     And I click InfoFornitore.SalvaContatto
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+ #aggiungo una commodity
+    And I check that InfoFornitore.AggiungiCommodity is displayed
+    And I click InfoFornitore.AggiungiCommodity
+    And I click InfoFornitore.CommodityArrow
+    And I check that InfoFornitore.ULCommodity is displayed
+    And I select the 0 element from the DDL InfoFornitore.ULCommodity
+    And I click InfoFornitore.RegistraCommodity
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+#Aggiungo un progetto
+    And I check that InfoFornitore.AggiungiProgetti is displayed
+    And I click InfoFornitore.AggiungiProgetti
+    And I click InfoFornitore.ProgettoArrow
+    And I check that InfoFornitore.ULProgetto is displayed
+    And I select the 0 element from the DDL InfoFornitore.ULProgetto
+    And I click InfoFornitore.RegistraProgetto
+    And I check that General.OKMessage is displayed
     And I click General.OKMessage
 #Aggiungo l'ufficio operativo
     And I click InfoFornitore.NuovoUfficioOperativo
@@ -77,17 +85,30 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click InfoFornitore.ProvinciaButton
     And I select the 0 element from the DDL InfoFornitore.ULProvincia
     And I click InfoFornitore.SalvaUfficioOperativo
-    And I wait 3 seconds
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+# allego un file
+    And I check that AnagraficaFornitore.AddDocumentButton is displayed
+    And I click AnagraficaFornitore.AddDocumentButton
+    And I click AnagraficaFornitore.AttachmentName
+    And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
+    And I check that AnagraficaFornitore.AttachmentDescription is displayed
+    And I click AnagraficaFornitore.AttachmentDescription
+    And I input in AnagraficaFornitore.AttachmentDescription the text 'File Test Allegato'
+    And I check that AnagraficaFornitore.AttachmentFileName is displayed
+    And I put the attachment cucumber.properties inside RFX.AttachmentField
+    And I check that AnagraficaFornitore.AddButton is displayed
+    And I click AnagraficaFornitore.AddButton
+    And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
     #invio la proposta
-    And I wait 4 seconds
+    And I check that InfoFornitore.InviaProposta is displayed and enabled
     And I click InfoFornitore.InviaProposta
-    And I wait 6 seconds
+    And I check that General.OKMessage is displayed
     And I click General.OKMessage
-    #controllo il nuovo status
-    And I wait 10 seconds
-    And I check that the element AnagraficaFornitore.Status contains the text 'Registrato AFC'
+    #errore manca fornitore cee
+    #step 15 non presente il tap Eco-fincancial non si procede
 
    #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
@@ -97,7 +118,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I wait 10 seconds
     And I go to the next frame
     #And I input the codFiscale in Fornitori.SearchBox
-    And I input in Fornitori.SearchBox the text <codFiscale>
+    And I input in Fornitori.SearchBox the text <CodiceFiscale>
     And I click Fornitori.SearchIcon
     And I wait 5 seconds
     And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
@@ -168,5 +189,5 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I go to the next frame
 
     Examples:
-      | codFiscale     |
-      | "009358409420" |
+      | CodiceFiscale | PartitaIvaCEE | PartitaIva | RagioneSociale |
+      | "STFPLA81H16E792D" | "CEE2323CEE2323CDC" | "002098009556" | "CocaCola" |

@@ -179,5 +179,5 @@ And I click General.OKMessage
 
 
     Examples:
-      | CodiceFiscale     |PartitaIvaCEE|PartitaIva|RagioneSociale|
+      | CodiceFiscale     |PartitaIvaCEE|PartitaIva|RagioneSociale
       | "STFPLA81H16B714B"  |"" |"009367409430"|"Astefano16"|
