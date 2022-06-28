@@ -6,11 +6,16 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
 
-    And I wait 2 seconds
 And I click HomePage.NuovoFornitore
-And I wait 2 seconds
-And I change the iFrame application-NPPSupplierCreation-Display
-And I click NuovoFornitore.NazioneButton
+    And I go to the next frame
+    And I check that NuovoFornitore.NazioneApri is displayed and enabled
+    And I wait 1 seconds
+      #And I click NuovoFornitore.NazioneButton
+And I click NuovoFornitore.NazioneApri
+
+And I check that NuovoFornitore.NazioneCerca is displayed
+And I click NuovoFornitore.NazioneCerca
+
 And I input in NuovoFornitore.NazioneCerca the text 'Italy'
 And I click NuovoFornitore.Clessidra
 And I click NuovoFornitore.NazioneTrovata
@@ -56,7 +61,7 @@ And I wait 1 seconds
  #aggiungo una commodity
 And I check that AnagraficaFornitore.AggiungiCommodity is displayed
 And I click AnagraficaFornitore.AggiungiCommodity
-And I click AnagraficaFornitore.CommodityArrow
+And I click InfoFornitore.CommodityArrow
 And I select the 0 element from the DDL InfoFornitore.ULCommodity
 And I click AnagraficaFornitore.RegistraCommodity
 And I click General.OKMessage
@@ -64,7 +69,7 @@ And I click General.OKMessage
 And I click AnagraficaFornitore.AggiungiProgetti
 And I click AnagraficaFornitore.ProgettoArrow
 And I select the 0 element from the DDL InfoFornitore.ULProgetto
-And I click AnagraficaFornitore.RegistraProgetto
+And I click InfoFornitore.RegistraProgetto
 And I click General.OKMessage
 #creo il contatto primario
 And I click AnagraficaFornitore.NuovoContatto
@@ -153,28 +158,26 @@ And I click General.OKMessage
       And I click AnagraficaFornitore.ArrowRuolo
       And I select the 0 element from the DDL InfoFornitore.ULRuolo
       And I click AnagraficaFornitore.ArrowTimezone
-      And I select the 0 element from the DDL InfoFornitore.ULTimezone
-      And I click AnagraficaFornitore.ArrowContattoPrimario
-      And I select the 1 element from the DDL InfoFornitore.ULContattoPrimario
+      And I select the 13 element from the DDL InfoFornitore.ULTimezone
       And I click AnagraficaFornitore.SalvaContatto
       And I click General.OKMessage
      #aggiungo una commodity
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
-    And I click AnagraficaFornitore.CommodityArrow
-    And I select the 1 element from the DDL InfoFornitore.ULCommodity
-    And I click AnagraficaFornitore.RegistraCommodity
+    And I click OperationalOffices.AddCommoditiesArrow
+    And I select the 1 element from the DDL OperationalOffices.CommoditiesUL
+    And I click OperationalOffices.CommoditiesRegister
     And I click General.OKMessage
  #aggiungo un progetto
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
-    And I click AnagraficaFornitore.CommodityArrow
-    And I select the 1 element from the DDL InfoFornitore.ULCommodity
-    And I click AnagraficaFornitore.RegistraCommodity
+    And I click OperationalOffices.AddProjectArrow
+    And I select the 1 element from the DDL OperationalOffices.ProjectUL
+    And I click OperationalOffices.ProjectRegister
     And I click General.OKMessage
     #manca tab eco financial
 
 
     Examples:
       | CodiceFiscale     |PartitaIvaCEE|PartitaIva|RagioneSociale|
-      | "STFPLA81H16E792B"  |"" |"002098009456"|"stefano92"|
+      | "STFPLA81H16B714B"  |"" |"009367409430"|"Astefano16"|
