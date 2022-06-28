@@ -158,4 +158,4 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
     Examples:
       | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale       |
-      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"009139309470"| "CompagniaTest07"    |
+      | "STFPLA81H16E792R" |"CEE2323CEE2323CAC" |"009139309475"| "CompagniaTest4251"    |

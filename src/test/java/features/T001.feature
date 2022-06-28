@@ -177,4 +177,4 @@ And I click General.OKMessage
 
     Examples:
       | CodiceFiscale     |PartitaIvaCEE|PartitaIva|RagioneSociale|
-      | "STFPLA81H16E792B"  |"" |"002098009456"|"stefano92"|
+      | "STFPLA81H16E792A"  |"CEE2323CEE2323CDC" |"002098009458"|"stefano5725"|
