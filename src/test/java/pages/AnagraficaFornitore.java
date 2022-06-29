@@ -54,7 +54,7 @@ public class AnagraficaFornitore {
 
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
 //tab contact
-    public static final BrowserElement TabContact = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--contact-anchor")});
+    public static final BrowserElement TabContact = new BrowserElement(new By[]{By.xpath("//bdi[text()='Contact']")});
     public static final BrowserElement NuovoContattoTabContact = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--contactblock-Collapsed--idNewUsrBtn")});
 //tab commodities and projects
 public static final BrowserElement TabCommodityAndProject = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierData--ObjectPageLayout-anchBar-application-NPPFornitori-Display-component---SupplierData--commodityproject-anchor")});
@@ -70,18 +70,17 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement AddDocumentButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPFornitori-Display-component---SupplierCreationData--attachmentblock-Collapsed--_IDGenButton1-BDI-content' and text()='Add document']")});
     public static final BrowserElement AttachmentName = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateAttachmentInputName-inner']")});
     public static final BrowserElement AttachmentDescription = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateAttachmentInputDescription-inner']")});
-
     public static final BrowserElement AttachmentFileName = new BrowserElement(new By[]{By.xpath("//input[ @type='file' and @id='fuSupplierCreate-fu']")});
     public static final BrowserElement AttachFileButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='fuSupplierCreate-fu_button-BDI-content']")});
-
     public static final BrowserElement AddButton = new BrowserElement(new By[]{By.xpath("//button//bdi[@id='_IDSupplierCreateAttachmentCTAButtonSave-BDI-content']")});
     public static final BrowserElement CancelButton = new BrowserElement(new By[]{By.xpath("//button//bdi[@id='_IDSupplierCreateAttachmentCTAButtonCancel-BDI-content']")});
-
-
     public static final BrowserElement CreateOperationOficeSerachInputField = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-I']")});
     public static final BrowserElement CreateOperationOficeSerachLenteIngradimento = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-search']")});
-
     public static final BrowserElement Status = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
+
+    // Tab Attachement in update
+    public static final BrowserElement AttachmentsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Attachments']")});
+    public static final BrowserElement AddDocumentButtonUpdate = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPFornitori-Display-component---SupplierData--attachmentblock-Collapsed--_IDGenButton1-BDI-content' and text()='Add document']")});
 
 // Eco Finance
     public static final BrowserElement EcoFinanceTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Eco Finance']")});
@@ -90,7 +89,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement CurrencyArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateEcofinInputCurrency-arrow']")});
     public static final BrowserElement CurrencyUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateEcofinInputCurrency-popup-list-listUl']")});
     public static final BrowserElement IncomeOperationsLastAvailableYear = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev0-inner']")});
-    public static final BrowserElement IncomeOperationsYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev1']")});
+    public static final BrowserElement IncomeOperationsYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev1-inner']")});
     public static final BrowserElement IncomeOperationsYear2 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev2-inner']")});
     public static final BrowserElement EBITDALastAvailableYear = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitda0-inner']")});
     public static final BrowserElement EBITDAYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitda1-inner']")});
