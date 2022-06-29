@@ -19,7 +19,7 @@ public class AnagraficaFornitore {
     public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--_IDGenButton1']")});
     public static final BrowserElement AggiungiCommodity = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew']")});
     public static final BrowserElement AggiungiProgetti = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content']")});
-    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierAddCommodityFormSelectCommodity-arrow']")});
+    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='iCommodity-arrow']")});
     public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.xpath("//ul[@id='iCommodity-popup-list-listUl']")});
     public static final BrowserElement RegistraCommodity = new BrowserElement(new By[]{By.xpath("//button[@id='id_SupplierAddCommodityFormCTAButtonSave']")});
     public static final BrowserElement ProgettoArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierAddProjectFormSelectProject-arrow']")});
@@ -83,7 +83,21 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
 
     public static final BrowserElement Status = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
 
-
-
+// Eco Finance
+    public static final BrowserElement EcoFinanceTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Eco Finance']")});
+    public static final BrowserElement EcoFinanceAddData = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add data']")});
+    public static final BrowserElement EvaluationYear = new BrowserElement(new By[]{By.xpath("//input[@id='_IDGenMaskInput1-inner']")});
+    public static final BrowserElement CurrencyArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateEcofinInputCurrency-arrow']")});
+    public static final BrowserElement CurrencyUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateEcofinInputCurrency-popup-list-listUl']")});
+    public static final BrowserElement IncomeOperationsLastAvailableYear = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev0-inner']")});
+    public static final BrowserElement IncomeOperationsYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev1']")});
+    public static final BrowserElement IncomeOperationsYear2 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputOperatRev2-inner']")});
+    public static final BrowserElement EBITDALastAvailableYear = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitda0-inner']")});
+    public static final BrowserElement EBITDAYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitda1-inner']")});
+    public static final BrowserElement EBITDAYear2 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitda2-inner']")});
+    public static final BrowserElement EBITDAMarginLastAvailableYear = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitdaMargin0-inner']")});
+    public static final BrowserElement EBITDAMarginYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitdaMargin1-inner']")});
+    public static final BrowserElement EBITDAMarginYear2 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitdaMargin2-inner']")});
+    public static final BrowserElement SaveButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
 
 }
