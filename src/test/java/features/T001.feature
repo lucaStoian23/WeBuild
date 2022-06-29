@@ -157,7 +157,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
        #Modifico gli elementi in anagrafica
-
+      And I wait 2 seconds
       And I check that AnagraficaFornitore.TabContact is displayed
       And I click AnagraficaFornitore.TabContact
       And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
@@ -201,8 +201,10 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click General.OKMessage
 
     # allego un file
-    And I check that AnagraficaFornitore.AddDocumentButton is displayed
-    And I click AnagraficaFornitore.AddDocumentButton
+    And I check that AnagraficaFornitore.AttachmentsTab is displayed
+    And I click AnagraficaFornitore.AttachmentsTab
+    And I check that AnagraficaFornitore.AddDocumentButtonUpdate is displayed
+    And I click AnagraficaFornitore.AddDocumentButtonUpdate
     And I click AnagraficaFornitore.AttachmentName
     And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
     And I check that AnagraficaFornitore.AttachmentDescription is displayed
@@ -221,9 +223,11 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceAddData
     And I check that AnagraficaFornitore.EvaluationYear is displayed
-    And I input in AnagraficaFornitore.EvaluationYear the text '2021'
     And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
+    And I click AnagraficaFornitore.EvaluationYear
+    And I wait 1 seconds
+    And I input in AnagraficaFornitore.EvaluationYear the text '2021' without clear
     And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
     And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'
     And I check that AnagraficaFornitore.IncomeOperationsYear1 is displayed
@@ -244,8 +248,10 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.EBITDAMarginYear2 the text '40000'
     And I check that AnagraficaFornitore.SaveButton is displayed
     And I click AnagraficaFornitore.SaveButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
 
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale  |
-      | "STFSLA71H23AB5h9F" | ""            | "009365609450"  | "BstoQajava"    |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
+      | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "ProfasfeFinalensi"    |

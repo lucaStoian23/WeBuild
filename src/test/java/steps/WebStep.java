@@ -83,6 +83,14 @@ public class WebStep {
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
     }
+    @And("I input in {}.{} the text {string} without clear")
+    public void insertText1(String className, String fieldName, String text) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        findEl(el).sendKeys(text);
+        String step =  new Throwable().getStackTrace()[0].getMethodName();
+        Util.takeScreenShot();
+    }
 
     @And("I check that the element {}.{} contains the text {string}")
     public void checkText(String className, String fieldName, String text) throws Exception {
