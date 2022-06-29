@@ -199,6 +199,22 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click OperationalOffices.ProjectRegister
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
+    # allego un file
+    And I check that AnagraficaFornitore.AddDocumentButton is displayed
+    And I click AnagraficaFornitore.AddDocumentButton
+    And I click AnagraficaFornitore.AttachmentName
+    And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
+    And I check that AnagraficaFornitore.AttachmentDescription is displayed
+    And I click AnagraficaFornitore.AttachmentDescription
+    And I input in AnagraficaFornitore.AttachmentDescription the text 'File Test Allegato'
+    And I check that AnagraficaFornitore.AttachmentFileName is displayed
+    And I put the attachment pdf-config.yaml inside RFX.AttachmentField
+    And I check that AnagraficaFornitore.AddButton is displayed
+    And I click AnagraficaFornitore.AddButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
     #manca tab eco financial
 
 
