@@ -33,8 +33,6 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click General.OKMessage
     And I check that General.OKMessage is not displayed
 #dopo che ho creato il fornitore in draft torno nella homepage
-
-     #torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
