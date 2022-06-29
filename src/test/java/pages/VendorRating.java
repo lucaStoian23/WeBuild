@@ -42,11 +42,13 @@ public class VendorRating {
     public static final BrowserElement CampaignEndDate = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPVendorRating-Display-component---VendorCreationCampaign--endDate-inner']")});
 
     public static final BrowserElement CampaignAddUser = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add User']")});
+    public static final BrowserElement CampaignUserSearch = new BrowserElement(new By[]{By.xpath("//input[@id='id_CampaignAdduserFormSelect-inner']")});
     public static final BrowserElement CampaignUserArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_CampaignAdduserFormSelect-arrow']")});
     public static final BrowserElement CampaignUserUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_CampaignAdduserFormSelect-popup-list-listUl']")});
     public static final BrowserElement CampaignSurveyArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_CampaignAddSurveyFormSelect-arrow']")});
-   // public static final BrowserElement CampaignSurveyUL = new BrowserElement(new By[]{By.xpath("//span[@id='']")});
+    public static final BrowserElement CampaignSurveyUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_CampaignAddSurveyFormSelect-popup-list-listUl']")});
     public static final BrowserElement NewUserRegister = new BrowserElement(new By[]{By.xpath("//bdi[text()='Register']")});
+    public static final BrowserElement NewUserCancel = new BrowserElement(new By[]{By.xpath("//bdi[text()='Cancel']")});
 
     public static final BrowserElement StartCampaign = new BrowserElement(new By[]{By.xpath("//bdi[text()='Start Campaign']")});
     public static final BrowserElement SaveDraft = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save Draft']")});
