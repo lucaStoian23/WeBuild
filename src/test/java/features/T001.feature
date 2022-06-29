@@ -1,6 +1,6 @@
 Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE, SENZA BVD
 
-  Scenario Outline: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE, SENZA BVD
+  Scenario Outline: T001 VendorManager Nuovo Fornitore Italiano
 #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -10,8 +10,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
-    And I wait 1 seconds
+    And I wait 2 seconds
     And I click NuovoFornitore.NazioneButton
+    And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
@@ -24,7 +25,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click NuovoFornitore.SearchInfoProviderButton
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     #senza BVD
-    And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     And I click NuovoFornitore.Annulla
     #la partita iva deve essere un numero reale
     And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
@@ -33,9 +33,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
-    And I check that General.OKMessage is not displayed
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
+    And I wait 3 seconds
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
     And I check that HomePage.Fornitori is displayed
@@ -48,7 +48,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
 #inizio ad editare l'anagrafica fornitore
-    And I check that AnagraficaFornitore.LinguaggioButton is displayed
+    And I wait 2 seconds
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
@@ -101,7 +101,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
+    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
 
    #devo prendere una country italiana
@@ -215,9 +215,37 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    #manca tab eco financial
+    # Aggiungo i dati ad Eco Finance
+    And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceTab
+    And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceAddData
+    And I check that AnagraficaFornitore.EvaluationYear is displayed
+    And I input in AnagraficaFornitore.EvaluationYear the text '2021'
+    And I click AnagraficaFornitore.CurrencyArrow
+    And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
+    And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear1 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear1 the text '10000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear2 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear2 the text '20000'
+    And I check that AnagraficaFornitore.EBITDALastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDALastAvailableYear the text '20000'
+    And I check that AnagraficaFornitore.EBITDAYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear1 the text '10000'
+    And I check that AnagraficaFornitore.EBITDAYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear2 the text '30000'
+    And I check that AnagraficaFornitore.EBITDAMarginLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginLastAvailableYear the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear1 the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear2 the text '40000'
+    And I check that AnagraficaFornitore.SaveButton is displayed
+    And I click AnagraficaFornitore.SaveButton
 
 
     Examples:
-      | CodiceFiscale     |PartitaIvaCEE|PartitaIva|RagioneSociale
-      | "STFPLA81H16B714B"  |"" |"009367409430"|"Astefano16"|
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale  |
+      | "STFSLA71H23AB5h9F" | ""            | "009365609450"  | "BstoQajava"    |
