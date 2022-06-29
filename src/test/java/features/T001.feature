@@ -101,7 +101,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
+    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
 
    #devo prendere una country italiana
@@ -247,5 +247,5 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
 
     Examples:
-      | CodiceFiscale         | PartitaIvaCEE | PartitaIva      | RagioneSociale  |
-      | "STFPLA81HnjjB5l9F"   | ""            | "009k6740h444"  | "AstehanSa"     |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale  |
+      | "STFSLA71H23AB5h9F" | ""            | "009365609450"  | "BstoQajava"    |
