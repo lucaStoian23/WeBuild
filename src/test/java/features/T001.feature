@@ -3,12 +3,13 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
   Scenario Outline: T001 VendorManager Nuovo Fornitore Italiano
 #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-  #  And I delete the supplier with <PartitaIva>
+
+    And I delete the supplier with <PartitaIva>
+
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
 
     And I check that HomePage.NuovoFornitore is displayed
-
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
@@ -104,7 +105,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     #Aggiungo l'ufficio operativo
     And I check that AnagraficaFornitore.NuovoUfficioOperativo is displayed and enabled
     And I click AnagraficaFornitore.NuovoUfficioOperativo
-    And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'CocaCola'
+    And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
     And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
@@ -257,7 +258,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    And I delete the supplier with <PartitaIva>
+
 
 
     Examples:

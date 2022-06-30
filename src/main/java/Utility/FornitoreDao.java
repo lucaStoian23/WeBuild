@@ -34,12 +34,14 @@ public class FornitoreDao {
             System.out.println("Connection to HANA successful!");
             PreparedStatement pst =connection.prepareStatement("DELETE from npp.fornitore where PARIVA = ?");
             pst.setString(1, PARIVA);
-            pst.executeQuery();
 
-           // while(result.next()){
-               // System.out.println(result.getString(1) + " " + result.getString(2) + " " + result.getString(3) + " " + result.getString(4) + " " + result.getString(5) + " " + result.getString(6));
-          //  }
+                pst.executeUpdate();
 
+/*
+            while(result.next()){
+                System.out.println(result.getString(1) + " " + result.getString(2) + " " + result.getString(3) + " " + result.getString(4) + " " + result.getString(5) + " " + result.getString(6));
+            }
+*/
 
 
         }
@@ -51,6 +53,6 @@ public class FornitoreDao {
 
 
     public static void main(String[] argv) throws SQLException {
-        deleteFornitoreWithPariva("053873906500");
+        deleteFornitoreWithPariva("01122740044");
     }
 }
