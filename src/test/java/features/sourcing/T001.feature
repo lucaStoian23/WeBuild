@@ -2,7 +2,7 @@ Feature: T001 creazione fornitore procurement and qualification
   Scenario Outline: T001 creazione fornitore procurement and qualification
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
     #And I click HomePage.SourcingCockpit
     #And I go to the next frameAnd I wait 15 seconds

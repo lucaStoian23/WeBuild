@@ -33,6 +33,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I wait 3 seconds
@@ -59,6 +60,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I select the 0 element from the DDL AnagraficaFornitore.ValutaDiRiferimentoDDL
     And I input in AnagraficaFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
+
  #aggiungo una commodity
     And I check that AnagraficaFornitore.AggiungiCommodity is displayed
     And I click AnagraficaFornitore.AggiungiCommodity
@@ -68,6 +70,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click AnagraficaFornitore.RegistraCommodity
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
 #Aggiungo un progetto
     And I check that AnagraficaFornitore.AggiungiProgetti is displayed and enabled
     And I click AnagraficaFornitore.AggiungiProgetti
@@ -77,6 +80,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click AnagraficaFornitore.RegistraProgetto
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
 #creo il contatto primario
     And I check that AnagraficaFornitore.NuovoContatto is displayed and enabled
     And I click AnagraficaFornitore.NuovoContatto
@@ -133,7 +137,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-        #invio della proposta
+    #invio della proposta e controllo registrato AFC
 
     And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
     And I click AnagraficaFornitore.InviaProposta
