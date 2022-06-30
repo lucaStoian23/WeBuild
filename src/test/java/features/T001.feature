@@ -3,6 +3,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
   Scenario Outline: T001 VendorManager Nuovo Fornitore Italiano
 #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
+
+    And I delete the supplier with <PartitaIva>
+
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
 
@@ -255,7 +258,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    And I delete the supplier with <PartitaIva>
+
 
 
     Examples:
