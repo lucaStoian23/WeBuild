@@ -238,6 +238,8 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click General.OKMessage
 
 
+
+
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
       | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "ProfasfeFinalensi"    |
