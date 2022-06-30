@@ -1,6 +1,6 @@
 Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE, CON BVD
 
-  Scenario: T002 VendorManager Nuovo Fornitore
+  Scenario Outline: T002 VendorManager Nuovo Fornitore
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
