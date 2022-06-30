@@ -278,6 +278,7 @@ public class WebStep {
 
     }
 
+
     @And("I open the {} row insire table {}.{}")
     public void iOpenTheFirstRowInsireTable(Integer n, String className, String fieldName) throws Exception {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
@@ -314,5 +315,15 @@ public class WebStep {
         System.out.println("iva: " + PARIVA);
         FornitoreDao.deleteFornitoreWithPariva(PARIVA);
         System.out.println("Fornitore eliminato con successo");
+    }
+
+    @And("I save the PIva from {}.{}")
+    public void iSaveThePIva(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        String val = findEl(el).getAttribute("value");
+        System.setProperty("PIva", val);
+        System.out.println("PIva");
+
     }
 }
