@@ -251,7 +251,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
+    And I delete the supplier with <PartitaIva>
+
 
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
-      | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "ProfasfeFinalensi"    |
+      | "STFSLA41A73AB5h9Z" | ""            | "053873906500"  | "ProsasfeFdinalensi"    |

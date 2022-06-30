@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import main.java.Base.Functions_Settings;
 import main.java.Elements.BrowserElement;
+import main.java.Utility.FornitoreDao;
 import main.java.Utility.Util;
 import org.apache.log4j.Logger; import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.*;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -305,5 +307,12 @@ public class WebStep {
         File file = Paths.get(res.toURI()).toFile();
         String absolutePath = file.getAbsolutePath();
         wbl.sendKeys(absolutePath);
+    }
+
+    @And("I delete the supplier with {}")
+    public void iDeleteTheSupplierWithPartitaIva(String PARIVA) throws SQLException {
+        System.out.println("iva: " + PARIVA);
+        FornitoreDao.deleteFornitoreWithPariva(PARIVA);
+        System.out.println("Fornitore eliminato con successo");
     }
 }
