@@ -59,11 +59,30 @@ Feature: T005 creazione fornitore procurement and qualification
     And I click RFX.PreRFXButton
     And I click RFX.AddVendorRegionFilter
     And I click RFX.AddVendorSupplierStatusArrow
-    And I select the 7 element from the DDL RFX.TenderCommodityUL
-    And I click RFX.AddVendorSearchButton
-    And I click RFX.Vendor1
-    And I click RFX.Vendor2
-    And I click RFX.Vendor3
+
+    And I input in RFX.InputSearch the text "Thinksys"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "Marco Coroniti SPA"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+    And I check that RFX.InviteVendors is displayed
+    And I wait 2 seconds
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
 #a questo punto bisogna creare un vendor da inserire come quarto elemento (tasto create non presente)
     And I click RFX.AddVendorButton
     And I click RFX.InviaVendorApprovazione

@@ -62,9 +62,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I click RFX.SortDescending
 
-
-
-
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
     And I wait 2 seconds
