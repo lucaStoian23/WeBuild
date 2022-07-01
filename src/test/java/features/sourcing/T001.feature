@@ -62,9 +62,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I click RFX.SortDescending
 
-
-
-
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
     And I wait 2 seconds
@@ -76,33 +73,28 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.AddVendorRegionFilter
     And I check that RFX.AddVendorSupplierStatusArrow is displayed
     And I click RFX.AddVendorSupplierStatusArrow
-  # And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
-  #  And I click RFX.AddVendorSearchButton
 
+#Inserisco i 3 vendor singolarmente
     And I input in RFX.InputSearch the text "Thinksys"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-
+    And I wait 1 seconds
+    And I check that RFX.InviteVendors is displayed
     And I click RFX.InviteVendors
-
     And I check that RFX.InputSearch is displayed
     And I input in RFX.InputSearch the text "Marco Coroniti SPA"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-
     And I check that RFX.InviteVendors is displayed
     And I wait 2 seconds
     And I click RFX.InviteVendors
-
     And I check that RFX.InputSearch is displayed
     And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-
-
 
     And I wait 5 seconds
       #torno nella homepage
@@ -128,8 +120,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that RFX.SortDescending is displayed
     And I wait 1 seconds
     And I click RFX.SortDescending
-
-
 
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
@@ -273,4 +263,4 @@ Feature: T001 creazione fornitore procurement and qualification
 
     Examples:
       | RFXTitle       |
-      | "SeiTu===?" |
+      | "SeiTu===?"    |

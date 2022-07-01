@@ -190,7 +190,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
     And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
     And I click OperationalOffices.AddCommoditiesArrow
-    And I select the 1 element from the DDL OperationalOffices.CommoditiesUL
+    And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
     And I click OperationalOffices.CommoditiesRegister
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
@@ -263,4 +263,4 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
-      | "STFSLA41A73AB5h9Z" | ""            | "053873906500"  | "ProsasfeFdinalensi"    |
+      | "STFSLA41A73AB5h9Z" | ""            | "053873906500"  | "TestVendor001"    |
