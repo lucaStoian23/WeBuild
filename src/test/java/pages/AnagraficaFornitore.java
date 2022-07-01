@@ -52,6 +52,8 @@ public class AnagraficaFornitore {
     public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl")});
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
 
+    public static final BrowserElement PartitaIVASalva = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--partitaiva-inner']")});
+
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
 //tab contact
     public static final BrowserElement TabContact = new BrowserElement(new By[]{By.xpath("//bdi[text()='Contact']")});

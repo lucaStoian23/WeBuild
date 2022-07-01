@@ -322,6 +322,7 @@ public class WebStep {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
         String val = findEl(el).getAttribute("value");
+        val.replaceAll("\"" ,"");
         System.setProperty("PIva", val);
         System.out.println("PIva");
 

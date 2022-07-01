@@ -1,25 +1,29 @@
 Feature: T004 creazione fornitore procurement and qualification
   Scenario Outline: T004 creazione fornitore procurement and qualification
-    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
-#TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-   # And I click HomePage.SourcingCockpit
-   # And I go to the next frame
-   # And I wait 15 seconds
+
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+    #And I click HomePage.SourcingCockpit
+    #And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
-#procedo dal punto 8
+    #procedo dal punto 08
     #creazione di un RFX
+
+    #STEP DA 8 FINO A 16
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.CreazioneRFX
     And I go to the next frame
-    And I wait 10 seconds
-    And I input in RFX.EventTitle the text <RFXTitle>
+    And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
     And I click RFX.RFI
+    And I input in RFX.EventTitle the text <RFXTitle>
+    #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
-    #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
+    And I check that the element RFX.RFCCreationDeatailCheck contains the text 'RFX Creation - Detail'
+    And I check that the element RFX.RFCCreationDeatailCheck contains the text 'Pre-RFX Bozza'
     #compilare RFX
     And I click RFX.ProjectButton
     And I input in RFX.ProjectSearch the text 'Headquarter'
@@ -40,96 +44,197 @@ Feature: T004 creazione fornitore procurement and qualification
     And I click RFX.CurrencyLents
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I input in RFX.Budget the text '30000'
-    And I input in RFX.Forecast the text '20000'
+    And I input in RFX.Forecast the text '10000'
     And I click RFX.SaveAsDraft
-    And I wait 3 seconds
+
      #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
-    #Scelgo manualmente RFX creato precedentemente
-    #aggiungo i vendor alla list
-         #aggiungo i vendor alla list
-    And I wait 5 seconds
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And I wait 1 seconds
+    And I open the 0 row insire table MyRfx.RFXtable
+          #aggiungo i vendor alla list
+    And I wait 2 seconds
+    And I check that RFX.PreRFX is displayed
     And I click RFX.PreRFX
-    And I wait 5 seconds
+    And I check that RFX.PreRFXButton is displayed
     And I click RFX.PreRFXButton
+    And I check that the element RFX.AddVendorsPageCheck contains the text 'Add Vendors'
     And I click RFX.AddVendorRegionFilter
+    And I check that RFX.AddVendorSupplierStatusArrow is displayed
     And I click RFX.AddVendorSupplierStatusArrow
-    And I select the 7 element from the DDL RFX.TenderCommodityUL
+    And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
     And I click RFX.AddVendorSearchButton
-    And I wait 3 seconds
+    And I check that RFX.Vendor1 is displayed
     And I click RFX.Vendor1
     And I click RFX.Vendor2
     And I click RFX.Vendor3
     And I click RFX.AddVendorButton
-    And I click RFX.InviaVendorApprovazione
+    And I wait 5 seconds
       #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
     #apro tile MyInbox e Approve la richiesta di cambio stato
-    And I click HomePage.LaMiaInbox
-    And I wait 10 seconds
-    And I go to the next frame
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I click LaMiaInbox.Approve
-    And I wait 30 seconds
+   # And I click HomePage.LaMiaInbox
+   # And I go to the next frame
+   # And I check that LaMiaInbox.DDLProposte is displayed
+   # And I select the 1 element from the DDL LaMiaInbox.DDLProposte
+   # And I click LaMiaInbox.Approve
    #torno nella homepage
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
+   # And I switch to defaultContentFrame
+   # And I click General.BackToHome
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And I wait 1 seconds
+    And I open the 0 row insire table MyRfx.RFXtable
+    #adesso procedo con la valutatione tecnica
+    And I wait 1 seconds
+    And I check that RFX.InviaVendorListPerApprovazione is displayed
+    And I check that RFX.InviaVendorListPerApprovazione is displayed and enabled
+    And I click RFX.InviaVendorListPerApprovazione
+    And I wait 3 seconds
+    And I check that RFX.TechnicalEvaluations is displayed and enabled
     And I click RFX.TechnicalEvaluations
+    And I check that RFX.AddTechnicalEvaluation is displayed
     And I click RFX.AddTechnicalEvaluation
-    #adesso valuto il primo negativo gli altri positivo
-    And I click RFX.EvaluationButton
+      #adesso valuto il primo negativo gli altri positivo
+    And I check that RFX.TechnicalEvaluationTable is displayed
+    And I use the 0 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
+    And I check that RFX.EvaluationUL is displayed
     And I select the 0 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Negativo'
-    #aggiungo un attach manualmente
+    And I input in RFX.EvaluationTextArea the text 'Negativo'
     And I click RFX.EvaluationArrow
-    And I wait 30 seconds
-    And I click RFX.EvaluationButton2
+    And I wait 1 seconds
+    And I put the attachment cucumber.properties inside RFX.AttachmentField
+    And I check that RFX.Add is displayed
+    And I click RFX.Add
+    And I check that RFX.TechnicalEvaluationTable is displayed and enabled
+    And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Positivo'
-    #aggiungo un attach manualmente
+    And I select the 2 element from the DDL RFX.EvaluationUL2
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
     And I click RFX.EvaluationArrow
-    And I wait 30 seconds
-    And I click RFX.EvaluationButton3
+    And I put the attachment embedded1.png inside RFX.AttachmentField
+    And I check that RFX.Add is displayed
+    And I click RFX.Add
+    And I check that RFX.TechnicalEvaluationTable is displayed and enabled
+    And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationNote the text 'Positivo'
-    #aggiungo un attach manualmente
+    And I select the 2 element from the DDL RFX.EvaluationUL3
+    And I input in RFX.EvaluationTextArea the text 'Positivo'
+    And I click RFX.EvaluationArrow
+    And I put the attachment extent.properties inside RFX.AttachmentField
+    And I click RFX.Add
+    And I check that RFX.CompletaValutazioneTecnica is displayed and enabled
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
+   # #processo di logout e login con primo account
+   # And I switch to defaultContentFrame
+   # And I click General.BackToHome
+   # And I check that General.MenuUtente is displayed
+   # And I click General.MenuUtente
+   # And I wait 1 seconds
+   # And I click General.Logout
+   # And I click General.OKMessage
+   # And I check that General.LogInAgain is displayed
+   # And I click General.LogInAgain
+   # And I wait 5 seconds
+#
+   # Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
+   # And I check that HomePage.MyRFX is displayed
+   # And I click HomePage.MyRFX
+   # And I go to the next frame
+   # And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+   # And I wait 6 seconds
+   # And I open the 0 row insire table MyRfx.RFXtable
+    #Logout e login per il secondo account<
+  #  And I switch to defaultContentFrame
+    # And I check that General.BackToHome is displayed
+  #  And I click General.BackToHome
+  #  And I wait 2 seconds
+  #  And I click General.MenuUtente
+  #  And I click General.Logout
+  #  And I click General.OKMessage
+    # And I check that General.LogInAgain is displayed
+  #  And I click General.LogInAgain
+  #  And I wait 5 seconds
+  #  Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
+  #  And I click HomePage.MyRFX
+  #  And I go to the next frame
+  #  And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+  #  And I wait 6 seconds
+  #  And I open the 0 row insire table MyRfx.RFXtable
+  #  #inserire step 32/33
+  #  #logout e login terzo account
+  #  And I switch to defaultContentFrame
+  #  And I click General.BackToHome
+  #  And I wait 2 seconds
+  #  And I click General.MenuUtente
+  #  And I click General.Logout
+  #  And I click General.OKMessage
+  #  And I wait 5 seconds
+  #  And I click General.LogInAgain
+   # And I wait 5 seconds
+   # Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
+   # And I click HomePage.MyRFX
+   # And I go to the next frame
+   # And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+   # And I wait 6 seconds
+   # And I open the 0 row insire table MyRfx.RFXtable
+    #inserire step 32/33
     #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
     #Sezione Target Setting da eseguire con buyer
     #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.MyRFX
     And I go to the next frame
-    And I click RFX.RFXFirstChoice
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And I check that MyRfx.RFXtable is displayed
+    And I open the 0 row insire table MyRfx.RFXtable
+    And I wait 1 seconds
+    And I check that RFX.TargetPrice is displayed
     And I click RFX.TargetPrice
+    And I click RFX.CompletaValutazioneTecnica
+    And I check that RFX.AddTargetPrice is displayed and enabled
     And I click RFX.AddTargetPrice
+    And I check that RFX.EventNotes is displayed
     And I input in RFX.TheEventEnds the text '15 June 2022 - 02:24 PM GMT+02:00'
     And I input in RFX.EventNotes the text 'Test'
     And I click RFX.AddEventItem
+    And I check that RFX.EventDescription is displayed
     And I input in RFX.EventDescription the text 'Test evento'
     And I input in RFX.EventTargetPrice the text '50000'
     And I click RFX.PublishButton
     And I wait 3 seconds
     #Recommendation
     And I click RFX.Reccomendations
+    And I check that RFX.AddRecommendation is displayed
     And I click RFX.AddRecommendation
-    #il sistema anche se ho settato un target price non mi fa inserire reccomendation
+    And I input in RFX.ReccomentationNote the text 'Test Nota'
+    And I check that RFX.CreateReccomendation is displayed
+    And I click RFX.CreateReccomendation
+    #And I search the supplier 'Draft' in the tbody RFX.ReccomendationTbody
+    #Punto finale rifiutare la proposta con approver account
+
+#Sezioni mancanti a causa dei primi step non attivi
+
+
+
 
 
 
     Examples:
       | RFXTitle       |
-      | "TestProva004" |
+      | "TestProva003" |
+
+
+
