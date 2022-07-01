@@ -10,9 +10,10 @@ Feature: T027 creazione fornitore procurement and qualification
     #entro in vendor rating e filtro gli elementi
     And I check that VendorRating.SupplierNameButton is displayed and enabled
     And I check that VendorRating.StatusArrow is displayed and enabled
+    And I wait 3 seconds
     And I click VendorRating.StatusArrow
     And I check that VendorRating.StatusUL is displayed
-    And I select the 1 element from the DDL NuovoFornitore.StatusUL
+    And I select the 1 element from the DDL VendorRating.StatusUL
     And I click VendorRating.SearchButton
 
     #scelgo il form in draft manualmente
@@ -31,7 +32,7 @@ Feature: T027 creazione fornitore procurement and qualification
     And I check that VendorRating.NewUserRegister is displayed
     And I click VendorRating.CampaignUserArrow
     And I check that VendorRating.CampaignUserUL is displayed
-    And I check that NuovoFornitore.StatusUL is displayed
+    And I check that VendorRating.StatusUL is displayed
     And I input in VendorRating.CampaignUserSearch the text 'Sara Zouhri(P000290)'
     And I click VendorRating.CampaignSurveyArrow
     And I check that VendorRating.CampaignSurveyUL is displayed

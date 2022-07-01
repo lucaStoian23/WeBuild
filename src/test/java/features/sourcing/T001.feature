@@ -263,4 +263,4 @@ Feature: T001 creazione fornitore procurement and qualification
 
     Examples:
       | RFXTitle       |
-      | "SeiTu===?" |
+      | "SeiTu===?"    |
