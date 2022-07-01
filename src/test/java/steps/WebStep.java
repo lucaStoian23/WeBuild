@@ -184,7 +184,7 @@ public class WebStep {
         findEl(WeBuildLogInPage.PasswordFieldSupplier).sendKeys(password);
         findEl(WeBuildLogInPage.SignInSupplier).click();
         Util.createCodFiscale();
-        waitSec(4);
+
 
     }
 

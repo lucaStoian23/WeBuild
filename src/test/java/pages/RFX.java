@@ -11,6 +11,10 @@ public class RFX {
     public static final BrowserElement RFCCreationDetailCheckFromRFXTable = new BrowserElement(new By[]{By.xpath("//span[@id='__title6-inner']")});
     public static final BrowserElement MyRFXCheckPage = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---MyRFX--IDMyRFXST-header-inner']")});
     public static final BrowserElement AddVendorsPageCheck = new BrowserElement(new By[]{By.xpath("//h2[@id='IDVendorDialog--IDRFXVendorDialog-title']")});
+    public static final BrowserElement CreationDate = new BrowserElement(new By[]{By.xpath("//span[text()='Data di creazione']")});
+    public static final BrowserElement SortDescending = new BrowserElement(new By[]{By.xpath("//button[@aria-label='Sort Descending']")});
+    public static final BrowserElement InputSearch = new BrowserElement(new By[]{By.xpath("//input[@placeholder='Search by VAT number / Company name / Name / Surname']")});
+    public static final BrowserElement Lente = new BrowserElement(new By[]{By.xpath("//*[@title='Search']")});
 
     public static final BrowserElement EventTitle = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXDescription-inner']")});
     public static final BrowserElement TenderCommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-arrow']")});
@@ -47,7 +51,7 @@ public class RFX {
     public static final BrowserElement SaveAsDraft = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDSaveGenDataDraftBtn-BDI-content']")});
 
     public static final BrowserElement DataDiCreazione = new BrowserElement(new By[]{By.id("__text3")});
-    public static final BrowserElement SortDescending = new BrowserElement(new By[]{By.id("__popover0-tb-btn_1-inner")});
+
     public static final BrowserElement RFXFirstChoice = new BrowserElement(new By[]{By.id("__item0-__clone85_cell1")});
 
     public static final BrowserElement VendorTickAll = new BrowserElement(new By[]{By.id("IDVendorDialog--tSuppliers-sa-CbBg")});
@@ -66,7 +70,7 @@ public class RFX {
     public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.xpath("//span[contains(text(),'PIO CESARE')]/../..//input/..")});
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Vendors']")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
-
+    public static final BrowserElement InviteVendors = new BrowserElement(new By[]{By.xpath("//span[text()='Invite  Vendors']/ancestor::button")});
 
 
     public static final BrowserElement TechnicalEvaluations = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTechnicalEvaluationTab-anchor-inner']")});

@@ -23,11 +23,12 @@ Feature: T001 creazione fornitore procurement and qualification
     And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
-    And I check that the element RFX.RFCCreationDeatailCheck contains the text 'RFX Creation - Detail'
-    And I check that the element RFX.RFCCreationDeatailCheck contains the text 'Pre-RFX Bozza'
+    #And I check that the element RFX.RFCCreationDeatailCheck contains the text 'RFX Creation - Detail'
+    #And I check that the element RFX.RFCCreationDeatailCheck contains the text 'Pre-RFX Bozza'
     #compilare RFX
+    And I check that RFX.ProjectButton is displayed
     And I click RFX.ProjectButton
-    And I input in RFX.ProjectSearch the text 'Headquarter'
+    And I input in RFX.ProjectSearch the text 'Koysha'
     And I click RFX.ProjectLents
     And I select the 0 element from the DDL RFX.ProjectUL
     #And I input in RFX.CapexPL the text '10'
@@ -55,7 +56,15 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.MyRFX
     And I go to the next frame
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    #And I wait 1 seconds
+    And I click RFX.CreationDate
+    And I check that RFX.SortDescending is displayed
     And I wait 1 seconds
+    And I click RFX.SortDescending
+
+
+
+
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
     And I wait 2 seconds
@@ -67,13 +76,34 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.AddVendorRegionFilter
     And I check that RFX.AddVendorSupplierStatusArrow is displayed
     And I click RFX.AddVendorSupplierStatusArrow
-    And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
-    And I click RFX.AddVendorSearchButton
-    And I check that RFX.Vendor1 is displayed
-    And I click RFX.Vendor1
-    And I click RFX.Vendor2
-    And I click RFX.Vendor3
+  # And I select the 7 element from the DDL RFX.AddVendorSupplierStatusUL
+  #  And I click RFX.AddVendorSearchButton
+
+    And I input in RFX.InputSearch the text "Thinksys"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
+
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "Marco Coroniti SPA"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+    And I check that RFX.InviteVendors is displayed
+    And I wait 2 seconds
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+
+
     And I wait 5 seconds
       #torno nella homepage
     And I switch to defaultContentFrame
@@ -93,6 +123,14 @@ Feature: T001 creazione fornitore procurement and qualification
     And I go to the next frame
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
     And I wait 1 seconds
+
+    And I click RFX.CreationDate
+    And I check that RFX.SortDescending is displayed
+    And I wait 1 seconds
+    And I click RFX.SortDescending
+
+
+
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
     And I wait 1 seconds
@@ -235,4 +273,4 @@ Feature: T001 creazione fornitore procurement and qualification
 
     Examples:
       | RFXTitle       |
-      | "TestProva003" |
+      | "SeiTu===?" |
