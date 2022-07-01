@@ -5,7 +5,6 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
-
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
@@ -30,6 +29,9 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
+    # Salvo PIVA
+    And I save the PIva from AnagraficaFornitore.PartitaIVASalva
 
    #inizio ad editare l'anagrafica fornitore
     And I wait 2 seconds
@@ -242,5 +244,5 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
-      | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "ProfasfeFinalensi"    |
+      | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "CocaCola"    |
 

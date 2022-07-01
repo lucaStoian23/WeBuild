@@ -1,7 +1,6 @@
 Feature: T001 creazione fornitore procurement and qualification
   Scenario Outline: T001 creazione fornitore procurement and qualification
-    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
-#TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
+
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
     #And I click HomePage.SourcingCockpit
@@ -13,6 +12,8 @@ Feature: T001 creazione fornitore procurement and qualification
 
     #STEP DA 8 FINO A 16
     And I check that the element HomePage.HeaderHome contains the text 'Home'
+
+    #Creo un RFX
     And I click HomePage.CreazioneRFX
     And I go to the next frame
     And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
@@ -223,6 +224,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that RFX.CreateReccomendation is displayed
     And I click RFX.CreateReccomendation
     #And I search the supplier 'Draft' in the tbody RFX.ReccomendationTbody
+    #Punto finale confermare la proposta con approver account
+
 #Sezioni mancanti a causa dei primi step non attivi
 
 

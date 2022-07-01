@@ -1,32 +1,33 @@
 Feature: T005 creazione fornitore procurement and qualification
   Scenario Outline: T005 creazione fornitore procurement and qualification
-    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
-#TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-   # And I click HomePage.SourcingCockpit
-   # And I go to the next frame
-   # And I wait 15 seconds
+
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+    #And I click HomePage.SourcingCockpit
+    #And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
-    #procedo dal punto 8
+    #procedo dal punto 08
     #creazione di un RFX
+
+    #STEP DA 8 FINO A 16
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
 
     And I click HomePage.CreazioneRFX
     And I go to the next frame
-    And I wait 10 seconds
-    And I input in RFX.EventTitle the text <RFXTitle>
+    And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
-    #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
-    #compilare RFX
+  # Aggiungo Un PR da RFX Creation
+
     And I click RFX.ProjectButton
     And I input in RFX.ProjectSearch the text 'Headquarter'
     And I click RFX.ProjectLents
     And I select the 0 element from the DDL RFX.ProjectUL
-    #And I input in RFX.CapexPL the text '10'
     And I input in RFX.PRReleaseDate the text '19/05/2023'
     And I input in RFX.AcceptanceOfPR the text '19/05/2023'
     And I input in RFX.PRDeliveryDate the text '19/05/2023'

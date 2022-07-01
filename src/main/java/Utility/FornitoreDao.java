@@ -19,7 +19,6 @@ public class FornitoreDao {
     public static void deleteFornitoreWithPariva(String PARIVA) throws SQLException {
 
         PARIVA = PARIVA.substring(1, PARIVA.length()-1);
-
         System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
         System.out.println("Minimum supported Java version and SAP driver version number: " + com.sap.db.jdbc.Driver.getVersionInfo());
         Connection connection = null;
