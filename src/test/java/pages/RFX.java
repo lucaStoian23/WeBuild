@@ -65,12 +65,12 @@ public class RFX {
     public static final BrowserElement AddVendorSupplierStatusUL = new BrowserElement(new By[]{By.id("IDVendorDialog--qualificationStatus-popup-list-listUl")});
     public static final BrowserElement AddVendorSearchButton = new BrowserElement(new By[]{By.id("__button48-inner")});
 
-    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='ABJ SISTEMI S.R.L.']/../..//input/..")});
+    public static final BrowserElement Vendor1 = new BrowserElement(new By[]{By.xpath("//span[text()='Thinksys']/../..//input/..")});
     public static final BrowserElement Vendor2 = new BrowserElement(new By[]{By.xpath("//span[text()='Marco Coroniti SPA']/../..//input/..")});
-    public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.xpath("//span[contains(text(),'PIO CESARE')]/../..//input/..")});
+    public static final BrowserElement Vendor3 = new BrowserElement(new By[]{By.xpath("//span[contains(text(),'MARELLI SNC DI MARELLI')]/../..//input/..")});
     public static final BrowserElement AddVendorButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Vendors']")});
     public static final BrowserElement InviaVendorApprovazione = new BrowserElement(new By[]{By.id("application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-inner")});
-    public static final BrowserElement InviteVendors = new BrowserElement(new By[]{By.xpath("//span[text()='Invite  Vendors']/ancestor::button")});
+    public static final BrowserElement InviteVendors = new BrowserElement(new By[]{By.xpath("//bdi[text()='Invite  Vendors']/ancestor::button")});
 
 
     public static final BrowserElement TechnicalEvaluations = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXDetailObjectPage-anchBar-application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXTechnicalEvaluationTab-anchor-inner']")});

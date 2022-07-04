@@ -18,7 +18,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I go to the next frame
     And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
-    And I select the 0 element from the DDL RFX.TenderCommodityUL
+    And I select the 3 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
     And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
@@ -79,7 +79,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-    And I wait 1 seconds
+    And I wait 5 seconds
     And I check that RFX.InviteVendors is displayed
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
@@ -88,28 +88,31 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
     And I check that RFX.InviteVendors is displayed
-    And I wait 2 seconds
+    And I wait 5 seconds
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
     And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-
     And I wait 5 seconds
+    And I check that RFX.InviaVendorListPerApprovazione is displayed
+    And I click RFX.InviaVendorListPerApprovazione
+    And I check that RFX.InviaVendorListPerApprovazione is not displayed
       #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
     And I check that the element HomePage.HeaderHome contains the text 'Home'
     #apro tile MyInbox e Approve la richiesta di cambio stato
-   # And I click HomePage.LaMiaInbox
-   # And I go to the next frame
-   # And I check that LaMiaInbox.DDLProposte is displayed
-   # And I select the 1 element from the DDL LaMiaInbox.DDLProposte
-   # And I click LaMiaInbox.Approve
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I input in LaMiaInbox.MailboxSearch the text 'Pre'
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I click LaMiaInbox.Approve
    #torno nella homepage
-   # And I switch to defaultContentFrame
-   # And I click General.BackToHome
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
     And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.MyRFX
     And I go to the next frame
@@ -123,10 +126,6 @@ Feature: T001 creazione fornitore procurement and qualification
 
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
-    And I wait 1 seconds
-    And I check that RFX.InviaVendorListPerApprovazione is displayed
-    And I check that RFX.InviaVendorListPerApprovazione is displayed and enabled
-    And I click RFX.InviaVendorListPerApprovazione
     And I wait 3 seconds
     And I check that RFX.TechnicalEvaluations is displayed and enabled
     And I click RFX.TechnicalEvaluations

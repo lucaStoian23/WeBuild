@@ -106,7 +106,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
+    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
 
     #devo prendere una country italiana
@@ -159,5 +159,5 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
 
     Examples:
-      | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale       |
-      | "STFPLA81H16E792R" |"CEE2323CEE2323CAC" |"009139309475"| "Test007"    |
+      | CodiceFiscale      | PartitaIvaCEE    | PartitaIva   | RagioneSociale  |
+      | "CTTFRZ87E19G273C" |""                |"009139309475"| "Test007"       |
