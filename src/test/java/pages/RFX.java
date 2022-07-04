@@ -16,10 +16,15 @@ public class RFX {
     public static final BrowserElement InputSearch = new BrowserElement(new By[]{By.xpath("//input[@placeholder='Search by VAT number / Company name / Name / Surname']")});
     public static final BrowserElement Lente = new BrowserElement(new By[]{By.xpath("//*[@title='Search']")});
 
+
+
     public static final BrowserElement EventTitle = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXDescription-inner']")});
     public static final BrowserElement TenderCommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-arrow']")});
     public static final BrowserElement TenderCommodityUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCommodity-popup-list-listUl']")});
     public static final BrowserElement AddPR = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add PR']")});
+    public static final BrowserElement PRTickAll = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPNewRFX-Display-component---NewRFXRDA--IDRFXRDATable-sa-CbBg']")});
+    public static final BrowserElement AddPrButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+    public static final BrowserElement PRtable = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody")});
     public static final BrowserElement Notes = new BrowserElement(new By[]{By.xpath("//textarea[@id='__area0-inner']")});
     public static final BrowserElement Create = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFX--IDNewRFXCreateBtn-BDI-content']")});
     public static final BrowserElement AggiungiRDA = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXAddBtn-inner")});

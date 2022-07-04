@@ -14,6 +14,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And I wait 2 seconds
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
@@ -45,6 +46,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click HomePage.Fornitori
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed and enabled
+    And I wait 2 seconds
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
@@ -118,6 +120,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.Indirizzo the text 'nomeIndirizzo'
     And I input in AnagraficaFornitore.CodicePostale the text '21052'
     And I input in AnagraficaFornitore.Citta the text 'Busto Arsizio'
+    And I wait 1 seconds
     And I click AnagraficaFornitore.ProvinciaButton
     And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
     And I click AnagraficaFornitore.SalvaUfficioOperativo
@@ -156,6 +159,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click HomePage.Fornitori
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed
+    And I wait 2 seconds
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I check that Fornitori.SearchIcon is displayed
     And I click Fornitori.SearchIcon
@@ -184,15 +188,17 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
      #aggiungo una commodity
 
-    And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
-    And I click AnagraficaFornitore.TabCommodityAndProject
-    And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
-    And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
-    And I click OperationalOffices.AddCommoditiesArrow
-    And I select the 2 element from the DDL OperationalOffices.CommoditiesUL
-    And I click OperationalOffices.CommoditiesRegister
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
+
+  #And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+  #And I click AnagraficaFornitore.TabCommodityAndProject
+  #And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
+  #And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
+  #And I click OperationalOffices.AddCommoditiesArrow
+  #And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
+  #And I click OperationalOffices.CommoditiesRegister
+  #And I check that General.OKMessage is displayed
+  #And I click General.OKMessage
+
 
  #aggiungo un progetto
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
@@ -229,6 +235,8 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceAddData
     And I check that AnagraficaFornitore.EvaluationYear is displayed
+    And I check that AnagraficaFornitore.CurrencyArrow is displayed
+    And I wait 1 seconds
     And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear

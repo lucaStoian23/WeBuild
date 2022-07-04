@@ -1,0 +1,212 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x00007ffa4bec16e9, pid=28092, tid=2784
+#
+# JRE version:  (11.0.15+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.15+9-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [VCRUNTIME140.dll+0x16e9]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dorg.jetbrains.run.directory=D:\WeBuild2\src\test\java\features -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=3557:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin -Dfile.encoding=UTF-8 io.cucumber.core.cli.Main --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name ^T001 VendorManager Nuovo Fornitore Italiano$ --glue test.java.steps --glue main.java.Hooks D:/WeBuild2/src/test/java/features/T001.feature
+
+Host: 11th Gen Intel(R) Core(TM) i5-11400F @ 2.60GHz, 12 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Mon Jul  4 16:19:03 2022 ora legale Europa occidentale elapsed time: 0.006764 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+Stack: [0x000000eca4300000,0x000000eca4400000],  sp=0x000000eca43ff440,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [VCRUNTIME140.dll+0x16e9]
+V  [jvm.dll+0x647ad1]
+V  [jvm.dll+0x6468c7]
+V  [jvm.dll+0x64646e]
+V  [jvm.dll+0x35f742]
+V  [jvm.dll+0x768366]
+V  [jvm.dll+0x3cd0ff]
+V  [jvm.dll+0x3cf491]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+siginfo: EXCEPTION_IN_PAGE_ERROR (0xc0000006), writing address 0x000002c8a2a40000
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x000002c8a2a40000, RCX=0x0000000000010000, RDX=0x0000000000000000
+RSP=0x000000eca43ff440, RBP=0x000002c8a4a59f80, RSI=0x000002c8a2765330, RDI=0x000002c8a2a40000
+R8 =0x0000000000010000, R9 =0x0000000000000000, R10=0x0000000000000000, R11=0x000002c8a2a40000
+R12=0x0000000000000000, R13=0x00007ff9e7c68440, R14=0x000002c8a274e150, R15=0x0000000000010000
+RIP=0x00007ffa4bec16e9, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000eca43ff440)
+0x000000eca43ff440:   0000000000000000 00007ff9e7ce7ad1
+0x000000eca43ff450:   000002c8a4a59f80 000002c800000000
+0x000000eca43ff460:   000002c8a2765330 0000000000000170
+0x000000eca43ff470:   0000000000010000 000000eca43ff494
+0x000000eca43ff480:   000000eca43ff720 0000000000000104
+0x000000eca43ff490:   03e706ff00000101 0000000000000103
+0x000000eca43ff4a0:   000002c8a4a59f85 00000000000000ff
+0x000000eca43ff4b0:   000000000000000d 0000000000000000
+0x000000eca43ff4c0:   0000000000000000 0000000000000090
+0x000000eca43ff4d0:   0000000000002000 000002c8a2730000
+0x000000eca43ff4e0:   0000000000002000 00007ffa7d28f47e
+0x000000eca43ff4f0:   000002c8a4a57b60 00007ffa7d27a46c
+0x000000eca43ff500:   00000000005c3a43 00007ffa7d3d8540
+0x000000eca43ff510:   4e232eed00000000 0000000000004749
+0x000000eca43ff520:   000002c8a2746d24 000002c8a2730150
+0x000000eca43ff530:   4e232eed00000000 00007ffa7d27a36f 
+
+Instructions: (pc=0x00007ffa4bec16e9)
+0x00007ffa4bec15e9:   ff ff 0f 1f 44 00 00 49 03 c8 0f 10 44 11 f0 48
+0x00007ffa4bec15f9:   83 e9 10 49 83 e8 10 f6 c1 0f 74 17 48 8b c1 48
+0x00007ffa4bec1609:   83 e1 f0 0f 10 c8 0f 10 04 11 0f 11 08 4c 8b c1
+0x00007ffa4bec1619:   4d 2b c3 4d 8b c8 49 c1 e9 07 74 68 0f 29 01 eb
+0x00007ffa4bec1629:   0d 66 0f 1f 44 00 00 0f 29 41 10 0f 29 09 0f 10
+0x00007ffa4bec1639:   44 11 f0 0f 10 4c 11 e0 48 81 e9 80 00 00 00 0f
+0x00007ffa4bec1649:   29 41 70 0f 29 49 60 0f 10 44 11 50 0f 10 4c 11
+0x00007ffa4bec1659:   40 49 ff c9 0f 29 41 50 0f 29 49 40 0f 10 44 11
+0x00007ffa4bec1669:   30 0f 10 4c 11 20 0f 29 41 30 0f 29 49 20 0f 10
+0x00007ffa4bec1679:   44 11 10 0f 10 0c 11 75 ae 0f 29 41 10 49 83 e0
+0x00007ffa4bec1689:   7f 0f 28 c1 4d 8b c8 49 c1 e9 04 74 1a 66 66 0f
+0x00007ffa4bec1699:   1f 84 00 00 00 00 00 0f 11 01 48 83 e9 10 0f 10
+0x00007ffa4bec16a9:   04 11 49 ff c9 75 f0 49 83 e0 0f 74 08 41 0f 10
+0x00007ffa4bec16b9:   0a 41 0f 11 0b 0f 11 01 49 8b c3 c3 cc cc cc cc
+0x00007ffa4bec16c9:   cc cc cc cc cc cc cc cc cc cc cc cc cc 66 66 0f
+0x00007ffa4bec16d9:   1f 84 00 00 00 00 00 57 8b c2 48 8b f9 49 8b c8
+0x00007ffa4bec16e9:   f3 aa 49 8b c3 5f c3 cc cc cc cc cc cc 66 66 0f
+0x00007ffa4bec16f9:   1f 84 00 00 00 00 00 4c 8b d9 0f b6 d2 49 b9 01
+0x00007ffa4bec1709:   01 01 01 01 01 01 01 4c 0f af ca 49 83 f8 10 0f
+0x00007ffa4bec1719:   86 f2 00 00 00 66 49 0f 6e c1 66 0f 60 c0 49 81
+0x00007ffa4bec1729:   f8 80 00 00 00 77 10 e9 6b 00 00 00 66 66 66 0f
+0x00007ffa4bec1739:   1f 84 00 00 00 00 00 f6 05 75 2c 01 00 02 75 97
+0x00007ffa4bec1749:   0f 11 01 4c 03 c1 48 83 c1 10 48 83 e1 f0 4c 2b
+0x00007ffa4bec1759:   c1 4d 8b c8 49 c1 e9 07 74 3d 4c 3b 0d be 28 01
+0x00007ffa4bec1769:   00 0f 87 60 00 00 00 0f 29 01 0f 29 41 10 48 81
+0x00007ffa4bec1779:   c1 80 00 00 00 0f 29 41 a0 0f 29 41 b0 49 ff c9
+0x00007ffa4bec1789:   0f 29 41 c0 0f 29 41 d0 0f 29 41 e0 66 0f 29 41
+0x00007ffa4bec1799:   f0 75 d4 49 83 e0 7f 4d 8b c8 49 c1 e9 04 74 13
+0x00007ffa4bec17a9:   0f 1f 80 00 00 00 00 0f 11 01 48 83 c1 10 49 ff
+0x00007ffa4bec17b9:   c9 75 f4 49 83 e0 0f 74 06 42 0f 11 44 01 f0 49
+0x00007ffa4bec17c9:   8b c3 c3 0f 1f 40 00 0f 2b 01 0f 2b 41 10 48 81
+0x00007ffa4bec17d9:   c1 80 00 00 00 0f 2b 41 a0 0f 2b 41 b0 49 ff c9 
+
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+[error occurred during error reporting (printing compressed oops mode), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9e7e26367]
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff73c760000 - 0x00007ff73c76d000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\java.exe
+0x00007ffa7d270000 - 0x00007ffa7d465000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa7c1b0000 - 0x00007ffa7c26d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa7af10000 - 0x00007ffa7b1d8000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa7acb0000 - 0x00007ffa7adb0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa4bec0000 - 0x00007ffa4bed9000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\VCRUNTIME140.dll
+0x00007ffa59880000 - 0x00007ffa59897000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\jli.dll
+0x00007ffa7be30000 - 0x00007ffa7bfd0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa7a9b0000 - 0x00007ffa7a9d2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa5ec60000 - 0x00007ffa5eefa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb\COMCTL32.dll
+0x00007ffa7ca40000 - 0x00007ffa7ca6a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa7c0d0000 - 0x00007ffa7c16e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa7aa70000 - 0x00007ffa7ab7b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa7b240000 - 0x00007ffa7b2dd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa7c0a0000 - 0x00007ffa7c0d0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa3e060000 - 0x00007ffa3e0fb000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\msvcp140.dll
+0x00007ff9e76a0000 - 0x00007ff9e8223000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\server\jvm.dll
+0x00007ffa7c780000 - 0x00007ffa7c82c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa7c6e0000 - 0x00007ffa7c77b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa7c910000 - 0x00007ffa7ca3b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa7b410000 - 0x00007ffa7b418000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffa5b300000 - 0x00007ffa5b309000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa64140000 - 0x00007ffa64167000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa7d1c0000 - 0x00007ffa7d22b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa797f0000 - 0x00007ffa797fa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa797a0000 - 0x00007ffa797b2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa5aaf0000 - 0x00007ffa5ab00000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\verify.dll
+0x00007ffa59e20000 - 0x00007ffa5a004000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa5a2c0000 - 0x00007ffa5a2ec000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa7a9e0000 - 0x00007ffa7aa63000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa4be10000 - 0x00007ffa4be38000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\java.dll
+0x00007ffa5a980000 - 0x00007ffa5a98a000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\jimage.dll
+0x00007ffa75060000 - 0x00007ffa7506e000 	C:\Users\lucas\.jdks\corretto-11.0.15\bin\instrument.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\lucas\.jdks\corretto-11.0.15\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb;C:\Users\lucas\.jdks\corretto-11.0.15\bin\server
+
+VM Arguments:
+jvm_args: -Dorg.jetbrains.run.directory=D:\WeBuild2\src\test\java\features -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=3557:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin -Dfile.encoding=UTF-8 
+java_command: io.cucumber.core.cli.Main --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name ^T001 VendorManager Nuovo Fornitore Italiano$ --glue test.java.steps --glue main.java.Hooks D:/WeBuild2/src/test/java/features/T001.feature
+java_class_path (initial): D:\WeBuild2\target\test-classes;D:\WeBuild2\target\classes;C:\Users\lucas\.m2\repository\com\sap\cloud\db\jdbc\ngdbc\2.13.5\ngdbc-2.13.5.jar;C:\Users\lucas\.m2\repository\io\github\bonigarcia\webdrivermanager\5.1.0\webdrivermanager-5.1.0.jar;C:\Users\lucas\.m2\repository\com\google\code\gson\gson\2.9.0\gson-2.9.0.jar;C:\Users\lucas\.m2\repository\com\github\docker-java\docker-java\3.2.13\docker-java-3.2.13.jar;C:\Users\lucas\.m2\repository\com\github\docker-java\docker-java-core\3.2.13\docker-java-core-3.2.13.jar;C:\Users\lucas\.m2\repository\com\github\docker-java\docker-java-api\3.2.13\docker-java-api-3.2.13.jar;C:\Users\lucas\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\lucas\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\lucas\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\lucas\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\lucas\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\lucas\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\lucas\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\lucas\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.13\docker-java-transport-httpclient5-3.2.13.jar;C:\Users\lucas\.m2\repository\com\github\docker-java\docker-java-transport\3.2.13\docker-java-transport-3.2.13.jar;C:\Users\lucas\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.0.3\httpclient5-5.0.3.jar;C:\Users\lucas\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.0.2\httpcore5-5.0.2.jar;C:\Users\lucas\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\lucas\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\lucas\.m2\repository\org\apache\commons\commons-lang3\3.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 265711040                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4251376640                                {product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.14
+PATH=C:\Program Files (x86)\VMware\VMware Player\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\MinGW\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\PostgreSQL\13\bin;E:\Web\xamp\pgsql\13\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\xentry\DAS\bus\EVODLFPS\Program;D:\xentry\DAS\bus\AUTOPARA\Program;D:\xentry\DAS\Bus\EVOZRDL\Program;D:\xentry\DAS\Bus\EVODMDL\Program;D:\xentry\DAS\Bus\EVOHLKDL\Program;D:\xentry\lib\;D:\xentry\DAS\Tipscall;C:\Program Files (x86)\Adobe\Reader 10.0\Reader\;C:\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Twelf\bin\twelf-server;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\Java\jdk-17.0.2;C:\Program Files\Java\jdk-11.0.14\bin;C:\Program Files\Java\jdk-11.0.14;C:\Users\lucas\.local\share\solana\install\active_release\bin;C:\Users\lucas\.cargo\bin;C:\Users\lucas\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\lucas\AppData\Local\Programs\Python\Python39\;C:\Users\lucas\AppData\Local\Programs\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin;C:\Users\lucas\AppData\Local\Microsoft\WindowsApps;C:\Users\lucas\.dotnet\tools;C:\Users\lucas\AppData\Local\GitHubDesktop\bin;E:\Web\google-cloud-sdk\bin;C:\Users\lucas\Desktop\ffmpeg-4.4.1-full_build\bin;C:\Program Files\heroku\bin;C:\Users\lucas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas\AppData\Roaming\npm;C:\Users\lucas\AppData\Local\Android\Sdk\platform-tools;C:\Users\lucas\AppData\Local\Android\Sdk;C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin;;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\Java\jdk-11.0.14\bin;C:\Program Files (x86)\Nmap
+USERNAME=lucas
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 167 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+OS uptime: 0 days 2:04 hours
+
+CPU:total 12 (initial active 12) 
+
+Memory: 4k page, system-wide physical 16217M (4747M free)
+TotalPageFile size 61217M (AvailPageFile size 43264M)
+current process WorkingSet (physical memory assigned to process): 8M, peak: 8M
+current process commit charge ("private bytes"): 3M, peak: 3M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.15+9-LTS) for windows-amd64 JRE (11.0.15+9-LTS), built on Apr 15 2022 22:20:31 by "Administrator" with unknown MS VC++:1916
+
+END.
