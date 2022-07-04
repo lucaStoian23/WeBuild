@@ -1,6 +1,7 @@
 Feature: T001 creazione fornitore procurement and qualification
   Scenario Outline: T001 creazione fornitore procurement and qualification
 
+
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
     #And I click HomePage.SourcingCockpit
@@ -21,16 +22,30 @@ Feature: T001 creazione fornitore procurement and qualification
     And I select the 3 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
     And I input in RFX.EventTitle the text <RFXTitle>
+
+    #aggiungo pr da creazione RFX
+    And I check that RFX.AddPR is displayed
+    And I click RFX.AddPR
+    And I check that RFX.PRTickAll is displayed
+    And I click RFX.PRTickAll
+    And I check that RFX.AddPrButton is displayed
+    And I click RFX.AddPrButton
+    And I check that RFX.PRtable is displayed
+    And I insert the rfx budget 10 to all the pr inside RFX.PRtable
+    And I check that General.CREATE is displayed
+    And I click General.CREATE
+
+
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
-    And I click RFX.Create
+    #And I click RFX.Create
     #And I check that the element RFX.RFCCreationDeatailCheck contains the text 'RFX Creation - Detail'
     #And I check that the element RFX.RFCCreationDeatailCheck contains the text 'Pre-RFX Bozza'
     #compilare RFX
-    And I check that RFX.ProjectButton is displayed
-    And I click RFX.ProjectButton
-    And I input in RFX.ProjectSearch the text 'Koysha'
-    And I click RFX.ProjectLents
-    And I select the 0 element from the DDL RFX.ProjectUL
+    #And I check that RFX.ProjectButton is displayed
+    #And I click RFX.ProjectButton
+    #And I input in RFX.ProjectSearch the text 'Koysha'
+    #And I click RFX.ProjectLents
+    #And I select the 0 element from the DDL RFX.ProjectUL
     #And I input in RFX.CapexPL the text '10'
     And I input in RFX.PRReleaseDate the text '19/05/2023'
     And I input in RFX.AcceptanceOfPR the text '19/05/2023'
@@ -41,12 +56,12 @@ Feature: T001 creazione fornitore procurement and qualification
     And I input in RFX.ContractStartDate the text '19/05/2023'
     And I input in RFX.ContractEndDate the text '19/07/2023'
     And I input in RFX.PlannedDateOfSignature the text '19/05/2023'
-    And I click RFX.CurrencyButton
-    And I input in RFX.CurrencySearch the text 'Euro'
-    And I click RFX.CurrencyLents
-    And I select the 0 element from the DDL RFX.CurrencyUL
-    And I input in RFX.Budget the text '30000'
-    And I input in RFX.Forecast the text '10000'
+    #And I click RFX.CurrencyButton
+    #And I input in RFX.CurrencySearch the text 'Euro'
+    #And I click RFX.CurrencyLents
+    #And I select the 0 element from the DDL RFX.CurrencyUL
+    #And I input in RFX.Budget the text '30000'
+    #And I input in RFX.Forecast the text '10000'
     And I click RFX.SaveAsDraft
 
      #torno nella homepage

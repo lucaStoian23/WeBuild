@@ -327,4 +327,19 @@ public class WebStep {
         System.out.println("PIva");
 
     }
+
+    @And("I insert the rfx budget {} to all the pr inside {}.{}")
+    public void iInsertTheRfxBudgetToAllThePrInsideRFXPRtable(String n, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
+        WebElement table = findEl(el);
+        List<WebElement> elements = table.findElements(By.tagName("input"));
+
+        for (WebElement wb: elements) {
+            wb.sendKeys(n);
+        }
+
+
+
+    }
 }
