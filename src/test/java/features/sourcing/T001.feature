@@ -19,21 +19,27 @@ Feature: T001 creazione fornitore procurement and qualification
     And I go to the next frame
     And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
-    And I select the 3 element from the DDL RFX.TenderCommodityUL
+    And I check that RFX.TenderCommoditySearch is displayed and clickable
+    And I input in RFX.TenderCommoditySearch the text 'logistic'
+    And I click RFX.Lente
+    And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
     And I input in RFX.EventTitle the text <RFXTitle>
 
     #aggiungo pr da creazione RFX
     And I check that RFX.AddPR is displayed
     And I click RFX.AddPR
+    And Wait if it is loading
+  #  And I wait 2 seconds
     And I check that RFX.PRTickAll is displayed
     And I click RFX.PRTickAll
     And I check that RFX.AddPrButton is displayed
     And I click RFX.AddPrButton
     And I check that RFX.PRtable is displayed
-    And I insert the rfx budget 10 to all the pr inside RFX.PRtable
-    And I check that General.CREATE is displayed
-    And I click General.CREATE
+    And I wait 2 seconds
+    And I insert the rfx budget 11 to all the pr inside RFX.PRtable
+
+    And I click RFX.Create
 
 
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
@@ -94,25 +100,29 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-    And I wait 5 seconds
+    And I wait 3 seconds
     And I check that RFX.InviteVendors is displayed
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
+    And I wait 1 seconds
     And I input in RFX.InputSearch the text "Marco Coroniti SPA"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
     And I check that RFX.InviteVendors is displayed
-    And I wait 5 seconds
+    And I wait 3 seconds
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
+    And I wait 1 seconds
     And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-    And I wait 5 seconds
+    And I wait 1 seconds
     And I check that RFX.InviaVendorListPerApprovazione is displayed
     And I click RFX.InviaVendorListPerApprovazione
+    And I wait 15 seconds
+    #FARE IL CHECK PRE RFX PENDING APPROVAL INVECE DI   QUESTO TIMER ENORME
 
       #torno nella homepage
     And I switch to defaultContentFrame
@@ -121,11 +131,12 @@ Feature: T001 creazione fornitore procurement and qualification
     #apro tile MyInbox e Approve la richiesta di cambio stato
     And I click HomePage.LaMiaInbox
     And I go to the next frame
-    And I check that LaMiaInbox.MailboxSearch is displayed
-    And I input in LaMiaInbox.MailboxSearch the text 'Pre'
+   # And I check that LaMiaInbox.MailboxSearch is displayed
+  #  And I input in LaMiaInbox.MailboxSearch the text 'Pre'
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
     And I click LaMiaInbox.Approve
+    And I wait 5 seconds
    #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
@@ -159,23 +170,28 @@ Feature: T001 creazione fornitore procurement and qualification
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I check that RFX.Add is displayed
     And I click RFX.Add
-    And I check that RFX.TechnicalEvaluationTable is displayed and enabled
+    And I check that RFX.TechnicalEvaluationTable is displayed
+    And I wait 5 seconds
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL2
+    And I check that RFX.EvaluationUL is displayed
+    And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
     And I click RFX.EvaluationArrow
     And I put the attachment embedded1.png inside RFX.AttachmentField
     And I check that RFX.Add is displayed
     And I click RFX.Add
     And I check that RFX.TechnicalEvaluationTable is displayed and enabled
+    And I wait 5 seconds
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I select the 2 element from the DDL RFX.EvaluationUL3
+    And I check that RFX.EvaluationUL is displayed
+    And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
     And I click RFX.EvaluationArrow
     And I put the attachment extent.properties inside RFX.AttachmentField
     And I click RFX.Add
+    And I wait 5 seconds
     And I check that RFX.CompletaValutazioneTecnica is displayed and enabled
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
@@ -242,9 +258,15 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click HomePage.MyRFX
     And I go to the next frame
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-    And I check that MyRfx.RFXtable is displayed
-    And I open the 0 row insire table MyRfx.RFXtable
+
     And I wait 1 seconds
+
+    And I click RFX.CreationDate
+    And I check that RFX.SortDescending is displayed
+    And I wait 1 seconds
+    And I click RFX.SortDescending
+
+    And I open the 0 row insire table MyRfx.RFXtable
     And I check that RFX.TargetPrice is displayed
     And I click RFX.TargetPrice
     And I click RFX.CompletaValutazioneTecnica
@@ -278,4 +300,4 @@ Feature: T001 creazione fornitore procurement and qualification
 
     Examples:
       | RFXTitle       |
-      | "SeiTu===?"    |
+      | "perbacco"    |

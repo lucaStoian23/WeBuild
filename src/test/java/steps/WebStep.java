@@ -37,11 +37,19 @@ public class WebStep {
    static final Logger logger = Logger.getLogger(WebStep.class);
 
     @And("I check that {}.{} is displayed")
-    public void isElementVisible(String className, String fieldName) throws Exception {
+    public static void isElementVisible(String className, String fieldName) throws Exception {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
+    }
+
+    public static Boolean isVisible(String className, String fieldName) throws Exception {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        Boolean result = findEl(el).isDisplayed();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        return result;
     }
 
 
@@ -51,8 +59,20 @@ public class WebStep {
         findEl(el).isDisplayed();
         findEl(el).isEnabled();
         String step =  new Throwable().getStackTrace()[0].getMethodName();
-        Util.takeScreenShot();
+
     }
+
+    @And("I check that {}.{} is displayed and clickable")
+    public void isElementVisibleAndClickable(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        WebElement wbl = findEl(el);
+        new WebDriverWait(driver, Duration.ofSeconds(39)).until(ExpectedConditions.elementToBeClickable(wbl));
+        String step =  new Throwable().getStackTrace()[0].getMethodName();
+
+    }
+
+
 
     @And("I check that {}.{} is enabled")
     public void isElementEnabled(String className, String fieldName) throws Exception {
@@ -330,16 +350,41 @@ public class WebStep {
 
     @And("I insert the rfx budget {} to all the pr inside {}.{}")
     public void iInsertTheRfxBudgetToAllThePrInsideRFXPRtable(String n, String className, String fieldName) throws Exception {
-        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
 
-        WebElement table = findEl(el);
-        List<WebElement> elements = table.findElements(By.tagName("input"));
 
-        for (WebElement wb: elements) {
-            wb.sendKeys(n);
+       List<WebElement> wb = driver.findElements(By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input"));
+
+       System.out.println(wb.size());
+
+        for (WebElement w: wb) {
+            try {
+                w.clear();
+                w.sendKeys( "10");
+
+            }catch (Exception e)
+            {
+
+            }
+
         }
 
 
+    }
 
+    @And("Wait if it is loading")
+    public void waitIfItIsLoading() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+       int size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
+       int maxWait = 15;
+       int c = 0;
+
+       while (size >=2){
+           waitSec(1);
+           size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
+           if(size <=2) return;
+           c++;
+           if(c == maxWait) return;
+
+       }
     }
 }

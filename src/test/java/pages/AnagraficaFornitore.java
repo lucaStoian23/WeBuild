@@ -100,5 +100,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement EBITDAMarginYear1 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitdaMargin1-inner']")});
     public static final BrowserElement EBITDAMarginYear2 = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateEcofinInputEbitdaMargin2-inner']")});
     public static final BrowserElement SaveButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
+    public static final BrowserElement EchoFinanceUpdateButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Update info']")});
+    public static final BrowserElement EchoFinanceUpdateButtonManually = new BrowserElement(new By[]{By.xpath("//bdi[text()='Manually']")});
 
 }

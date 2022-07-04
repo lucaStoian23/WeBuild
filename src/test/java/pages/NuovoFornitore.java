@@ -14,6 +14,9 @@ public class NuovoFornitore {
     public static final BrowserElement TipologiaFornitoreButton = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iTipologia-arrow']")});
     public static final BrowserElement ULTipologieFornitore = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iTipologia-popup-list-listUl']")});
     public static final BrowserElement RagioneSociale = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iRagioneSociale-inner']")});
+    public static final BrowserElement Nome = new BrowserElement(new By[]{By.xpath("//input[@placeholder='Name...']")});
+    public static final BrowserElement Surname = new BrowserElement(new By[]{By.xpath("//input[@placeholder='Surname...']")});
+
     public static final BrowserElement PartitaIva = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iPIva-inner']")});
     public static final BrowserElement CodiceFiscale = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iCodFisc-inner']")});
     public static final BrowserElement PartitaIvaCEE = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreation--iPIvaCom-inner']")});
