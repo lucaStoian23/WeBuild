@@ -23,7 +23,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'CocaCola'
+    And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
@@ -205,7 +205,9 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceTab
     And I check that AnagraficaFornitore.EchoFinanceUpdateButton is displayed
+    And I click AnagraficaFornitore.EchoFinanceUpdateButton
     And I check that AnagraficaFornitore.EchoFinanceUpdateButtonManually is displayed
+    And I click AnagraficaFornitore.EchoFinanceUpdateButtonManually
     And I check that AnagraficaFornitore.EvaluationYear is displayed
     And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
@@ -235,8 +237,28 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
+    # Aggiungo una Request Supplier afc-procurement
 
-
+    And I check that AnagraficaFornitore.RequestsTab is displayed
+    And I click AnagraficaFornitore.RequestsTab
+    And I check that AnagraficaFornitore.AddRequestButton is displayed
+    And I click AnagraficaFornitore.AddRequestButton
+    And I check that AnagraficaFornitore.AddRequestArrow is displayed
+    And I click AnagraficaFornitore.AddRequestArrow
+    And I check that AnagraficaFornitore.AddRequestUL is displayed
+    And I select the 6 element from the DDL AnagraficaFornitore.AddRequestUL
+    And I click AnagraficaFornitore.AddRequestNotes
+    And I input in AnagraficaFornitore.AddRequestNotes the text 'ProvaTest'
+    And I check that AnagraficaFornitore.AddRequestEnterProject is displayed
+    And I input in AnagraficaFornitore.AddRequestEnterProject the text 'Koysha'
+    And I check that AnagraficaFornitore.AddRequestCommodityButton is displayed
+    And I click AnagraficaFornitore.AddRequestCommodityButton
+    And I check that AnagraficaFornitore.AddRequestCommodiryUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
+    And I check that AnagraficaFornitore.AddRequestAddButton is displayed
+    And I click AnagraficaFornitore.AddRequestAddButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
 
     Examples:
        | PartitaIva      | RagioneSociale                             |
