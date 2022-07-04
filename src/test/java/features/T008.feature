@@ -27,7 +27,6 @@ Feature: T008 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     #la partita iva deve essere un numero reale
     And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
     And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
-    And I input the codFiscale in {}.{}
     And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed

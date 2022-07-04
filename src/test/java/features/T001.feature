@@ -36,10 +36,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
-
+    And I wait 3 seconds
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
-    And I wait 3 seconds
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
     And I check that HomePage.Fornitori is displayed
@@ -190,7 +189,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
     And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
     And I click OperationalOffices.AddCommoditiesArrow
-    And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
+    And I select the 2 element from the DDL OperationalOffices.CommoditiesUL
     And I click OperationalOffices.CommoditiesRegister
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
