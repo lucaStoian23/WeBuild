@@ -103,4 +103,14 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement EchoFinanceUpdateButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Update info']")});
     public static final BrowserElement EchoFinanceUpdateButtonManually = new BrowserElement(new By[]{By.xpath("//bdi[text()='Manually']")});
 
+    // Request
+    public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
+    public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
+    public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestComboTipo-arrow']")});
+    public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
+    public static final BrowserElement AddRequestNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote5-inner']")});
+    public static final BrowserElement AddRequestEnterProject = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInsertProjectAFC-inner']")});
+    public static final BrowserElement AddRequestCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestInsertCommodityAFC-vhi']")});
+    public static final BrowserElement AddRequestCommodiryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
+    public static final BrowserElement AddRequestAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 }
