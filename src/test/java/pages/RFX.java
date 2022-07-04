@@ -46,7 +46,7 @@ public class RFX {
     public static final BrowserElement CurrencyUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPNewRFX-Display-component---NewRFXDetail--selectCurrency-list-listUl']")});
     public static final BrowserElement Budget = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXBudget-inner']")});
     public static final BrowserElement Forecast = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXForecast-inner']")});
-    public static final BrowserElement InviaVendorListPerApprovazione = new BrowserElement(new By[]{By.xpath("//bdi[text()='Invia vendor list per approvazione']")});
+    public static final BrowserElement InviaVendorListPerApprovazione = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDNewRFXDetailApprovalBtn-BDI-content']")});
     public static final BrowserElement WorkflowPreRFX = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXDetailWorkflowTestBtn-BDI-content']")});
     public static final BrowserElement SaveAsDraft = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDSaveGenDataDraftBtn-BDI-content']")});
 

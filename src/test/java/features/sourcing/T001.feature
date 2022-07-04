@@ -98,7 +98,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 5 seconds
     And I check that RFX.InviaVendorListPerApprovazione is displayed
     And I click RFX.InviaVendorListPerApprovazione
-    And I check that RFX.InviaVendorListPerApprovazione is not displayed
+
       #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
@@ -106,6 +106,7 @@ Feature: T001 creazione fornitore procurement and qualification
     #apro tile MyInbox e Approve la richiesta di cambio stato
     And I click HomePage.LaMiaInbox
     And I go to the next frame
+    And I check that LaMiaInbox.MailboxSearch is displayed
     And I input in LaMiaInbox.MailboxSearch the text 'Pre'
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
