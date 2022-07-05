@@ -122,7 +122,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 
     And I check that InfoFornitore.SubmitProposal is displayed and enabled
     And I click InfoFornitore.SubmitProposal
-    And I check that the element AnagraficaFornitore.Status contains the text 'Registered AFC'
+    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
          #dopo che ho creato il fornitore in draft torno nella homepage
 
     And I switch to defaultContentFrame
@@ -254,11 +254,25 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that AnagraficaFornitore.AddRequestCommodityButton is displayed
     And I click AnagraficaFornitore.AddRequestCommodityButton
     And I check that AnagraficaFornitore.AddRequestCommodiryUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
+    And I select the 4 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
     And I check that AnagraficaFornitore.AddRequestAddButton is displayed
     And I click AnagraficaFornitore.AddRequestAddButton
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+
+        #ora devo accettare la proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
+
 
     Examples:
        | PartitaIva      | RagioneSociale                             |
