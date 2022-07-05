@@ -62,7 +62,8 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
     And I input in Fornitori.SearchBox the text <Nome>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
-    And I search the supplier <Nome><Cognome> in the tbody Fornitori.SuppliersTableBody
+    #And I search the supplier <Nome> in the tbody Fornitori.SuppliersTableBody
+    And Click the supplier that contains the text <Nome> in the tbody Fornitori.SuppliersTableBody
 
 #inizio ad editare l'anagrafica fornitore
     And Wait if it is loading

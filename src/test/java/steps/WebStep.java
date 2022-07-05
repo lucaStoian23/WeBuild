@@ -272,6 +272,15 @@ public class WebStep {
         element.click();
     }
 
+    @And("Click the supplier that contains the text {} in the tbody {}.{}")
+    public void searchTheSupplierthatContainsTheText(String nomeFornitore, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        WebElement wbl = findEl(el);
+        WebElement element = wbl.findElement(By.xpath("//a[contains(text(),"+nomeFornitore + ")]"));
+        element.click();
+
+    }
+
 
     @And("I go to the next frame")
     public void iGoToTheNextFrame() {
