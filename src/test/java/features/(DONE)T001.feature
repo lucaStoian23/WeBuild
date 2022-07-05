@@ -59,7 +59,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
 #inizio ad editare l'anagrafica fornitore
     And Wait if it is loading
-    #And I wait 2 seconds
+    And I wait 1 seconds
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
