@@ -161,19 +161,20 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click AnagraficaFornitore.InviaProposta
     And I check that the element AnagraficaFornitore.StatusProsposed contains the text 'Proposed'
 
-      #ora devo accettare la proposta
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And Wait if it is loading
-    And I check that HomePage.LaMiaInbox is displayed
-    And I click HomePage.LaMiaInbox
-    And I go to the next frame
-    And I check that LaMiaInbox.DDLProposte is displayed
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Approve is displayed
-    And I click LaMiaInbox.Approve
-
+   #ora devo accettare la proposta
+   And I switch to defaultContentFrame
+   And I check that General.Logo is displayed
+   And I click General.Logo
+   And Wait if it is loading
+   And I check that HomePage.LaMiaInbox is displayed
+   And I click HomePage.LaMiaInbox
+   And I go to the next frame
+   And I check that LaMiaInbox.DDLProposte is displayed
+   And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+   And I check that LaMiaInbox.Approve is displayed
+   And I click LaMiaInbox.Approve
+    And I wait 2 seconds
+    
            #dopo che ho creato il fornitore in draft torno nella homepage
 
     And I switch to defaultContentFrame
@@ -194,7 +195,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
        #Modifico gli elementi in anagrafica
 
-    And Wait if it is loading
+    And I wait 2 seconds
     And I check that AnagraficaFornitore.TabContact is displayed
     And I click AnagraficaFornitore.TabContact
     And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
@@ -317,6 +318,9 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in AnagraficaFornitore.RevokedNotes the text 'Prova007'
     And I check that AnagraficaFornitore.RevokedProject is displayed
     And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
+    And I click AnagraficaFornitore.RevokedNotes
+    And I check that AnagraficaFornitore.EnterProjectUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
     And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
     And I click AnagraficaFornitore.RevokedCommodityButton
     And I check that AnagraficaFornitore.RevokedCommodityUL is displayed
