@@ -278,36 +278,39 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click General.OKMessage
     And Wait if it is loading
 
-        #ora devo accettare la proposta
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And Wait if it is loading
-    And I check that HomePage.LaMiaInbox is displayed
-    And I click HomePage.LaMiaInbox
-    And I go to the next frame
-    And I check that LaMiaInbox.DDLProposte is displayed
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Approve is displayed
-    And I click LaMiaInbox.Approve
 
-           #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+#
+ #       #ora devo accettare la proposta
+ #   And I switch to defaultContentFrame
+ #   And I check that General.Logo is displayed
+ #   And I click General.Logo
+ #   And Wait if it is loading
+ #   And I check that HomePage.LaMiaInbox is displayed
+ #   And I click HomePage.LaMiaInbox
+ #   And I go to the next frame
+ #   And I check that LaMiaInbox.DDLProposte is displayed
+ #   And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+ #   And I check that LaMiaInbox.Approve is displayed
+ #   And I click LaMiaInbox.Approve
+#
+ #          #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+#
+ #   And I switch to defaultContentFrame
+ #   And I check that General.Logo is displayed
+ #   And I click General.Logo
+ #   And I check that HomePage.Fornitori is displayed
+ #   And I click HomePage.Fornitori
+ #   And I go to the next frame
+ #   And I check that Fornitori.SearchBox is displayed
+ #   And I input in Fornitori.SearchBox the text <RagioneSociale>
+ #   And I check that Fornitori.SearchIcon is displayed
+ #   And I click Fornitori.SearchIcon
+ #   And I check that Fornitori.SuppliersTableBody is displayed and enabled
+ #   And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+#
 
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And I check that HomePage.Fornitori is displayed
-    And I click HomePage.Fornitori
-    And I go to the next frame
-    And I check that Fornitori.SearchBox is displayed
-    And I input in Fornitori.SearchBox the text <RagioneSociale>
-    And I check that Fornitori.SearchIcon is displayed
-    And I click Fornitori.SearchIcon
-    And I check that Fornitori.SuppliersTableBody is displayed and enabled
-    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
-
-    #Check Status Finale
-    And I check that the element AnagraficaFornitore.StatusRegistered contains the text 'Registered'
+ #   #Check Status Finale
+  And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
 
 
 

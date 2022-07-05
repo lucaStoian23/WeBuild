@@ -161,19 +161,20 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click AnagraficaFornitore.InviaProposta
     And I check that the element AnagraficaFornitore.StatusProsposed contains the text 'Proposed'
 
-      #ora devo accettare la proposta
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And Wait if it is loading
-    And I check that HomePage.LaMiaInbox is displayed
-    And I click HomePage.LaMiaInbox
-    And I go to the next frame
-    And I check that LaMiaInbox.DDLProposte is displayed
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Approve is displayed
-    And I click LaMiaInbox.Approve
-
+   #ora devo accettare la proposta
+   And I switch to defaultContentFrame
+   And I check that General.Logo is displayed
+   And I click General.Logo
+   And Wait if it is loading
+   And I check that HomePage.LaMiaInbox is displayed
+   And I click HomePage.LaMiaInbox
+   And I go to the next frame
+   And I check that LaMiaInbox.DDLProposte is displayed
+   And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+   And I check that LaMiaInbox.Approve is displayed
+   And I click LaMiaInbox.Approve
+    And I wait 2 seconds
+    
            #dopo che ho creato il fornitore in draft torno nella homepage
 
     And I switch to defaultContentFrame
