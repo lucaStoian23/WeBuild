@@ -78,7 +78,8 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement CancelButton = new BrowserElement(new By[]{By.xpath("//button//bdi[@id='_IDSupplierCreateAttachmentCTAButtonCancel-BDI-content']")});
     public static final BrowserElement CreateOperationOficeSerachInputField = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-I']")});
     public static final BrowserElement CreateOperationOficeSerachLenteIngradimento = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-search']")});
-    public static final BrowserElement Status = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
+    public static final BrowserElement StatusRegisteredAFC = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
+    public static final BrowserElement StatusProsposed = new BrowserElement(new By[]{By.xpath("//span[text()='Proposed']")});
 
     // Tab Attachement in update
     public static final BrowserElement AttachmentsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Attachments']")});
@@ -103,14 +104,27 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement EchoFinanceUpdateButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Update info']")});
     public static final BrowserElement EchoFinanceUpdateButtonManually = new BrowserElement(new By[]{By.xpath("//bdi[text()='Manually']")});
 
-    // Request
+    // Request General
     public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
     public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
     public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestComboTipo-arrow']")});
     public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
+
+    // Request SuppliersFromAfc
     public static final BrowserElement AddRequestNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote5-inner']")});
     public static final BrowserElement AddRequestEnterProject = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInsertProjectAFC-inner']")});
     public static final BrowserElement AddRequestCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestInsertCommodityAFC-vhi']")});
     public static final BrowserElement AddRequestCommodiryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
     public static final BrowserElement AddRequestAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
+    // Request Revoked
+    public static final BrowserElement ReasonRevokedArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestSelectReason-arrow']")});
+    public static final BrowserElement ReasonRevokedUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestSelectReason-popup-list-listUl']")});
+    public static final BrowserElement RevokedNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote3-inner']")});
+    public static final BrowserElement RevokedProject = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInsertProject-inner']")});
+    public static final BrowserElement RevokedCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestInsertCommodity-vhi']")});
+    public static final BrowserElement RevokedCommodityUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
+    public static final BrowserElement RevokedFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateREV-fu']")});
+    public static final BrowserElement RevokedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
 }

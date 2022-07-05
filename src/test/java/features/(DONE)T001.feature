@@ -14,7 +14,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And Wait if it is loading
-      #And I wait 2 seconds
     And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
@@ -42,6 +41,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
     And I wait 3 seconds
+
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
@@ -51,7 +51,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed and enabled
     And Wait if it is loading
-    #And I wait 2 seconds
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
@@ -59,7 +58,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
 #inizio ad editare l'anagrafica fornitore
     And Wait if it is loading
-    And I wait 1 seconds
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
@@ -162,7 +160,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
     And I click AnagraficaFornitore.InviaProposta
     And Wait if it is loading
-    And I check that the element AnagraficaFornitore.Status contains the text 'Registered AFC'
+    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
 
         #dopo che ho creato il fornitore in draft torno nella homepage
 
@@ -176,7 +174,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed
     And Wait if it is loading
-    #And I wait 2 seconds
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I check that Fornitori.SearchIcon is displayed
     And I click Fornitori.SearchIcon
@@ -185,7 +182,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
        #Modifico gli elementi in anagrafica
     And Wait if it is loading
-     # And I wait 2 seconds
       And I check that AnagraficaFornitore.TabContact is displayed
       And I click AnagraficaFornitore.TabContact
       And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
@@ -209,15 +205,15 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
      #aggiungo una commodity
 
 
-  #And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
-  #And I click AnagraficaFornitore.TabCommodityAndProject
-  #And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
-  #And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
-  #And I click OperationalOffices.AddCommoditiesArrow
-  #And I select the 0 element from the DDL OperationalOffices.CommoditiesUL
-  #And I click OperationalOffices.CommoditiesRegister
-  #And I check that General.OKMessage is displayed
-  #And I click General.OKMessage
+  And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+  And I click AnagraficaFornitore.TabCommodityAndProject
+  And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
+  And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
+  And I click OperationalOffices.AddCommoditiesArrow
+  And I select the 2 element from the DDL OperationalOffices.CommoditiesUL
+  And I click OperationalOffices.CommoditiesRegister
+  And I check that General.OKMessage is displayed
+  And I click General.OKMessage
 
 
  #aggiungo un progetto
@@ -262,12 +258,10 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that AnagraficaFornitore.EvaluationYear is displayed
     And I check that AnagraficaFornitore.CurrencyArrow is displayed
     And Wait if it is loading
-    #And I wait 1 seconds
     And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear
     And Wait if it is loading
-   # And I wait 1 seconds
     And I input in AnagraficaFornitore.EvaluationYear the text '2021' without clear
     And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
     And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'

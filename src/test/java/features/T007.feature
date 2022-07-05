@@ -7,34 +7,41 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I delete the supplier with <PartitaIva>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
-    And I wait 2 seconds
+    And Wait if it is loading
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
+    And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
-    And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
+    And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 1 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
+    And Wait if it is loading
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     #senza BVD
-    And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     And I click NuovoFornitore.Annulla
     #la partita iva deve essere un numero reale
     And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
     And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
     And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
+    And Wait if it is loading
     And I click NuovoFornitore.Crea
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
-    And I wait 2 seconds
+    And I wait 3 seconds
+
 #dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
@@ -43,14 +50,13 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click HomePage.Fornitori
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed and enabled
+    And Wait if it is loading
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
-
 #inizio ad editare l'anagrafica fornitore
-    And I wait 1 seconds
-    And I check that AnagraficaFornitore.LinguaggioButton is displayed
+    And Wait if it is loading
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
@@ -59,6 +65,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in AnagraficaFornitore.ValutaDiRiferimentoCerca the text 'EUR'
     And I click AnagraficaFornitore.ValutaDiRiferimentoLente
     And I select the 0 element from the DDL AnagraficaFornitore.ValutaDiRiferimentoDDL
+    And I wait 1 seconds
     And I input in AnagraficaFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
 
@@ -69,8 +76,11 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that InfoFornitore.ULCommodity is displayed
     And I select the 0 element from the DDL InfoFornitore.ULCommodity
     And I click AnagraficaFornitore.RegistraCommodity
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
+   # And I wait 3 seconds
 
 #Aggiungo un progetto
     And I check that AnagraficaFornitore.AggiungiProgetti is displayed and enabled
@@ -79,6 +89,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that InfoFornitore.ULProgetto is displayed
     And I select the 0 element from the DDL InfoFornitore.ULProgetto
     And I click AnagraficaFornitore.RegistraProgetto
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
@@ -99,6 +110,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I click AnagraficaFornitore.SalvaContatto
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
     #Aggiungo l'ufficio operativo
     And I check that AnagraficaFornitore.NuovoUfficioOperativo is displayed and enabled
@@ -109,7 +121,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
 
-    #devo prendere una country italiana
+   #devo prendere una country italiana
     And I check that AnagraficaFornitore.CreateOperationOficeSerachInputField is displayed
     And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
     And I click AnagraficaFornitore.CreateOperationOficeSerachLenteIngradimento
@@ -117,13 +129,15 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in AnagraficaFornitore.Indirizzo the text 'nomeIndirizzo'
     And I input in AnagraficaFornitore.CodicePostale the text '21052'
     And I input in AnagraficaFornitore.Citta the text 'Busto Arsizio'
+    And I wait 1 seconds
     And I click AnagraficaFornitore.ProvinciaButton
     And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
     And I click AnagraficaFornitore.SalvaUfficioOperativo
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
-    # allego un file
+# allego un file
     And I check that AnagraficaFornitore.AddDocumentButton is displayed
     And I click AnagraficaFornitore.AddDocumentButton
     And I click AnagraficaFornitore.AttachmentName
@@ -135,29 +149,196 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I check that AnagraficaFornitore.AddButton is displayed
     And I click AnagraficaFornitore.AddButton
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
-    #invio della proposta
+
+    #invio della proposta e controllo status 'proposed'
 
     And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
     And I click AnagraficaFornitore.InviaProposta
-    And I check that the element AnagraficaFornitore.Status contains the text 'Proposed'
+    And I check that the element AnagraficaFornitore.StatusProsposed contains the text 'Proposed'
 
       #ora devo accettare la proposta
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
     And I click General.Logo
+    And Wait if it is loading
     And I check that HomePage.LaMiaInbox is displayed
     And I click HomePage.LaMiaInbox
     And I go to the next frame
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Approve is displayed and enabled
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
+
+           #dopo che ho creato il fornitore in draft torno nella homepage
+
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+
+        #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+       #Modifico gli elementi in anagrafica
+
+    And Wait if it is loading
+    And I check that AnagraficaFornitore.TabContact is displayed
+    And I click AnagraficaFornitore.TabContact
+    And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
+    And I click AnagraficaFornitore.NuovoContattoTabContact
+    And I check that AnagraficaFornitore.NomeContatto is displayed
+    And I input in AnagraficaFornitore.NomeContatto the text 'paolo'
+    And I input in AnagraficaFornitore.CognomeContatto the text 'bianchi'
+    And I input in AnagraficaFornitore.TelefonoContatto the text '742421499123'
+    And I input in AnagraficaFornitore.EmailContatto the text 'emailcontatto3@outlook.com'
+    And I check that AnagraficaFornitore.ArrowRuolo is displayed
+    And I click AnagraficaFornitore.ArrowRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
+    And I click AnagraficaFornitore.ArrowTimezone
+    And I select the 13 element from the DDL InfoFornitore.ULTimezone
+    And I click AnagraficaFornitore.SalvaContatto
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+     #aggiungo una commodity
+
+
+    And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+    And I click AnagraficaFornitore.TabCommodityAndProject
+    And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
+    And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
+    And I click OperationalOffices.AddCommoditiesArrow
+    And I select the 2 element from the DDL OperationalOffices.CommoditiesUL
+    And I click OperationalOffices.CommoditiesRegister
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+
+ #aggiungo un progetto
+    And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+    And I click AnagraficaFornitore.TabCommodityAndProject
+    And I check that AnagraficaFornitore.AggiungiProgettiTabCommodity is displayed
+    And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
+    And I click OperationalOffices.AddProjectArrow
+    And I check that OperationalOffices.ProjectUL is displayed
+    And I select the 1 element from the DDL OperationalOffices.ProjectUL
+    And I click OperationalOffices.ProjectRegister
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+    # allego un file
+    And I check that AnagraficaFornitore.AttachmentsTab is displayed
+    And I click AnagraficaFornitore.AttachmentsTab
+    And I check that AnagraficaFornitore.AddDocumentButtonUpdate is displayed
+    And I click AnagraficaFornitore.AddDocumentButtonUpdate
+    And I click AnagraficaFornitore.AttachmentName
+    And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
+    And I check that AnagraficaFornitore.AttachmentDescription is displayed
+    And I click AnagraficaFornitore.AttachmentDescription
+    And I input in AnagraficaFornitore.AttachmentDescription the text 'File Test Allegato'
+    And I check that AnagraficaFornitore.AttachmentFileName is displayed
+    And I put the attachment pdf-config.yaml inside RFX.AttachmentField
+    And I check that AnagraficaFornitore.AddButton is displayed
+    And I click AnagraficaFornitore.AddButton
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+
+    # Aggiungo i dati ad Eco Finance
+    And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceTab
+    And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceAddData
+    And I check that AnagraficaFornitore.EvaluationYear is displayed
+    And I check that AnagraficaFornitore.CurrencyArrow is displayed
+    And Wait if it is loading
+    And I click AnagraficaFornitore.CurrencyArrow
+    And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
+    And I click AnagraficaFornitore.EvaluationYear
+    And Wait if it is loading
+    And I input in AnagraficaFornitore.EvaluationYear the text '2021' without clear
+    And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear1 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear1 the text '10000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear2 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear2 the text '20000'
+    And I check that AnagraficaFornitore.EBITDALastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDALastAvailableYear the text '20000'
+    And I check that AnagraficaFornitore.EBITDAYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear1 the text '10000'
+    And I check that AnagraficaFornitore.EBITDAYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear2 the text '30000'
+    And I check that AnagraficaFornitore.EBITDAMarginLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginLastAvailableYear the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear1 the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear2 the text '40000'
+    And I check that AnagraficaFornitore.SaveButton is displayed
+    And I click AnagraficaFornitore.SaveButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+     # Aggiungo una Request Revoked
+
+    And I check that AnagraficaFornitore.RequestsTab is displayed
+    And I click AnagraficaFornitore.RequestsTab
+    And I check that AnagraficaFornitore.AddRequestButton is displayed
+    And I click AnagraficaFornitore.AddRequestButton
+    And I check that AnagraficaFornitore.AddRequestArrow is displayed
+    And I click AnagraficaFornitore.AddRequestArrow
+    And I check that AnagraficaFornitore.AddRequestUL is displayed
+    And I select the 5 element from the DDL AnagraficaFornitore.AddRequestUL
+    And I check that AnagraficaFornitore.ReasonRevokedArrow is displayed
+    And I click AnagraficaFornitore.ReasonRevokedArrow
+    And I check that AnagraficaFornitore.ReasonRevokedUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.ReasonRevokedUL
+    And I check that AnagraficaFornitore.RevokedNotes is displayed
+    And I input in AnagraficaFornitore.RevokedNotes the text 'Prova007'
+    And I check that AnagraficaFornitore.RevokedProject is displayed
+    And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
+    And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
+    And I click AnagraficaFornitore.RevokedCommodityButton
+    And I check that AnagraficaFornitore.RevokedCommodityUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.RevokedCommodityUL
+    And I put the attachment we-html inside AnagraficaFornitore.RevokedFile
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+          #ora devo accettare la proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.Approve is displayed
     And I click LaMiaInbox.Approve
 
 
-
     Examples:
-      | CodiceFiscale      | PartitaIvaCEE    | PartitaIva   | RagioneSociale  |
-      | "CTTFRZ87E19G273C" |""                |"009139309475"| "Test007"       |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor7"    |
