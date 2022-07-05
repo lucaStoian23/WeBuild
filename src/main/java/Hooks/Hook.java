@@ -35,7 +35,8 @@ public class Hook extends DriverManager {
 
 
     @AfterStep
-    public void afterStep(Scenario scenario) throws IOException {
+    public void
+    afterStep(Scenario scenario) throws IOException {
         try {
             scenario.attach(Util.screenshot, "image/png", scenario.getName());
            // WebStep.waitSec();

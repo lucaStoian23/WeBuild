@@ -319,6 +319,8 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that AnagraficaFornitore.RevokedProject is displayed
     And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
     And I click AnagraficaFornitore.RevokedNotes
+    And I check that AnagraficaFornitore.RevokedAddButton is displayed
+    And I click AnagraficaFornitore.RevokedAddButton
     And I check that AnagraficaFornitore.EnterProjectUL is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
     And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
@@ -341,6 +343,34 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
     And I check that LaMiaInbox.Approve is displayed
     And I click LaMiaInbox.Approve
+    And I wait 3 seconds
+
+               #dopo che ho Accettato la Richiesta torno in homepage
+
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+
+        #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+    # Check Finale Su Request
+
+    And I wait 2 seconds
+    And I check that AnagraficaFornitore.RequestsTab is displayed
+    And I click AnagraficaFornitore.RequestsTab
+    And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
+
+
 
 
     Examples:

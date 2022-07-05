@@ -291,4 +291,4 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"    |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"     |
