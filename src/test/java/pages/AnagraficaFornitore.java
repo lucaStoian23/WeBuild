@@ -80,6 +80,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement CreateOperationOficeSerachLenteIngradimento = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-search']")});
     public static final BrowserElement StatusRegisteredAFC = new BrowserElement(new By[]{By.xpath("//span[text()='Registered AFC']")});
     public static final BrowserElement StatusProsposed = new BrowserElement(new By[]{By.xpath("//span[text()='Proposed']")});
+    public static final BrowserElement StatusRegistered = new BrowserElement(new By[]{By.xpath("//span[text()='Registered']")});
 
     // Tab Attachement in update
     public static final BrowserElement AttachmentsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Attachments']")});
@@ -108,7 +109,8 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
     public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
     public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestComboTipo-arrow']")});
-    public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
+    public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
+    public static final BrowserElement EnterProjectUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestInsertProjectAFC-popup-list-listUl']")});
 
     // Request SuppliersFromAfc
     public static final BrowserElement AddRequestNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote5-inner']")});

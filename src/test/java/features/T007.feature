@@ -194,7 +194,7 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
 
        #Modifico gli elementi in anagrafica
 
-    And Wait if it is loading
+    And I wait 2 seconds
     And I check that AnagraficaFornitore.TabContact is displayed
     And I click AnagraficaFornitore.TabContact
     And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
@@ -317,6 +317,9 @@ Feature: T007 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I input in AnagraficaFornitore.RevokedNotes the text 'Prova007'
     And I check that AnagraficaFornitore.RevokedProject is displayed
     And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
+    And I click AnagraficaFornitore.RevokedNotes
+    And I check that AnagraficaFornitore.EnterProjectUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
     And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
     And I click AnagraficaFornitore.RevokedCommodityButton
     And I check that AnagraficaFornitore.RevokedCommodityUL is displayed
