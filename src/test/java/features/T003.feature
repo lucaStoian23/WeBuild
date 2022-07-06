@@ -77,6 +77,16 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
     And I click AnagraficaFornitore.ValutaDiRiferimentoLente
     And I select the 0 element from the DDL AnagraficaFornitore.ValutaDiRiferimentoDDL
     And I input in AnagraficaFornitore.SitoWeb the text 'nomefornitore.com'
+    And I click AnagraficaFornitore.DatePicker
+    And I check that AnagraficaFornitore.Date is displayed
+    And I click AnagraficaFornitore.Date
+    And I check that AnagraficaFornitore.LuogoDiNascita is displayed
+    And I input in AnagraficaFornitore.LuogoDiNascita the text 'Busto arsizio'
+    And I click AnagraficaFornitore.ArrowSesso
+    And I select the 0 element from the DDL AnagraficaFornitore.ULsesso
+    And I click AnagraficaFornitore.ProvinciaDiNascitaButton
+    And I check that AnagraficaFornitore.ULprovincia is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.ULprovincia
     And I scroll down
 
  #aggiungo una commodity
@@ -305,5 +315,5 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
 
     Examples:
       | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   | Nome    | Cognome|
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"    |  "Pippotester" |"Caio"  |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"    |  "Pepco" |"Camillo"  |
 
