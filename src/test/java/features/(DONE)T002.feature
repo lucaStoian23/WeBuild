@@ -316,6 +316,6 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 
 
     Examples:
-       | PartitaIva    | RagioneSociale                        |
-       | "00342830817" | "COMMERCIALE LA SORGENTE DI VINCENZO" |
+      | PartitaIva    | RagioneSociale  |
+      | "00943140228" | "SVELTO S.R.L." |
 

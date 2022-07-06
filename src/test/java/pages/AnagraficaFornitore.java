@@ -160,14 +160,14 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
 
     public static final BrowserElement QualificationTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Qualification']")});
     public static final BrowserElement QualificationAddSurvey = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Survey']")});
-    public static final BrowserElement CommodityQualificationButton = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement CommodityQualificationSearch = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement CommodityQualificationLents = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement CommodityQualificationUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement QualificationProjectArrow = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement QualificationProjectUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement QualificationRegionArrow = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement QualificationRegionUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CommodityQualificationButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateQuestComboCommodity-vhi']")});
+    public static final BrowserElement CommodityQualificationSearch = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierData--qualificationblock-Collapsed--selectDialogCommodity-searchField-I']")});
+    public static final BrowserElement CommodityQualificationLents = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierData--qualificationblock-Collapsed--selectDialogCommodity-searchField-search']")});
+    public static final BrowserElement CommodityQualificationUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--qualificationblock-Collapsed--selectDialogCommodity-list-listUl']")});
+    public static final BrowserElement QualificationProjectArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateQuestComboProject-arrow']")});
+    public static final BrowserElement QualificationProjectUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateQuestComboProject-popup-list-listUl']")});
+    public static final BrowserElement QualificationRegionArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateQuestComboRegion-arrow']")});
+    public static final BrowserElement QualificationRegionUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateQuestComboRegion-popup-list-listUl']")});
     public static final BrowserElement QualificationSearch = new BrowserElement(new By[]{By.xpath("//bdi[text()='Search']")});
     public static final BrowserElement QualificationAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
