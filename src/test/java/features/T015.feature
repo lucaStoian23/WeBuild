@@ -3,38 +3,46 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
+
+    And I delete the supplier with <PartitaIva>
+
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
-    And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And Wait if it is loading
     And I wait 1 seconds
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
-    And I input in NuovoFornitore.NazioneCerca the text 'Australia'
+    And I check that NuovoFornitore.NazioneCerca is displayed
+    And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
-    And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
+    And I select the 1 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
+    And Wait if it is loading
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     #senza BVD
-    And I check that NuovoFornitore.ULFornitoriTrovati is displayed
     And I click NuovoFornitore.Annulla
     #la partita iva deve essere un numero reale
     And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
     And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
     And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
+    And Wait if it is loading
     And I click NuovoFornitore.Crea
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
-    And I check that General.OKMessage is not displayed
-#dopo che ho creato il fornitore in draft torno nella homepage
+    And I wait 3 seconds
 
-     #torno nella homepage
+#dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
@@ -42,13 +50,14 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click HomePage.Fornitori
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed and enabled
+    And Wait if it is loading
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
 #inizio ad editare l'anagrafica fornitore
-    And I check that AnagraficaFornitore.LinguaggioButton is displayed
+    And Wait if it is loading
     And I click AnagraficaFornitore.LinguaggioButton
     And I check that AnagraficaFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
@@ -67,16 +76,20 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that InfoFornitore.ULCommodity is displayed
     And I select the 0 element from the DDL InfoFornitore.ULCommodity
     And I click AnagraficaFornitore.RegistraCommodity
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
+   # And I wait 3 seconds
 
 #Aggiungo un progetto
     And I check that AnagraficaFornitore.AggiungiProgetti is displayed and enabled
     And I click AnagraficaFornitore.AggiungiProgetti
     And I click AnagraficaFornitore.ProgettoArrow
     And I check that InfoFornitore.ULProgetto is displayed
-    And I select the 0 element from the DDL InfoFornitore.ULProgetto
+    And I select the 4 element from the DDL InfoFornitore.ULProgetto
     And I click AnagraficaFornitore.RegistraProgetto
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
@@ -97,6 +110,7 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click AnagraficaFornitore.SalvaContatto
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
     #Aggiungo l'ufficio operativo
     And I check that AnagraficaFornitore.NuovoUfficioOperativo is displayed and enabled
@@ -104,24 +118,26 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
     And I click AnagraficaFornitore.TipoIndirizzoArrow
     And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
+    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
     And I click AnagraficaFornitore.NazioneButton
 
-    #devo prendere una country italiana
+   #devo prendere una country italiana
     And I check that AnagraficaFornitore.CreateOperationOficeSerachInputField is displayed
-    And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'Australia'
+    And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
     And I click AnagraficaFornitore.CreateOperationOficeSerachLenteIngradimento
     And I select the 0 element from the DDL AnagraficaFornitore.ULNazione
     And I input in AnagraficaFornitore.Indirizzo the text 'nomeIndirizzo'
     And I input in AnagraficaFornitore.CodicePostale the text '21052'
-    And I input in AnagraficaFornitore.Citta the text 'Sydney'
+    And I input in AnagraficaFornitore.Citta the text 'Busto Arsizio'
+    And I wait 1 seconds
     And I click AnagraficaFornitore.ProvinciaButton
     And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
     And I click AnagraficaFornitore.SalvaUfficioOperativo
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
-    # allego un file
+# allego un file
     And I check that AnagraficaFornitore.AddDocumentButton is displayed
     And I click AnagraficaFornitore.AddDocumentButton
     And I click AnagraficaFornitore.AttachmentName
@@ -133,23 +149,245 @@ Feature: T015 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I check that AnagraficaFornitore.AddButton is displayed
     And I click AnagraficaFornitore.AddButton
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
-    #invio della proposta
+    #invio della proposta e controllo Registered
 
     And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
     And I click AnagraficaFornitore.InviaProposta
-    And I check that the element AnagraficaFornitore.Status contains the text 'Proposed'
+    And Wait if it is loading
+    And I check that the element AnagraficaFornitore.StatusProposed contains the text 'Proposed'
 
-    #appro tile MyInbox e Send To compliance la richiesta di cambio stato
+              #ora devo inviare a compliance la proposta
+
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
     And I click HomePage.LaMiaInbox
-    And I wait 10 seconds
     And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.SendToCompliance is displayed
     And I click LaMiaInbox.SendToCompliance
-    And I wait 30 seconds
+
+
+    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+       #Modifico gli elementi in anagrafica
+    And Wait if it is loading
+    And I check that AnagraficaFornitore.TabContact is displayed
+    And I click AnagraficaFornitore.TabContact
+    And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
+    And I click AnagraficaFornitore.NuovoContattoTabContact
+    And I check that AnagraficaFornitore.NomeContatto is displayed
+    And I input in AnagraficaFornitore.NomeContatto the text 'paolo'
+    And I input in AnagraficaFornitore.CognomeContatto the text 'bianchi'
+    And I input in AnagraficaFornitore.TelefonoContatto the text '742421499123'
+    And I input in AnagraficaFornitore.EmailContatto the text 'emailcontatto3@outlook.com'
+    And I check that AnagraficaFornitore.ArrowRuolo is displayed
+    And I click AnagraficaFornitore.ArrowRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
+    And I click AnagraficaFornitore.ArrowTimezone
+    And I select the 13 element from the DDL InfoFornitore.ULTimezone
+    And I click AnagraficaFornitore.SalvaContatto
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+     #aggiungo una commodity
+
+
+    And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+    And I click AnagraficaFornitore.TabCommodityAndProject
+    And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
+    And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
+    And I click OperationalOffices.AddCommoditiesArrow
+    And I select the 2 element from the DDL OperationalOffices.CommoditiesUL
+    And I click OperationalOffices.CommoditiesRegister
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+
+ #aggiungo un progetto
+    And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
+    And I click AnagraficaFornitore.TabCommodityAndProject
+    And I check that AnagraficaFornitore.AggiungiProgettiTabCommodity is displayed
+    And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
+    And I click OperationalOffices.AddProjectArrow
+    And I check that OperationalOffices.ProjectUL is displayed
+    And I select the 1 element from the DDL OperationalOffices.ProjectUL
+    And I click OperationalOffices.ProjectRegister
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+    # Aggiungo un secondo ufficio operativo
+    And I check that AnagraficaFornitore.OperationalOfficesTab is displayed
+    And I click AnagraficaFornitore.OperationalOfficesTab
+    And I check that AnagraficaFornitore.AddOperationalOfficesButton is displayed
+    And I click AnagraficaFornitore.AddOperationalOfficesButton
+    And I check that AnagraficaFornitore.OperationsOfficeName is displayed
+    And I input in AnagraficaFornitore.OperationsOfficeName the text 'Test Secondo Ufficio operativo'
+    And I check that AnagraficaFornitore.AddressTypeArrow is displayed
+    And I click AnagraficaFornitore.AddressTypeArrow
+    And I check that AnagraficaFornitore.AddressTypeUL is displayed
+    And I select the 3 element from the DDL OperationalOffices.AddressTypeUL
+    And I check that AnagraficaFornitore.CountryButton is displayed
+    And I click AnagraficaFornitore.CountryButton
+    And I check that AnagraficaFornitore.CountrySearch is displayed
+    And I input in AnagraficaFornitore.CountrySearch the text 'Italy'
+    And I check that AnagraficaFornitore.CountryLents is displayed
+    And I click AnagraficaFornitore.CountryLents
+    And I check that AnagraficaFornitore.CountryUL is displayed
+    And I select the 0 element from the DDL OperationalOffices.CountryUL
+    And I check that AnagraficaFornitore.Address is displayed
+    And I input in AnagraficaFornitore.Address the text 'Via Delle Rose 58'
+    And I check that AnagraficaFornitore.PostalCode is displayed
+    And I input in AnagraficaFornitore.PostalCode the text '90100'
+    And I check that AnagraficaFornitore.City is displayed
+    And I input in AnagraficaFornitore.City the text 'Palermo'
+    And I check that AnagraficaFornitore.ProvinceButton is displayed
+    And I click AnagraficaFornitore.ProvinceButton
+    And I check that AnagraficaFornitore.ProvinceUL is displayed
+    And I select the 56 element from the DDL OperationalOffices.ProvinceUL
+    And I check that AnagraficaFornitore.OperetionsOfficeSave is displayed
+    And I click AnagraficaFornitore.OperetionsOfficeSave
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+
+    # allego un file
+    And I check that AnagraficaFornitore.AttachmentsTab is displayed
+    And I click AnagraficaFornitore.AttachmentsTab
+    And I check that AnagraficaFornitore.AddDocumentButtonUpdate is displayed
+    And I click AnagraficaFornitore.AddDocumentButtonUpdate
+    And I click AnagraficaFornitore.AttachmentName
+    And I input in AnagraficaFornitore.AttachmentName the text 'FileTest'
+    And I check that AnagraficaFornitore.AttachmentDescription is displayed
+    And I click AnagraficaFornitore.AttachmentDescription
+    And I input in AnagraficaFornitore.AttachmentDescription the text 'File Test Allegato'
+    And I check that AnagraficaFornitore.AttachmentFileName is displayed
+    And I put the attachment pdf-config.yaml inside RFX.AttachmentField
+    And I check that AnagraficaFornitore.AddButton is displayed
+    And I click AnagraficaFornitore.AddButton
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+
+
+    # Aggiungo i dati ad Eco Finance
+    And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceTab
+    And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceAddData
+    And I check that AnagraficaFornitore.EvaluationYear is displayed
+    And I check that AnagraficaFornitore.CurrencyArrow is displayed
+    And Wait if it is loading
+    And I click AnagraficaFornitore.CurrencyArrow
+    And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
+    And I click AnagraficaFornitore.EvaluationYear
+    And Wait if it is loading
+    And I input in AnagraficaFornitore.EvaluationYear the text '2021' without clear
+    And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear1 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear1 the text '10000'
+    And I check that AnagraficaFornitore.IncomeOperationsYear2 is displayed
+    And I input in AnagraficaFornitore.IncomeOperationsYear2 the text '20000'
+    And I check that AnagraficaFornitore.EBITDALastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDALastAvailableYear the text '20000'
+    And I check that AnagraficaFornitore.EBITDAYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear1 the text '10000'
+    And I check that AnagraficaFornitore.EBITDAYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAYear2 the text '30000'
+    And I check that AnagraficaFornitore.EBITDAMarginLastAvailableYear is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginLastAvailableYear the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear1 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear1 the text '40000'
+    And I check that AnagraficaFornitore.EBITDAMarginYear2 is displayed
+    And I input in AnagraficaFornitore.EBITDAMarginYear2 the text '40000'
+    And I check that AnagraficaFornitore.SaveButton is displayed
+    And I click AnagraficaFornitore.SaveButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+    # Aggiungo una Request Duplicate
+
+    And Wait if it is loading
+    And I check that AnagraficaFornitore.RequestsTab is displayed
+    And I click AnagraficaFornitore.RequestsTab
+    And I check that AnagraficaFornitore.AddRequestButton is displayed
+    And I click AnagraficaFornitore.AddRequestButton
+    And I check that AnagraficaFornitore.AddRequestArrow is displayed
+    And I click AnagraficaFornitore.AddRequestArrow
+    And I check that AnagraficaFornitore.AddRequestUL is displayed
+    And I select the 2 element from the DDL AnagraficaFornitore.AddRequestUL
+    And I check that AnagraficaFornitore.DuplicatedNotes is displayed
+    And I input in AnagraficaFornitore.DuplicatedNotes the text 'Nota Test'
+    And I check that AnagraficaFornitore.DuplicatedAddFile is displayed
+    And I put the attachment extent-config.xml inside AnagraficaFornitore.DuplicatedAddFile
+    And I check that AnagraficaFornitore.DuplicateFileDescription is displayed
+    And I input in AnagraficaFornitore.DuplicateFileDescription the text 'Test'
+    And I check that AnagraficaFornitore.DuplicateAddButton is displayed
+    And I click AnagraficaFornitore.DuplicateAddButton
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+
+        #ora devo accettare la proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
+
+           #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+
+    #Check Status Finale
+    And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
+
 
     Examples:
-      | CodiceFiscale      | PartitaIvaCEE      | PartitaIva   | RagioneSociale       |
-      | "STFPLA81H16E792B" |"CEE2323CEE2323CDC" |"009139309470"| "CompagniaTest07"    |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor15"     |
