@@ -156,6 +156,15 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestAttachDesc-inner']")});
     public static final BrowserElement CeasedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
+    // Request Duplicaded
+
+
+    public static final BrowserElement DuplicatedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInputNote-inner']")});
+    public static final BrowserElement DuplicatedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement DuplicateFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestAttachDesc-inner']")});
+    public static final BrowserElement DuplicateAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
+
     // Qualification Tab
 
     public static final BrowserElement QualificationTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Qualification']")});
