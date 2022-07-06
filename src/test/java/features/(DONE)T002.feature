@@ -12,7 +12,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
-    And I wait 2 seconds
+    And Wait if it is loading
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
@@ -37,7 +37,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
    # And I save the PIva from AnagraficaFornitore.PartitaIVASalva
 
    #inizio ad editare l'anagrafica fornitore
-    And I wait 2 seconds
+    And Wait if it is loading
     And I click InfoFornitore.LinguaggioButton
     And I check that InfoFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL InfoFornitore.ULLinguaggio
@@ -57,6 +57,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that InfoFornitore.ULCommodity is displayed
     And I select the 0 element from the DDL InfoFornitore.ULCommodity
     And I click InfoFornitore.RegistraCommodity
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
@@ -67,6 +68,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that InfoFornitore.ULProgetto is displayed
     And I select the 0 element from the DDL InfoFornitore.ULProgetto
     And I click InfoFornitore.RegistraProgetto
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
@@ -101,6 +103,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click InfoFornitore.SalvaContatto
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
 
     # allego un file
@@ -115,14 +118,17 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I check that InfoFornitore.AddButton is displayed
     And I click InfoFornitore.AddButton
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
    #invio della proposta e controllo registrato AFC
 
     And I check that InfoFornitore.SubmitProposal is displayed and enabled
     And I click InfoFornitore.SubmitProposal
-    And I check that the element AnagraficaFornitore.Status contains the text 'Registered AFC'
+    And Wait if it is loading
+    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
          #dopo che ho creato il fornitore in draft torno nella homepage
 
     And I switch to defaultContentFrame
@@ -157,8 +163,10 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click AnagraficaFornitore.ArrowTimezone
     And I select the 13 element from the DDL InfoFornitore.ULTimezone
     And I click AnagraficaFornitore.SalvaContatto
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
      #aggiungo una commodity
 
@@ -174,15 +182,16 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 
  #aggiungo un progetto
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
-    And I click AnagraficaFornitore.TabCommodityAndProject
     And I check that AnagraficaFornitore.AggiungiProgettiTabCommodity is displayed
     And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
     And I click OperationalOffices.AddProjectArrow
     And I check that OperationalOffices.ProjectUL is displayed
     And I select the 1 element from the DDL OperationalOffices.ProjectUL
     And I click OperationalOffices.ProjectRegister
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
     # allego un file
     And I check that AnagraficaFornitore.AttachmentsTab is displayed
@@ -198,8 +207,10 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I put the attachment pdf-config.yaml inside RFX.AttachmentField
     And I check that AnagraficaFornitore.AddButton is displayed
     And I click AnagraficaFornitore.AddButton
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
     # Aggiorno i dati Echo Finance
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
@@ -210,9 +221,10 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click AnagraficaFornitore.EchoFinanceUpdateButtonManually
     And I check that AnagraficaFornitore.EvaluationYear is displayed
     And I click AnagraficaFornitore.CurrencyArrow
+    And Wait if it is loading
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear
-    And I wait 1 seconds
+    And Wait if it is loading
     And I input in AnagraficaFornitore.EvaluationYear the text '2021' without clear
     And I check that AnagraficaFornitore.IncomeOperationsLastAvailableYear is displayed
     And I input in AnagraficaFornitore.IncomeOperationsLastAvailableYear the text '500000'
@@ -236,6 +248,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I click AnagraficaFornitore.SaveButton
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
     # Aggiungo una Request Supplier afc-procurement
 
@@ -251,16 +264,57 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I input in AnagraficaFornitore.AddRequestNotes the text 'ProvaTest'
     And I check that AnagraficaFornitore.AddRequestEnterProject is displayed
     And I input in AnagraficaFornitore.AddRequestEnterProject the text 'Koysha'
+    And I click AnagraficaFornitore.AddRequestNotes
+    And I check that AnagraficaFornitore.EnterProjectUL is displayed
+    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
     And I check that AnagraficaFornitore.AddRequestCommodityButton is displayed
     And I click AnagraficaFornitore.AddRequestCommodityButton
     And I check that AnagraficaFornitore.AddRequestCommodiryUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
+    And I select the 4 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
     And I check that AnagraficaFornitore.AddRequestAddButton is displayed
     And I click AnagraficaFornitore.AddRequestAddButton
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
+
+
+#
+ #       #ora devo accettare la proposta
+ #   And I switch to defaultContentFrame
+ #   And I check that General.Logo is displayed
+ #   And I click General.Logo
+ #   And Wait if it is loading
+ #   And I check that HomePage.LaMiaInbox is displayed
+ #   And I click HomePage.LaMiaInbox
+ #   And I go to the next frame
+ #   And I check that LaMiaInbox.DDLProposte is displayed
+ #   And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+ #   And I check that LaMiaInbox.Approve is displayed
+ #   And I click LaMiaInbox.Approve
+#
+ #          #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+#
+ #   And I switch to defaultContentFrame
+ #   And I check that General.Logo is displayed
+ #   And I click General.Logo
+ #   And I check that HomePage.Fornitori is displayed
+ #   And I click HomePage.Fornitori
+ #   And I go to the next frame
+ #   And I check that Fornitori.SearchBox is displayed
+ #   And I input in Fornitori.SearchBox the text <RagioneSociale>
+ #   And I check that Fornitori.SearchIcon is displayed
+ #   And I click Fornitori.SearchIcon
+ #   And I check that Fornitori.SuppliersTableBody is displayed and enabled
+ #   And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+#
+
+ #   #Check Status Finale
+  And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
+
+
 
     Examples:
-       | PartitaIva      | RagioneSociale                             |
-       | "00342830817"   | "COMMERCIALE LA SORGENTE DI VINCENZO URSO" |
+       | PartitaIva    | RagioneSociale                        |
+       | "00342830817" | "COMMERCIALE LA SORGENTE DI VINCENZO" |
 
