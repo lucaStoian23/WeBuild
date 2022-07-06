@@ -12,8 +12,9 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
-    And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And Wait if it is loading
+    And I wait 1 seconds
+    And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
@@ -230,6 +231,43 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click General.OKMessage
     And Wait if it is loading
 
+    # Aggiungo un secondo ufficio operativo
+    And I check that AnagraficaFornitore.OperationalOfficesTab is displayed
+    And I click AnagraficaFornitore.OperationalOfficesTab
+    And I check that AnagraficaFornitore.AddOperationalOfficesButton is displayed
+    And I click AnagraficaFornitore.AddOperationalOfficesButton
+    And I check that AnagraficaFornitore.OperationsOfficeName is displayed
+    And I input in AnagraficaFornitore.OperationsOfficeName the text 'Test Secondo Ufficio operativo'
+    And I check that AnagraficaFornitore.AddressTypeArrow is displayed
+    And I click AnagraficaFornitore.AddressTypeArrow
+    And I check that AnagraficaFornitore.AddressTypeUL is displayed
+    And I select the 3 element from the DDL OperationalOffices.AddressTypeUL
+    And I check that AnagraficaFornitore.CountryButton is displayed
+    And I click AnagraficaFornitore.CountryButton
+    And I check that AnagraficaFornitore.CountrySearch is displayed
+    And I input in AnagraficaFornitore.CountrySearch the text 'Italy'
+    And I check that AnagraficaFornitore.CountryLents is displayed
+    And I click AnagraficaFornitore.CountryLents
+    And I check that AnagraficaFornitore.CountryUL is displayed
+    And I select the 0 element from the DDL OperationalOffices.CountryUL
+    And I check that AnagraficaFornitore.Address is displayed
+    And I input in AnagraficaFornitore.Address the text 'Via Delle Rose 58'
+    And I check that AnagraficaFornitore.PostalCode is displayed
+    And I input in AnagraficaFornitore.PostalCode the text '90100'
+    And I check that AnagraficaFornitore.City is displayed
+    And I input in AnagraficaFornitore.City the text 'Palermo'
+    And I check that AnagraficaFornitore.ProvinceButton is displayed
+    And I click AnagraficaFornitore.ProvinceButton
+    And I check that AnagraficaFornitore.ProvinceUL is displayed
+    And I select the 56 element from the DDL OperationalOffices.ProvinceUL
+    And I check that AnagraficaFornitore.OperetionsOfficeSave is displayed
+    And I click AnagraficaFornitore.OperetionsOfficeSave
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+
     # allego un file
     And I check that AnagraficaFornitore.AttachmentsTab is displayed
     And I click AnagraficaFornitore.AttachmentsTab
@@ -248,6 +286,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
     And Wait if it is loading
+
 
 
     # Aggiungo i dati ad Eco Finance
@@ -290,5 +329,5 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"     |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor01"     |

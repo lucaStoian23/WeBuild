@@ -50,7 +50,7 @@ public class InfoFornitore {
     public static final BrowserElement Indirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputAddress-inner")});
     public static final BrowserElement CodicePostale = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboPostalCode-inner")});
     public static final BrowserElement Citta = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboCity-inner")});
-    public static final BrowserElement ProvinciaButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierEditFormInputLocal-vhi']")});
+    public static final BrowserElement ProvinciaButton = new BrowserElement(new By[]{By.xpath("//span[@id='SupplierCreateOfficeLocal-vhi']")});
     public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")});
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.xpath("_IDGenButton1x")});
     public static final BrowserElement OK = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'OK')]")});
