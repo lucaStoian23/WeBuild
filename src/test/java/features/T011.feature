@@ -66,19 +66,19 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-  #  # Riparo ufficio operativo
+    # Riparo ufficio operativo
 
-  # And I check that InfoFornitore.Matita is displayed
-  # And I click InfoFornitore.Matita
-  # And I wait 2 seconds
-  # And I check that InfoFornitore.ProvinciaButton is displayed
-  # And I click InfoFornitore.ProvinciaButton
-  # And I check that InfoFornitore.ULProvincia is displayed
-  # And I select the 0 element from the DDL InfoFornitore.ULProvincia
-  # And I check that InfoFornitore.Salva is displayed
-  # And I click InfoFornitore.Salva
-  # And I check that General.OKMessage is displayed
-  # And I click General.OKMessage
+    And I check that InfoFornitore.Matita is displayed
+    And I click InfoFornitore.Matita
+    And I wait 2 seconds
+    And I check that InfoFornitore.ProvinciaButton is displayed
+    And I click InfoFornitore.ProvinciaButton
+    And I check that InfoFornitore.ULProvincia is displayed
+    And I select the 0 element from the DDL InfoFornitore.ULProvincia
+    And I check that InfoFornitore.Salva is displayed
+    And I click InfoFornitore.Salva
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
 
 #creo il contatto primario
     And I check that InfoFornitore.NuovoContatto is displayed and enabled
@@ -101,6 +101,7 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
 
     # allego un file
+    And I scroll down
     And I check that InfoFornitore.AddDocumentButton is displayed
     And I click InfoFornitore.AddDocumentButton
     And I click InfoFornitore.AttachmentName
@@ -122,21 +123,21 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that InfoFornitore.SubmitProposal is displayed and enabled
     And I click InfoFornitore.SubmitProposal
     And Wait if it is loading
-    And I check that the element AnagraficaFornitore.StatusProsposed contains the text 'Proposed'
+    And I check that the element AnagraficaFornitore.StatusRegistered contains the text 'Registered'
 
-       #ora devo Rifiutare la proposta (mail)
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And Wait if it is loading
-    And I check that HomePage.LaMiaInbox is displayed
-    And I click HomePage.LaMiaInbox
-    And I go to the next frame
-    And I check that LaMiaInbox.DDLProposte is displayed
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Approve is displayed
-    And I click LaMiaInbox.Approve
-    And I wait 3 seconds
+  #     #ora devo Rifiutare la proposta (mail)
+  #  And I switch to defaultContentFrame
+  #  And I check that General.Logo is displayed
+  #  And I click General.Logo
+  #  And Wait if it is loading
+  #  And I check that HomePage.LaMiaInbox is displayed
+  #  And I click HomePage.LaMiaInbox
+  #  And I go to the next frame
+  #  And I check that LaMiaInbox.DDLProposte is displayed
+  #  And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+  #  And I check that LaMiaInbox.Approve is displayed
+  #  And I click LaMiaInbox.Approve
+  #  And I wait 3 seconds
 
      #dopo che ho Accettato la Richiesta torno in homepage
 
@@ -182,5 +183,5 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
 
     Examples:
-      | PartitaIva    | RagioneSociale                        |
-      | "00342830817" | "COMMERCIALE LA SORGENTE DI VINCENZO" |
+      | PartitaIva    | RagioneSociale  |
+      | "00943140228" | "SVELTO S.R.L." |
