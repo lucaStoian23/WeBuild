@@ -1,0 +1,17 @@
+test\java\pages\SupplierAccount.class
+test\java\pages\NewSupplierProposal.class
+test\java\pages\LaMiaInbox.class
+test\java\pages\WeBuildLogInPage.class
+test\java\steps\WebStep.class
+test\java\pages\RFX.class
+test\java\pages\VendorRating.class
+test\java\runner\TestRunner.class
+test\java\pages\AnagraficaFornitore.class
+test\java\pages\HomePage.class
+test\java\pages\Fornitori.class
+test\java\pages\InfoFornitore.class
+test\java\pages\OperationalOffices.class
+test\java\pages\NuovoFornitore.class
+test\java\pages\Request.class
+test\java\pages\MyRfx.class
+test\java\pages\General.class

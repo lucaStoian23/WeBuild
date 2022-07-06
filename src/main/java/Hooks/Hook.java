@@ -5,16 +5,32 @@ package main.java.Hooks;
 import io.cucumber.java.*;
 import main.java.Base.DriverManager;
 import main.java.Utility.Util;
+import org.openqa.selenium.By;
 import test.java.pages.General;
 import test.java.steps.WebStep;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.Duration;
 
 public class Hook extends DriverManager {
 
     @BeforeStep
-    public void beforeStep() {
+    public void beforeStep() throws Exception {
+
+        try {
+            if (WebStep.isVisible("General", "ErrorMessage")) {
+
+               int size = driver.findElements(By.xpath("//span[text()='NPP message'] | //span[text()='Messaggio NPP'] | //span[text()='Error in accessing or reading data. ']")).size();
+               for(int i = 0; i<size; i++){
+                   WebStep.ClickEl("General", "OK");
+               }
+
+            }
+        } catch(Exception e){
+
+        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
 
@@ -24,7 +40,14 @@ public class Hook extends DriverManager {
             scenario.attach(Util.screenshot, "image/png", scenario.getName());
            // WebStep.waitSec();
            // WebStep.ClickEl("General", "OKMessage");
+            if (WebStep.isVisible("General", "ErrorMessage")) {
 
+                int size = driver.findElements(By.xpath("//span[text()='NPP message'] | //span[text()='Messaggio NPP'] | //span[text()='Error in accessing or reading data. ']")).size();
+                for(int i = 0; i<size; i++){
+                    WebStep.ClickEl("General", "OK");
+                }
+
+            }
         }catch (Exception e){
 
         }

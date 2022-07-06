@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import main.java.Base.Functions_Settings;
 import main.java.Elements.BrowserElement;
+import main.java.Utility.FornitoreDao;
 import main.java.Utility.Util;
 import org.apache.log4j.Logger; import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.*;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +37,19 @@ public class WebStep {
    static final Logger logger = Logger.getLogger(WebStep.class);
 
     @And("I check that {}.{} is displayed")
-    public void isElementVisible(String className, String fieldName) throws Exception {
+    public static void isElementVisible(String className, String fieldName) throws Exception {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
+    }
+
+    public static Boolean isVisible(String className, String fieldName) throws Exception {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        Boolean result = findEl(el).isDisplayed();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        return result;
     }
 
 
@@ -49,8 +59,20 @@ public class WebStep {
         findEl(el).isDisplayed();
         findEl(el).isEnabled();
         String step =  new Throwable().getStackTrace()[0].getMethodName();
-        Util.takeScreenShot();
+
     }
+
+    @And("I check that {}.{} is displayed and clickable")
+    public void isElementVisibleAndClickable(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        WebElement wbl = findEl(el);
+        new WebDriverWait(driver, Duration.ofSeconds(39)).until(ExpectedConditions.elementToBeClickable(wbl));
+        String step =  new Throwable().getStackTrace()[0].getMethodName();
+
+    }
+
+
 
     @And("I check that {}.{} is enabled")
     public void isElementEnabled(String className, String fieldName) throws Exception {
@@ -79,6 +101,14 @@ public class WebStep {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
         findEl(el).clear();
+        findEl(el).sendKeys(text);
+        String step =  new Throwable().getStackTrace()[0].getMethodName();
+        Util.takeScreenShot();
+    }
+    @And("I input in {}.{} the text {string} without clear")
+    public void insertText1(String className, String fieldName, String text) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
         findEl(el).sendKeys(text);
         String step =  new Throwable().getStackTrace()[0].getMethodName();
         Util.takeScreenShot();
@@ -167,12 +197,14 @@ public class WebStep {
     @And("I log_in NEW with username {} and password {}")
     public void iLog_inSupplier(String username, String password) throws Exception {
         Util.getURL("https://tst-tdrwhi6n.launchpad.cfapps.eu20.hana.ondemand.com/site/npp");
+        findEl(WeBuildLogInPage.LogInField).clear();
         findEl(WeBuildLogInPage.LogInField).sendKeys(username);
         findEl(WeBuildLogInPage.Continuare).click();
+        findEl(WeBuildLogInPage.PasswordFieldSupplier).clear();
         findEl(WeBuildLogInPage.PasswordFieldSupplier).sendKeys(password);
         findEl(WeBuildLogInPage.SignInSupplier).click();
         Util.createCodFiscale();
-        waitSec(4);
+
 
     }
 
@@ -220,6 +252,13 @@ public class WebStep {
         js.executeScript("window.scrollBy(0,1000)","");
     }
 
+    @And("I scroll up")
+    public void iScrollUp() {
+        JavascriptExecutor js = (JavascriptExecutor) Util.driver;
+        js.executeScript("window.scrollBy(1000,0)","");
+    }
+
+
     @And("I switch to defaultContentFrame")
     public void iSwitchToDefaultContentFrame() {
         Util.driver.switchTo().defaultContent();
@@ -232,6 +271,16 @@ public class WebStep {
         WebElement element = wbl.findElement(By.xpath("//a[text() =" + nomeFornitore + "]"));
         element.click();
     }
+
+    @And("Click the supplier that contains the text {} in the tbody {}.{}")
+    public void searchTheSupplierthatContainsTheText(String nomeFornitore, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        WebElement wbl = findEl(el);
+        WebElement element = wbl.findElement(By.xpath("//a[contains(text(),"+nomeFornitore + ")]"));
+        element.click();
+
+    }
+
 
     @And("I go to the next frame")
     public void iGoToTheNextFrame() {
@@ -257,6 +306,7 @@ public class WebStep {
         System.setProperty("codiceFiscale", val);
 
     }
+
 
     @And("I open the {} row insire table {}.{}")
     public void iOpenTheFirstRowInsireTable(Integer n, String className, String fieldName) throws Exception {
@@ -287,5 +337,63 @@ public class WebStep {
         File file = Paths.get(res.toURI()).toFile();
         String absolutePath = file.getAbsolutePath();
         wbl.sendKeys(absolutePath);
+    }
+
+    @And("I delete the supplier with {}")
+    public void iDeleteTheSupplierWithPartitaIva(String PARIVA) throws SQLException {
+        System.out.println("iva: " + PARIVA);
+        FornitoreDao.deleteFornitoreWithPariva(PARIVA);
+        System.out.println("Fornitore eliminato con successo");
+    }
+
+    @And("I save the PIva from {}.{}")
+    public void iSaveThePIva(String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+        findEl(el).isDisplayed();
+        String val = findEl(el).getAttribute("value");
+        val.replaceAll("\"" ,"");
+        System.setProperty("PIva", val);
+        System.out.println("PIva");
+
+    }
+
+    @And("I insert the rfx budget {} to all the pr inside {}.{}")
+    public void iInsertTheRfxBudgetToAllThePrInsideRFXPRtable(String n, String className, String fieldName) throws Exception {
+
+
+       List<WebElement> wb = driver.findElements(By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input"));
+
+       System.out.println(wb.size());
+
+        for (WebElement w: wb) {
+            try {
+                w.clear();
+                w.sendKeys( "10");
+
+            }catch (Exception e)
+            {
+
+            }
+
+        }
+
+
+    }
+
+    @And("Wait if it is loading")
+    public void waitIfItIsLoading() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+       int size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
+       int maxWait = 15;
+       int c = 0;
+
+       while (size >=2){
+           waitSec(1);
+           size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
+           if(size <=2) return;
+           c++;
+           if(c == maxWait) return;
+
+       }
     }
 }

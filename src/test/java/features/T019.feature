@@ -23,7 +23,6 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     And I click NuovoFornitore.Crea
     And I click InfoFornitore.OK
-    And I wait 10 seconds
      #Inserimento dati nella scheda
     And I click AnagraficaFornitore.LinguaggioButton
     And I select the 0 element from the DDL AnagraficaFornitore.ULLinguaggio
@@ -76,13 +75,17 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
    #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.Logo
-  #appro tile MyInbox e SendToCompliance la richiesta di cambio stato
+      #ora devo Fare send To compliance alla proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And I check that HomePage.LaMiaInbox is displayed
     And I click HomePage.LaMiaInbox
-    And I wait 10 seconds
     And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.SendToCompliance is displayed and enabled
     And I click LaMiaInbox.SendToCompliance
-    And I wait 30 seconds
 
     Examples:
       | RagSociale     |

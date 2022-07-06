@@ -17,8 +17,8 @@ public class InfoFornitore {
     public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--_IDGenButton1")});
     public static final BrowserElement AggiungiCommodity = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew")});
     public static final BrowserElement AggiungiProgetti = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content")});
-    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.id("iCommodity-arrow")});
-    public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.id("iCommodity-popup-list-listUl")});
+    public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='iCommodity-arrow']")});
+    public static final BrowserElement ULCommodity = new BrowserElement(new By[]{By.xpath("//ul[@id='iCommodity-popup-list-listUl']")});
     public static final BrowserElement RegistraCommodity = new BrowserElement(new By[]{By.id("id_SupplierAddCommodityFormCTAButtonSave")});
     public static final BrowserElement ProgettoArrow = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-arrow")});
     public static final BrowserElement ULProgetto = new BrowserElement(new By[]{By.id("id_SupplierAddProjectFormSelectProject-popup-list-listUl")});
@@ -35,7 +35,7 @@ public class InfoFornitore {
     public static final BrowserElement ULContattoPrimario = new BrowserElement(new By[]{By.id("id_SupplierCreateFormPC-popup-list-listUl")});
     public static final BrowserElement SalvaContatto = new BrowserElement(new By[]{By.id("_IDSupplierCreateFormCTAButtonSave")});
 
-    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.id("shell-header-logo")});
+    public static final BrowserElement TornaIndietro = new BrowserElement(new By[]{By.xpath("//a[@id='shell-header-logo']")});
 
     public static final BrowserElement OperationalOffices = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Offices')]")});
 
@@ -44,15 +44,27 @@ public class InfoFornitore {
     public static final BrowserElement TipoIndirizzoArrow = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-arrow")});
     public static final BrowserElement ULTipoIndirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboTipo-popup-list-listUl")});
     public static final BrowserElement NazioneButton = new BrowserElement(new By[]{By.id("iOfficeNation-vhi")});
+    public static final BrowserElement CreateOperationOficeSerachInputField = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-I']")});
+    public static final BrowserElement CreateOperationOficeSerachLenteIngradimento = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-searchField-search']")});
     public static final BrowserElement ULNazione = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--nationDialog-list-listUl")});
     public static final BrowserElement Indirizzo = new BrowserElement(new By[]{By.id("SupplierCreateOfficeInputAddress-inner")});
     public static final BrowserElement CodicePostale = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboPostalCode-inner")});
     public static final BrowserElement Citta = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboCity-inner")});
-    public static final BrowserElement ProvinciaButton = new BrowserElement(new By[]{By.id("SupplierCreateOfficeLocal-vhi")});
-    public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl")});
-    public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
+    public static final BrowserElement ProvinciaButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierEditFormInputLocal-vhi']")});
+    public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")});
+    public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.xpath("_IDGenButton1x")});
     public static final BrowserElement OK = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'OK')]")});
     public static final BrowserElement SubmitProposal = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Submit Proposal')]")});
-    public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
+    public static final BrowserElement Salva = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
+
+    // Allego file
+
+    public static final BrowserElement AddDocumentButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add document']")});
+    public static final BrowserElement AttachmentName = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateAttachmentInputName-inner']")});
+    public static final BrowserElement AttachmentDescription = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateAttachmentInputDescription-inner']")});
+    public static final BrowserElement AttachmentFileName = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreate-fu_input-inner']")});
+    public static final BrowserElement AddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+    public static final BrowserElement Matita = new BrowserElement(new By[]{By.xpath("//span[@data-sap-ui-icon-content='\uE038']")});
 
 }
+

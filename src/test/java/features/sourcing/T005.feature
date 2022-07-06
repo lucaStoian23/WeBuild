@@ -1,32 +1,33 @@
 Feature: T005 creazione fornitore procurement and qualification
   Scenario Outline: T005 creazione fornitore procurement and qualification
-    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
-#TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-   # And I click HomePage.SourcingCockpit
-   # And I go to the next frame
-   # And I wait 15 seconds
+
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+    #And I click HomePage.SourcingCockpit
+    #And I go to the next frameAnd I wait 15 seconds
     #parte ancora in fase di sviluppo
 
-    #procedo dal punto 8
+    #procedo dal punto 08
     #creazione di un RFX
+
+    #STEP DA 8 FINO A 16
+    And I check that the element HomePage.HeaderHome contains the text 'Home'
 
     And I click HomePage.CreazioneRFX
     And I go to the next frame
-    And I wait 10 seconds
-    And I input in RFX.EventTitle the text <RFXTitle>
+    And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I input in RFX.EventTitle the text <RFXTitle>
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
     And I click RFX.Create
-    #And I check that the element RFX.RFXHeader contains the text 'Pre-RFX Bozza'
-    #compilare RFX
+  # Aggiungo Un PR da RFX Creation
+
     And I click RFX.ProjectButton
     And I input in RFX.ProjectSearch the text 'Headquarter'
     And I click RFX.ProjectLents
     And I select the 0 element from the DDL RFX.ProjectUL
-    #And I input in RFX.CapexPL the text '10'
     And I input in RFX.PRReleaseDate the text '19/05/2023'
     And I input in RFX.AcceptanceOfPR the text '19/05/2023'
     And I input in RFX.PRDeliveryDate the text '19/05/2023'
@@ -58,11 +59,30 @@ Feature: T005 creazione fornitore procurement and qualification
     And I click RFX.PreRFXButton
     And I click RFX.AddVendorRegionFilter
     And I click RFX.AddVendorSupplierStatusArrow
-    And I select the 7 element from the DDL RFX.TenderCommodityUL
-    And I click RFX.AddVendorSearchButton
-    And I click RFX.Vendor1
-    And I click RFX.Vendor2
-    And I click RFX.Vendor3
+
+    And I input in RFX.InputSearch the text "Thinksys"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "Marco Coroniti SPA"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
+    And I check that RFX.InviteVendors is displayed
+    And I wait 2 seconds
+    And I click RFX.InviteVendors
+
+    And I check that RFX.InputSearch is displayed
+    And I input in RFX.InputSearch the text "MARELLI SNC DI MARELLI MARCO E DANIELEe"
+    And I click RFX.Lente
+    And I click RFX.VendorTickAll
+    And I click RFX.AddVendorButton
+
 #a questo punto bisogna creare un vendor da inserire come quarto elemento (tasto create non presente)
     And I click RFX.AddVendorButton
     And I click RFX.InviaVendorApprovazione
