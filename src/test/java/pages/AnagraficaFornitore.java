@@ -86,6 +86,24 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement AttachmentsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Attachments']")});
     public static final BrowserElement AddDocumentButtonUpdate = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPFornitori-Display-component---SupplierData--attachmentblock-Collapsed--_IDGenButton1-BDI-content' and text()='Add document']")});
 
+    // Tab Operational Officies
+
+    public static final BrowserElement OperationalOfficesTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Operational Offices']")});
+    public static final BrowserElement AddOperationalOfficesButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add operational office']")});
+    public static final BrowserElement OperationsOfficeName = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeInputName-inner']")});
+    public static final BrowserElement AddressTypeArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateOfficeComboTipo-arrow']")});
+    public static final BrowserElement AddressTypeUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateOfficeComboTipo-popup-list-listUl']")});
+    public static final BrowserElement CountryButton = new BrowserElement(new By[]{By.xpath("//span[@id='SupplierCreateOfficeComboNation-vhi']")});
+    public static final BrowserElement CountrySearch = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-searchField-I']")});
+    public static final BrowserElement CountryLents = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-searchField-search']")});
+    public static final BrowserElement CountryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-list-listUl']")});
+    public static final BrowserElement Address = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeInputAddress-inner']")});
+    public static final BrowserElement PostalCode = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeComboPostalCode-inner']")});
+    public static final BrowserElement City = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeComboCity-inner']")});
+    public static final BrowserElement ProvinceButton = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeLocal-vhi']")});
+    public static final BrowserElement ProvinceUL = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")}); //56
+    public static final BrowserElement OperetionsOfficeSave = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
+
 // Eco Finance
     public static final BrowserElement EcoFinanceTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Eco Finance']")});
     public static final BrowserElement EcoFinanceAddData = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add data']")});
@@ -106,6 +124,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement EchoFinanceUpdateButtonManually = new BrowserElement(new By[]{By.xpath("//bdi[text()='Manually']")});
 
     // Request General
+    public static final BrowserElement RejectedCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Rejected']")});
     public static final BrowserElement ApprovedCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Approved']")});
     public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
     public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
@@ -130,4 +149,10 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement RevokedFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateREV-fu']")});
     public static final BrowserElement RevokedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
+    // Request Ceased
+
+    public static final BrowserElement CeasedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
+    public static final BrowserElement CeasedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
+    public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
+    public static final BrowserElement CeasedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 }
