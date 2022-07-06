@@ -13,6 +13,7 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And Wait if it is loading
+    And I wait 1 seconds
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'

@@ -151,8 +151,24 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
 
     // Request Ceased
 
-    public static final BrowserElement CeasedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
-    public static final BrowserElement CeasedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
-    public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='']")});
+    public static final BrowserElement CeasedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInputNote-inner']")});
+    public static final BrowserElement CeasedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestAttachDesc-inner']")});
     public static final BrowserElement CeasedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
+    // Qualification Tab
+
+    public static final BrowserElement QualificationTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Qualification']")});
+    public static final BrowserElement QualificationAddSurvey = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Survey']")});
+    public static final BrowserElement CommodityQualificationButton = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CommodityQualificationSearch = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CommodityQualificationLents = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CommodityQualificationUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement QualificationProjectArrow = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement QualificationProjectUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement QualificationRegionArrow = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement QualificationRegionUL = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
+    public static final BrowserElement QualificationSearch = new BrowserElement(new By[]{By.xpath("//bdi[text()='Search']")});
+    public static final BrowserElement QualificationAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
 }
