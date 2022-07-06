@@ -1,5 +1,5 @@
-Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario Outline: T011 VendorManager Nuovo Fornitore
+Feature: T012 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , BVD
+  Scenario Outline: T012 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , BVD
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
     And I delete the supplier with <PartitaIva>
@@ -118,70 +118,16 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-  #invio della proposta e controllo proposed
+  #invio della proposta e controllo Registered
 
     And I check that InfoFornitore.SubmitProposal is displayed and enabled
     And I click InfoFornitore.SubmitProposal
     And Wait if it is loading
     And I check that the element AnagraficaFornitore.StatusRegistered contains the text 'Registered'
 
-  #     #ora devo Rifiutare la proposta (mail)
-  #  And I switch to defaultContentFrame
-  #  And I check that General.Logo is displayed
-  #  And I click General.Logo
-  #  And Wait if it is loading
-  #  And I check that HomePage.LaMiaInbox is displayed
-  #  And I click HomePage.LaMiaInbox
-  #  And I go to the next frame
-  #  And I check that LaMiaInbox.DDLProposte is displayed
-  #  And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-  #  And I check that LaMiaInbox.Approve is displayed
-  #  And I click LaMiaInbox.Approve
-  #  And I wait 3 seconds
-
-     #dopo che ho Accettato la Richiesta torno in homepage
-
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-
-     #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
-
-    And I check that HomePage.Fornitori is displayed
-    And I click HomePage.Fornitori
-    And I go to the next frame
-    And I check that Fornitori.SearchBox is displayed
-    And Wait if it is loading
-    And I input in Fornitori.SearchBox the text <RagioneSociale>
-    And I check that Fornitori.SearchIcon is displayed
-    And I click Fornitori.SearchIcon
-    And I check that Fornitori.SuppliersTableBody is displayed and enabled
-    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
-
-    # Entro in Qualification per inserire un questionario (nessun elemento in pagina)
-    And Wait if it is loading
-    And I check that AnagraficaFornitore.QualificationTab is displayed
-    And I click AnagraficaFornitore.QualificationTab
-    And I check that AnagraficaFornitore.QualificationAddSurvey is displayed
-    And I click AnagraficaFornitore.QualificationAddSurvey
-    And I check that AnagraficaFornitore.CommodityQualificationButton is displayed
-    And I click AnagraficaFornitore.CommodityQualificationButton
-    And I check that AnagraficaFornitore.CommodityQualificationUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.CommodityQualificationUL
-    And I check that AnagraficaFornitore.QualificationProjectArrow is displayed
-    And I click AnagraficaFornitore.QualificationProjectArrow
-    And I check that AnagraficaFornitore.QualificationProjectUL is displayed
-    And I select the 9 element from the DDL AnagraficaFornitore.QualificationProjectUL
-    And I check that AnagraficaFornitore.QualificationRegionArrow is displayed
-    And I click AnagraficaFornitore.QualificationRegionArrow
-    And I check that AnagraficaFornitore.QualificationRegionUL is displayed
-    And I select the 8 element from the DDL AnagraficaFornitore.QualificationRegionUL
-    And I check that AnagraficaFornitore.QualificationSearch is displayed
-    And I click AnagraficaFornitore.QualificationSearch
-    And Wait if it is loading
-
-    #non risultano questionari e di conseguenza non è possibile proseguire con il test
-
 
     Examples:
       | PartitaIva    | RagioneSociale  |
       | "00943140228" | "SVELTO S.R.L." |
+
+
