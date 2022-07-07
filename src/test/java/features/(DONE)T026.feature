@@ -1,18 +1,17 @@
-Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario Outline: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-    #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
-#TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
+Feature: T026 creazione fornitore procurement and qualification
+  Scenario Outline: T026 creazione fornitore procurement and qualification
 
     And I delete the supplier with <PartitaIva>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
+
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
-    And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And Wait if it is loading
     And I wait 1 seconds
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
@@ -22,14 +21,23 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
-    And I select the 1 element from the DDL NuovoFornitore.ULTipologieFornitore
+    And I select the 2 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
+    And Wait if it is loading
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
-    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
+    #senza BVD
+    And I click NuovoFornitore.Annulla
+    #la partita iva deve essere un numero reale
+    And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
+    And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
+    And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
+    And Wait if it is loading
     And I click NuovoFornitore.Crea
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And I wait 3 seconds
 
      #inizio ad editare l'anagrafica fornitore
     And Wait if it is loading
@@ -45,7 +53,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I input in InfoFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
 
-    #aggiungo una commodity
+#aggiungo una commodity
     And I check that InfoFornitore.AggiungiCommodity is displayed
     And I click InfoFornitore.AggiungiCommodity
     And I click InfoFornitore.CommodityArrow
@@ -56,7 +64,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    #Aggiungo un progetto
+#Aggiungo un progetto
     And I check that InfoFornitore.AggiungiProgetti is displayed and enabled
     And I click InfoFornitore.AggiungiProgetti
     And I click InfoFornitore.ProgettoArrow
@@ -67,20 +75,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    # Riparo ufficio operativo
-    And I check that InfoFornitore.Matita is displayed
-    And I click InfoFornitore.Matita
-    And I wait 2 seconds
-    And I check that InfoFornitore.ProvinciaButton is displayed
-    And I click InfoFornitore.ProvinciaButton
-    And I check that InfoFornitore.ULProvincia is displayed
-    And I select the 0 element from the DDL InfoFornitore.ULProvincia
-    And I check that InfoFornitore.Salva is displayed
-    And I click InfoFornitore.Salva
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-
-    #creo il contatto primario
+#creo il contatto primario
     And I check that InfoFornitore.NuovoContatto is displayed and enabled
     And I click InfoFornitore.NuovoContatto
     And I input in InfoFornitore.NomeContatto the text 'Marco'
@@ -99,8 +94,30 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-    # allego un file
-    And I scroll down
+    #Aggiungo l'ufficio operativo
+    And I check that InfoFornitore.NuovoUfficioOperativo is displayed and enabled
+    And I click InfoFornitore.NuovoUfficioOperativo
+    And I input in InfoFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
+    And I click AnagraficaFornitore.TipoIndirizzoArrow
+    And I check that InfoFornitore.ULTipoIndirizzo is displayed
+    And I select the 1 element from the DDL InfoFornitore.ULTipoIndirizzo
+    And I click InfoFornitore.NazioneButton
+    And I check that InfoFornitore.CreateOperationOficeSerachInputField is displayed
+    And I input in InfoFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
+    And I click InfoFornitore.CreateOperationOficeSerachLenteIngradimento
+    And I select the 0 element from the DDL InfoFornitore.ULNazione
+    And I input in InfoFornitore.Indirizzo the text 'nomeIndirizzo'
+    And I input in InfoFornitore.CodicePostale the text '21052'
+    And I input in InfoFornitore.Citta the text 'Busto Arsizio'
+    And I wait 1 seconds
+    And I click InfoFornitore.ProvinciaButton
+    And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
+    And I click InfoFornitore.SalvaUfficioOperativo
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
+
+ # allego un file
     And I check that InfoFornitore.AddDocumentButton is displayed
     And I click InfoFornitore.AddDocumentButton
     And I click InfoFornitore.AttachmentName
@@ -117,33 +134,11 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-    #torno nella homepage
-    And I switch to defaultContentFrame
-    And I click General.Logo
-
-    #ora devo Fare send To compliance alla proposta
-    And I switch to defaultContentFrame
-    And I check that General.Logo is displayed
-    And I click General.Logo
-    And I check that HomePage.LaMiaInbox is displayed
-    And I click HomePage.LaMiaInbox
-    And I go to the next frame
-    And I check that LaMiaInbox.DDLProposte is displayed
-    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.SendToCompliance is displayed and enabled
-    And I click LaMiaInbox.SendToCompliance
-
-    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
-    And I check that HomePage.Fornitori is displayed
-    And I click HomePage.Fornitori
-    And I go to the next frame
-    And I check that Fornitori.SearchBox is displayed
+  #invio della proposta e controllo registrato AFC
+    And I check that InfoFornitore.SubmitProposal is displayed and enabled
+    And I click InfoFornitore.SubmitProposal
     And Wait if it is loading
-    And I input in Fornitori.SearchBox the text <RagioneSociale>
-    And I check that Fornitori.SearchIcon is displayed
-    And I click Fornitori.SearchIcon
-    And I check that Fornitori.SuppliersTableBody is displayed and enabled
-    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
 
     #Modifico gli elementi in anagrafica
     And Wait if it is loading
@@ -167,7 +162,9 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-    #aggiungo una commodity
+     #aggiungo una commodity
+
+
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
@@ -178,7 +175,8 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    #aggiungo un progetto
+
+ #aggiungo un progetto (aggiungere PRJ non in lista al momento)
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I check that AnagraficaFornitore.AggiungiProgettiTabCommodity is displayed
@@ -192,7 +190,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-    #Aggiungo un secondo ufficio operativo
+      # Aggiungo un secondo ufficio operativo
     And I check that AnagraficaFornitore.OperationalOfficesTab is displayed
     And I click AnagraficaFornitore.OperationalOfficesTab
     And I check that AnagraficaFornitore.AddOperationalOfficesButton is displayed
@@ -228,6 +226,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
+
     # allego un file
     And I check that AnagraficaFornitore.AttachmentsTab is displayed
     And I click AnagraficaFornitore.AttachmentsTab
@@ -246,6 +245,7 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
     And Wait if it is loading
+
 
     # Aggiungo i dati ad Eco Finance
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
@@ -283,7 +283,22 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    #ora devo rifiutare la proposta
+     #ora devo Fare send To compliance alla proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.SendToCompliance is displayed and enabled
+    And I click LaMiaInbox.SendToCompliance
+
+    #ora devo accettare la proposta
+      # usando account compliance aggiungere il permesso ad account seguente
+        # oppure sloggare e riloggare con eventuale account compliance
+
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
     And I click General.Logo
@@ -293,32 +308,10 @@ Feature: T019 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I go to the next frame
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.Reject is displayed
-    And I click LaMiaInbox.Reject
-    And I wait 3 seconds
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
 
-    #dopo che ho rifiutato la Richiesta torno in homepage
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-
-    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
-    And I check that HomePage.Fornitori is displayed
-    And I click HomePage.Fornitori
-    And I go to the next frame
-    And I check that Fornitori.SearchBox is displayed
-    And Wait if it is loading
-    And I input in Fornitori.SearchBox the text <RagioneSociale>
-    And I check that Fornitori.SearchIcon is displayed
-    And I click Fornitori.SearchIcon
-    And I check that Fornitori.SuppliersTableBody is displayed and enabled
-    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
-
-    # Check Finale Su Request
-    And I wait 2 seconds
-    And I check that AnagraficaFornitore.RequestsTab is displayed
-    And I click AnagraficaFornitore.RequestsTab
-    And I check that the element AnagraficaFornitore.RejectedCheck contains the text 'Rejected'
 
     Examples:
-      | PartitaIva    | RagioneSociale  |
-      | "14292621001" | "HP S.R.L."     |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor26"     |
