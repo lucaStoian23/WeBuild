@@ -1,7 +1,8 @@
-Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario Outline: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+Feature: T016 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+  Scenario Outline: T016 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
+
     And I delete the supplier with <PartitaIva>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -143,8 +144,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And Wait if it is loading
     And I check that the element AnagraficaFornitore.StatusProposed contains the text 'Proposed'
 
-
-              #ora devo inviare a compliance la proposta
+                #ora devo inviare a compliance la proposta
 
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
@@ -158,7 +158,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that LaMiaInbox.SendToCompliance is displayed
     And I click LaMiaInbox.SendToCompliance
 
-    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+     #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
 
     And I check that HomePage.Fornitori is displayed
     And I click HomePage.Fornitori
@@ -277,17 +277,16 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
-
-
-    # Aggiungo i dati ad Eco Finance
+      # Aggiorno i dati Echo Finance
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceTab
-    And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
-    And I click AnagraficaFornitore.EcoFinanceAddData
+    And I check that AnagraficaFornitore.EchoFinanceUpdateButton is displayed
+    And I click AnagraficaFornitore.EchoFinanceUpdateButton
+    And I check that AnagraficaFornitore.EchoFinanceUpdateButtonManually is displayed
+    And I click AnagraficaFornitore.EchoFinanceUpdateButtonManually
     And I check that AnagraficaFornitore.EvaluationYear is displayed
-    And I check that AnagraficaFornitore.CurrencyArrow is displayed
-    And Wait if it is loading
     And I click AnagraficaFornitore.CurrencyArrow
+    And Wait if it is loading
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear
     And Wait if it is loading
@@ -314,39 +313,9 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click AnagraficaFornitore.SaveButton
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And Wait if it is loading
 
-# Aggiungo una Request Revoked
-
-    And I check that AnagraficaFornitore.RequestsTab is displayed
-    And I click AnagraficaFornitore.RequestsTab
-    And I check that AnagraficaFornitore.AddRequestButton is displayed
-    And I click AnagraficaFornitore.AddRequestButton
-    And I check that AnagraficaFornitore.AddRequestArrow is displayed
-    And I click AnagraficaFornitore.AddRequestArrow
-    And I check that AnagraficaFornitore.AddRequestUL is displayed
-    And I select the 5 element from the DDL AnagraficaFornitore.AddRequestUL
-    And I check that AnagraficaFornitore.ReasonRevokedArrow is displayed
-    And I click AnagraficaFornitore.ReasonRevokedArrow
-    And I check that AnagraficaFornitore.ReasonRevokedUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ReasonRevokedUL
-    And I check that AnagraficaFornitore.RevokedNotes is displayed
-    And I input in AnagraficaFornitore.RevokedNotes the text 'Prova007'
-    And I check that AnagraficaFornitore.RevokedProject is displayed
-    And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
-    And I click AnagraficaFornitore.RevokedNotes
-    And I check that AnagraficaFornitore.RevokedAddButton is displayed
-    And I click AnagraficaFornitore.RevokedAddButton
-    And I check that AnagraficaFornitore.EnterProjectUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
-    And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
-    And I click AnagraficaFornitore.RevokedCommodityButton
-    And I check that AnagraficaFornitore.RevokedCommodityUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.RevokedCommodityUL
-    And I put the attachment we-html inside AnagraficaFornitore.RevokedFile
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-
-          #ora devo accettare la proposta
+             #ora devo accettare la proposta
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
     And I click General.Logo
@@ -386,8 +355,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
 
 
+
     Examples:
       | PartitaIva    | RagioneSociale  |
       | "14292621001" | "HP S.R.L."     |
-
-

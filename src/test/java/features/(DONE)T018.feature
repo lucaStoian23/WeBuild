@@ -1,17 +1,20 @@
-Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario Outline: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+Feature: T018 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
+  Scenario Outline: T018 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
+
+
     And I delete the supplier with <PartitaIva>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
+
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
-    And I check that NuovoFornitore.NazioneButton is displayed and enabled
     And Wait if it is loading
     And I wait 1 seconds
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
@@ -21,19 +24,25 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
-    And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
+    And I select the 1 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
+    And Wait if it is loading
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
-    #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
-    #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
-    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
+    #senza BVD
+    And I click NuovoFornitore.Annulla
+    #la partita iva deve essere un numero reale
+    And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
+    And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
+    And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
+    And Wait if it is loading
     And I click NuovoFornitore.Crea
+    And Wait if it is loading
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
     And I wait 3 seconds
 
-    #dopo che ho creato il fornitore in draft torno nella homepage
+#dopo che ho creato il fornitore in draft torno nella homepage
     And I switch to defaultContentFrame
     And I check that InfoFornitore.TornaIndietro is displayed and enabled
     And I click InfoFornitore.TornaIndietro
@@ -73,7 +82,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And Wait if it is loading
    # And I wait 3 seconds
 
-#Aggiungo un progetto
+#Aggiungo un progetto (aggiungere PRJ)
     And I check that AnagraficaFornitore.AggiungiProgetti is displayed and enabled
     And I click AnagraficaFornitore.AggiungiProgetti
     And I click AnagraficaFornitore.ProgettoArrow
@@ -84,21 +93,7 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    # Riparo ufficio operativo
-
-    And I check that InfoFornitore.Matita is displayed
-    And I click InfoFornitore.Matita
-    And I wait 2 seconds
-    And I check that InfoFornitore.ProvinciaButton is displayed
-    And I click InfoFornitore.ProvinciaButton
-    And I check that InfoFornitore.ULProvincia is displayed
-    And I select the 0 element from the DDL InfoFornitore.ULProvincia
-    And I check that InfoFornitore.Salva is displayed
-    And I click InfoFornitore.Salva
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-
-#creo il contatto primario
+    #creo il contatto primario
     And I check that AnagraficaFornitore.NuovoContatto is displayed and enabled
     And I click AnagraficaFornitore.NuovoContatto
     And I input in AnagraficaFornitore.NomeContatto the text 'Marco'
@@ -117,6 +112,30 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
+    #Aggiungo l'ufficio operativo
+    And I check that AnagraficaFornitore.NuovoUfficioOperativo is displayed and enabled
+    And I click AnagraficaFornitore.NuovoUfficioOperativo
+    And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
+    And I click AnagraficaFornitore.TipoIndirizzoArrow
+    And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
+    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
+    And I click AnagraficaFornitore.NazioneButton
+
+   #devo prendere una country italiana
+    And I check that AnagraficaFornitore.CreateOperationOficeSerachInputField is displayed
+    And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
+    And I click AnagraficaFornitore.CreateOperationOficeSerachLenteIngradimento
+    And I select the 0 element from the DDL AnagraficaFornitore.ULNazione
+    And I input in AnagraficaFornitore.Indirizzo the text 'nomeIndirizzo'
+    And I input in AnagraficaFornitore.CodicePostale the text '21052'
+    And I input in AnagraficaFornitore.Citta the text 'Busto Arsizio'
+    And I wait 1 seconds
+    And I click AnagraficaFornitore.ProvinciaButton
+    And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
+    And I click AnagraficaFornitore.SalvaUfficioOperativo
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And Wait if it is loading
 
 # allego un file
     And I check that AnagraficaFornitore.AddDocumentButton is displayed
@@ -135,16 +154,14 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I click General.OKMessage
     And Wait if it is loading
 
+    #invio della proposta e controllo Registered
 
-  #invio della proposta e controllo Registered
-
-    And I check that InfoFornitore.SubmitProposal is displayed and enabled
-    And I click InfoFornitore.SubmitProposal
+    And I check that AnagraficaFornitore.InviaProposta is displayed and enabled
+    And I click AnagraficaFornitore.InviaProposta
     And Wait if it is loading
     And I check that the element AnagraficaFornitore.StatusProposed contains the text 'Proposed'
 
-
-              #ora devo inviare a compliance la proposta
+             #ora devo Approvare la proposta
 
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
@@ -155,8 +172,9 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I go to the next frame
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I check that LaMiaInbox.SendToCompliance is displayed
-    And I click LaMiaInbox.SendToCompliance
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
+
 
     #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
 
@@ -315,8 +333,9 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-# Aggiungo una Request Revoked
+    # Aggiungo una Request Duplicate
 
+    And Wait if it is loading
     And I check that AnagraficaFornitore.RequestsTab is displayed
     And I click AnagraficaFornitore.RequestsTab
     And I check that AnagraficaFornitore.AddRequestButton is displayed
@@ -324,29 +343,19 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that AnagraficaFornitore.AddRequestArrow is displayed
     And I click AnagraficaFornitore.AddRequestArrow
     And I check that AnagraficaFornitore.AddRequestUL is displayed
-    And I select the 5 element from the DDL AnagraficaFornitore.AddRequestUL
-    And I check that AnagraficaFornitore.ReasonRevokedArrow is displayed
-    And I click AnagraficaFornitore.ReasonRevokedArrow
-    And I check that AnagraficaFornitore.ReasonRevokedUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.ReasonRevokedUL
-    And I check that AnagraficaFornitore.RevokedNotes is displayed
-    And I input in AnagraficaFornitore.RevokedNotes the text 'Prova007'
-    And I check that AnagraficaFornitore.RevokedProject is displayed
-    And I input in AnagraficaFornitore.RevokedProject the text 'Koysha'
-    And I click AnagraficaFornitore.RevokedNotes
-    And I check that AnagraficaFornitore.RevokedAddButton is displayed
-    And I click AnagraficaFornitore.RevokedAddButton
-    And I check that AnagraficaFornitore.EnterProjectUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
-    And I check that AnagraficaFornitore.RevokedCommodityButton is displayed
-    And I click AnagraficaFornitore.RevokedCommodityButton
-    And I check that AnagraficaFornitore.RevokedCommodityUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.RevokedCommodityUL
-    And I put the attachment we-html inside AnagraficaFornitore.RevokedFile
+    And I select the 2 element from the DDL AnagraficaFornitore.AddRequestUL
+    And I check that AnagraficaFornitore.DuplicatedNotes is displayed
+    And I input in AnagraficaFornitore.DuplicatedNotes the text 'Nota Test'
+    And I check that AnagraficaFornitore.DuplicatedAddFile is displayed
+    And I put the attachment extent-config.xml inside AnagraficaFornitore.DuplicatedAddFile
+    And I check that AnagraficaFornitore.DuplicateFileDescription is displayed
+    And I input in AnagraficaFornitore.DuplicateFileDescription the text 'Test'
+    And I check that AnagraficaFornitore.DuplicateAddButton is displayed
+    And I click AnagraficaFornitore.DuplicateAddButton
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-          #ora devo accettare la proposta
+        #ora devo accettare la proposta
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
     And I click General.Logo
@@ -358,36 +367,28 @@ Feature: T014 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
     And I check that LaMiaInbox.Approve is displayed
     And I click LaMiaInbox.Approve
-    And I wait 3 seconds
 
-               #dopo che ho Accettato la Richiesta torno in homepage
+           #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
 
     And I switch to defaultContentFrame
-    And I click General.BackToHome
-
-        #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
-
+    And I check that General.Logo is displayed
+    And I click General.Logo
     And I check that HomePage.Fornitori is displayed
     And I click HomePage.Fornitori
     And I go to the next frame
     And I check that Fornitori.SearchBox is displayed
-    And Wait if it is loading
     And I input in Fornitori.SearchBox the text <RagioneSociale>
     And I check that Fornitori.SearchIcon is displayed
     And I click Fornitori.SearchIcon
     And I check that Fornitori.SuppliersTableBody is displayed and enabled
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
-    # Check Finale Su Request
 
-    And I wait 2 seconds
-    And I check that AnagraficaFornitore.RequestsTab is displayed
-    And I click AnagraficaFornitore.RequestsTab
+    #Check Status Finale
     And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
 
 
     Examples:
-      | PartitaIva    | RagioneSociale  |
-      | "14292621001" | "HP S.R.L."     |
-
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor18"     |
 

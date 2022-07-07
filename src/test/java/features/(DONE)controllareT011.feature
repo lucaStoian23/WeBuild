@@ -184,4 +184,4 @@ Feature: T011 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 
     Examples:
       | PartitaIva    | RagioneSociale  |
-      | "00943140228" | "SVELTO S.R.L." |
+      | "14292621001" | "HP S.R.L."     |
