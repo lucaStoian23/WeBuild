@@ -52,6 +52,7 @@ public class VendorRating {
 
     public static final BrowserElement StartCampaign = new BrowserElement(new By[]{By.xpath("//bdi[text()='Start Campaign']")});
     public static final BrowserElement SaveDraft = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save Draft']")});
+    public static final BrowserElement Draft = new BrowserElement(new By[]{By.xpath("//span[@data-sap-ui-icon-content='\uE172']")});
 }
    // public static final BrowserElement SupplierNameButton = new BrowserElement(new By[]{By.xpath("//span[@id='']")});
 

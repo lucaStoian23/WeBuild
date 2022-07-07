@@ -16,9 +16,12 @@ Feature: T027 creazione fornitore procurement and qualification
     And I select the 1 element from the DDL VendorRating.StatusUL
     And I click VendorRating.SearchButton
 
-    #scelgo il form in draft manualmente
+    #scelgo il primo form in draft
+    And Wait if it is loading
+    And I check that VendorRating.Draft is displayed
+    And I click VendorRating.Draft
 
-    #compilo i campi per creare il survey e faccio partire la campagna
+    #compilo i campi per creare il survey e faccio partire la campagna (survey non presenti in lista)
     And I check that VendorRating.CampaignName is displayed
     And I check that VendorRating.CampaignStartDate is displayed
     And I check that VendorRating.CampaignEndDate is displayed
