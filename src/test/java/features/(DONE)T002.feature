@@ -317,5 +317,5 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
 
     Examples:
       | PartitaIva    | RagioneSociale  |
-      | "00943140228" | "SVELTO S.R.L." |
+      | "14292621001" | "HP S.R.L."     |
 
