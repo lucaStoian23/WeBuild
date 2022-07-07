@@ -51,7 +51,7 @@ public class AnagraficaFornitore {
     public static final BrowserElement ProvinciaInput = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-searchField-I")});
     public static final BrowserElement ULProvincia = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--operationalofficesblock-Collapsed--selectDialog2-list-listUl")});
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
-
+    public static final BrowserElement SubmitProposal = new BrowserElement(new By[]{By.xpath("//bdi[text()='Submit Proposal']")});
     public static final BrowserElement PartitaIVASalva = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--partitaiva-inner']")});
 
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
@@ -126,6 +126,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     // Request General
     public static final BrowserElement RejectedCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Rejected']")});
     public static final BrowserElement ApprovedCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Approved']")});
+    public static final BrowserElement RegisteredWithRequestOfInformationCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Registered with request for information']")});
     public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
     public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
     public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestComboTipo-arrow']")});
@@ -179,5 +180,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement QualificationRegionUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateQuestComboRegion-popup-list-listUl']")});
     public static final BrowserElement QualificationSearch = new BrowserElement(new By[]{By.xpath("//bdi[text()='Search']")});
     public static final BrowserElement QualificationAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+
+
 
 }

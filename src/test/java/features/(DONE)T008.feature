@@ -222,7 +222,7 @@ Feature: T008 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-            #ora devo accettare la proposta
+            #ora devo Rifiutare la proposta
     And I switch to defaultContentFrame
     And I check that General.Logo is displayed
     And I click General.Logo
@@ -235,6 +235,19 @@ Feature: T008 VendorManager Nuovo Fornitore Italiano, procurement, DITC - DIFFER
     And I check that LaMiaInbox.Reject is displayed
     And I click LaMiaInbox.Reject
     And I wait 3 seconds
+
+            #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
      # Check Finale Su Request
 
