@@ -1,6 +1,5 @@
-Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. and supplier type = account and finance, SENZA BVD
-
-  Scenario Outline: T006 VendorManager Nuovo Fornitore
+Feature: T023 creazione fornitore procurement and qualification
+  Scenario Outline: T023 creazione fornitore procurement and qualification
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
 
@@ -12,31 +11,31 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And I check that NuovoFornitore.NazioneButton is displayed and enabled
+    And Wait if it is loading
     And I wait 1 seconds
     And I click NuovoFornitore.NazioneButton
+    And I check that NuovoFornitore.NazioneCerca is displayed
     And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
-    And I check that NuovoFornitore.ULFormeGiuridiche is displayed
     And I select the 1 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
-    And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
+    And I select the 2 element from the DDL NuovoFornitore.ULTipologieFornitore
     And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
-    And Wait if it is loading
     And I check that NuovoFornitore.ULFornitoriTrovati is displayed
-    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
     #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
+    And I select the 0 element from the DDL NuovoFornitore.ULFornitoriTrovati
     And I click NuovoFornitore.Crea
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
+    And I wait 3 seconds
 
     #inizio ad editare l'anagrafica fornitore
     And Wait if it is loading
-    And I check that InfoFornitore.LinguaggioButton is displayed
     And I click InfoFornitore.LinguaggioButton
     And I check that InfoFornitore.ULLinguaggio is displayed
     And I select the 0 element from the DDL InfoFornitore.ULLinguaggio
@@ -45,7 +44,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I input in InfoFornitore.ValutaDiRiferimentoCerca the text 'EUR'
     And I click InfoFornitore.ValutaDiRiferimentoLente
     And I select the 0 element from the DDL InfoFornitore.ValutaDiRiferimentoDDL
-    And I check that InfoFornitore.SitoWeb is displayed
+    And I wait 1 seconds
     And I input in InfoFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
 
@@ -71,7 +70,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-    #Aggiungo l'ufficio operativo
+    # Riparo ufficio operativo
     And I check that InfoFornitore.Matita is displayed
     And I click InfoFornitore.Matita
     And I wait 2 seconds
@@ -104,6 +103,7 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And Wait if it is loading
 
     # allego un file
+    And I scroll down
     And I check that InfoFornitore.AddDocumentButton is displayed
     And I click InfoFornitore.AddDocumentButton
     And I click InfoFornitore.AttachmentName
@@ -120,17 +120,11 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click General.OKMessage
     And Wait if it is loading
 
-    #invio la proposta
+    #invio della proposta e controllo Registered
     And I check that InfoFornitore.SubmitProposal is displayed and enabled
     And I click InfoFornitore.SubmitProposal
     And Wait if it is loading
-    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
-    #errore manca fornitore cee
-    #step 15 non presente il tap Eco-fincancial non si procede
-
-    #dopo che ho creato il fornitore in draft torno nella homepage
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
+    And I check that the element AnagraficaFornitore.StatusRegistered contains the text 'Registered'
 
     #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
     And I check that HomePage.Fornitori is displayed
@@ -144,13 +138,11 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
 
     #Modifico gli elementi in anagrafica
+    And I wait 2 seconds
     And I check that AnagraficaFornitore.TabContact is displayed
     And I click AnagraficaFornitore.TabContact
-    And I wait 3 seconds
-    And I scroll down
     And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
     And I click AnagraficaFornitore.NuovoContattoTabContact
-    And I wait 3 seconds
     And I check that AnagraficaFornitore.NomeContatto is displayed
     And I input in AnagraficaFornitore.NomeContatto the text 'paolo'
     And I input in AnagraficaFornitore.CognomeContatto the text 'bianchi'
@@ -158,17 +150,17 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I input in AnagraficaFornitore.EmailContatto the text 'emailcontatto3@outlook.com'
     And I check that AnagraficaFornitore.ArrowRuolo is displayed
     And I click AnagraficaFornitore.ArrowRuolo
-    And I select the 0 element from the DDL AnagraficaFornitore.ULRuolo
+    And I select the 0 element from the DDL InfoFornitore.ULRuolo
     And I click AnagraficaFornitore.ArrowTimezone
-    And I select the 13 element from the DDL AnagraficaFornitore.ULTimezone
+    And I select the 13 element from the DDL InfoFornitore.ULTimezone
     And I click AnagraficaFornitore.SalvaContatto
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
     And I click General.OKMessage
     And Wait if it is loading
 
     #aggiungo una commodity
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
-    And I wait 3 seconds
-    And I scroll down
     And I click AnagraficaFornitore.TabCommodityAndProject
     And I check that AnagraficaFornitore.AggiungiCommodityTabCommodity is displayed
     And I click AnagraficaFornitore.AggiungiCommodityTabCommodity
@@ -178,10 +170,8 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-   #aggiungo un progetto
+    #aggiungo un progetto
     And I check that AnagraficaFornitore.TabCommodityAndProject is displayed
-    And I wait 3 seconds
-    And I scroll down
     And I check that AnagraficaFornitore.AggiungiProgettiTabCommodity is displayed
     And I click AnagraficaFornitore.AggiungiProgettiTabCommodity
     And I click OperationalOffices.AddProjectArrow
@@ -196,8 +186,6 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     # allego un file
     And I check that AnagraficaFornitore.AttachmentsTab is displayed
     And I click AnagraficaFornitore.AttachmentsTab
-    And I scroll down
-    And I wait 3 seconds
     And I check that AnagraficaFornitore.AddDocumentButtonUpdate is displayed
     And I click AnagraficaFornitore.AddDocumentButtonUpdate
     And I click AnagraficaFornitore.AttachmentName
@@ -217,8 +205,6 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     # Aggiorno i dati Echo Finance
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceTab
-    And I wait 3 seconds
-    And I scroll down
     And I check that AnagraficaFornitore.EchoFinanceUpdateButton is displayed
     And I click AnagraficaFornitore.EchoFinanceUpdateButton
     And I check that AnagraficaFornitore.EchoFinanceUpdateButtonManually is displayed
@@ -254,72 +240,74 @@ Feature: T006 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click General.OKMessage
     And Wait if it is loading
 
-    #devo fargli una richiesta di cambio stato afc proc
-    #0=cessato,1=duplicato,2=fallito,3=afc>proc,4=derogaRFX,5=incorporato,6=modificheVM,7=revocato,8=sospeso
-    And I check that AnagraficaFornitore.RequestsTab is displayed
-    And I click AnagraficaFornitore.RequestsTab
-    And I wait 3 seconds
-    And I scroll down
-    And I check that AnagraficaFornitore.AddRequestButton is displayed
-    And I click AnagraficaFornitore.AddRequestButton
-    And I check that AnagraficaFornitore.AddRequestArrow is displayed
-    And I click AnagraficaFornitore.AddRequestArrow
-    And I check that AnagraficaFornitore.AddRequestUL is displayed
-    And I select the 5 element from the DDL AnagraficaFornitore.AddRequestUL
-    And I click AnagraficaFornitore.AddRequestNotes
-    And I input in AnagraficaFornitore.AddRequestNotes the text 'ProvaTest'
-    And I wait 3 seconds
-    And I check that AnagraficaFornitore.AddRequestEnterProject is displayed
-    And I input in AnagraficaFornitore.AddRequestEnterProject the text 'Koysha'
-    And I click AnagraficaFornitore.AddRequestNotes
-    And I check that AnagraficaFornitore.EnterProjectUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
-    And I check that AnagraficaFornitore.AddRequestCommodityButton is displayed
-    And I click AnagraficaFornitore.AddRequestCommodityButton
-    And I check that AnagraficaFornitore.AddRequestCommodiryUL is displayed
-    And I select the 4 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
-    And I check that AnagraficaFornitore.AddRequestAddButton is displayed
-    And I click AnagraficaFornitore.AddRequestAddButton
-    And Wait if it is loading
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And Wait if it is loading
+    # Clicco su submit proposal e controllo stato registered AFC
+    And I check that AnagraficaFornitore.SubmitProposal is displayed
+    And I click AnagraficaFornitore.SubmitProposal
+    And I check that the element AnagraficaFornitore.StatusRegisteredAFC contains the text 'Registered AFC'
 
-   #ora aspetto devo approvare la richiesta, devo approvarla usando tantissimi account diversi.
-   #torno nella homepage
-#    And I switch to defaultContentFrame
-#    And I click General.Logo
-#   #apro tile MyInbox e approvo la richiesta di cambio stato
-#    And I click HomePage.LaMiaInbox
-#    And I wait 30 seconds
-#    And I go to the next frame
-#    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-#    And I check that LaMiaInbox.Approve is displayed and enabled
-#    And I click LaMiaInbox.Approve
-#    And I wait 30 seconds
-    #torno nella vendor List
-#    And I switch to defaultContentFrame
-#    And I click General.logo
-#    And I wait 5 seconds
-#    And I click HomePage.Fornitori
-#    And I wait 10 seconds
-#    And I go to the next frame
-#    And I input in Fornitori.SearchBox the text <RagioneSociale>
-#    And I check that Fornitori.SearchIcon is displayed
-#    And I click Fornitori.SearchIcon
-#    And Wait if it is loading
-#    And I check that Fornitori.SuppliersTableBody is displayed and enabled
-#    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
-#    And Wait if it is loading
-#    And I go to the next frame
+    #ora devo accettare la proposta
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
 
-    # Check Finale Su Request
+    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+    # Check  Registered with request for information
     And I wait 2 seconds
-    And I check that AnagraficaFornitore.RequestsTab is displayed
-    And I click AnagraficaFornitore.RequestsTab
-    And I check that the element AnagraficaFornitore.ApprovedCheck contains the text 'Approved'
+    And I check that the element AnagraficaFornitore.RegisteredWithRequestOfInformationCheck contains the text 'Registered with request for information'
+
+    #ora devo accettare la proposta con wait di 30 secondi
+    And I switch to defaultContentFrame
+    And I check that General.Logo is displayed
+    And I click General.Logo
+    And I wait 30 seconds
+    And Wait if it is loading
+    And I check that HomePage.LaMiaInbox is displayed
+    And I click HomePage.LaMiaInbox
+    And I go to the next frame
+    And I check that LaMiaInbox.DDLProposte is displayed
+    And I select the 0 element from the DDL LaMiaInbox.DDLProposte
+    And I check that LaMiaInbox.Approve is displayed
+    And I click LaMiaInbox.Approve
+
+    #Rientro in Fornitori per ritrovare l'elemento creato in precedenza
+    And I check that HomePage.Fornitori is displayed
+    And I click HomePage.Fornitori
+    And I go to the next frame
+    And I check that Fornitori.SearchBox is displayed
+    And Wait if it is loading
+    And I input in Fornitori.SearchBox the text <RagioneSociale>
+    And I check that Fornitori.SearchIcon is displayed
+    And I click Fornitori.SearchIcon
+    And I check that Fornitori.SuppliersTableBody is displayed and enabled
+    And I search the supplier <RagioneSociale> in the tbody Fornitori.SuppliersTableBody
+
+    #Entro in Qualification per controllare lo stato dei questionari (registered) (nessun elemento in pagina)
+    And Wait if it is loading
+    And I check that AnagraficaFornitore.QualificationTab is displayed
+    And I click AnagraficaFornitore.QualificationTab
+    And I check that the element AnagraficaFornitore.StatusRegistered contains the text 'Registered'
+
 
 
     Examples:
-      | PartitaIva    | RagioneSociale |
-      | "08399370967" | "LENOVA SRL"   |
+      | PartitaIva    | RagioneSociale  |
+      | "14292621001" | "HP S.R.L."     |
