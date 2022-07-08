@@ -70,5 +70,5 @@ Feature: T029 questionaire
 
 
     Examples:
-      | Contract     |
-      | "" |
+      | Contract |
+      | ""       |
