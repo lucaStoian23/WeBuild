@@ -17,6 +17,7 @@ public class HomePage {
     public static final BrowserElement GestioneDeiFornitori = new BrowserElement(new By[]{By.id("__item0-anchorNavigationBar-2-inner")});
     public static final BrowserElement SourcingCockpit = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Sourc\u00ADing Cock\u00ADpit')]/ancestor::a")});
     public static final BrowserElement GeneralData = new BrowserElement(new By[]{By.xpath("//*[@id=\"__tile31\"]")});
+    public static final BrowserElement Qualifications = new BrowserElement(new By[]{By.xpath("//*[@id=\"__tile37\"]")});
     public static final BrowserElement PaginaInizialeMenu = new BrowserElement(new By[]{By.xpath("//*[@id=\"shellAppTitle-button\"]")});
     public static final BrowserElement PaginaInizialeGestioneDeiFornitori = new BrowserElement(new By[]{By.xpath("//*[@id=\"__item3-allMyAppsView--sapUshellAllMyAppsDataSourcesList-1\"]")});
     public static final BrowserElement PaginaInizialeNuovoFornitore = new BrowserElement(new By[]{By.xpath("//*[@id=\"__label0-allMyAppsView--oItemsContainerlist-3-bdi\"]")});
