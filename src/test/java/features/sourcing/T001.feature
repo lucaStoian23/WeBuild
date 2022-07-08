@@ -118,10 +118,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I go to the next frame
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
     #And I wait 1 seconds
-    And I click RFX.CreationDate
-    And I check that RFX.SortDescending is displayed
-    And I wait 1 seconds
-    And I click RFX.SortDescending
+   # And I click RFX.CreationDate
+   # And I check that RFX.SortDescending is displayed
+   # And I wait 1 seconds
+   # And I click RFX.SortDescending
 
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
@@ -141,6 +141,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
     And I wait 3 seconds
+    And I click RFX.EnlargePage
     And I check that RFX.InviteVendors is displayed
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
@@ -186,10 +187,10 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
     And I wait 1 seconds
 
-    And I click RFX.CreationDate
-    And I check that RFX.SortDescending is displayed
-    And I wait 1 seconds
-    And I click RFX.SortDescending
+    #And I click RFX.CreationDate
+    #And I check that RFX.SortDescending is displayed
+    #And I wait 1 seconds
+    #And I click RFX.SortDescending
 
     And I open the 0 row insire table MyRfx.RFXtable
     #adesso procedo con la valutatione tecnica
@@ -205,33 +206,23 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that RFX.EvaluationUL is displayed
     And I select the 0 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Negativo'
-    And I click RFX.EvaluationArrow
-    And I wait 1 seconds
-    And I put the attachment cucumber.properties inside RFX.AttachmentField
     And I check that RFX.Add is displayed
     And I click RFX.Add
     And I check that RFX.TechnicalEvaluationTable is displayed
-    And I wait 5 seconds
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I check that RFX.EvaluationUL is displayed
     And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
-    And I click RFX.EvaluationArrow
-    And I put the attachment embedded1.png inside RFX.AttachmentField
     And I check that RFX.Add is displayed
     And I click RFX.Add
     And I check that RFX.TechnicalEvaluationTable is displayed and enabled
-    And I wait 5 seconds
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I check that RFX.EvaluationUL is displayed
     And I select the 2 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
-    And I click RFX.EvaluationArrow
-    And I put the attachment extent.properties inside RFX.AttachmentField
     And I click RFX.Add
-    And I wait 5 seconds
     And I check that RFX.CompletaValutazioneTecnica is displayed and enabled
     And I click RFX.CompletaValutazioneTecnica
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)

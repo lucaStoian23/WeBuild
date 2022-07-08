@@ -57,6 +57,8 @@ public class RFX {
     public static final BrowserElement WorkflowPreRFX = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDNewRFXDetailWorkflowTestBtn-BDI-content']")});
     public static final BrowserElement SaveAsDraft = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPNewRFX-Display-component---NewRFXDetail--IDSaveGenDataDraftBtn-BDI-content']")});
 
+    public static final BrowserElement EnlargePage = new BrowserElement(new By[]{By.xpath("//span[@data-sap-ui-icon-content='\uE1F0']")});
+
     public static final BrowserElement DataDiCreazione = new BrowserElement(new By[]{By.id("__text3")});
 
     public static final BrowserElement RFXFirstChoice = new BrowserElement(new By[]{By.id("__item0-__clone85_cell1")});
