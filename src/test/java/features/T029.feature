@@ -35,7 +35,7 @@ Feature: T029 questionaire
     And I click VendorRating.CampaignUserArrow
     And I check that VendorRating.CampaignUserUL is displayed
     And I check that VendorRating.StatusUL is displayed
-    And I input in VendorRating.CampaignUserSearch the text 'Sara Zouhri(P000290)'
+    And I input in VendorRating.CampaignUserSearch the text 'Corrado Motta(P000265)'
     And I click VendorRating.CampaignSurveyArrow
     And I check that VendorRating.CampaignSurveyUL is displayed
     And I select the 0 element from the DDL NuovoFornitore.StatusUL
@@ -70,5 +70,5 @@ Feature: T029 questionaire
 
 
     Examples:
-      | Contract     |
-      | "" |
+      | Contract |
+      | ""       |

@@ -180,15 +180,14 @@ Feature: T017 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I check that AnagraficaFornitore.CommodityQualificationButton is displayed
     And I click AnagraficaFornitore.CommodityQualificationButton
     And I check that AnagraficaFornitore.CommodityQualificationUL is displayed
+    And I input in AnagraficaFornitore.CommodityQualificationSearch the text 'Agenzie Stampa'
+    And I click AnagraficaFornitore.CommodityQualificationLents
+    And I check that AnagraficaFornitore.CommodityQualificationUL is displayed
     And I select the 0 element from the DDL AnagraficaFornitore.CommodityQualificationUL
     And I check that AnagraficaFornitore.QualificationProjectArrow is displayed
     And I click AnagraficaFornitore.QualificationProjectArrow
     And I check that AnagraficaFornitore.QualificationProjectUL is displayed
-    And I select the 9 element from the DDL AnagraficaFornitore.QualificationProjectUL
-    And I check that AnagraficaFornitore.QualificationRegionArrow is displayed
-    And I click AnagraficaFornitore.QualificationRegionArrow
-    And I check that AnagraficaFornitore.QualificationRegionUL is displayed
-    And I select the 8 element from the DDL AnagraficaFornitore.QualificationRegionUL
+    And I select the 13 element from the DDL AnagraficaFornitore.QualificationProjectUL
     And I check that AnagraficaFornitore.QualificationSearch is displayed
     And I click AnagraficaFornitore.QualificationSearch
     And Wait if it is loading
