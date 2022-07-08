@@ -28,7 +28,7 @@ public class RFX {
     public static final BrowserElement AddPrButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
     public static final BrowserElement PRtable = new BrowserElement(new By[]{By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input")});
     public static final BrowserElement Notes = new BrowserElement(new By[]{By.xpath("//textarea[@id='__area0-inner']")});
-    public static final BrowserElement Create = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXRDARecap--IDNewRFXRDACreateBtn-inner")});
+    public static final BrowserElement Create = new BrowserElement(new By[]{By.xpath("//bdi[text()='Create']")});
     public static final BrowserElement AggiungiRDA = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDNewRFXAddBtn-inner")});
     public static final BrowserElement RFXHeader = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFX--IDPageNewRFX-intHeader-BarPH")});
     public static final BrowserElement RFI = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'RFI')]")});
@@ -115,11 +115,16 @@ public class RFX {
     public static final BrowserElement CreateReccomendation = new BrowserElement(new By[]{By.xpath("//bdi[text()='Create']")});
     public static final BrowserElement ReccomendationTbody = new BrowserElement(new By[]{By.xpath("//tbody[@id='application-NPPMyRFX-Display-component---NewRFXDetail--IDRFXRecommendationTable-tblBody']")});
 
-    //textarea[@id='__area1-inner']
-
     public static final BrowserElement EvaluationAttachment = new BrowserElement(new By[]{By.xpath("//form[@id='IDTechEvalDialog--fuTechEvalAttachment-fu_form']")});
+    public static final BrowserElement PRListArrow = new BrowserElement(new By[]{By.xpath("//span[@data-sap-ui-icon-content='\uE0E3']")});
+    public static final BrowserElement AssignPR = new BrowserElement(new By[]{By.xpath("//bdi[text()='Assign PR']")});
 
+    public static final BrowserElement PRBuyerBoxArrow = new BrowserElement(new By[]{By.xpath("//span[@id='__box1-arrow']")});
+    public static final BrowserElement PRBuyerBoxUL = new BrowserElement(new By[]{By.xpath("//ul[@id='__box1-popup-list-listUl']")}); //3
+    public static final BrowserElement PRBuyerRegister = new BrowserElement(new By[]{By.xpath("//bdi[text()='Register']")});
+    public static final BrowserElement PRBuyerRegister2 = new BrowserElement(new By[]{By.xpath("//button[@id='__mbox-btn-0']")});
 
+    public static final BrowserElement PRAll = new BrowserElement(new By[]{By.xpath("//div[@class='sapUiTableSelectAllCheckBox']")});
     //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
 
 
