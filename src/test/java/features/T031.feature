@@ -1,5 +1,5 @@
-Feature: T029 questionaire
-  Scenario Outline: T029 questionaire
+Feature: T031 questionaire
+  Scenario Outline: T031 questionaire
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
     And I check that HomePage.VendorRating is displayed
