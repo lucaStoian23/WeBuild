@@ -373,14 +373,25 @@ public class WebStep {
     public void iInsertTheRfxBudgetToAllThePrInsideRFXPRtable(String n, String className, String fieldName) throws Exception {
 
 
-       List<WebElement> wb = driver.findElements(By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input"));
+       WebElement wb = driver.findElement(By.xpath("//tbody[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input"));
 
-       System.out.println(wb.size());
 
-                wb.get(0).clear();
+                wb.clear();
                 waitSec(1);
-                wb.get(0).sendKeys( "10");
+                wb.sendKeys( "10");
+                waitSec(1);
         driver.findElement(By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDNewRFXRDACreateBtn']")).click();
+
+
+    }
+
+    @And("I clear the rfx budget to all the pr inside {}.{}")
+    public void iInsertTheRfxBudgetToAllThePrInsideRFXPRtable(String className, String fieldName) throws Exception {
+
+
+        WebElement wb = driver.findElement(By.xpath("//tbody[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDRFXRDARecapTable-tblBody']//input"));
+
+        wb.clear();
 
 
     }
