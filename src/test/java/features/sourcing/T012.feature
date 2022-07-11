@@ -1,5 +1,5 @@
-Feature: T011 TEST FILTRI TILE RFX SLIDE 45
-  Scenario Outline: T011 TEST FILTRI TILE RFX SLIDE 45
+Feature: T012 test filtri -> mischiare i filtri di diverse tab
+  Scenario Outline: T012 test filtri -> mischiare i filtri di diverse tab
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
@@ -15,4 +15,4 @@ Feature: T011 TEST FILTRI TILE RFX SLIDE 45
 
     Examples:
       | RagSociale |
-      | "Test11"   |
+      | "Test12"   |
