@@ -377,18 +377,10 @@ public class WebStep {
 
        System.out.println(wb.size());
 
-        for (WebElement w: wb) {
-            try {
-                w.clear();
+                wb.get(0).clear();
                 waitSec(1);
-                w.sendKeys( "10");
-
-            }catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-        }
+                wb.get(0).sendKeys( "10");
+        driver.findElement(By.xpath("//*[@id='application-NPPNewRFX-Display-component---NewRFXRDARecap--IDNewRFXRDACreateBtn']")).click();
 
 
     }
