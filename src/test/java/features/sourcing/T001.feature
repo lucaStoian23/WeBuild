@@ -253,7 +253,7 @@ Feature: T001 creazione fornitore procurement and qualification
   #  And I click General.MenuUtente
   #  And I click General.Logout
   #  And I click General.OKMessage
-    # And I check that General.LogInAgain is displayed
+    #  And I check that General.LogInAgain is displayed
   #  And I click General.LogInAgain
   #  And I wait 5 seconds
   #  Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
