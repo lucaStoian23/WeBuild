@@ -127,7 +127,11 @@ public class RFX {
     public static final BrowserElement PRBuyerRegister2 = new BrowserElement(new By[]{By.xpath("//button[@id='__mbox-btn-0']")});
 
     public static final BrowserElement PRAll = new BrowserElement(new By[]{By.xpath("//div[@class='sapUiTableSelectAllCheckBox']")});
+
+
+    // RFX creation - PR
+
+    public static final BrowserElement AddPRTbody = new BrowserElement(new By[]{By.id("application-NPPNewRFX-Display-component---NewRFXRDA--IDRFXRDATable-tblBody")});
+
     //public static final BrowserElement ProjectButton = new BrowserElement(new By[]{By.id("")})
-
-
 }

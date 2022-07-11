@@ -4,33 +4,33 @@ Feature: T001 creazione fornitore procurement and qualification
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
-    #Assegno il pr
+  #  #Assegno il pr da sourcing cockpit
 
-    And I check that HomePage.SourcingCockpit is displayed
-    And I click HomePage.SourcingCockpit
-    And I go to the next frame
-    And Wait if it is loading
-    And I check that RFX.PRListArrow is displayed
-    And I click RFX.PRListArrow
-    And Wait if it is loading
-    And I check that RFX.PRAll is displayed
-    And I click RFX.PRAll
-    And I check that RFX.AssignPR is displayed
-    And I click RFX.AssignPR
-    And I check that RFX.PRBuyerBoxArrow is displayed
-    And I click RFX.PRBuyerBoxArrow
-    And I check that RFX.PRBuyerBoxUL is displayed
-    And I select the 3 element from the DDL RFX.PRBuyerBoxUL
-    And I check that RFX.PRBuyerRegister is displayed
-    And I click RFX.PRBuyerRegister
-    And I wait 1 seconds
-    And I check that RFX.PRBuyerRegister2 is displayed
-    And I click RFX.PRBuyerRegister2
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-    And I check that the element HomePage.HeaderHome contains the text 'Home'
+  #  And I check that HomePage.SourcingCockpit is displayed
+  #  And I click HomePage.SourcingCockpit
+  #  And I go to the next frame
+  #  And Wait if it is loading
+  #  And I check that RFX.PRListArrow is displayed
+  #  And I click RFX.PRListArrow
+  #  And Wait if it is loading
+  #  And I check that RFX.PRAll is displayed
+  #  And I click RFX.PRAll
+  #  And I check that RFX.AssignPR is displayed
+  #  And I click RFX.AssignPR
+  #  And I check that RFX.PRBuyerBoxArrow is displayed
+  #  And I click RFX.PRBuyerBoxArrow
+  #  And I check that RFX.PRBuyerBoxUL is displayed
+  #  And I select the 3 element from the DDL RFX.PRBuyerBoxUL
+  #  And I check that RFX.PRBuyerRegister is displayed
+  #  And I click RFX.PRBuyerRegister
+  #  And I wait 1 seconds
+  #  And I check that RFX.PRBuyerRegister2 is displayed
+  #  And I click RFX.PRBuyerRegister2
+  #  And I check that General.OKMessage is displayed
+  #  And I click General.OKMessage
+  #  And I switch to defaultContentFrame
+  #  And I click General.BackToHome
+  #  And I check that the element HomePage.HeaderHome contains the text 'Home'
 
     #procedo dal punto 08
     #creazione di un RFX
@@ -43,25 +43,26 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that the element RFX.RFXCreationPageCheck contains the text 'Select the type of RFX'
     And I click RFX.TenderCommodityArrow
     And I check that RFX.TenderCommoditySearch is displayed and clickable
-    And I input in RFX.TenderCommoditySearch the text 'logistic'
+    And I input in RFX.TenderCommoditySearch the text 'photo'
     And I click RFX.Lente
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
     And I input in RFX.EventTitle the text <RFXTitle>
 
    # #aggiungo pr da creazione RFX (errore in pagina)
-   # And I check that RFX.AddPR is displayed
-   # And I click RFX.AddPR
-   # And Wait if it is loading
+    And I check that RFX.AddPR is displayed
+    And I click RFX.AddPR
+    And Wait if it is loading
    # And I check that RFX.PRTickAll is displayed
    # And I click RFX.PRTickAll
-   # And I check that RFX.AddPrButton is displayed
-   # And I click RFX.AddPrButton
-   # And I check that RFX.PRtable is displayed
-   # And I wait 2 seconds
-   # And I insert the rfx budget 11 to all the pr inside RFX.PRtable
-
-    And I click RFX.Create
+    And I choose the 0 insire table RFX.AddPRTbody
+   # And I choose the 4 insire table RFX.AddPRTbody
+    And I check that RFX.AddPrButton is displayed
+    And I click RFX.AddPrButton
+    And I check that RFX.PRtable is displayed
+    And I wait 2 seconds
+    And I insert the rfx budget 11 to all the pr inside RFX.PRtable
+    #And I click RFX.Create
 
 
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
@@ -123,9 +124,10 @@ Feature: T001 creazione fornitore procurement and qualification
    # And I wait 1 seconds
    # And I click RFX.SortDescending
 
+    And Wait if it is loading
     And I open the 0 row insire table MyRfx.RFXtable
           #aggiungo i vendor alla list
-    And I wait 2 seconds
+    And Wait if it is loading
     And I check that RFX.PreRFX is displayed
     And I click RFX.PreRFX
     And I check that RFX.PreRFXButton is displayed
@@ -293,9 +295,6 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
 
     And I click RFX.CreationDate
-    And I check that RFX.SortDescending is displayed
-    And I wait 1 seconds
-    And I click RFX.SortDescending
 
     And I open the 0 row insire table MyRfx.RFXtable
     And I check that RFX.TargetPrice is displayed
@@ -330,5 +329,5 @@ Feature: T001 creazione fornitore procurement and qualification
 
 
     Examples:
-      | RFXTitle       |
-      | "TestRFX1"     |
+      | RFXTitle   |
+      | "TestRFX1" |
