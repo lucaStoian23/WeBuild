@@ -62,7 +62,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I check that RFX.PRtable is displayed
     And I wait 2 seconds
     And I insert the rfx budget 11 to all the pr inside RFX.PRtable
-    #And I click RFX.Create
+    And I wait 1 seconds
+  #  And I click RFX.Create
 
 
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
