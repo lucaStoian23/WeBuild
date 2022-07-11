@@ -15,4 +15,4 @@ Feature: T011 TEST FILTRI TILE RFX SLIDE 45
 
     Examples:
       | RagSociale     |
-      | "Test"         |
+      | "Test "         |

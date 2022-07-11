@@ -1,5 +1,5 @@
-Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
-  Scenario Outline: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
+Feature: T008 creare un rfx con un budget che superi i 15.000.000 euro
+  Scenario Outline: T008 creare un rfx con un budget che superi i 15.000.000 euro
 
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -47,6 +47,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I click RFX.Lente
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I click RFX.RFI
     And I input in RFX.EventTitle the text <RFXTitle>
 
  #  # #aggiungo pr da creazione RFX (errore in pagina)
@@ -105,7 +106,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I click RFX.CurrencyLents
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I check that RFX.Budget is displayed
-    And I input in RFX.Budget the text '30000'
+    And I input in RFX.Budget the text '15000000'
     And I check that RFX.Forecast is displayed
     And I input in RFX.Forecast the text '10000'
     And I check that RFX.SaveAsDraft is displayed
@@ -372,4 +373,4 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
 
     Examples:
       | RFXTitle   |
-      | "TestRFX2" |
+      | "TestRFX8" |
