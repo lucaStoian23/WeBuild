@@ -318,6 +318,18 @@ public class WebStep {
         elements.get(n).click();
     }
 
+    @And("I choose the {} insire table {}.{}")
+    public void iTickPR(Integer n, String className, String fieldName) throws Exception {
+        BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
+
+        WebElement wbl = findEl(el);
+        List<WebElement> elements = wbl.findElements(By.tagName("tr"));
+        List<WebElement> tdElements = elements.get(n).findElements(By.tagName("td"));
+
+        System.out.println(elements);
+        tdElements.get(1).click();
+    }
+
 
     @And("I use the {} button of {}.{}")
     public void iUseTheButtonOfRFXTechnicalEvaluationTable(Integer n, String className, String fieldName) throws Exception {
@@ -368,11 +380,12 @@ public class WebStep {
         for (WebElement w: wb) {
             try {
                 w.clear();
+                waitSec(1);
                 w.sendKeys( "10");
 
             }catch (Exception e)
             {
-
+                e.printStackTrace();
             }
 
         }
