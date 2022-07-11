@@ -1,5 +1,5 @@
-Feature: T009 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
-  Scenario Outline: T009 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
+Feature: T010 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
+  Scenario Outline: T010 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
 
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -50,19 +50,21 @@ Feature: T009 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e N
     And I click RFX.RFI
     And I input in RFX.EventTitle the text <RFXTitle>
 
- #  # #aggiungo pr da creazione RFX (errore in pagina)
- #   And I check that RFX.AddPR is displayed
- #   And I click RFX.AddPR
- #   And Wait if it is loading
- #  # And I check that RFX.PRTickAll is displayed
- #  # And I click RFX.PRTickAll
- #   And I choose the 0 insire table RFX.AddPRTbody
- #  # And I choose the 4 insire table RFX.AddPRTbody
- #   And I check that RFX.AddPrButton is displayed
- #   And I click RFX.AddPrButton
- #   And I check that RFX.PRtable is displayed
- #   And I wait 2 seconds
- #   And I insert the rfx budget 11 to all the pr inside RFX.PRtable
+ # #aggiungo pr da creazione RFX (errore in pagina)
+    And I check that RFX.AddPR is displayed
+    And I click RFX.AddPR
+    And Wait if it is loading
+   # And I check that RFX.PRTickAll is displayed
+   # And I click RFX.PRTickAll
+    And I choose the 0 insire table RFX.AddPRTbody
+   # And I choose the 4 insire table RFX.AddPRTbody
+    And I check that RFX.AddPrButton is displayed
+    And I click RFX.AddPrButton
+    And I check that RFX.PRtable is displayed
+    And I wait 2 seconds
+    And I clear the rfx budget to all the pr inside RFX.PRtable
+  #  And I insert the rfx budget 11 to all the pr inside RFX.PRtable
+    And I wait 1 seconds
     And I click RFX.Create
 
 
