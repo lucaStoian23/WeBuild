@@ -1,5 +1,5 @@
-Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
-  Scenario Outline: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
+Feature: T009 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
+  Scenario Outline: T009 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e NON farla approvare al VM,
 
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -47,6 +47,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I click RFX.Lente
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I click RFX.RFI
     And I input in RFX.EventTitle the text <RFXTitle>
 
  #  # #aggiungo pr da creazione RFX (errore in pagina)
@@ -105,7 +106,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I click RFX.CurrencyLents
     And I select the 0 element from the DDL RFX.CurrencyUL
     And I check that RFX.Budget is displayed
-    And I input in RFX.Budget the text '30000'
+    And I input in RFX.Budget the text '15000000'
     And I check that RFX.Forecast is displayed
     And I input in RFX.Forecast the text '10000'
     And I check that RFX.SaveAsDraft is displayed
@@ -171,16 +172,16 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I switch to defaultContentFrame
     And I click General.BackToHome
     And I check that the element HomePage.HeaderHome contains the text 'Home'
-    #apro tile MyInbox e Approve la richiesta di cambio stato
+
+    #apro tile MyInbox e Reject la richiesta di cambio stato
     And I click HomePage.LaMiaInbox
     And I go to the next frame
     And Wait if it is loading
-   # And I check that LaMiaInbox.MailboxSearch is displayed
-  #  And I input in LaMiaInbox.MailboxSearch the text 'Pre'
     And I check that LaMiaInbox.DDLProposte is displayed
     And I select the 0 element from the DDL LaMiaInbox.DDLProposte
-    And I click LaMiaInbox.Approve
+    And I click LaMiaInbox.Reject
     And I wait 5 seconds
+
    #torno nella homepage
     And I switch to defaultContentFrame
     And I click General.BackToHome
@@ -209,161 +210,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I check that RFX.TechnicalEvaluationTable is displayed
     And I use the 0 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
-    And I check that RFX.EvaluationUL is displayed
-    And I select the 5 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationTextArea the text 'Negativo'
-    And I check that RFX.Add is displayed
-    And I click RFX.Add
-    And I check that RFX.TechnicalEvaluationTable is displayed
-    And I use the 1 button of RFX.TechnicalEvaluationTable
-    And I click RFX.EvaluationArrow
-    And I check that RFX.EvaluationUL is displayed
-    And I select the 7 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationTextArea the text 'Positivo'
-    And I check that RFX.Add is displayed
-    And I click RFX.Add
-    And I check that RFX.TechnicalEvaluationTable is displayed and enabled
-    And I use the 2 button of RFX.TechnicalEvaluationTable
-    And I click RFX.EvaluationArrow
-    And I check that RFX.EvaluationUL is displayed
-    And I select the 7 element from the DDL RFX.EvaluationUL
-    And I input in RFX.EvaluationTextArea the text 'Positivo'
-    And I click RFX.Add
-    And I check that RFX.CompletaValutazioneTecnica is displayed and enabled
-    And I click RFX.CompletaValutazioneTecnica
 
-    #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
-
-    #processo di logout e login con primo account (negato)
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-    And I check that General.MenuUtente is displayed
-    And I click General.MenuUtente
-    And I wait 1 seconds
-    And I check that General.Logout is displayed
-    And I click General.Logout
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And I check that General.LogInAgain is displayed
-    And I click General.LogInAgain
-    And I wait 5 seconds
-    Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
-    And I check that HomePage.RFX is displayed
-    And I click HomePage.RFX
-    And I go to the next frame
-    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-    And Wait if it is loading
-    #qui non si deve visualizzare RFX creato
-
-
- # Logout e login per il secondo account
-
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-    And I check that General.MenuUtente is displayed
-    And I click General.MenuUtente
-    And I wait 1 seconds
-    And I check that General.Logout is displayed
-    And I click General.Logout
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And I check that General.LogInAgain is displayed
-    And I click General.LogInAgain
-    And I wait 5 seconds
-    Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
-    And I click HomePage.RFX
-    And I go to the next frame
-    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-    And Wait if it is loading
-    #cercare e trovare offerta mandata
-    #And I open the 0 row insire table MyRfx.RFXtable
-  #inserire step 32/33
-    And I check that RFX.SupplierOffer1 is displayed
-    And I input in RFX.SupplierOffer1 the text '100'
-    And I check that RFX.SupplierOffer2 is displayed
-    And I input in RFX.SupplierOffer2 the text '100'
-    And I check that RFX.InviaRFX is displayed
-    And I click RFX.InviaRFX
-
-  #logout e login terzo account
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-    And I check that General.MenuUtente is displayed
-    And I click General.MenuUtente
-    And I wait 1 seconds
-    And I check that General.Logout is displayed
-    And I click General.Logout
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And I check that General.LogInAgain is displayed
-    And I click General.LogInAgain
-    And I wait 5 seconds
-    Given I log_in NEW with username cidravayda@vusra.com and password WebuildPwd00.
-    And I click HomePage.RFX
-    And I go to the next frame
-    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-    And Wait if it is loading
-     #cercare e trovare offerta mandata
-   # And I open the 0 row insire table MyRfx.RFXtable
-    And I check that RFX.SupplierOffer1 is displayed
-    And I input in RFX.SupplierOffer1 the text '100'
-    And I check that RFX.SupplierOffer2 is displayed
-    And I input in RFX.SupplierOffer2 the text '100'
-    And I check that RFX.InviaRFX is displayed
-    And I click RFX.InviaRFX
- # adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
- # Sezione Target Setting da eseguire con buyer
-
-    #Riloggo con account base
-
-    And I switch to defaultContentFrame
-    And I click General.BackToHome
-    And I check that General.MenuUtente is displayed
-    And I click General.MenuUtente
-    And I wait 1 seconds
-    And I check that General.Logout is displayed
-    And I click General.Logout
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
-    And I check that General.LogInAgain is displayed
-    And I click General.LogInAgain
-    And I wait 5 seconds
-    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
-
-    #atterro nella homepage
-
-    And I check that the element HomePage.HeaderHome contains the text 'Home'
-    And I click HomePage.MyRFX
-    And I go to the next frame
-    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-    And Wait if it is loading
-    And I open the 0 row insire table MyRfx.RFXtable
-    And I check that RFX.TargetPrice is displayed
-    And I click RFX.TargetPrice
-    And I click RFX.CompletaValutazioneTecnica
-    And I check that RFX.AddTargetPrice is displayed and enabled
-    And I click RFX.AddTargetPrice
-    And I check that RFX.EventNotes is displayed
-    And I input in RFX.TheEventEnds the text '15 June 2022 - 02:24 PM GMT+02:00'
-    And I input in RFX.EventNotes the text 'Test'
-    And I click RFX.AddEventItem
-    And I check that RFX.EventDescription is displayed
-    And I input in RFX.EventDescription the text 'Test evento'
-    And I input in RFX.EventTargetPrice the text '50000'
-    And I click RFX.PublishButton
-    And Wait if it is loading
-
-    #Recommendation
-    And I click RFX.Reccomendations
-    And I check that RFX.AddRecommendation is displayed
-    And I click RFX.AddRecommendation
-    And I input in RFX.ReccomentationNote the text 'Test Nota'
-    And I check that RFX.CreateReccomendation is displayed
-    And I click RFX.CreateReccomendation
-    #And I search the supplier 'Draft' in the tbody RFX.ReccomendationTbody
-    #Punto finale confermare la proposta con approver account
-
-#Sezioni mancanti a causa dei primi step non attivi
 
 
 
@@ -371,5 +218,5 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
 
 
     Examples:
-      | RFXTitle   |
-      | "TestRFX2" |
+      | RFXTitle    |
+      | "TestRFX10" |

@@ -1,5 +1,5 @@
-Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
-  Scenario Outline: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e farla approvare al VM
+Feature: T006 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDI e farla approvare al VM
+  Scenario Outline: T006 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDI e farla approvare al VM
 
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
@@ -47,6 +47,7 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
     And I click RFX.Lente
     And I select the 0 element from the DDL RFX.TenderCommodityUL
     And I input in RFX.Notes the text 'Test prova note 1'
+    And I click RFX.RFI
     And I input in RFX.EventTitle the text <RFXTitle>
 
  #  # #aggiungo pr da creazione RFX (errore in pagina)
@@ -372,4 +373,4 @@ Feature: T002 Assegnare RDA a buyer, far creare al buyer una rfx di tipo RDQ e f
 
     Examples:
       | RFXTitle   |
-      | "TestRFX2" |
+      | "TestRFX6" |
