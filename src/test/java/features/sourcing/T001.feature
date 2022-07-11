@@ -49,20 +49,20 @@ Feature: T001 creazione fornitore procurement and qualification
     And I input in RFX.Notes the text 'Test prova note 1'
     And I input in RFX.EventTitle the text <RFXTitle>
 
-   # #aggiungo pr da creazione RFX (errore in pagina)
-    And I check that RFX.AddPR is displayed
-    And I click RFX.AddPR
-    And Wait if it is loading
-   # And I check that RFX.PRTickAll is displayed
-   # And I click RFX.PRTickAll
-    And I choose the 0 insire table RFX.AddPRTbody
-   # And I choose the 4 insire table RFX.AddPRTbody
-    And I check that RFX.AddPrButton is displayed
-    And I click RFX.AddPrButton
-    And I check that RFX.PRtable is displayed
-    And I wait 2 seconds
-    And I insert the rfx budget 11 to all the pr inside RFX.PRtable
-    #And I click RFX.Create
+ #  # #aggiungo pr da creazione RFX (errore in pagina)
+ #   And I check that RFX.AddPR is displayed
+ #   And I click RFX.AddPR
+ #   And Wait if it is loading
+ #  # And I check that RFX.PRTickAll is displayed
+ #  # And I click RFX.PRTickAll
+ #   And I choose the 0 insire table RFX.AddPRTbody
+ #  # And I choose the 4 insire table RFX.AddPRTbody
+ #   And I check that RFX.AddPrButton is displayed
+ #   And I click RFX.AddPrButton
+ #   And I check that RFX.PRtable is displayed
+ #   And I wait 2 seconds
+ #   And I insert the rfx budget 11 to all the pr inside RFX.PRtable
+    And I click RFX.Create
 
 
     #a questo punto bisognerebbe aggiungere un PR ma non è possibile al momento
@@ -142,7 +142,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.Lente
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
-    And I wait 3 seconds
+    And Wait if it is loading
     And I click RFX.EnlargePage
     And I check that RFX.InviteVendors is displayed
     And I click RFX.InviteVendors
@@ -153,7 +153,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I click RFX.VendorTickAll
     And I click RFX.AddVendorButton
     And I check that RFX.InviteVendors is displayed
-    And I wait 3 seconds
+    And Wait if it is loading
     And I click RFX.InviteVendors
     And I check that RFX.InputSearch is displayed
     And I wait 1 seconds
@@ -164,7 +164,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I wait 1 seconds
     And I check that RFX.InviaVendorListPerApprovazione is displayed
     And I click RFX.InviaVendorListPerApprovazione
-    And I wait 15 seconds
+    And Wait if it is loading
     #FARE IL CHECK PRE RFX PENDING APPROVAL INVECE DI   QUESTO TIMER ENORME
 
       #torno nella homepage
@@ -174,6 +174,7 @@ Feature: T001 creazione fornitore procurement and qualification
     #apro tile MyInbox e Approve la richiesta di cambio stato
     And I click HomePage.LaMiaInbox
     And I go to the next frame
+    And Wait if it is loading
    # And I check that LaMiaInbox.MailboxSearch is displayed
   #  And I input in LaMiaInbox.MailboxSearch the text 'Pre'
     And I check that LaMiaInbox.DDLProposte is displayed
@@ -195,18 +196,21 @@ Feature: T001 creazione fornitore procurement and qualification
     #And I click RFX.SortDescending
 
     And I open the 0 row insire table MyRfx.RFXtable
+
     #adesso procedo con la valutatione tecnica
-    And I wait 3 seconds
+
+    And Wait if it is loading
     And I check that RFX.TechnicalEvaluations is displayed and enabled
     And I click RFX.TechnicalEvaluations
     And I check that RFX.AddTechnicalEvaluation is displayed
     And I click RFX.AddTechnicalEvaluation
+
       #adesso valuto il primo negativo gli altri positivo
     And I check that RFX.TechnicalEvaluationTable is displayed
     And I use the 0 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I check that RFX.EvaluationUL is displayed
-    And I select the 0 element from the DDL RFX.EvaluationUL
+    And I select the 5 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Negativo'
     And I check that RFX.Add is displayed
     And I click RFX.Add
@@ -214,7 +218,7 @@ Feature: T001 creazione fornitore procurement and qualification
     And I use the 1 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I check that RFX.EvaluationUL is displayed
-    And I select the 2 element from the DDL RFX.EvaluationUL
+    And I select the 7 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
     And I check that RFX.Add is displayed
     And I click RFX.Add
@@ -222,80 +226,117 @@ Feature: T001 creazione fornitore procurement and qualification
     And I use the 2 button of RFX.TechnicalEvaluationTable
     And I click RFX.EvaluationArrow
     And I check that RFX.EvaluationUL is displayed
-    And I select the 2 element from the DDL RFX.EvaluationUL
+    And I select the 7 element from the DDL RFX.EvaluationUL
     And I input in RFX.EvaluationTextArea the text 'Positivo'
     And I click RFX.Add
     And I check that RFX.CompletaValutazioneTecnica is displayed and enabled
     And I click RFX.CompletaValutazioneTecnica
+
     #adesso devo aprire un rfx da l'account vendor che ho rifiutato step 30 (non disponibile)
-   # #processo di logout e login con primo account
-   # And I switch to defaultContentFrame
-   # And I click General.BackToHome
-   # And I check that General.MenuUtente is displayed
-   # And I click General.MenuUtente
-   # And I wait 1 seconds
-   # And I click General.Logout
-   # And I click General.OKMessage
-   # And I check that General.LogInAgain is displayed
-   # And I click General.LogInAgain
-   # And I wait 5 seconds
-#
-   # Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
-   # And I check that HomePage.MyRFX is displayed
-   # And I click HomePage.MyRFX
-   # And I go to the next frame
-   # And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-   # And I wait 6 seconds
-   # And I open the 0 row insire table MyRfx.RFXtable
-    #Logout e login per il secondo account<
-  #  And I switch to defaultContentFrame
-    # And I check that General.BackToHome is displayed
-  #  And I click General.BackToHome
-  #  And I wait 2 seconds
-  #  And I click General.MenuUtente
-  #  And I click General.Logout
-  #  And I click General.OKMessage
-    #  And I check that General.LogInAgain is displayed
-  #  And I click General.LogInAgain
-  #  And I wait 5 seconds
-  #  Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
-  #  And I click HomePage.MyRFX
-  #  And I go to the next frame
-  #  And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-  #  And I wait 6 seconds
-  #  And I open the 0 row insire table MyRfx.RFXtable
-  #  #inserire step 32/33
-  #  #logout e login terzo account
-  #  And I switch to defaultContentFrame
-  #  And I click General.BackToHome
-  #  And I wait 2 seconds
-  #  And I click General.MenuUtente
-  #  And I click General.Logout
-  #  And I click General.OKMessage
-  #  And I wait 5 seconds
-  #  And I click General.LogInAgain
-   # And I wait 5 seconds
-   # Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
-   # And I click HomePage.MyRFX
-   # And I go to the next frame
-   # And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-   # And I wait 6 seconds
-   # And I open the 0 row insire table MyRfx.RFXtable
-    #inserire step 32/33
-    #adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
-    #Sezione Target Setting da eseguire con buyer
-    #torno nella homepage
+
+    #processo di logout e login con primo account (negato)
     And I switch to defaultContentFrame
     And I click General.BackToHome
+    And I check that General.MenuUtente is displayed
+    And I click General.MenuUtente
+    And I wait 1 seconds
+    And I check that General.Logout is displayed
+    And I click General.Logout
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I check that General.LogInAgain is displayed
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username somija5008@dilanfa.com and password WebuildPwd00.
+    And I check that HomePage.RFX is displayed
+    And I click HomePage.RFX
+    And I go to the next frame
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And Wait if it is loading
+    #qui non si deve visualizzare RFX creato
+
+
+ # Logout e login per il secondo account
+
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I check that General.MenuUtente is displayed
+    And I click General.MenuUtente
+    And I wait 1 seconds
+    And I check that General.Logout is displayed
+    And I click General.Logout
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I check that General.LogInAgain is displayed
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username talode1120@falkyz.com and password WebuildPwd00.
+    And I click HomePage.RFX
+    And I go to the next frame
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And Wait if it is loading
+    #cercare e trovare offerta mandata
+    #And I open the 0 row insire table MyRfx.RFXtable
+  #inserire step 32/33
+    And I check that RFX.SupplierOffer1 is displayed
+    And I input in RFX.SupplierOffer1 the text '100'
+    And I check that RFX.SupplierOffer2 is displayed
+    And I input in RFX.SupplierOffer2 the text '100'
+    And I check that RFX.InviaRFX is displayed
+    And I click RFX.InviaRFX
+
+  #logout e login terzo account
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I check that General.MenuUtente is displayed
+    And I click General.MenuUtente
+    And I wait 1 seconds
+    And I check that General.Logout is displayed
+    And I click General.Logout
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I check that General.LogInAgain is displayed
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username cidravayda@vusra.com and password WebuildPwd00.
+    And I click HomePage.RFX
+    And I go to the next frame
+    And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
+    And Wait if it is loading
+     #cercare e trovare offerta mandata
+   # And I open the 0 row insire table MyRfx.RFXtable
+    And I check that RFX.SupplierOffer1 is displayed
+    And I input in RFX.SupplierOffer1 the text '100'
+    And I check that RFX.SupplierOffer2 is displayed
+    And I input in RFX.SupplierOffer2 the text '100'
+    And I check that RFX.InviaRFX is displayed
+    And I click RFX.InviaRFX
+ # adesso devo aprire un rfx da l'account vendor che ho Accettato step 31-32-33 (non disponibile)
+ # Sezione Target Setting da eseguire con buyer
+
+    #Riloggo con account base
+
+    And I switch to defaultContentFrame
+    And I click General.BackToHome
+    And I check that General.MenuUtente is displayed
+    And I click General.MenuUtente
+    And I wait 1 seconds
+    And I check that General.Logout is displayed
+    And I click General.Logout
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I check that General.LogInAgain is displayed
+    And I click General.LogInAgain
+    And I wait 5 seconds
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+    #atterro nella homepage
+
     And I check that the element HomePage.HeaderHome contains the text 'Home'
     And I click HomePage.MyRFX
     And I go to the next frame
     And I check that the element RFX.MyRFXCheckPage contains the text 'RFX'
-
-    And I wait 1 seconds
-
-    And I click RFX.CreationDate
-
+    And Wait if it is loading
     And I open the 0 row insire table MyRfx.RFXtable
     And I check that RFX.TargetPrice is displayed
     And I click RFX.TargetPrice
@@ -310,7 +351,8 @@ Feature: T001 creazione fornitore procurement and qualification
     And I input in RFX.EventDescription the text 'Test evento'
     And I input in RFX.EventTargetPrice the text '50000'
     And I click RFX.PublishButton
-    And I wait 3 seconds
+    And Wait if it is loading
+
     #Recommendation
     And I click RFX.Reccomendations
     And I check that RFX.AddRecommendation is displayed

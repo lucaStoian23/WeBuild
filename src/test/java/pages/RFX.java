@@ -128,6 +128,12 @@ public class RFX {
 
     public static final BrowserElement PRAll = new BrowserElement(new By[]{By.xpath("//div[@class='sapUiTableSelectAllCheckBox']")});
 
+    // RFX da Vendor
+    public static final BrowserElement SupplierOffer1 = new BrowserElement(new By[]{By.xpath("//textarea[@id='application-NPPListRFX-Display-component---SourcingGeneralData--_IDGenTextArea4-application-NPPListRFX-Display-component---SourcingGeneralData--tSurvey-0-inner']")});
+    public static final BrowserElement SupplierOffer2 = new BrowserElement(new By[]{By.xpath("//textarea[@id='application-NPPListRFX-Display-component---SourcingGeneralData--_IDGenTextArea4-application-NPPListRFX-Display-component---SourcingGeneralData--tSurvey-1-inner']")});
+    public static final BrowserElement InviaRFX = new BrowserElement(new By[]{By.xpath("//bdi[text()='Invia']")});
+    public static final BrowserElement TbodyCustomerRFX = new BrowserElement(new By[]{By.xpath("//tbody[@id='application-NPPListRFX-Display-component---SourcingListRFX--tListRFX-tblBody']")});
+
 
     // RFX creation - PR
 
