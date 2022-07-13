@@ -11,9 +11,10 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
+    And Wait if it is loading
     And I go to the next frame
     And Wait if it is loading
-    And I wait 2 seconds
+    And I wait 4 seconds
     And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
@@ -66,6 +67,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.ValutaDiRiferimentoCerca the text 'EUR'
     And I click AnagraficaFornitore.ValutaDiRiferimentoLente
     And I select the 0 element from the DDL AnagraficaFornitore.ValutaDiRiferimentoDDL
+    And I wait 1 seconds
     And I input in AnagraficaFornitore.SitoWeb the text 'nomefornitore.com'
     And I scroll down
 

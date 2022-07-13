@@ -157,6 +157,15 @@ public class WebStep {
         }
     }
 
+    public static void waitMills(int millis) {
+
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Given("I navigate to FPT page")
     public void navigateToFpt() throws IOException {
         Util.getURL("https://www.fptindustrial.com/global/en");
@@ -397,14 +406,14 @@ public class WebStep {
     }
 
     @And("Wait if it is loading")
-    public void waitIfItIsLoading() {
+    public static void waitIfItIsLoading() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
        int size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
        int maxWait = 15;
        int c = 0;
 
        while (size >=2){
-           waitSec(1);
+           waitMills(100);
            size = driver.findElements(By.xpath("//div[@title='Please wait' and @aria-valuetext='Busy' and @role='progressbar']")).size();
            if(size <=2) return;
            c++;

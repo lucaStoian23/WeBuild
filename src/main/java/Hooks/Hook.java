@@ -30,6 +30,7 @@ public class Hook extends DriverManager {
         } catch(Exception e){
 
         }
+        WebStep.waitIfItIsLoading();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
@@ -52,7 +53,7 @@ public class Hook extends DriverManager {
         }catch (Exception e){
 
         }
-
+        WebStep.waitIfItIsLoading();
 
     }
 
