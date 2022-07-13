@@ -254,5 +254,5 @@ Feature: T004 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And Wait if it is loading
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale      |
-      | "STFSLA41A73AB5h9Z" | ""            | "009355109410"  | "ProfasfeFinalensi" |
+     | PartitaIva    | RagioneSociale  |
+     | "14292621001" | "HP S.R.L."     |
