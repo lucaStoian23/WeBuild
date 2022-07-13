@@ -13,7 +13,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I click HomePage.NuovoFornitore
     And I go to the next frame
     And Wait if it is loading
-    And I wait 1 seconds
+    And I wait 2 seconds
     And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
