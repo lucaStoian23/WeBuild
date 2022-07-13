@@ -9,7 +9,7 @@ Feature: T027 creazione fornitore procurement and qualification
     And I wait 15 seconds
     And I go to the next frame
     And I click NuovoFornitore.NazioneButton
-    And I input in NuovoFornitore.NazioneCerca the text 'Italia'
+    And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton

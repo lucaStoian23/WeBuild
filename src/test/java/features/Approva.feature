@@ -1,7 +1,7 @@
 Feature: T003 VendorManager Approva workflow
 
   Scenario: T003 VendorManager Approva workflow
-    Given I log_in with username c.motta@reply.it and password Sysko@003
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
     And I wait 10 seconds
     And I click HomePage.Fornitori
     And I wait 10 seconds
