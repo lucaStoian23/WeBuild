@@ -14,7 +14,6 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And Wait if it is loading
     And I go to the next frame
     And Wait if it is loading
-    And I wait 4 seconds
     And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
     And I check that NuovoFornitore.NazioneCerca is displayed
@@ -330,5 +329,5 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor01"     |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale    |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor001"   |
