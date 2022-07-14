@@ -363,7 +363,7 @@ public class WebStep {
     @And("I delete the supplier with {}")
     public void iDeleteTheSupplierWithPartitaIva(String PARIVA) throws SQLException {
         System.out.println("iva: " + PARIVA);
-        FornitoreDao.deleteFornitoreWithPariva(PARIVA);
+        FornitoreDao.deleteFornitoreWithRagSociale(PARIVA);
         System.out.println("Fornitore eliminato con successo");
     }
 
