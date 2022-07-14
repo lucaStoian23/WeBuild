@@ -131,40 +131,40 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement RegisteredWithRequestOfInformationCheck = new BrowserElement(new By[]{By.xpath("//span[text()='Registered with request for information']")});
     public static final BrowserElement RequestsTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Requests']")});
     public static final BrowserElement AddRequestButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add Request']")});
-    public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestComboTipo-arrow']")});
-    public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
+    public static final BrowserElement AddRequestArrow = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestComboTipo-arrow']")});
+    public static final BrowserElement AddRequestUL = new BrowserElement(new By[]{By.xpath("//ul[@id='IDAddReqDialog--id_SupplierCreateRequestComboTipo-popup-list-listUl']")});
     public static final BrowserElement EnterProjectUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestInsertProjectAFC-popup-list-listUl']")});
 
     // Request SuppliersFromAfc
-    public static final BrowserElement AddRequestNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote5-inner']")});
-    public static final BrowserElement AddRequestEnterProject = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInsertProjectAFC-inner']")});
-    public static final BrowserElement AddRequestCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestInsertCommodityAFC-vhi']")});
+    public static final BrowserElement AddRequestNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='IDAddReqDialog--id_SupplierCreateRequestInputNote5-inner']")});
+    public static final BrowserElement AddRequestEnterProject = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--id_SupplierCreateRequestInsertProjectAFC-inner']")});
+    public static final BrowserElement AddRequestCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestInsertCommodityAFC-vhi']")});
     public static final BrowserElement AddRequestCommodiryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
     public static final BrowserElement AddRequestAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
     // Request Revoked
-    public static final BrowserElement ReasonRevokedArrow = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestSelectReason-arrow']")});
-    public static final BrowserElement ReasonRevokedUL = new BrowserElement(new By[]{By.xpath("//ul[@id='id_SupplierCreateRequestSelectReason-popup-list-listUl']")});
-    public static final BrowserElement RevokedNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateRequestInputNote3-inner']")});
-    public static final BrowserElement RevokedProject = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInsertProject-inner']")});
-    public static final BrowserElement RevokedCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateRequestInsertCommodity-vhi']")});
+    public static final BrowserElement ReasonRevokedArrow = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestSelectReason-arrow']")});
+    public static final BrowserElement ReasonRevokedUL = new BrowserElement(new By[]{By.xpath("//ul[@id='IDAddReqDialog--id_SupplierCreateRequestSelectReason-popup-list-listUl']")});
+    public static final BrowserElement RevokedNotes = new BrowserElement(new By[]{By.xpath("//textarea[@id='IDAddReqDialog--id_SupplierCreateRequestInputNote3-inner']")});
+    public static final BrowserElement RevokedProject = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--id_SupplierCreateRequestInsertProject-inner']")});
+    public static final BrowserElement RevokedCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestInsertCommodity-vhi']")});
     public static final BrowserElement RevokedCommodityUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
-    public static final BrowserElement RevokedFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateREV-fu']")});
+    public static final BrowserElement RevokedFile = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--fuSupplierCreateREV-fu']")});
     public static final BrowserElement RevokedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
     // Request Ceased
 
-    public static final BrowserElement CeasedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInputNote-inner']")});
-    public static final BrowserElement CeasedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestAttachDesc-inner']")});
+    public static final BrowserElement CeasedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--id_SupplierCreateRequestInputNote-inner']")});
+    public static final BrowserElement CeasedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--fuSupplierCreateCF-fu']")});
+    public static final BrowserElement CeasedFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--id_SupplierCreateRequestAttachDesc-inner']")});
     public static final BrowserElement CeasedAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
     // Request Duplicaded
 
 
-    public static final BrowserElement DuplicatedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestInputNote-inner']")});
-    public static final BrowserElement DuplicatedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='fuSupplierCreateCF-fu']")});
-    public static final BrowserElement DuplicateFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateRequestAttachDesc-inner']")});
+    public static final BrowserElement DuplicatedNotes = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--_IDGenTextArea1-inner']")});
+    public static final BrowserElement DuplicatedAddFile = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--_IDGenFileUploader3-fu']")});
+    public static final BrowserElement DuplicateFileDescription = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--_IDGenInput3-inner']")});
     public static final BrowserElement DuplicateAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
 
 
