@@ -249,6 +249,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.CountrySearch the text 'Italy'
     And I check that AnagraficaFornitore.CountryLents is displayed
     And I click AnagraficaFornitore.CountryLents
+
     And I check that AnagraficaFornitore.CountryUL is displayed
     And I select the 0 element from the DDL OperationalOffices.CountryUL
     And I check that AnagraficaFornitore.Address is displayed
@@ -259,8 +260,12 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
     And I input in AnagraficaFornitore.City the text 'Palermo'
     And I check that AnagraficaFornitore.ProvinceButton is displayed
     And I click AnagraficaFornitore.ProvinceButton
+    And I check that AnagraficaFornitore.ProvinceSearch is displayed
+    And I input in AnagraficaFornitore.ProvinceSearch the text 'Palermo'
+    And I check that AnagraficaFornitore.ProvinceLents is displayed
+    And I click AnagraficaFornitore.ProvinceLents
     And I check that AnagraficaFornitore.ProvinceUL is displayed
-    And I select the 56 element from the DDL OperationalOffices.ProvinceUL
+    And I select the 0 element from the DDL OperationalOffices.ProvinceUL
     And I check that AnagraficaFornitore.OperetionsOfficeSave is displayed
     And I click AnagraficaFornitore.OperetionsOfficeSave
     And Wait if it is loading

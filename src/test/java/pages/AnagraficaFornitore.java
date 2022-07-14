@@ -102,6 +102,8 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement City = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeComboCity-inner']")});
     public static final BrowserElement ProvinceButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateOfficeLocal-vhi']")});
     public static final BrowserElement ProvinceUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")}); //56
+    public static final BrowserElement ProvinceSearch = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-searchField-I']")});
+    public static final BrowserElement ProvinceLents = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-searchField-search']")});
     public static final BrowserElement OperetionsOfficeSave = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
 
 // Eco Finance
