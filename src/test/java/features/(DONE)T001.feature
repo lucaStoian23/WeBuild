@@ -183,6 +183,7 @@ Feature: T001 VendorManager Nuovo Fornitore Italiano, AFC, DITC - DIFFERENT SUPP
 
        #Modifico gli elementi in anagrafica
     And Wait if it is loading
+    And I wait 3 seconds
       And I check that AnagraficaFornitore.TabContact is displayed
       And I click AnagraficaFornitore.TabContact
       And I check that AnagraficaFornitore.NuovoContattoTabContact is displayed
