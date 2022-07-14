@@ -16,7 +16,8 @@ public class AnagraficaFornitore {
     public static final BrowserElement ValutaDiRiferimentoLente = new BrowserElement(new By[]{By.xpath("//div[@id='application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-searchField-search']")});
     public static final BrowserElement ValutaDiRiferimentoDDL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--nationDialog-list-listUl']")});
     public static final BrowserElement SitoWeb = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--website-inner']")});
-    public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--_IDGenButton1']")});
+    public static final BrowserElement InviaProposta = new BrowserElement(new By[]{By.xpath("//bdi[text()='Submit Proposal']")});
+    public static final BrowserElement AttachmentTab = new BrowserElement(new By[]{By.xpath("//bdi[text()='Attachments']")});
     public static final BrowserElement AggiungiCommodity = new BrowserElement(new By[]{By.xpath("//button[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_suppliercommodityblocktab_Table_HeaderToolbar_ButtonAddNew']")});
     public static final BrowserElement AggiungiProgetti = new BrowserElement(new By[]{By.xpath("//span[@id='application-NPPFornitori-Display-component---SupplierCreationData--commodityprojectblock-Collapsed--id_supplierprojectblocktab_Table_HeaderToolbar_ButtonAddNew-content']")});
     public static final BrowserElement CommodityArrow = new BrowserElement(new By[]{By.xpath("//span[@id='iCommodity-arrow']")});
@@ -69,7 +70,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
 
 
     //tab attachement
-    public static final BrowserElement AddDocumentButton = new BrowserElement(new By[]{By.xpath("//bdi[@id='application-NPPFornitori-Display-component---SupplierCreationData--attachmentblock-Collapsed--_IDGenButton1-BDI-content' and text()='Add document']")});
+    public static final BrowserElement AddDocumentButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add document']")});
     public static final BrowserElement AttachmentName = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateAttachmentInputName-inner']")});
     public static final BrowserElement AttachmentDescription = new BrowserElement(new By[]{By.xpath("//textarea[@id='id_SupplierCreateAttachmentInputDescription-inner']")});
     public static final BrowserElement AttachmentFileName = new BrowserElement(new By[]{By.xpath("//input[ @type='file' and @id='fuSupplierCreate-fu']")});

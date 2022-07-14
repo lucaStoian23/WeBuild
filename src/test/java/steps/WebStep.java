@@ -41,7 +41,7 @@ public class WebStep {
         BrowserElement el = Functions_Settings.getPageElementByString(className, fieldName);
         findEl(el).isDisplayed();
         String step =  new Throwable().getStackTrace()[0].getMethodName();
-        Util.takeScreenShot();
+       // Util.takeScreenShot();
     }
 
     public static Boolean isVisible(String className, String fieldName) throws Exception {
@@ -141,9 +141,10 @@ public class WebStep {
 
             findEl(el).click();
             String step = new Throwable().getStackTrace()[0].getMethodName();
-            Util.takeScreenShot();
+
         }catch (org.openqa.selenium.ElementNotInteractableException e){
             System.out.println("Element not intercectable");
+            Util.takeScreenShot();
         }
     }
 
