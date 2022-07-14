@@ -1,30 +1,46 @@
 Feature: T010 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/SUBAPP. CEE", supplier type= procurement , senza BVD
-  Scenario: T010 VendorManager Nuovo Fornitore
+  Scenario Outline: T010 VendorManager Nuovo Fornitore
     #FORME GIURIDICHE: 0= fornitori diversi/ 1 = pers giuridiche/ 2 = Professionisti/
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
-    Given I log_in NEW with username s.zouhri@reply.it and password NPP.webuild1
-    And I wait 20 seconds
+    And I delete the supplier with <RagioneSociale>
+
+    Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
+
+
+    And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
-    And I wait 4 seconds
-    And I change the iFrame application-NPPSupplierCreation-Display
+    And Wait if it is loading
+    And I go to the next frame
+    And Wait if it is loading
+    And I check that NuovoFornitore.NazioneButton is displayed
     And I click NuovoFornitore.NazioneButton
-    And I input in NuovoFornitore.NazioneCerca the text 'Italia'
+    And I check that NuovoFornitore.NazioneCerca is displayed
+    And I input in NuovoFornitore.NazioneCerca the text 'Italy'
     And I click NuovoFornitore.Clessidra
     And I click NuovoFornitore.NazioneTrovata
     And I click NuovoFornitore.FormaGiuridicaButton
     And I select the 0 element from the DDL NuovoFornitore.ULFormeGiuridiche
     And I click NuovoFornitore.TipologiaFornitoreButton
+    And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-    And I input in NuovoFornitore.RagioneSociale the text 'mang'
+    And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I click NuovoFornitore.SearchInfoProviderButton
-    #se si crea su un fornitore gia presente su npp, parte il controllo dei duplicati che porta
-    #l'utente sulla schermata info-fornitore della bozza, faccio un log4j per questa situazione
+    And Wait if it is loading
+    And I check that NuovoFornitore.ULFornitoriTrovati is displayed
+    #senza BVD
     And I click NuovoFornitore.Annulla
-    And I input the codFiscale in NuovoFornitore.PartitaIva
-    And I input in NuovoFornitore.CodiceFiscale the text 'STNAASD1230ASD'
-    And I input in NuovoFornitore.PartitaIvaCEE the text 'CEE2323CEE2323CDD'
+    #la partita iva deve essere un numero reale
+    And I input in NuovoFornitore.PartitaIva the text <PartitaIva>
+    And I input in NuovoFornitore.CodiceFiscale the text <CodiceFiscale>
+    And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
+    And Wait if it is loading
     And I click NuovoFornitore.Crea
-    And I wait 4 seconds
+    And Wait if it is loading
+    And I check that General.OKMessage is displayed
+    And I click General.OKMessage
+    And I wait 3 seconds
+
+
     And I click InfoFornitore.LinguaggioButton
     And I wait 1 seconds
     And I select the 1 element from the DDL InfoFornitore.ULLinguaggio
@@ -162,3 +178,7 @@ Feature: T010 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
     And I search the supplier 'mang' in the tbody Fornitori.SuppliersTableBody
     And I wait 4 seconds
     And I go to the next frame
+
+    Examples:
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   |
+      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor10"   |

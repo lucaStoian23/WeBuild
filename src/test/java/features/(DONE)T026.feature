@@ -1,7 +1,7 @@
 Feature: T026 creazione fornitore procurement and qualification
   Scenario Outline: T026 creazione fornitore procurement and qualification
 
-    And I delete the supplier with <PartitaIva>
+    And I delete the supplier with <RagioneSociale>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
