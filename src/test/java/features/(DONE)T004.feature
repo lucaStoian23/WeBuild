@@ -87,30 +87,11 @@ Feature: T004 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click General.OKMessage
     And Wait if it is loading
 
-#Aggiungo l'ufficio operativo
-    And I check that AnagraficaFornitore.NuovoUfficioOperativo is displayed and enabled
-    And I click AnagraficaFornitore.NuovoUfficioOperativo
-    And I input in AnagraficaFornitore.NomeUfficioOperativo the text 'Nome Ufficio Operativo'
-    And I click AnagraficaFornitore.TipoIndirizzoArrow
-    And I check that AnagraficaFornitore.ULTipoIndirizzo is displayed
-    And I select the 1 element from the DDL AnagraficaFornitore.ULTipoIndirizzo
-    And I click AnagraficaFornitore.NazioneButton
 
-#devo prendere una country italiana
-    And I check that AnagraficaFornitore.CreateOperationOficeSerachInputField is displayed
-    And I input in AnagraficaFornitore.CreateOperationOficeSerachInputField the text 'ITALY'
-    And I click AnagraficaFornitore.CreateOperationOficeSerachLenteIngradimento
-    And I select the 0 element from the DDL AnagraficaFornitore.ULNazione
-    And I input in AnagraficaFornitore.Indirizzo the text 'nomeIndirizzo'
-    And I input in AnagraficaFornitore.CodicePostale the text '21052'
-    And I input in AnagraficaFornitore.Citta the text 'Busto Arsizio'
-    And I click AnagraficaFornitore.ProvinciaButton
-    And I select the 0 element from the DDL AnagraficaFornitore.ULProvincia
-    And I click AnagraficaFornitore.SalvaUfficioOperativo
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
 
 #allego un file
+    And I check that AnagraficaFornitore.AttachmentTab is displayed
+    And I click AnagraficaFornitore.AttachmentTab
     And I check that AnagraficaFornitore.AddDocumentButton is displayed
     And I click AnagraficaFornitore.AddDocumentButton
     And I click AnagraficaFornitore.AttachmentName
@@ -213,18 +194,15 @@ Feature: T004 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
 
-#Aggiungo i dati ad Eco Finance
+ # Aggiungo i dati ad Eco Finance
     And I check that AnagraficaFornitore.EcoFinanceTab is displayed and enabled
     And I click AnagraficaFornitore.EcoFinanceTab
-    And I wait 3 seconds
-    And I scroll down
-    And I check that AnagraficaFornitore.EchoFinanceUpdateButton is displayed
-    And I click AnagraficaFornitore.EchoFinanceUpdateButton
-    And I check that AnagraficaFornitore.EchoFinanceUpdateButtonManually is displayed
-    And I click AnagraficaFornitore.EchoFinanceUpdateButtonManually
+    And I check that AnagraficaFornitore.EcoFinanceAddData is displayed and enabled
+    And I click AnagraficaFornitore.EcoFinanceAddData
     And I check that AnagraficaFornitore.EvaluationYear is displayed
-    And I click AnagraficaFornitore.CurrencyArrow
+    And I check that AnagraficaFornitore.CurrencyArrow is displayed
     And Wait if it is loading
+    And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear
     And Wait if it is loading
@@ -251,8 +229,7 @@ Feature: T004 VendorManager Nuovo Fornitore Italia GITC - PROFES. PERS. GIUR. an
     And I click AnagraficaFornitore.SaveButton
     And I check that General.OKMessage is displayed
     And I click General.OKMessage
-    And Wait if it is loading
 
     Examples:
-     | PartitaIva    | RagioneSociale  |
-     | "14292621001" | "HP S.R.L."     |
+     | RagioneSociale  |
+     | "HP S.R.L."     |
