@@ -100,7 +100,7 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement Address = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeInputAddress-inner']")});
     public static final BrowserElement PostalCode = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeComboPostalCode-inner']")});
     public static final BrowserElement City = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeComboCity-inner']")});
-    public static final BrowserElement ProvinceButton = new BrowserElement(new By[]{By.xpath("//input[@id='id_SupplierCreateOfficeLocal-vhi']")});
+    public static final BrowserElement ProvinceButton = new BrowserElement(new By[]{By.xpath("//span[@id='id_SupplierCreateOfficeLocal-vhi']")});
     public static final BrowserElement ProvinceUL = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")}); //56
     public static final BrowserElement OperetionsOfficeSave = new BrowserElement(new By[]{By.xpath("//bdi[text()='Save']")});
 

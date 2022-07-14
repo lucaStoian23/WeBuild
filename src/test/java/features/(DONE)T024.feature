@@ -103,5 +103,5 @@ Feature: T024 creazione fornitore procurement and qualification
 
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     |
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor20"     |
+      | RagioneSociale   |
+      | "TestVendor24"   |

@@ -87,6 +87,6 @@ public class Hook extends DriverManager {
     @After
     public void closeDriver() {
 
-        afterSuite();
+       // afterSuite();
     }
 }

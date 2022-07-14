@@ -13,7 +13,7 @@ public class OperationalOffices {
     public static final BrowserElement CountryButton = new BrowserElement(new By[]{By.id("SupplierCreateOfficeComboNation-vhi")});
     public static final BrowserElement CountrySearchBar = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-searchField-I")});
     public static final BrowserElement CountryLents = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-searchField-search")});
-    public static final BrowserElement CountryUL = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-list-listUl")});
+    public static final BrowserElement CountryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog-list-listUl']")});
     public static final BrowserElement Address = new BrowserElement(new By[]{By.id("id_SupplierCreateOfficeInputAddress-inner")});
     public static final BrowserElement PostalCode = new BrowserElement(new By[]{By.id("id_SupplierCreateOfficeComboPostalCode-inner")});
     public static final BrowserElement City = new BrowserElement(new By[]{By.id("id_SupplierCreateOfficeComboCity-inner")});

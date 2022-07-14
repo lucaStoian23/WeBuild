@@ -4,7 +4,7 @@ Feature: T018 VendorManager Nuovo Fornitore Italia "DITC - DIFFERENT SUPPLIERS/S
 #TIPOLOGIE FORNITORE:  0 = AFC/ 1 = PROCUREMENT / 2 = PROCUREMENT & QUALIFICA
 
 
-    And I delete the supplier with <PartitaIva>
+    And I delete the supplier with <RagioneSociale>
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
