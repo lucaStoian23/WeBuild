@@ -221,8 +221,9 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that AnagraficaFornitore.EchoFinanceUpdateButtonManually is displayed
     And I click AnagraficaFornitore.EchoFinanceUpdateButtonManually
     And I check that AnagraficaFornitore.EvaluationYear is displayed
-    And I click AnagraficaFornitore.CurrencyArrow
+    And I check that AnagraficaFornitore.CurrencyArrow is displayed
     And Wait if it is loading
+    And I click AnagraficaFornitore.CurrencyArrow
     And I select the 0 element from the DDL AnagraficaFornitore.CurrencyUL
     And I click AnagraficaFornitore.EvaluationYear
     And Wait if it is loading
@@ -266,12 +267,14 @@ Feature: T002.featureFeature: T002 VendorManager Nuovo Fornitore Italiano, AFC, 
     And I check that AnagraficaFornitore.AddRequestEnterProject is displayed
     And I input in AnagraficaFornitore.AddRequestEnterProject the text 'Koysha'
     And I click AnagraficaFornitore.AddRequestNotes
-    And I check that AnagraficaFornitore.EnterProjectUL is displayed
-    And I select the 0 element from the DDL AnagraficaFornitore.EnterProjectUL
     And I check that AnagraficaFornitore.AddRequestCommodityButton is displayed
     And I click AnagraficaFornitore.AddRequestCommodityButton
     And I check that AnagraficaFornitore.AddRequestCommodiryUL is displayed
-    And I select the 4 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
+    And I select the 0 element from the DDL AnagraficaFornitore.AddRequestCommodiryUL
+    And I check that AnagraficaFornitore.AddRequestFileAdd is displayed
+    And I put the attachment extent-config.xml inside AnagraficaFornitore.AddRequestFileAdd
+    And I check that AnagraficaFornitore.AddRequestFileDesc is displayed
+    And I input in AnagraficaFornitore.AddRequestFileDesc the text 'File Test'
     And I check that AnagraficaFornitore.AddRequestAddButton is displayed
     And I click AnagraficaFornitore.AddRequestAddButton
     And Wait if it is loading

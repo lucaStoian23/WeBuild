@@ -141,6 +141,8 @@ public static final BrowserElement TabRequest = new BrowserElement(new By[]{By.i
     public static final BrowserElement AddRequestCommodityButton = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestInsertCommodityAFC-vhi']")});
     public static final BrowserElement AddRequestCommodiryUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--requestblock-Collapsed--selectDialogCommodity-list-listUl']")});
     public static final BrowserElement AddRequestAddButton = new BrowserElement(new By[]{By.xpath("//bdi[text()='Add']")});
+    public static final BrowserElement AddRequestFileAdd = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--_IDGenFileUploader2-fu']")});
+    public static final BrowserElement AddRequestFileDesc = new BrowserElement(new By[]{By.xpath("//input[@id='IDAddReqDialog--_IDGenInput2-inner']")});
 
     // Request Revoked
     public static final BrowserElement ReasonRevokedArrow = new BrowserElement(new By[]{By.xpath("//span[@id='IDAddReqDialog--id_SupplierCreateRequestSelectReason-arrow']")});
