@@ -20,7 +20,7 @@ public class OperationalOffices {
     public static final BrowserElement ProvinceButton = new BrowserElement(new By[]{By.id("id_SupplierCreateOfficeLocal-vhi")});
     public static final BrowserElement ProvinceSearch = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-searchField-I")});
     public static final BrowserElement ProvinceLents = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-searchField-search")});
-    public static final BrowserElement ProvinceUL = new BrowserElement(new By[]{By.id("application-NPPSupplierCreation-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-list-listUl")});
+    public static final BrowserElement ProvinceUL = new BrowserElement(new By[]{By.xpath("//ul[@id='application-NPPFornitori-Display-component---SupplierData--operationalofficesblock-Collapsed--selectDialog2-list-listUl']")});
     public static final BrowserElement Save = new BrowserElement(new By[]{By.id("_IDSupplierCreateOfficeCTAButtonSave-inner")});
     //Compilazione Nuovo contatto
     public static final BrowserElement ChooseContact = new BrowserElement(new By[]{By.xpath("//*[contains(text(),'Contact')]")});
