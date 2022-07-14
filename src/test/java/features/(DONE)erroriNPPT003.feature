@@ -6,7 +6,6 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
 
     Given I log_in NEW with username c.motta@reply.it and password CM.Webuild.003
 
-
     And I check that HomePage.NuovoFornitore is displayed
     And I click HomePage.NuovoFornitore
     And I go to the next frame
@@ -27,7 +26,7 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
     And I click NuovoFornitore.TipologiaFornitoreButton
     And I check that NuovoFornitore.ULTipologieFornitore is displayed
     And I select the 0 element from the DDL NuovoFornitore.ULTipologieFornitore
-   # And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
+#    And I input in NuovoFornitore.RagioneSociale the text <RagioneSociale>
     And I input in NuovoFornitore.Nome the text <Nome>
     And I input in NuovoFornitore.Surname the text <Cognome>
     And I click NuovoFornitore.SearchInfoProviderButton
@@ -41,9 +40,9 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
     And I input in NuovoFornitore.PartitaIvaCEE the text <PartitaIvaCEE>
     And Wait if it is loading
     And I click NuovoFornitore.Crea
-    And Wait if it is loading
-    And I check that General.OKMessage is displayed
-    And I click General.OKMessage
+#    And Wait if it is loading
+#    And I check that General.OKMessage is displayed
+#    And I click General.OKMessage
     And Wait if it is loading
     And I wait 3 seconds
 #dopo che ho creato il fornitore in draft
@@ -82,6 +81,7 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
     And I click AnagraficaFornitore.Date
     And I check that AnagraficaFornitore.LuogoDiNascita is displayed
     And I input in AnagraficaFornitore.LuogoDiNascita the text 'Busto arsizio'
+    And I check that AnagraficaFornitore.ArrowSesso is displayed
     And I click AnagraficaFornitore.ArrowSesso
     And I select the 0 element from the DDL AnagraficaFornitore.ULsesso
     And I click AnagraficaFornitore.ProvinciaDiNascitaButton
@@ -314,6 +314,6 @@ Feature: T003 VendorManager Nuovo Fornitore Italiano, AFC, GITC PROFESSIONISTI, 
 
 
     Examples:
-      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale   | Nome    | Cognome|
-      | "STFSLA41A73AB5h9Z" | ""            | "009341609460"  | "TestVendor"    |  "Pepco" |"Camillo"  |
+      | CodiceFiscale       | PartitaIvaCEE | PartitaIva      | RagioneSociale     | Nome    | Cognome|
+      | "STFSLA41A73AB5h9Z" | ""            | "008611109480"  | "Camilla Pepca"    |  "Pepca" |"Camilla"  |
 

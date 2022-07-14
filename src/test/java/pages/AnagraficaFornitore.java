@@ -53,6 +53,14 @@ public class AnagraficaFornitore {
     public static final BrowserElement SalvaUfficioOperativo = new BrowserElement(new By[]{By.id("_IDGenButton1x")});
     public static final BrowserElement SubmitProposal = new BrowserElement(new By[]{By.xpath("//bdi[text()='Submit Proposal']")});
     public static final BrowserElement PartitaIVASalva = new BrowserElement(new By[]{By.xpath("//input[@id='application-NPPSupplierCreation-Display-component---SupplierCreationData--infosupplierblock-Collapsed--partitaiva-inner']")});
+    public static final BrowserElement DatePicker = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--DP2-icon")});
+    public static final BrowserElement Date = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--DP2-cal--Month0-20220715")});
+    public static final BrowserElement LuogoDiNascita = new BrowserElement(new By[]{By.id("__input1-inner")});
+    public static final BrowserElement ArrowSesso = new BrowserElement(new By[]{By.id("__select3-label")});
+    public static final BrowserElement ULsesso = new BrowserElement(new By[]{By.id("__list6")});
+    public static final BrowserElement ProvinciaDiNascitaButton = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--SupplierCreateOfficeLocal-vhi")});
+    public static final BrowserElement ULprovincia = new BrowserElement(new By[]{By.id("application-NPPFornitori-Display-component---SupplierCreationData--infosupplierblock-Collapsed--selectDialog2-list-listUl")});
+
 
     public static final BrowserElement Salva = new BrowserElement(new By[]{By.id("_IDGenButton1x-inner")});
 //tab contact
